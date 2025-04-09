@@ -1,0 +1,22 @@
+# OpenapiClient::AttributeUpdate200Response
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **return_code** | **Integer** |  | [optional] |
+| **return_message** | **String** |  | [optional] |
+| **result** | [**AttributeUpdate200ResponseResult**](AttributeUpdate200ResponseResult.md) |  | [optional] |
+
+## Example
+
+```ruby
+require 'openapi_client'
+
+instance = OpenapiClient::AttributeUpdate200Response.new(
+  return_code: null,
+  return_message: null,
+  result: null
+)
+```
+
