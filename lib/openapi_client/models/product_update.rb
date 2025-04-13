@@ -250,6 +250,9 @@ module OpenapiClient
     # When true, automatically renews a listing upon its expiration.
     attr_accessor :auto_renew
 
+    # Set whether the product on sale
+    attr_accessor :on_sale
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -331,7 +334,8 @@ module OpenapiClient
         :'is_supply' => :'is_supply',
         :'downloadable' => :'downloadable',
         :'materials' => :'materials',
-        :'auto_renew' => :'auto_renew'
+        :'auto_renew' => :'auto_renew',
+        :'on_sale' => :'on_sale'
       }
     end
 
@@ -421,7 +425,8 @@ module OpenapiClient
         :'is_supply' => :'Boolean',
         :'downloadable' => :'Boolean',
         :'materials' => :'Array<String>',
-        :'auto_renew' => :'Boolean'
+        :'auto_renew' => :'Boolean',
+        :'on_sale' => :'Boolean'
       }
     end
 
@@ -787,6 +792,12 @@ module OpenapiClient
       else
         self.auto_renew = false
       end
+
+      if attributes.key?(:'on_sale')
+        self.on_sale = attributes[:'on_sale']
+      else
+        self.on_sale = false
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -887,7 +898,8 @@ module OpenapiClient
           is_supply == o.is_supply &&
           downloadable == o.downloadable &&
           materials == o.materials &&
-          auto_renew == o.auto_renew
+          auto_renew == o.auto_renew &&
+          on_sale == o.on_sale
     end
 
     # @see the `==` method
@@ -899,7 +911,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, model, old_price, price, special_price, sprice_create, sprice_expire, cost_price, fixed_cost_shipping_price, retail_price, quantity, available_for_view, weight, weight_unit, dimensions_unit, increase_quantity, reduce_quantity, warehouse_id, reserve_quantity, manage_stock, backorder_status, name, sku, visible, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, description, short_description, meta_title, meta_keywords, meta_description, store_id, lang_id, in_stock, status, seo_url, report_request_id, disable_report_cache, reindex, tags, clear_cache, gtin, upc, mpn, ean, isbn, taxable, product_class, height, length, width, harmonized_system_code, country_of_origin, search_keywords, barcode, is_virtual, is_free_shipping, reserve_price, buyitnow_price, avail_from, tax_class_id, type, avail, delivery_code, check_process_status, package_details, stores_ids, manufacturer_info, production_partner_ids, shipping_template_id, when_made, is_supply, downloadable, materials, auto_renew].hash
+      [id, model, old_price, price, special_price, sprice_create, sprice_expire, cost_price, fixed_cost_shipping_price, retail_price, quantity, available_for_view, weight, weight_unit, dimensions_unit, increase_quantity, reduce_quantity, warehouse_id, reserve_quantity, manage_stock, backorder_status, name, sku, visible, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, description, short_description, meta_title, meta_keywords, meta_description, store_id, lang_id, in_stock, status, seo_url, report_request_id, disable_report_cache, reindex, tags, clear_cache, gtin, upc, mpn, ean, isbn, taxable, product_class, height, length, width, harmonized_system_code, country_of_origin, search_keywords, barcode, is_virtual, is_free_shipping, reserve_price, buyitnow_price, avail_from, tax_class_id, type, avail, delivery_code, check_process_status, package_details, stores_ids, manufacturer_info, production_partner_ids, shipping_template_id, when_made, is_supply, downloadable, materials, auto_renew, on_sale].hash
     end
 
     # Builds the object from hash

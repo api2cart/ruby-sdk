@@ -75,6 +75,8 @@ module OpenapiClient
 
     attr_accessor :in_stock
 
+    attr_accessor :on_sale
+
     attr_accessor :backorders
 
     attr_accessor :manage_stock
@@ -160,6 +162,7 @@ module OpenapiClient
         :'weight_unit' => :'weight_unit',
         :'sort_order' => :'sort_order',
         :'in_stock' => :'in_stock',
+        :'on_sale' => :'on_sale',
         :'backorders' => :'backorders',
         :'manage_stock' => :'manage_stock',
         :'is_stock_managed' => :'is_stock_managed',
@@ -227,6 +230,7 @@ module OpenapiClient
         :'weight_unit' => :'String',
         :'sort_order' => :'Integer',
         :'in_stock' => :'Boolean',
+        :'on_sale' => :'Boolean',
         :'backorders' => :'String',
         :'manage_stock' => :'String',
         :'is_stock_managed' => :'Boolean',
@@ -407,6 +411,10 @@ module OpenapiClient
         self.in_stock = attributes[:'in_stock']
       end
 
+      if attributes.key?(:'on_sale')
+        self.on_sale = attributes[:'on_sale']
+      end
+
       if attributes.key?(:'backorders')
         self.backorders = attributes[:'backorders']
       end
@@ -578,6 +586,7 @@ module OpenapiClient
           weight_unit == o.weight_unit &&
           sort_order == o.sort_order &&
           in_stock == o.in_stock &&
+          on_sale == o.on_sale &&
           backorders == o.backorders &&
           manage_stock == o.manage_stock &&
           is_stock_managed == o.is_stock_managed &&
@@ -615,7 +624,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, type, u_model, u_sku, name, description, short_description, price, advanced_price, cost_price, quantity, inventory, group_items, u_brand_id, u_brand, categories_ids, stores_ids, url, seo_url, meta_title, meta_keywords, meta_description, avail_sale, avail_view, is_virtual, is_downloadable, weight, weight_unit, sort_order, in_stock, backorders, manage_stock, is_stock_managed, create_at, modified_at, tax_class_id, special_price, tier_price, group_price, images, product_options, u_upc, u_mpn, u_gtin, u_isbn, u_ean, related_products_ids, up_sell_products_ids, cross_sell_products_ids, dimensions_unit, width, height, length, discounts, additional_fields, custom_fields].hash
+      [id, type, u_model, u_sku, name, description, short_description, price, advanced_price, cost_price, quantity, inventory, group_items, u_brand_id, u_brand, categories_ids, stores_ids, url, seo_url, meta_title, meta_keywords, meta_description, avail_sale, avail_view, is_virtual, is_downloadable, weight, weight_unit, sort_order, in_stock, on_sale, backorders, manage_stock, is_stock_managed, create_at, modified_at, tax_class_id, special_price, tier_price, group_price, images, product_options, u_upc, u_mpn, u_gtin, u_isbn, u_ean, related_products_ids, up_sell_products_ids, cross_sell_products_ids, dimensions_unit, width, height, length, discounts, additional_fields, custom_fields].hash
     end
 
     # Builds the object from hash

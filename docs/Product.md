@@ -34,6 +34,7 @@
 | **weight_unit** | **String** |  | [optional] |
 | **sort_order** | **Integer** |  | [optional] |
 | **in_stock** | **Boolean** |  | [optional] |
+| **on_sale** | **Boolean** |  | [optional] |
 | **backorders** | **String** |  | [optional] |
 | **manage_stock** | **String** |  | [optional] |
 | **is_stock_managed** | **Boolean** |  | [optional] |
@@ -97,6 +98,7 @@ instance = OpenapiClient::Product.new(
   weight_unit: null,
   sort_order: null,
   in_stock: null,
+  on_sale: null,
   backorders: null,
   manage_stock: null,
   is_stock_managed: null,

@@ -83,6 +83,7 @@
 | **downloadable** | **Boolean** | Defines whether the product is downloadable | [optional][default to false] |
 | **materials** | **Array&lt;String&gt;** | A list of material strings for materials used in the product. | [optional] |
 | **auto_renew** | **Boolean** | When true, automatically renews a listing upon its expiration. | [optional][default to false] |
+| **on_sale** | **Boolean** | Set whether the product on sale | [optional][default to false] |
 
 ## Example
 
@@ -168,7 +169,8 @@ instance = OpenapiClient::ProductUpdate.new(
   is_supply: false,
   downloadable: true,
   materials: materials[0]&#x3D;Aluminum&amp;materials[1]&#x3D;Brass,
-  auto_renew: false
+  auto_renew: false,
+  on_sale: false
 )
 ```
 
