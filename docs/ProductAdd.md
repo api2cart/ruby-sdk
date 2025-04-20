@@ -72,10 +72,12 @@
 | **specifics** | [**Array&lt;ProductAddSpecificsInner&gt;**](ProductAddSpecificsInner.md) | An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields-&gt;product_specifics).         &lt;b&gt;The structure of the parameter is different for specific platforms.&lt;/b&gt; | [optional] |
 | **image_url** | **String** | Image Url | [optional] |
 | **image_name** | **String** | Defines image&#39;s name | [optional] |
+| **additional_image_urls** | **Array&lt;String&gt;** | Image Url | [optional] |
 | **reserve_price** | **Float** | Defines reserve price value | [optional] |
 | **buyitnow_price** | **Float** | Defines buy it now value | [optional] |
 | **condition_description** | **String** | Detailed description of the product condition. | [optional] |
 | **auction_confidentiality_level** | **String** | This allows buyers to remain anonymous when the bid or buy an item. | [optional] |
+| **logistic_info** | [**Array&lt;ProductAddLogisticInfoInner&gt;**](ProductAddLogisticInfoInner.md) | Defines product&#39;s logistic channel settings | [optional] |
 | **avail_from** | **String** | Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time. | [optional] |
 | **tags** | **String** | Product tags | [optional] |
 | **clear_cache** | **Boolean** | Is cache clear required | [optional][default to true] |
@@ -189,10 +191,12 @@ instance = OpenapiClient::ProductAdd.new(
   specifics: null,
   image_url: https://docs.api2cart.com/img/logo.png,
   image_name: abibas.png,
+  additional_image_urls: null,
   reserve_price: 65.9,
   buyitnow_price: 65.9,
   condition_description: Almost perfect condition, a few scratches,
   auction_confidentiality_level: public,
+  logistic_info: null,
   avail_from: avail_from&#x3D;2029-10-25T15:54:37-0500,
   tags: tag1,tag2,
   clear_cache: false,

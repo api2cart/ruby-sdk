@@ -530,6 +530,7 @@ opts = {
   params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
   brand_ids: '4,5', # String | Retrieves brands specified by brand ids
   exclude: 'false', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+  category_id: '6', # String | Retrieves product brands specified by category id
   store_id: '1', # String | Store Id
   lang_id: '3', # String | Language id
   created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
@@ -579,6 +580,7 @@ end
 | **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,short_description,active,url&#39;] |
 | **brand_ids** | **String** | Retrieves brands specified by brand ids | [optional] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **category_id** | **String** | Retrieves product brands specified by category id | [optional] |
 | **store_id** | **String** | Store Id | [optional] |
 | **lang_id** | **String** | Language id | [optional] |
 | **created_from** | **String** | Retrieve entities from their creation date | [optional] |

@@ -128,6 +128,7 @@ describe 'ProductApi' do
   # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :brand_ids Retrieves brands specified by brand ids
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+  # @option opts [String] :category_id Retrieves product brands specified by category id
   # @option opts [String] :store_id Store Id
   # @option opts [String] :lang_id Language id
   # @option opts [String] :created_from Retrieve entities from their creation date

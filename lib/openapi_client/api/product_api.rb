@@ -438,6 +438,7 @@ module OpenapiClient
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,short_description,active,url')
     # @option opts [String] :brand_ids Retrieves brands specified by brand ids
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+    # @option opts [String] :category_id Retrieves product brands specified by category id
     # @option opts [String] :store_id Store Id
     # @option opts [String] :lang_id Language id
     # @option opts [String] :created_from Retrieve entities from their creation date
@@ -463,6 +464,7 @@ module OpenapiClient
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,short_description,active,url')
     # @option opts [String] :brand_ids Retrieves brands specified by brand ids
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+    # @option opts [String] :category_id Retrieves product brands specified by category id
     # @option opts [String] :store_id Store Id
     # @option opts [String] :lang_id Language id
     # @option opts [String] :created_from Retrieve entities from their creation date
@@ -489,6 +491,7 @@ module OpenapiClient
       query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'brand_ids'] = opts[:'brand_ids'] if !opts[:'brand_ids'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
+      query_params[:'category_id'] = opts[:'category_id'] if !opts[:'category_id'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
       query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?

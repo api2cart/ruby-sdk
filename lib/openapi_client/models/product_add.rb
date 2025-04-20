@@ -215,6 +215,9 @@ module OpenapiClient
     # Defines image's name
     attr_accessor :image_name
 
+    # Image Url
+    attr_accessor :additional_image_urls
+
     # Defines reserve price value
     attr_accessor :reserve_price
 
@@ -226,6 +229,9 @@ module OpenapiClient
 
     # This allows buyers to remain anonymous when the bid or buy an item.
     attr_accessor :auction_confidentiality_level
+
+    # Defines product's logistic channel settings
+    attr_accessor :logistic_info
 
     # Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time.
     attr_accessor :avail_from
@@ -410,10 +416,12 @@ module OpenapiClient
         :'specifics' => :'specifics',
         :'image_url' => :'image_url',
         :'image_name' => :'image_name',
+        :'additional_image_urls' => :'additional_image_urls',
         :'reserve_price' => :'reserve_price',
         :'buyitnow_price' => :'buyitnow_price',
         :'condition_description' => :'condition_description',
         :'auction_confidentiality_level' => :'auction_confidentiality_level',
+        :'logistic_info' => :'logistic_info',
         :'avail_from' => :'avail_from',
         :'tags' => :'tags',
         :'clear_cache' => :'clear_cache',
@@ -531,10 +539,12 @@ module OpenapiClient
         :'specifics' => :'Array<ProductAddSpecificsInner>',
         :'image_url' => :'String',
         :'image_name' => :'String',
+        :'additional_image_urls' => :'Array<String>',
         :'reserve_price' => :'Float',
         :'buyitnow_price' => :'Float',
         :'condition_description' => :'String',
         :'auction_confidentiality_level' => :'String',
+        :'logistic_info' => :'Array<ProductAddLogisticInfoInner>',
         :'avail_from' => :'String',
         :'tags' => :'String',
         :'clear_cache' => :'Boolean',
@@ -909,6 +919,12 @@ module OpenapiClient
         self.image_name = attributes[:'image_name']
       end
 
+      if attributes.key?(:'additional_image_urls')
+        if (value = attributes[:'additional_image_urls']).is_a?(Array)
+          self.additional_image_urls = value
+        end
+      end
+
       if attributes.key?(:'reserve_price')
         self.reserve_price = attributes[:'reserve_price']
       end
@@ -923,6 +939,12 @@ module OpenapiClient
 
       if attributes.key?(:'auction_confidentiality_level')
         self.auction_confidentiality_level = attributes[:'auction_confidentiality_level']
+      end
+
+      if attributes.key?(:'logistic_info')
+        if (value = attributes[:'logistic_info']).is_a?(Array)
+          self.logistic_info = value
+        end
       end
 
       if attributes.key?(:'avail_from')
@@ -1204,10 +1226,12 @@ module OpenapiClient
           specifics == o.specifics &&
           image_url == o.image_url &&
           image_name == o.image_name &&
+          additional_image_urls == o.additional_image_urls &&
           reserve_price == o.reserve_price &&
           buyitnow_price == o.buyitnow_price &&
           condition_description == o.condition_description &&
           auction_confidentiality_level == o.auction_confidentiality_level &&
+          logistic_info == o.logistic_info &&
           avail_from == o.avail_from &&
           tags == o.tags &&
           clear_cache == o.clear_cache &&
@@ -1257,7 +1281,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, model, sku, description, price, old_price, special_price, cost_price, fixed_cost_shipping_price, sprice_create, sprice_modified, sprice_expire, tier_prices, group_prices, available_for_view, available_for_sale, weight, width, height, length, weight_unit, dimensions_unit, short_description, warehouse_id, backorder_status, quantity, downloadable, wholesale_price, created_at, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, tax_class_id, type, meta_title, meta_keywords, meta_description, url, lang_id, stores_ids, category_id, viewed_count, ordered_count, attribute_set_name, attribute_name, shipping_template_id, production_partner_ids, condition, listing_duration, listing_type, payment_methods, return_accepted, shipping_details, paypal_email, seller_profiles, package_details, best_offer, sales_tax, barcode, upc, ean, isbn, specifics, image_url, image_name, reserve_price, buyitnow_price, condition_description, auction_confidentiality_level, avail_from, tags, clear_cache, asin, gtin, mpn, taxable, visible, status, seo_url, product_class, product_type, marketplace_item_properties, manage_stock, harmonized_system_code, country_of_origin, files, search_keywords, store_id, brand_name, is_virtual, is_free_shipping, in_stock, delivery_code, product_reference, delivery_type, delivery_time, size_chart, certifications, delivery_option_ids, manufacturer_info, when_made, is_supply, materials, auto_renew, allow_display_condition, min_order_quantity, max_order_quantity].hash
+      [name, model, sku, description, price, old_price, special_price, cost_price, fixed_cost_shipping_price, sprice_create, sprice_modified, sprice_expire, tier_prices, group_prices, available_for_view, available_for_sale, weight, width, height, length, weight_unit, dimensions_unit, short_description, warehouse_id, backorder_status, quantity, downloadable, wholesale_price, created_at, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, tax_class_id, type, meta_title, meta_keywords, meta_description, url, lang_id, stores_ids, category_id, viewed_count, ordered_count, attribute_set_name, attribute_name, shipping_template_id, production_partner_ids, condition, listing_duration, listing_type, payment_methods, return_accepted, shipping_details, paypal_email, seller_profiles, package_details, best_offer, sales_tax, barcode, upc, ean, isbn, specifics, image_url, image_name, additional_image_urls, reserve_price, buyitnow_price, condition_description, auction_confidentiality_level, logistic_info, avail_from, tags, clear_cache, asin, gtin, mpn, taxable, visible, status, seo_url, product_class, product_type, marketplace_item_properties, manage_stock, harmonized_system_code, country_of_origin, files, search_keywords, store_id, brand_name, is_virtual, is_free_shipping, in_stock, delivery_code, product_reference, delivery_type, delivery_time, size_chart, certifications, delivery_option_ids, manufacturer_info, when_made, is_supply, materials, auto_renew, allow_display_condition, min_order_quantity, max_order_quantity].hash
     end
 
     # Builds the object from hash

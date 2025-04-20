@@ -535,6 +535,7 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::ProductAddCertificationsInnerImagesInner](docs/ProductAddCertificationsInnerImagesInner.md)
  - [OpenapiClient::ProductAddFilesInner](docs/ProductAddFilesInner.md)
  - [OpenapiClient::ProductAddGroupPricesInner](docs/ProductAddGroupPricesInner.md)
+ - [OpenapiClient::ProductAddLogisticInfoInner](docs/ProductAddLogisticInfoInner.md)
  - [OpenapiClient::ProductAddManufacturerInfo](docs/ProductAddManufacturerInfo.md)
  - [OpenapiClient::ProductAddPackageDetails](docs/ProductAddPackageDetails.md)
  - [OpenapiClient::ProductAddSalesTax](docs/ProductAddSalesTax.md)

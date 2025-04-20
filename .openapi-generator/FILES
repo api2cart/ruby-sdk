@@ -288,6 +288,7 @@ docs/ProductAddCertificationsInnerFilesInner.md
 docs/ProductAddCertificationsInnerImagesInner.md
 docs/ProductAddFilesInner.md
 docs/ProductAddGroupPricesInner.md
+docs/ProductAddLogisticInfoInner.md
 docs/ProductAddManufacturerInfo.md
 docs/ProductAddPackageDetails.md
 docs/ProductAddSalesTax.md
@@ -749,6 +750,7 @@ lib/openapi_client/models/product_add_certifications_inner_files_inner.rb
 lib/openapi_client/models/product_add_certifications_inner_images_inner.rb
 lib/openapi_client/models/product_add_files_inner.rb
 lib/openapi_client/models/product_add_group_prices_inner.rb
+lib/openapi_client/models/product_add_logistic_info_inner.rb
 lib/openapi_client/models/product_add_manufacturer_info.rb
 lib/openapi_client/models/product_add_package_details.rb
 lib/openapi_client/models/product_add_sales_tax.rb
@@ -1200,6 +1202,7 @@ spec/models/product_add_certifications_inner_images_inner_spec.rb
 spec/models/product_add_certifications_inner_spec.rb
 spec/models/product_add_files_inner_spec.rb
 spec/models/product_add_group_prices_inner_spec.rb
+spec/models/product_add_logistic_info_inner_spec.rb
 spec/models/product_add_manufacturer_info_spec.rb
 spec/models/product_add_package_details_spec.rb
 spec/models/product_add_sales_tax_spec.rb

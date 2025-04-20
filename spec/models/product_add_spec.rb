@@ -435,6 +435,12 @@ describe OpenapiClient::ProductAdd do
     end
   end
 
+  describe 'test attribute "additional_image_urls"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "reserve_price"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -454,6 +460,12 @@ describe OpenapiClient::ProductAdd do
   end
 
   describe 'test attribute "auction_confidentiality_level"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "logistic_info"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
