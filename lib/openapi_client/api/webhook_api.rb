@@ -295,13 +295,13 @@ module OpenapiClient
     # webhook.list
     # List registered webhook on the store.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,entity,action,callback')
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :entity The entity you want to filter webhooks by (e.g. order or product)
     # @option opts [String] :action The action you want to filter webhooks by (e.g. add, update, or delete)
     # @option opts [Boolean] :active The webhook status you want to filter webhooks by
     # @option opts [String] :ids List of сomma-separated webhook ids
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,entity,action,callback')
     # @return [WebhookList200Response]
     def webhook_list(opts = {})
       data, _status_code, _headers = webhook_list_with_http_info(opts)
@@ -311,13 +311,13 @@ module OpenapiClient
     # webhook.list
     # List registered webhook on the store.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,entity,action,callback')
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :entity The entity you want to filter webhooks by (e.g. order or product)
     # @option opts [String] :action The action you want to filter webhooks by (e.g. add, update, or delete)
     # @option opts [Boolean] :active The webhook status you want to filter webhooks by
     # @option opts [String] :ids List of сomma-separated webhook ids
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,entity,action,callback')
     # @return [Array<(WebhookList200Response, Integer, Hash)>] WebhookList200Response data, response status code and response headers
     def webhook_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -328,13 +328,13 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
       query_params[:'entity'] = opts[:'entity'] if !opts[:'entity'].nil?
       query_params[:'action'] = opts[:'action'] if !opts[:'action'].nil?
       query_params[:'active'] = opts[:'active'] if !opts[:'active'].nil?
       query_params[:'ids'] = opts[:'ids'] if !opts[:'ids'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

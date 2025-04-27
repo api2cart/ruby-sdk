@@ -22,19 +22,19 @@ module OpenapiClient
     # order.abandoned.list
     # Get list of orders that were left by customers before completing the order.
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
+    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :customer_id Retrieves orders specified by customer id
     # @option opts [String] :customer_email Retrieves orders specified by customer email
-    # @option opts [String] :created_to Retrieve entities to their creation date
-    # @option opts [String] :created_from Retrieve entities from their creation date
-    # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [String] :modified_from Retrieve entities from their modification date
-    # @option opts [Boolean] :skip_empty_email Filter empty emails (default to false)
     # @option opts [String] :store_id Store Id
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'customer,totals,items')
+    # @option opts [String] :created_from Retrieve entities from their creation date
+    # @option opts [String] :created_to Retrieve entities to their creation date
+    # @option opts [String] :modified_from Retrieve entities from their modification date
+    # @option opts [String] :modified_to Retrieve entities to their modification date
+    # @option opts [Boolean] :skip_empty_email Filter empty emails (default to false)
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'customer,totals,items')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [ModelResponseOrderAbandonedList]
     def order_abandoned_list(opts = {})
@@ -45,19 +45,19 @@ module OpenapiClient
     # order.abandoned.list
     # Get list of orders that were left by customers before completing the order.
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
+    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :customer_id Retrieves orders specified by customer id
     # @option opts [String] :customer_email Retrieves orders specified by customer email
-    # @option opts [String] :created_to Retrieve entities to their creation date
-    # @option opts [String] :created_from Retrieve entities from their creation date
-    # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [String] :modified_from Retrieve entities from their modification date
-    # @option opts [Boolean] :skip_empty_email Filter empty emails (default to false)
     # @option opts [String] :store_id Store Id
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'customer,totals,items')
+    # @option opts [String] :created_from Retrieve entities from their creation date
+    # @option opts [String] :created_to Retrieve entities to their creation date
+    # @option opts [String] :modified_from Retrieve entities from their modification date
+    # @option opts [String] :modified_to Retrieve entities to their modification date
+    # @option opts [Boolean] :skip_empty_email Filter empty emails (default to false)
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'customer,totals,items')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(ModelResponseOrderAbandonedList, Integer, Hash)>] ModelResponseOrderAbandonedList data, response status code and response headers
     def order_abandoned_list_with_http_info(opts = {})
@@ -69,19 +69,19 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
+      query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
+      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'customer_id'] = opts[:'customer_id'] if !opts[:'customer_id'].nil?
       query_params[:'customer_email'] = opts[:'customer_email'] if !opts[:'customer_email'].nil?
-      query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
-      query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
-      query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
-      query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
-      query_params[:'skip_empty_email'] = opts[:'skip_empty_email'] if !opts[:'skip_empty_email'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
-      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
-      query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
-      query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
+      query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
+      query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
+      query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
+      query_params[:'skip_empty_email'] = opts[:'skip_empty_email'] if !opts[:'skip_empty_email'].nil?
       query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
@@ -189,17 +189,13 @@ module OpenapiClient
     # order.count
     # Count orders in store
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :order_ids Counts orders specified by order ids
+    # @option opts [String] :ids Counts orders specified by ids
     # @option opts [String] :customer_id Counts orders quantity specified by customer id
+    # @option opts [String] :store_id Counts orders quantity specified by store id
     # @option opts [String] :customer_email Counts orders quantity specified by customer email
     # @option opts [String] :order_status Counts orders quantity specified by order status
     # @option opts [Array<String>] :order_status_ids Retrieves orders specified by order statuses
-    # @option opts [String] :created_to Retrieve entities to their creation date
-    # @option opts [String] :created_from Retrieve entities from their creation date
-    # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [String] :modified_from Retrieve entities from their modification date
-    # @option opts [String] :store_id Counts orders quantity specified by store id
-    # @option opts [String] :ids Counts orders specified by ids
-    # @option opts [String] :order_ids Counts orders specified by order ids
     # @option opts [String] :ebay_order_status Counts orders quantity specified by order status
     # @option opts [String] :financial_status Counts orders quantity specified by financial status
     # @option opts [Array<String>] :financial_status_ids Retrieves orders count specified by financial status ids
@@ -209,6 +205,10 @@ module OpenapiClient
     # @option opts [String] :delivery_method Retrieves order with delivery method
     # @option opts [String] :tags Order tags
     # @option opts [String] :ship_node_type Retrieves order with ship node type
+    # @option opts [String] :created_from Retrieve entities from their creation date
+    # @option opts [String] :created_to Retrieve entities to their creation date
+    # @option opts [String] :modified_from Retrieve entities from their modification date
+    # @option opts [String] :modified_to Retrieve entities to their modification date
     # @return [OrderCount200Response]
     def order_count(opts = {})
       data, _status_code, _headers = order_count_with_http_info(opts)
@@ -218,17 +218,13 @@ module OpenapiClient
     # order.count
     # Count orders in store
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :order_ids Counts orders specified by order ids
+    # @option opts [String] :ids Counts orders specified by ids
     # @option opts [String] :customer_id Counts orders quantity specified by customer id
+    # @option opts [String] :store_id Counts orders quantity specified by store id
     # @option opts [String] :customer_email Counts orders quantity specified by customer email
     # @option opts [String] :order_status Counts orders quantity specified by order status
     # @option opts [Array<String>] :order_status_ids Retrieves orders specified by order statuses
-    # @option opts [String] :created_to Retrieve entities to their creation date
-    # @option opts [String] :created_from Retrieve entities from their creation date
-    # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [String] :modified_from Retrieve entities from their modification date
-    # @option opts [String] :store_id Counts orders quantity specified by store id
-    # @option opts [String] :ids Counts orders specified by ids
-    # @option opts [String] :order_ids Counts orders specified by order ids
     # @option opts [String] :ebay_order_status Counts orders quantity specified by order status
     # @option opts [String] :financial_status Counts orders quantity specified by financial status
     # @option opts [Array<String>] :financial_status_ids Retrieves orders count specified by financial status ids
@@ -238,6 +234,10 @@ module OpenapiClient
     # @option opts [String] :delivery_method Retrieves order with delivery method
     # @option opts [String] :tags Order tags
     # @option opts [String] :ship_node_type Retrieves order with ship node type
+    # @option opts [String] :created_from Retrieve entities from their creation date
+    # @option opts [String] :created_to Retrieve entities to their creation date
+    # @option opts [String] :modified_from Retrieve entities from their modification date
+    # @option opts [String] :modified_to Retrieve entities to their modification date
     # @return [Array<(OrderCount200Response, Integer, Hash)>] OrderCount200Response data, response status code and response headers
     def order_count_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -248,17 +248,13 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'order_ids'] = opts[:'order_ids'] if !opts[:'order_ids'].nil?
+      query_params[:'ids'] = opts[:'ids'] if !opts[:'ids'].nil?
       query_params[:'customer_id'] = opts[:'customer_id'] if !opts[:'customer_id'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'customer_email'] = opts[:'customer_email'] if !opts[:'customer_email'].nil?
       query_params[:'order_status'] = opts[:'order_status'] if !opts[:'order_status'].nil?
       query_params[:'order_status_ids'] = @api_client.build_collection_param(opts[:'order_status_ids'], :multi) if !opts[:'order_status_ids'].nil?
-      query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
-      query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
-      query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
-      query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
-      query_params[:'ids'] = opts[:'ids'] if !opts[:'ids'].nil?
-      query_params[:'order_ids'] = opts[:'order_ids'] if !opts[:'order_ids'].nil?
       query_params[:'ebay_order_status'] = opts[:'ebay_order_status'] if !opts[:'ebay_order_status'].nil?
       query_params[:'financial_status'] = opts[:'financial_status'] if !opts[:'financial_status'].nil?
       query_params[:'financial_status_ids'] = @api_client.build_collection_param(opts[:'financial_status_ids'], :multi) if !opts[:'financial_status_ids'].nil?
@@ -268,6 +264,10 @@ module OpenapiClient
       query_params[:'delivery_method'] = opts[:'delivery_method'] if !opts[:'delivery_method'].nil?
       query_params[:'tags'] = opts[:'tags'] if !opts[:'tags'].nil?
       query_params[:'ship_node_type'] = opts[:'ship_node_type'] if !opts[:'ship_node_type'].nil?
+      query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
+      query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
+      query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
+      query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -363,18 +363,18 @@ module OpenapiClient
     # order.find
     # This method is deprecated and won't be supported in the future. Please use \"order.list\" instead.
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
+    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :customer_id Retrieves orders specified by customer id
     # @option opts [String] :customer_email Retrieves orders specified by customer email
     # @option opts [String] :order_status Retrieves orders specified by order status
-    # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
-    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'order_id,customer,totals,address,items,bundles,status')
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+    # @option opts [String] :financial_status Retrieves orders specified by financial status
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :modified_to Retrieve entities to their modification date
     # @option opts [String] :modified_from Retrieve entities from their modification date
-    # @option opts [String] :financial_status Retrieves orders specified by financial status
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'order_id,customer,totals,address,items,bundles,status')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [OrderFind200Response]
     def order_find(opts = {})
       data, _status_code, _headers = order_find_with_http_info(opts)
@@ -384,18 +384,18 @@ module OpenapiClient
     # order.find
     # This method is deprecated and won&#39;t be supported in the future. Please use \&quot;order.list\&quot; instead.
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
+    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :customer_id Retrieves orders specified by customer id
     # @option opts [String] :customer_email Retrieves orders specified by customer email
     # @option opts [String] :order_status Retrieves orders specified by order status
-    # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
-    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'order_id,customer,totals,address,items,bundles,status')
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+    # @option opts [String] :financial_status Retrieves orders specified by financial status
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :modified_to Retrieve entities to their modification date
     # @option opts [String] :modified_from Retrieve entities from their modification date
-    # @option opts [String] :financial_status Retrieves orders specified by financial status
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'order_id,customer,totals,address,items,bundles,status')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(OrderFind200Response, Integer, Hash)>] OrderFind200Response data, response status code and response headers
     def order_find_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -406,18 +406,18 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
+      query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
       query_params[:'customer_id'] = opts[:'customer_id'] if !opts[:'customer_id'].nil?
       query_params[:'customer_email'] = opts[:'customer_email'] if !opts[:'customer_email'].nil?
       query_params[:'order_status'] = opts[:'order_status'] if !opts[:'order_status'].nil?
-      query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
-      query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
+      query_params[:'financial_status'] = opts[:'financial_status'] if !opts[:'financial_status'].nil?
       query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
       query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
       query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
       query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
-      query_params[:'financial_status'] = opts[:'financial_status'] if !opts[:'financial_status'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -516,12 +516,12 @@ module OpenapiClient
     # order.info
     # Info about a specific order by ID
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :order_id Retrieves order’s info specified by order id
     # @option opts [String] :id Retrieves order info specified by id
+    # @option opts [String] :order_id Retrieves order’s info specified by order id
+    # @option opts [String] :store_id Defines store id where the order should be found
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'order_id,customer,totals,address,items,bundles,status')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :store_id Defines store id where the order should be found
     # @option opts [Boolean] :enable_cache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (default to false)
     # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
     # @return [OrderInfo200Response]
@@ -533,12 +533,12 @@ module OpenapiClient
     # order.info
     # Info about a specific order by ID
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :order_id Retrieves order’s info specified by order id
     # @option opts [String] :id Retrieves order info specified by id
+    # @option opts [String] :order_id Retrieves order’s info specified by order id
+    # @option opts [String] :store_id Defines store id where the order should be found
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'order_id,customer,totals,address,items,bundles,status')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :store_id Defines store id where the order should be found
     # @option opts [Boolean] :enable_cache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (default to false)
     # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
     # @return [Array<(OrderInfo200Response, Integer, Hash)>] OrderInfo200Response data, response status code and response headers
@@ -551,12 +551,12 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'order_id'] = opts[:'order_id'] if !opts[:'order_id'].nil?
       query_params[:'id'] = opts[:'id'] if !opts[:'id'].nil?
+      query_params[:'order_id'] = opts[:'order_id'] if !opts[:'order_id'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'enable_cache'] = opts[:'enable_cache'] if !opts[:'enable_cache'].nil?
       query_params[:'use_latest_api_version'] = opts[:'use_latest_api_version'] if !opts[:'use_latest_api_version'].nil?
 
@@ -597,43 +597,43 @@ module OpenapiClient
     # order.list
     # Get list of orders from store.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :customer_id Retrieves orders specified by customer id
-    # @option opts [String] :customer_email Retrieves orders specified by customer email
-    # @option opts [String] :phone Filter orders by customer&#39;s phone number
-    # @option opts [String] :order_status Retrieves orders specified by order status
-    # @option opts [Array<String>] :order_status_ids Retrieves orders specified by order statuses
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :page_cursor Used to retrieve orders via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+    # @option opts [String] :ids Retrieves orders specified by ids
+    # @option opts [String] :order_ids Retrieves orders specified by order ids
+    # @option opts [String] :since_id Retrieve entities starting from the specified id.
+    # @option opts [String] :store_id Store Id
+    # @option opts [String] :customer_id Retrieves orders specified by customer id
+    # @option opts [String] :customer_email Retrieves orders specified by customer email
+    # @option opts [String] :basket_id Retrieves order’s info specified by basket id.
+    # @option opts [String] :currency_id Currency Id
+    # @option opts [String] :phone Filter orders by customer&#39;s phone number
+    # @option opts [String] :order_status Retrieves orders specified by order status
+    # @option opts [Array<String>] :order_status_ids Retrieves orders specified by order statuses
+    # @option opts [String] :ebay_order_status Retrieves orders specified by order status
+    # @option opts [String] :financial_status Retrieves orders specified by financial status
+    # @option opts [Array<String>] :financial_status_ids Retrieves orders specified by financial status ids
+    # @option opts [String] :fulfillment_status Create order with fulfillment status
+    # @option opts [String] :return_status Retrieves orders specified by return status
+    # @option opts [String] :fulfillment_channel Retrieves order with a fulfillment channel
+    # @option opts [String] :shipping_method Retrieve entities according to shipping method
+    # @option opts [String] :skip_order_ids Skipped orders by ids
+    # @option opts [Boolean] :is_deleted Filter deleted orders
+    # @option opts [String] :shipping_country_iso3 Retrieve entities according to shipping country
+    # @option opts [String] :delivery_method Retrieves order with delivery method
+    # @option opts [String] :ship_node_type Retrieves order with ship node type
+    # @option opts [String] :created_to Retrieve entities to their creation date
+    # @option opts [String] :created_from Retrieve entities from their creation date
+    # @option opts [String] :modified_to Retrieve entities to their modification date
+    # @option opts [String] :modified_from Retrieve entities from their modification date
+    # @option opts [String] :tags Order tags
     # @option opts [String] :sort_by Set field to sort by (default to 'order_id')
     # @option opts [String] :sort_direction Set sorting direction (default to 'asc')
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'order_id,customer,totals,address,items,bundles,status')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :created_to Retrieve entities to their creation date
-    # @option opts [String] :created_from Retrieve entities from their creation date
-    # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [String] :modified_from Retrieve entities from their modification date
-    # @option opts [String] :store_id Store Id
-    # @option opts [String] :ids Retrieves orders specified by ids
-    # @option opts [String] :order_ids Retrieves orders specified by order ids
-    # @option opts [String] :ebay_order_status Retrieves orders specified by order status
-    # @option opts [String] :basket_id Retrieves order’s info specified by basket id.
-    # @option opts [String] :financial_status Retrieves orders specified by financial status
-    # @option opts [Array<String>] :financial_status_ids Retrieves orders specified by financial status ids
-    # @option opts [String] :fulfillment_status Create order with fulfillment status
-    # @option opts [String] :fulfillment_channel Retrieves order with a fulfillment channel
-    # @option opts [String] :shipping_method Retrieve entities according to shipping method
-    # @option opts [String] :skip_order_ids Skipped orders by ids
-    # @option opts [String] :since_id Retrieve entities starting from the specified id.
-    # @option opts [Boolean] :is_deleted Filter deleted orders
-    # @option opts [String] :shipping_country_iso3 Retrieve entities according to shipping country
     # @option opts [Boolean] :enable_cache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (default to false)
-    # @option opts [String] :delivery_method Retrieves order with delivery method
-    # @option opts [String] :tags Order tags
-    # @option opts [String] :ship_node_type Retrieves order with ship node type
-    # @option opts [String] :currency_id Currency Id
-    # @option opts [String] :return_status Retrieves orders specified by return status
     # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
     # @return [ModelResponseOrderList]
     def order_list(opts = {})
@@ -644,43 +644,43 @@ module OpenapiClient
     # order.list
     # Get list of orders from store.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :customer_id Retrieves orders specified by customer id
-    # @option opts [String] :customer_email Retrieves orders specified by customer email
-    # @option opts [String] :phone Filter orders by customer&#39;s phone number
-    # @option opts [String] :order_status Retrieves orders specified by order status
-    # @option opts [Array<String>] :order_status_ids Retrieves orders specified by order statuses
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :page_cursor Used to retrieve orders via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+    # @option opts [String] :ids Retrieves orders specified by ids
+    # @option opts [String] :order_ids Retrieves orders specified by order ids
+    # @option opts [String] :since_id Retrieve entities starting from the specified id.
+    # @option opts [String] :store_id Store Id
+    # @option opts [String] :customer_id Retrieves orders specified by customer id
+    # @option opts [String] :customer_email Retrieves orders specified by customer email
+    # @option opts [String] :basket_id Retrieves order’s info specified by basket id.
+    # @option opts [String] :currency_id Currency Id
+    # @option opts [String] :phone Filter orders by customer&#39;s phone number
+    # @option opts [String] :order_status Retrieves orders specified by order status
+    # @option opts [Array<String>] :order_status_ids Retrieves orders specified by order statuses
+    # @option opts [String] :ebay_order_status Retrieves orders specified by order status
+    # @option opts [String] :financial_status Retrieves orders specified by financial status
+    # @option opts [Array<String>] :financial_status_ids Retrieves orders specified by financial status ids
+    # @option opts [String] :fulfillment_status Create order with fulfillment status
+    # @option opts [String] :return_status Retrieves orders specified by return status
+    # @option opts [String] :fulfillment_channel Retrieves order with a fulfillment channel
+    # @option opts [String] :shipping_method Retrieve entities according to shipping method
+    # @option opts [String] :skip_order_ids Skipped orders by ids
+    # @option opts [Boolean] :is_deleted Filter deleted orders
+    # @option opts [String] :shipping_country_iso3 Retrieve entities according to shipping country
+    # @option opts [String] :delivery_method Retrieves order with delivery method
+    # @option opts [String] :ship_node_type Retrieves order with ship node type
+    # @option opts [String] :created_to Retrieve entities to their creation date
+    # @option opts [String] :created_from Retrieve entities from their creation date
+    # @option opts [String] :modified_to Retrieve entities to their modification date
+    # @option opts [String] :modified_from Retrieve entities from their modification date
+    # @option opts [String] :tags Order tags
     # @option opts [String] :sort_by Set field to sort by (default to 'order_id')
     # @option opts [String] :sort_direction Set sorting direction (default to 'asc')
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'order_id,customer,totals,address,items,bundles,status')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :created_to Retrieve entities to their creation date
-    # @option opts [String] :created_from Retrieve entities from their creation date
-    # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [String] :modified_from Retrieve entities from their modification date
-    # @option opts [String] :store_id Store Id
-    # @option opts [String] :ids Retrieves orders specified by ids
-    # @option opts [String] :order_ids Retrieves orders specified by order ids
-    # @option opts [String] :ebay_order_status Retrieves orders specified by order status
-    # @option opts [String] :basket_id Retrieves order’s info specified by basket id.
-    # @option opts [String] :financial_status Retrieves orders specified by financial status
-    # @option opts [Array<String>] :financial_status_ids Retrieves orders specified by financial status ids
-    # @option opts [String] :fulfillment_status Create order with fulfillment status
-    # @option opts [String] :fulfillment_channel Retrieves order with a fulfillment channel
-    # @option opts [String] :shipping_method Retrieve entities according to shipping method
-    # @option opts [String] :skip_order_ids Skipped orders by ids
-    # @option opts [String] :since_id Retrieve entities starting from the specified id.
-    # @option opts [Boolean] :is_deleted Filter deleted orders
-    # @option opts [String] :shipping_country_iso3 Retrieve entities according to shipping country
     # @option opts [Boolean] :enable_cache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (default to false)
-    # @option opts [String] :delivery_method Retrieves order with delivery method
-    # @option opts [String] :tags Order tags
-    # @option opts [String] :ship_node_type Retrieves order with ship node type
-    # @option opts [String] :currency_id Currency Id
-    # @option opts [String] :return_status Retrieves orders specified by return status
     # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
     # @return [Array<(ModelResponseOrderList, Integer, Hash)>] ModelResponseOrderList data, response status code and response headers
     def order_list_with_http_info(opts = {})
@@ -692,43 +692,43 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'customer_id'] = opts[:'customer_id'] if !opts[:'customer_id'].nil?
-      query_params[:'customer_email'] = opts[:'customer_email'] if !opts[:'customer_email'].nil?
-      query_params[:'phone'] = opts[:'phone'] if !opts[:'phone'].nil?
-      query_params[:'order_status'] = opts[:'order_status'] if !opts[:'order_status'].nil?
-      query_params[:'order_status_ids'] = @api_client.build_collection_param(opts[:'order_status_ids'], :multi) if !opts[:'order_status_ids'].nil?
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
       query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
+      query_params[:'ids'] = opts[:'ids'] if !opts[:'ids'].nil?
+      query_params[:'order_ids'] = opts[:'order_ids'] if !opts[:'order_ids'].nil?
+      query_params[:'since_id'] = opts[:'since_id'] if !opts[:'since_id'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'customer_id'] = opts[:'customer_id'] if !opts[:'customer_id'].nil?
+      query_params[:'customer_email'] = opts[:'customer_email'] if !opts[:'customer_email'].nil?
+      query_params[:'basket_id'] = opts[:'basket_id'] if !opts[:'basket_id'].nil?
+      query_params[:'currency_id'] = opts[:'currency_id'] if !opts[:'currency_id'].nil?
+      query_params[:'phone'] = opts[:'phone'] if !opts[:'phone'].nil?
+      query_params[:'order_status'] = opts[:'order_status'] if !opts[:'order_status'].nil?
+      query_params[:'order_status_ids'] = @api_client.build_collection_param(opts[:'order_status_ids'], :multi) if !opts[:'order_status_ids'].nil?
+      query_params[:'ebay_order_status'] = opts[:'ebay_order_status'] if !opts[:'ebay_order_status'].nil?
+      query_params[:'financial_status'] = opts[:'financial_status'] if !opts[:'financial_status'].nil?
+      query_params[:'financial_status_ids'] = @api_client.build_collection_param(opts[:'financial_status_ids'], :multi) if !opts[:'financial_status_ids'].nil?
+      query_params[:'fulfillment_status'] = opts[:'fulfillment_status'] if !opts[:'fulfillment_status'].nil?
+      query_params[:'return_status'] = opts[:'return_status'] if !opts[:'return_status'].nil?
+      query_params[:'fulfillment_channel'] = opts[:'fulfillment_channel'] if !opts[:'fulfillment_channel'].nil?
+      query_params[:'shipping_method'] = opts[:'shipping_method'] if !opts[:'shipping_method'].nil?
+      query_params[:'skip_order_ids'] = opts[:'skip_order_ids'] if !opts[:'skip_order_ids'].nil?
+      query_params[:'is_deleted'] = opts[:'is_deleted'] if !opts[:'is_deleted'].nil?
+      query_params[:'shipping_country_iso3'] = opts[:'shipping_country_iso3'] if !opts[:'shipping_country_iso3'].nil?
+      query_params[:'delivery_method'] = opts[:'delivery_method'] if !opts[:'delivery_method'].nil?
+      query_params[:'ship_node_type'] = opts[:'ship_node_type'] if !opts[:'ship_node_type'].nil?
+      query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
+      query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
+      query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
+      query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
+      query_params[:'tags'] = opts[:'tags'] if !opts[:'tags'].nil?
       query_params[:'sort_by'] = opts[:'sort_by'] if !opts[:'sort_by'].nil?
       query_params[:'sort_direction'] = opts[:'sort_direction'] if !opts[:'sort_direction'].nil?
       query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
-      query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
-      query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
-      query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
-      query_params[:'ids'] = opts[:'ids'] if !opts[:'ids'].nil?
-      query_params[:'order_ids'] = opts[:'order_ids'] if !opts[:'order_ids'].nil?
-      query_params[:'ebay_order_status'] = opts[:'ebay_order_status'] if !opts[:'ebay_order_status'].nil?
-      query_params[:'basket_id'] = opts[:'basket_id'] if !opts[:'basket_id'].nil?
-      query_params[:'financial_status'] = opts[:'financial_status'] if !opts[:'financial_status'].nil?
-      query_params[:'financial_status_ids'] = @api_client.build_collection_param(opts[:'financial_status_ids'], :multi) if !opts[:'financial_status_ids'].nil?
-      query_params[:'fulfillment_status'] = opts[:'fulfillment_status'] if !opts[:'fulfillment_status'].nil?
-      query_params[:'fulfillment_channel'] = opts[:'fulfillment_channel'] if !opts[:'fulfillment_channel'].nil?
-      query_params[:'shipping_method'] = opts[:'shipping_method'] if !opts[:'shipping_method'].nil?
-      query_params[:'skip_order_ids'] = opts[:'skip_order_ids'] if !opts[:'skip_order_ids'].nil?
-      query_params[:'since_id'] = opts[:'since_id'] if !opts[:'since_id'].nil?
-      query_params[:'is_deleted'] = opts[:'is_deleted'] if !opts[:'is_deleted'].nil?
-      query_params[:'shipping_country_iso3'] = opts[:'shipping_country_iso3'] if !opts[:'shipping_country_iso3'].nil?
       query_params[:'enable_cache'] = opts[:'enable_cache'] if !opts[:'enable_cache'].nil?
-      query_params[:'delivery_method'] = opts[:'delivery_method'] if !opts[:'delivery_method'].nil?
-      query_params[:'tags'] = opts[:'tags'] if !opts[:'tags'].nil?
-      query_params[:'ship_node_type'] = opts[:'ship_node_type'] if !opts[:'ship_node_type'].nil?
-      query_params[:'currency_id'] = opts[:'currency_id'] if !opts[:'currency_id'].nil?
-      query_params[:'return_status'] = opts[:'return_status'] if !opts[:'return_status'].nil?
       query_params[:'use_latest_api_version'] = opts[:'use_latest_api_version'] if !opts[:'use_latest_api_version'].nil?
 
       # header parameters
@@ -1327,10 +1327,10 @@ module OpenapiClient
     # @param order_id [String] Defines the order id
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,order_id,items,tracking_numbers')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :store_id Store Id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,order_id,items,tracking_numbers')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [OrderShipmentInfo200Response]
     def order_shipment_info(id, order_id, opts = {})
       data, _status_code, _headers = order_shipment_info_with_http_info(id, order_id, opts)
@@ -1343,10 +1343,10 @@ module OpenapiClient
     # @param order_id [String] Defines the order id
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,order_id,items,tracking_numbers')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :store_id Store Id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,order_id,items,tracking_numbers')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(OrderShipmentInfo200Response, Integer, Hash)>] OrderShipmentInfo200Response data, response status code and response headers
     def order_shipment_info_with_http_info(id, order_id, opts = {})
       if @api_client.config.debugging
@@ -1368,10 +1368,10 @@ module OpenapiClient
       query_params[:'id'] = id
       query_params[:'order_id'] = order_id
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -1411,17 +1411,17 @@ module OpenapiClient
     # Get list of shipments by orders.
     # @param order_id [String] Retrieves shipments specified by order id
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,order_id,items,tracking_numbers')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+    # @option opts [String] :store_id Store Id
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [String] :store_id Store Id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,order_id,items,tracking_numbers')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [ModelResponseOrderShipmentList]
     def order_shipment_list(order_id, opts = {})
       data, _status_code, _headers = order_shipment_list_with_http_info(order_id, opts)
@@ -1432,17 +1432,17 @@ module OpenapiClient
     # Get list of shipments by orders.
     # @param order_id [String] Retrieves shipments specified by order id
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,order_id,items,tracking_numbers')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+    # @option opts [String] :store_id Store Id
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [String] :store_id Store Id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,order_id,items,tracking_numbers')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(ModelResponseOrderShipmentList, Integer, Hash)>] ModelResponseOrderShipmentList data, response status code and response headers
     def order_shipment_list_with_http_info(order_id, opts = {})
       if @api_client.config.debugging
@@ -1458,17 +1458,17 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'order_id'] = order_id
-      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
+      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
       query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
       query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
       query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -1711,11 +1711,11 @@ module OpenapiClient
     # @param order_ids [String] Retrieves order transactions specified by order ids
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :store_id Store Id
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,order_id,amount,description')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @return [ModelResponseOrderTransactionList]
     def order_transaction_list(order_ids, opts = {})
       data, _status_code, _headers = order_transaction_list_with_http_info(order_ids, opts)
@@ -1727,11 +1727,11 @@ module OpenapiClient
     # @param order_ids [String] Retrieves order transactions specified by order ids
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :store_id Store Id
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,order_id,amount,description')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @return [Array<(ModelResponseOrderTransactionList, Integer, Hash)>] ModelResponseOrderTransactionList data, response status code and response headers
     def order_transaction_list_with_http_info(order_ids, opts = {})
       if @api_client.config.debugging
@@ -1748,11 +1748,11 @@ module OpenapiClient
       query_params = opts[:query_params] || {}
       query_params[:'order_ids'] = order_ids
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
+      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -1794,19 +1794,19 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :store_id Defines store id where the order should be found
     # @option opts [String] :order_status Defines new order&#39;s status
+    # @option opts [String] :financial_status Update order financial status to specified
+    # @option opts [String] :fulfillment_status Create order with fulfillment status
     # @option opts [String] :cancellation_reason Defines the cancellation reason when the order will be canceled
+    # @option opts [String] :order_payment_method Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39;
     # @option opts [String] :comment Specifies order comment
     # @option opts [String] :admin_comment Specifies admin&#39;s order comment
     # @option opts [String] :admin_private_comment Specifies private admin&#39;s order comment
+    # @option opts [String] :invoice_admin_comment Specifies admin&#39;s order invoice comment
     # @option opts [String] :date_modified Specifies order&#39;s  modification date
     # @option opts [String] :date_finished Specifies order&#39;s  finished date
-    # @option opts [String] :financial_status Update order financial status to specified
-    # @option opts [String] :fulfillment_status Create order with fulfillment status
-    # @option opts [String] :order_payment_method Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39;
     # @option opts [Boolean] :send_notifications Send notifications to customer after order was created (default to false)
-    # @option opts [String] :origin The source of the order
     # @option opts [Boolean] :create_invoice Determines whether an invoice should be created if it has not already been created
-    # @option opts [String] :invoice_admin_comment Specifies admin&#39;s order invoice comment
+    # @option opts [String] :origin The source of the order
     # @return [AccountConfigUpdate200Response]
     def order_update(order_id, opts = {})
       data, _status_code, _headers = order_update_with_http_info(order_id, opts)
@@ -1819,19 +1819,19 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :store_id Defines store id where the order should be found
     # @option opts [String] :order_status Defines new order&#39;s status
+    # @option opts [String] :financial_status Update order financial status to specified
+    # @option opts [String] :fulfillment_status Create order with fulfillment status
     # @option opts [String] :cancellation_reason Defines the cancellation reason when the order will be canceled
+    # @option opts [String] :order_payment_method Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39;
     # @option opts [String] :comment Specifies order comment
     # @option opts [String] :admin_comment Specifies admin&#39;s order comment
     # @option opts [String] :admin_private_comment Specifies private admin&#39;s order comment
+    # @option opts [String] :invoice_admin_comment Specifies admin&#39;s order invoice comment
     # @option opts [String] :date_modified Specifies order&#39;s  modification date
     # @option opts [String] :date_finished Specifies order&#39;s  finished date
-    # @option opts [String] :financial_status Update order financial status to specified
-    # @option opts [String] :fulfillment_status Create order with fulfillment status
-    # @option opts [String] :order_payment_method Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39;
     # @option opts [Boolean] :send_notifications Send notifications to customer after order was created (default to false)
-    # @option opts [String] :origin The source of the order
     # @option opts [Boolean] :create_invoice Determines whether an invoice should be created if it has not already been created
-    # @option opts [String] :invoice_admin_comment Specifies admin&#39;s order invoice comment
+    # @option opts [String] :origin The source of the order
     # @return [Array<(AccountConfigUpdate200Response, Integer, Hash)>] AccountConfigUpdate200Response data, response status code and response headers
     def order_update_with_http_info(order_id, opts = {})
       if @api_client.config.debugging
@@ -1849,19 +1849,19 @@ module OpenapiClient
       query_params[:'order_id'] = order_id
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'order_status'] = opts[:'order_status'] if !opts[:'order_status'].nil?
+      query_params[:'financial_status'] = opts[:'financial_status'] if !opts[:'financial_status'].nil?
+      query_params[:'fulfillment_status'] = opts[:'fulfillment_status'] if !opts[:'fulfillment_status'].nil?
       query_params[:'cancellation_reason'] = opts[:'cancellation_reason'] if !opts[:'cancellation_reason'].nil?
+      query_params[:'order_payment_method'] = opts[:'order_payment_method'] if !opts[:'order_payment_method'].nil?
       query_params[:'comment'] = opts[:'comment'] if !opts[:'comment'].nil?
       query_params[:'admin_comment'] = opts[:'admin_comment'] if !opts[:'admin_comment'].nil?
       query_params[:'admin_private_comment'] = opts[:'admin_private_comment'] if !opts[:'admin_private_comment'].nil?
+      query_params[:'invoice_admin_comment'] = opts[:'invoice_admin_comment'] if !opts[:'invoice_admin_comment'].nil?
       query_params[:'date_modified'] = opts[:'date_modified'] if !opts[:'date_modified'].nil?
       query_params[:'date_finished'] = opts[:'date_finished'] if !opts[:'date_finished'].nil?
-      query_params[:'financial_status'] = opts[:'financial_status'] if !opts[:'financial_status'].nil?
-      query_params[:'fulfillment_status'] = opts[:'fulfillment_status'] if !opts[:'fulfillment_status'].nil?
-      query_params[:'order_payment_method'] = opts[:'order_payment_method'] if !opts[:'order_payment_method'].nil?
       query_params[:'send_notifications'] = opts[:'send_notifications'] if !opts[:'send_notifications'].nil?
-      query_params[:'origin'] = opts[:'origin'] if !opts[:'origin'].nil?
       query_params[:'create_invoice'] = opts[:'create_invoice'] if !opts[:'create_invoice'].nil?
-      query_params[:'invoice_admin_comment'] = opts[:'invoice_admin_comment'] if !opts[:'invoice_admin_comment'].nil?
+      query_params[:'origin'] = opts[:'origin'] if !opts[:'origin'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

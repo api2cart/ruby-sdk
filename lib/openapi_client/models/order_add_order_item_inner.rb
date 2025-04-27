@@ -39,6 +39,9 @@ module OpenapiClient
     # Percentage of tax for product order
     attr_accessor :order_item_tax
 
+    # Defines if item price includes tax
+    attr_accessor :order_item_price_includes_tax
+
     # Index of the parent grouped/bundle product
     attr_accessor :order_item_parent
 
@@ -50,9 +53,6 @@ module OpenapiClient
 
     # Indicates whether subitems of the grouped/bundle product can be shipped separately
     attr_accessor :order_item_allow_ship_items_separately
-
-    # Defines if item price includes tax
-    attr_accessor :order_item_price_includes_tax
 
     attr_accessor :order_item_option
 
@@ -69,11 +69,11 @@ module OpenapiClient
         :'order_item_weight' => :'order_item_weight',
         :'order_item_variant_id' => :'order_item_variant_id',
         :'order_item_tax' => :'order_item_tax',
+        :'order_item_price_includes_tax' => :'order_item_price_includes_tax',
         :'order_item_parent' => :'order_item_parent',
         :'order_item_parent_option_name' => :'order_item_parent_option_name',
         :'order_item_allow_refund_items_separately' => :'order_item_allow_refund_items_separately',
         :'order_item_allow_ship_items_separately' => :'order_item_allow_ship_items_separately',
-        :'order_item_price_includes_tax' => :'order_item_price_includes_tax',
         :'order_item_option' => :'order_item_option',
         :'order_item_property' => :'order_item_property'
       }
@@ -95,11 +95,11 @@ module OpenapiClient
         :'order_item_weight' => :'Float',
         :'order_item_variant_id' => :'String',
         :'order_item_tax' => :'Float',
+        :'order_item_price_includes_tax' => :'Boolean',
         :'order_item_parent' => :'Integer',
         :'order_item_parent_option_name' => :'String',
         :'order_item_allow_refund_items_separately' => :'Boolean',
         :'order_item_allow_ship_items_separately' => :'Boolean',
-        :'order_item_price_includes_tax' => :'Boolean',
         :'order_item_option' => :'Array<OrderAddOrderItemInnerOrderItemOptionInner>',
         :'order_item_property' => :'Array<OrderAddOrderItemInnerOrderItemPropertyInner>'
       }
@@ -168,6 +168,12 @@ module OpenapiClient
         self.order_item_tax = 0
       end
 
+      if attributes.key?(:'order_item_price_includes_tax')
+        self.order_item_price_includes_tax = attributes[:'order_item_price_includes_tax']
+      else
+        self.order_item_price_includes_tax = false
+      end
+
       if attributes.key?(:'order_item_parent')
         self.order_item_parent = attributes[:'order_item_parent']
       end
@@ -182,12 +188,6 @@ module OpenapiClient
 
       if attributes.key?(:'order_item_allow_ship_items_separately')
         self.order_item_allow_ship_items_separately = attributes[:'order_item_allow_ship_items_separately']
-      end
-
-      if attributes.key?(:'order_item_price_includes_tax')
-        self.order_item_price_includes_tax = attributes[:'order_item_price_includes_tax']
-      else
-        self.order_item_price_includes_tax = false
       end
 
       if attributes.key?(:'order_item_option')
@@ -251,11 +251,11 @@ module OpenapiClient
           order_item_weight == o.order_item_weight &&
           order_item_variant_id == o.order_item_variant_id &&
           order_item_tax == o.order_item_tax &&
+          order_item_price_includes_tax == o.order_item_price_includes_tax &&
           order_item_parent == o.order_item_parent &&
           order_item_parent_option_name == o.order_item_parent_option_name &&
           order_item_allow_refund_items_separately == o.order_item_allow_refund_items_separately &&
           order_item_allow_ship_items_separately == o.order_item_allow_ship_items_separately &&
-          order_item_price_includes_tax == o.order_item_price_includes_tax &&
           order_item_option == o.order_item_option &&
           order_item_property == o.order_item_property
     end
@@ -269,7 +269,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [order_item_id, order_item_name, order_item_model, order_item_price, order_item_quantity, order_item_weight, order_item_variant_id, order_item_tax, order_item_parent, order_item_parent_option_name, order_item_allow_refund_items_separately, order_item_allow_ship_items_separately, order_item_price_includes_tax, order_item_option, order_item_property].hash
+      [order_item_id, order_item_name, order_item_model, order_item_price, order_item_quantity, order_item_weight, order_item_variant_id, order_item_tax, order_item_price_includes_tax, order_item_parent, order_item_parent_option_name, order_item_allow_refund_items_separately, order_item_allow_ship_items_separately, order_item_option, order_item_property].hash
     end
 
     # Builds the object from hash

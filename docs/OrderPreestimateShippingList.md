@@ -4,10 +4,10 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **store_id** | **String** | Store Id | [optional] |
 | **warehouse_id** | **String** | This parameter is used for selecting a warehouse where you need to set/modify a product quantity. | [optional] |
-| **customer_email** | **String** | Retrieves orders specified by customer email | [optional] |
 | **customer_id** | **String** | Retrieves orders specified by customer id | [optional] |
+| **customer_email** | **String** | Retrieves orders specified by customer email | [optional] |
+| **store_id** | **String** | Store Id | [optional] |
 | **shipp_address_1** | **String** | Specifies first shipping address | [optional] |
 | **shipp_city** | **String** | Specifies shipping city | [optional] |
 | **shipp_postcode** | **String** | Specifies shipping postcode | [optional] |
@@ -23,10 +23,10 @@
 require 'openapi_client'
 
 instance = OpenapiClient::OrderPreestimateShippingList.new(
-  store_id: 1,
   warehouse_id: 1,
-  customer_email: jubari@hannsgroup.com,
   customer_id: 5,
+  customer_email: jubari@hannsgroup.com,
+  store_id: 1,
   shipp_address_1: Green str. 35,
   shipp_city: Chicago,
   shipp_postcode: 24545,

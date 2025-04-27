@@ -15,17 +15,17 @@ require 'time'
 
 module OpenapiClient
   class OrderPreestimateShippingList
-    # Store Id
-    attr_accessor :store_id
-
     # This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
     attr_accessor :warehouse_id
+
+    # Retrieves orders specified by customer id
+    attr_accessor :customer_id
 
     # Retrieves orders specified by customer email
     attr_accessor :customer_email
 
-    # Retrieves orders specified by customer id
-    attr_accessor :customer_id
+    # Store Id
+    attr_accessor :store_id
 
     # Specifies first shipping address
     attr_accessor :shipp_address_1
@@ -53,10 +53,10 @@ module OpenapiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'store_id' => :'store_id',
         :'warehouse_id' => :'warehouse_id',
-        :'customer_email' => :'customer_email',
         :'customer_id' => :'customer_id',
+        :'customer_email' => :'customer_email',
+        :'store_id' => :'store_id',
         :'shipp_address_1' => :'shipp_address_1',
         :'shipp_city' => :'shipp_city',
         :'shipp_postcode' => :'shipp_postcode',
@@ -76,10 +76,10 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'store_id' => :'String',
         :'warehouse_id' => :'String',
-        :'customer_email' => :'String',
         :'customer_id' => :'String',
+        :'customer_email' => :'String',
+        :'store_id' => :'String',
         :'shipp_address_1' => :'String',
         :'shipp_city' => :'String',
         :'shipp_postcode' => :'String',
@@ -112,20 +112,20 @@ module OpenapiClient
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'store_id')
-        self.store_id = attributes[:'store_id']
-      end
-
       if attributes.key?(:'warehouse_id')
         self.warehouse_id = attributes[:'warehouse_id']
+      end
+
+      if attributes.key?(:'customer_id')
+        self.customer_id = attributes[:'customer_id']
       end
 
       if attributes.key?(:'customer_email')
         self.customer_email = attributes[:'customer_email']
       end
 
-      if attributes.key?(:'customer_id')
-        self.customer_id = attributes[:'customer_id']
+      if attributes.key?(:'store_id')
+        self.store_id = attributes[:'store_id']
       end
 
       if attributes.key?(:'shipp_address_1')
@@ -199,10 +199,10 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          store_id == o.store_id &&
           warehouse_id == o.warehouse_id &&
-          customer_email == o.customer_email &&
           customer_id == o.customer_id &&
+          customer_email == o.customer_email &&
+          store_id == o.store_id &&
           shipp_address_1 == o.shipp_address_1 &&
           shipp_city == o.shipp_city &&
           shipp_postcode == o.shipp_postcode &&
@@ -222,7 +222,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [store_id, warehouse_id, customer_email, customer_id, shipp_address_1, shipp_city, shipp_postcode, shipp_state, shipp_country, params, exclude, order_item].hash
+      [warehouse_id, customer_id, customer_email, store_id, shipp_address_1, shipp_city, shipp_postcode, shipp_state, shipp_country, params, exclude, order_item].hash
     end
 
     # Builds the object from hash

@@ -105,12 +105,12 @@ end
 
 api_instance = OpenapiClient::AccountApi.new
 opts = {
-  params: 'url,store_key', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'url,store_key', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+  store_url: 'http://mystore.com', # String | A web address of a store
+  store_key: 'ab37fc230bc5df63a5be1b11220949be', # String | Find store by store key
   request_from_date: '2010-07-29', # String | Retrieve entities from their creation date
   request_to_date: '2100-08-29', # String | Retrieve entities to their creation date
-  store_url: 'http://mystore.com', # String | A web address of a store
-  store_key: 'ab37fc230bc5df63a5be1b11220949be' # String | Find store by store key
+  params: 'url,store_key', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'url,store_key' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
 begin
@@ -144,12 +144,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;force_all&#39;] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **request_from_date** | **String** | Retrieve entities from their creation date | [optional] |
-| **request_to_date** | **String** | Retrieve entities to their creation date | [optional] |
 | **store_url** | **String** | A web address of a store | [optional] |
 | **store_key** | **String** | Find store by store key | [optional] |
+| **request_from_date** | **String** | Retrieve entities from their creation date | [optional] |
+| **request_to_date** | **String** | Retrieve entities to their creation date | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;force_all&#39;] |
+| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -252,6 +252,7 @@ opts = {
   shopline_access_token: 'igse8e4rdmzkxdi937qe69d59en1imw', # String | Shopline APP Key
   shopline_app_key: '737cf6bd2879cb6c7e5a8ff9cd63f3d46b0b5b7b', # String | Shopline APP Key
   shopline_app_secret: '1701d123bb5cc14cd2732dcaed90638316c0a09', # String | Shopline App Secret
+  shopline_shared_secret: '1701d123bb5cc14cd2732dcaed90638316c0a09', # String | Shopline Shared Secret
   shopify_access_token: 'igse8e4rdmzkxdi937qe69d59en1imw', # String | Access token authorizing the app to access resources on behalf of a user
   shopify_api_key: 'bbca57d8ff3c3677128112c15556d9e3', # String | Shopify API Key
   shopify_api_password: '860f3a6fc87632301a42cd88e4b5ab3d', # String | Shopify API Password
@@ -431,6 +432,7 @@ end
 | **shopline_access_token** | **String** | Shopline APP Key | [optional] |
 | **shopline_app_key** | **String** | Shopline APP Key | [optional] |
 | **shopline_app_secret** | **String** | Shopline App Secret | [optional] |
+| **shopline_shared_secret** | **String** | Shopline Shared Secret | [optional] |
 | **shopify_access_token** | **String** | Access token authorizing the app to access resources on behalf of a user | [optional] |
 | **shopify_api_key** | **String** | Shopify API Key | [optional] |
 | **shopify_api_password** | **String** | Shopify API Password | [optional] |
@@ -551,8 +553,8 @@ end
 
 api_instance = OpenapiClient::AccountApi.new
 opts = {
-  count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
   start: 0, # Integer | This parameter sets the number from which you want to get entities
+  count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
   ids: '3,14,25' # String | List of сomma-separated webhook ids
 }
 
@@ -587,8 +589,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
+| **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
 | **ids** | **String** | List of сomma-separated webhook ids | [optional] |
 
 ### Return type

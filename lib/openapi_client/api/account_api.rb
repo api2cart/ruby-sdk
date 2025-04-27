@@ -90,12 +90,12 @@ module OpenapiClient
     # account.cart.list
     # This method lets you get a list of online stores connected to your API2Cart account. You can get the number of API requests to each store if you specify a period using parameters (request_from_date, request_to_date). The total_calls field is displayed only if there are parameters (request_from_date, request_to_date).
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :request_from_date Retrieve entities from their creation date
-    # @option opts [String] :request_to_date Retrieve entities to their creation date
     # @option opts [String] :store_url A web address of a store
     # @option opts [String] :store_key Find store by store key
+    # @option opts [String] :request_from_date Retrieve entities from their creation date
+    # @option opts [String] :request_to_date Retrieve entities to their creation date
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [AccountCartList200Response]
     def account_cart_list(opts = {})
       data, _status_code, _headers = account_cart_list_with_http_info(opts)
@@ -105,12 +105,12 @@ module OpenapiClient
     # account.cart.list
     # This method lets you get a list of online stores connected to your API2Cart account. You can get the number of API requests to each store if you specify a period using parameters (request_from_date, request_to_date). The total_calls field is displayed only if there are parameters (request_from_date, request_to_date).
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :request_from_date Retrieve entities from their creation date
-    # @option opts [String] :request_to_date Retrieve entities to their creation date
     # @option opts [String] :store_url A web address of a store
     # @option opts [String] :store_key Find store by store key
+    # @option opts [String] :request_from_date Retrieve entities from their creation date
+    # @option opts [String] :request_to_date Retrieve entities to their creation date
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(AccountCartList200Response, Integer, Hash)>] AccountCartList200Response data, response status code and response headers
     def account_cart_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -121,12 +121,12 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'request_from_date'] = opts[:'request_from_date'] if !opts[:'request_from_date'].nil?
-      query_params[:'request_to_date'] = opts[:'request_to_date'] if !opts[:'request_to_date'].nil?
       query_params[:'store_url'] = opts[:'store_url'] if !opts[:'store_url'].nil?
       query_params[:'store_key'] = opts[:'store_key'] if !opts[:'store_key'].nil?
+      query_params[:'request_from_date'] = opts[:'request_from_date'] if !opts[:'request_from_date'].nil?
+      query_params[:'request_to_date'] = opts[:'request_to_date'] if !opts[:'request_to_date'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -224,6 +224,7 @@ module OpenapiClient
     # @option opts [String] :shopline_access_token Shopline APP Key
     # @option opts [String] :shopline_app_key Shopline APP Key
     # @option opts [String] :shopline_app_secret Shopline App Secret
+    # @option opts [String] :shopline_shared_secret Shopline Shared Secret
     # @option opts [String] :shopify_access_token Access token authorizing the app to access resources on behalf of a user
     # @option opts [String] :shopify_api_key Shopify API Key
     # @option opts [String] :shopify_api_password Shopify API Password
@@ -374,6 +375,7 @@ module OpenapiClient
     # @option opts [String] :shopline_access_token Shopline APP Key
     # @option opts [String] :shopline_app_key Shopline APP Key
     # @option opts [String] :shopline_app_secret Shopline App Secret
+    # @option opts [String] :shopline_shared_secret Shopline Shared Secret
     # @option opts [String] :shopify_access_token Access token authorizing the app to access resources on behalf of a user
     # @option opts [String] :shopify_api_key Shopify API Key
     # @option opts [String] :shopify_api_password Shopify API Password
@@ -525,6 +527,7 @@ module OpenapiClient
       query_params[:'shopline_access_token'] = opts[:'shopline_access_token'] if !opts[:'shopline_access_token'].nil?
       query_params[:'shopline_app_key'] = opts[:'shopline_app_key'] if !opts[:'shopline_app_key'].nil?
       query_params[:'shopline_app_secret'] = opts[:'shopline_app_secret'] if !opts[:'shopline_app_secret'].nil?
+      query_params[:'shopline_shared_secret'] = opts[:'shopline_shared_secret'] if !opts[:'shopline_shared_secret'].nil?
       query_params[:'shopify_access_token'] = opts[:'shopify_access_token'] if !opts[:'shopify_access_token'].nil?
       query_params[:'shopify_api_key'] = opts[:'shopify_api_key'] if !opts[:'shopify_api_key'].nil?
       query_params[:'shopify_api_password'] = opts[:'shopify_api_password'] if !opts[:'shopify_api_password'].nil?
@@ -645,8 +648,8 @@ module OpenapiClient
     # account.failed_webhooks
     # If the callback of your service for some reason could not accept webhooks from API2Cart, then with the help of this method you can get a list of missed webhooks to perform synchronization again using entity_id. Please note that we keep such records for 24 hours.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
+    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :ids List of сomma-separated webhook ids
     # @return [AccountFailedWebhooks200Response]
     def account_failed_webhooks(opts = {})
@@ -657,8 +660,8 @@ module OpenapiClient
     # account.failed_webhooks
     # If the callback of your service for some reason could not accept webhooks from API2Cart, then with the help of this method you can get a list of missed webhooks to perform synchronization again using entity_id. Please note that we keep such records for 24 hours.
     # @param [Hash] opts the optional parameters
-    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
+    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :ids List of сomma-separated webhook ids
     # @return [Array<(AccountFailedWebhooks200Response, Integer, Hash)>] AccountFailedWebhooks200Response data, response status code and response headers
     def account_failed_webhooks_with_http_info(opts = {})
@@ -670,8 +673,8 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
+      query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
       query_params[:'ids'] = opts[:'ids'] if !opts[:'ids'].nil?
 
       # header parameters

@@ -25,8 +25,8 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :store_id Store Id
     # @option opts [String] :lang_id Language id
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'tax_class_id,name,avail')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'tax_class_id,name,avail')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [ModelResponseTaxClassInfo]
     def tax_class_info(tax_class_id, opts = {})
@@ -40,8 +40,8 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :store_id Store Id
     # @option opts [String] :lang_id Language id
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'tax_class_id,name,avail')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'tax_class_id,name,avail')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(ModelResponseTaxClassInfo, Integer, Hash)>] ModelResponseTaxClassInfo data, response status code and response headers
     def tax_class_info_with_http_info(tax_class_id, opts = {})
@@ -60,8 +60,8 @@ module OpenapiClient
       query_params[:'tax_class_id'] = tax_class_id
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
@@ -101,15 +101,15 @@ module OpenapiClient
     # tax.class.list
     # Get list of tax classes from your store.
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+    # @option opts [String] :store_id Store Id
+    # @option opts [String] :find_value Entity search that is specified by some value
+    # @option opts [String] :find_where Tax class search that is specified by field
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :modified_to Retrieve entities to their modification date
     # @option opts [String] :modified_from Retrieve entities from their modification date
-    # @option opts [String] :find_value Entity search that is specified by some value
-    # @option opts [String] :find_where Tax class search that is specified by field
-    # @option opts [String] :store_id Store Id
-    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve (default to '{return_code,return_message,pagination,result}')
     # @return [ModelResponseTaxClassList]
     def tax_class_list(opts = {})
@@ -120,15 +120,15 @@ module OpenapiClient
     # tax.class.list
     # Get list of tax classes from your store.
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+    # @option opts [String] :store_id Store Id
+    # @option opts [String] :find_value Entity search that is specified by some value
+    # @option opts [String] :find_where Tax class search that is specified by field
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :modified_to Retrieve entities to their modification date
     # @option opts [String] :modified_from Retrieve entities from their modification date
-    # @option opts [String] :find_value Entity search that is specified by some value
-    # @option opts [String] :find_where Tax class search that is specified by field
-    # @option opts [String] :store_id Store Id
-    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve (default to '{return_code,return_message,pagination,result}')
     # @return [Array<(ModelResponseTaxClassList, Integer, Hash)>] ModelResponseTaxClassList data, response status code and response headers
     def tax_class_list_with_http_info(opts = {})
@@ -140,15 +140,15 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
+      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'find_value'] = opts[:'find_value'] if !opts[:'find_value'].nil?
+      query_params[:'find_where'] = opts[:'find_where'] if !opts[:'find_where'].nil?
       query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
       query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
       query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
       query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
-      query_params[:'find_value'] = opts[:'find_value'] if !opts[:'find_value'].nil?
-      query_params[:'find_where'] = opts[:'find_where'] if !opts[:'find_where'].nil?
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
-      query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
-      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
 
       # header parameters

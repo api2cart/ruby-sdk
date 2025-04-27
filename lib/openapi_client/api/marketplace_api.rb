@@ -22,20 +22,20 @@ module OpenapiClient
     # marketplace.product.find
     # Search product in global catalog.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :store_id Store Id
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-    # @option opts [String] :categories_ids Defines product add that is specified by comma-separated categories id
     # @option opts [String] :keyword Defines search keyword
+    # @option opts [String] :categories_ids Defines product add that is specified by comma-separated categories id
+    # @option opts [String] :store_id Store Id
     # @option opts [String] :asin Amazon Standard Identification Number.
     # @option opts [String] :ean European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products.
     # @option opts [String] :gtin Global Trade Item Number. An GTIN is an identifier for trade items.
     # @option opts [String] :upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products.
     # @option opts [String] :mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
     # @option opts [String] :isbn International Standard Book Number. An ISBN is a unique identifier for books.
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @return [ModelResponseMarketplaceProductFind]
     def marketplace_product_find(opts = {})
       data, _status_code, _headers = marketplace_product_find_with_http_info(opts)
@@ -45,20 +45,20 @@ module OpenapiClient
     # marketplace.product.find
     # Search product in global catalog.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :store_id Store Id
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-    # @option opts [String] :categories_ids Defines product add that is specified by comma-separated categories id
     # @option opts [String] :keyword Defines search keyword
+    # @option opts [String] :categories_ids Defines product add that is specified by comma-separated categories id
+    # @option opts [String] :store_id Store Id
     # @option opts [String] :asin Amazon Standard Identification Number.
     # @option opts [String] :ean European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products.
     # @option opts [String] :gtin Global Trade Item Number. An GTIN is an identifier for trade items.
     # @option opts [String] :upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products.
     # @option opts [String] :mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
     # @option opts [String] :isbn International Standard Book Number. An ISBN is a unique identifier for books.
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @return [Array<(ModelResponseMarketplaceProductFind, Integer, Hash)>] ModelResponseMarketplaceProductFind data, response status code and response headers
     def marketplace_product_find_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -69,20 +69,20 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
       query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
-      query_params[:'categories_ids'] = opts[:'categories_ids'] if !opts[:'categories_ids'].nil?
       query_params[:'keyword'] = opts[:'keyword'] if !opts[:'keyword'].nil?
+      query_params[:'categories_ids'] = opts[:'categories_ids'] if !opts[:'categories_ids'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'asin'] = opts[:'asin'] if !opts[:'asin'].nil?
       query_params[:'ean'] = opts[:'ean'] if !opts[:'ean'].nil?
       query_params[:'gtin'] = opts[:'gtin'] if !opts[:'gtin'].nil?
       query_params[:'upc'] = opts[:'upc'] if !opts[:'upc'].nil?
       query_params[:'mpn'] = opts[:'mpn'] if !opts[:'mpn'].nil?
       query_params[:'isbn'] = opts[:'isbn'] if !opts[:'isbn'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
       query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

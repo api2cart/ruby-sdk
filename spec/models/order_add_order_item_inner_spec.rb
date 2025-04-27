@@ -75,6 +75,12 @@ describe OpenapiClient::OrderAddOrderItemInner do
     end
   end
 
+  describe 'test attribute "order_item_price_includes_tax"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "order_item_parent"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -94,12 +100,6 @@ describe OpenapiClient::OrderAddOrderItemInner do
   end
 
   describe 'test attribute "order_item_allow_ship_items_separately"' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  describe 'test attribute "order_item_price_includes_tax"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

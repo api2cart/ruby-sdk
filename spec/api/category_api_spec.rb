@@ -37,20 +37,20 @@ describe 'CategoryApi' do
   # Add new category in store
   # @param name Defines category&#39;s name that has to be added
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :parent_id Adds categories specified by parent id
-  # @option opts [String] :stores_ids Create category in the stores that is specified by comma-separated stores&#39; id
-  # @option opts [String] :store_id Store Id
-  # @option opts [String] :lang_id Language id
-  # @option opts [Boolean] :avail Defines category&#39;s visibility status
-  # @option opts [Integer] :sort_order Sort number in the list
-  # @option opts [String] :created_time Entity&#39;s date creation
-  # @option opts [String] :modified_time Entity&#39;s date modification
   # @option opts [String] :description Defines category&#39;s description
   # @option opts [String] :short_description Defines short description
+  # @option opts [String] :parent_id Adds categories specified by parent id
+  # @option opts [Boolean] :avail Defines category&#39;s visibility status
+  # @option opts [String] :created_time Entity&#39;s date creation
+  # @option opts [String] :modified_time Entity&#39;s date modification
+  # @option opts [Integer] :sort_order Sort number in the list
   # @option opts [String] :meta_title Defines unique meta title for each entity
   # @option opts [String] :meta_description Defines unique meta description of a entity
   # @option opts [String] :meta_keywords Defines unique meta keywords for each entity
   # @option opts [String] :seo_url Defines unique category&#39;s URL for SEO
+  # @option opts [String] :store_id Store Id
+  # @option opts [String] :stores_ids Create category in the stores that is specified by comma-separated stores&#39; id
+  # @option opts [String] :lang_id Language id
   # @return [CategoryAdd200Response]
   describe 'category_add test' do
     it 'should work' do
@@ -73,8 +73,8 @@ describe 'CategoryApi' do
   # unit tests for category_assign
   # category.assign
   # Assign category to product
-  # @param product_id Defines category assign to the product, specified by product id
   # @param category_id Defines category assign, specified by category id
+  # @param product_id Defines category assign to the product, specified by product id
   # @param [Hash] opts the optional parameters
   # @option opts [String] :store_id Store Id
   # @return [CartConfigUpdate200Response]
@@ -91,11 +91,11 @@ describe 'CategoryApi' do
   # @option opts [String] :parent_id Counts categories specified by parent id
   # @option opts [String] :store_id Counts category specified by store id
   # @option opts [String] :lang_id Counts category specified by language id
+  # @option opts [Boolean] :avail Defines category&#39;s visibility status
   # @option opts [String] :created_from Retrieve entities from their creation date
   # @option opts [String] :created_to Retrieve entities to their creation date
   # @option opts [String] :modified_from Retrieve entities from their modification date
   # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @option opts [Boolean] :avail Defines category&#39;s visibility status
   # @option opts [String] :product_type A categorization for the product
   # @option opts [String] :find_value Entity search that is specified by some value
   # @option opts [String] :find_where Counts categories that are searched specified by field
@@ -145,10 +145,10 @@ describe 'CategoryApi' do
   # @param url Defines URL of the image that has to be added
   # @param type Defines image&#39;s types that are specified by comma-separated list
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :store_id Store Id
   # @option opts [String] :label Defines alternative text that has to be attached to the picture
   # @option opts [String] :mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
   # @option opts [Integer] :position Defines image’s position in the list
-  # @option opts [String] :store_id Store Id
   # @return [CategoryImageAdd200Response]
   describe 'category_image_add test' do
     it 'should work' do
@@ -175,12 +175,12 @@ describe 'CategoryApi' do
   # Get category info about category ID*** or specify other category ID.
   # @param id Retrieves category&#39;s info specified by category id
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @option opts [String] :store_id Retrieves category info  specified by store id
   # @option opts [String] :lang_id Retrieves category info  specified by language id
   # @option opts [String] :schema_type The name of the requirements set for the provided schema.
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @option opts [String] :report_request_id Report request id
   # @option opts [Boolean] :disable_report_cache Disable report cache for current request
   # @return [CategoryInfo200Response]
@@ -197,20 +197,20 @@ describe 'CategoryApi' do
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
   # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-  # @option opts [String] :parent_id Retrieves categories specified by parent id
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @option opts [String] :store_id Retrieves categories specified by store id
   # @option opts [String] :lang_id Retrieves categorys specified by language id
+  # @option opts [String] :parent_id Retrieves categories specified by parent id
+  # @option opts [Boolean] :avail Defines category&#39;s visibility status
+  # @option opts [String] :product_type A categorization for the product
   # @option opts [String] :created_from Retrieve entities from their creation date
   # @option opts [String] :created_to Retrieve entities to their creation date
   # @option opts [String] :modified_from Retrieve entities from their modification date
   # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @option opts [Boolean] :avail Defines category&#39;s visibility status
-  # @option opts [String] :product_type A categorization for the product
   # @option opts [String] :find_value Entity search that is specified by some value
   # @option opts [String] :find_where Category search that is specified by field
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @option opts [String] :report_request_id Report request id
   # @option opts [Boolean] :disable_report_cache Disable report cache for current request
   # @option opts [Boolean] :disable_cache Disable cache for current request
@@ -241,19 +241,19 @@ describe 'CategoryApi' do
   # @param id Defines category update specified by category id
   # @param [Hash] opts the optional parameters
   # @option opts [String] :name Defines new category’s name
+  # @option opts [String] :description Defines new category&#39;s description
+  # @option opts [String] :short_description Defines short description
   # @option opts [String] :parent_id Defines new parent category id
-  # @option opts [String] :stores_ids Update category in the stores that is specified by comma-separated stores&#39; id
   # @option opts [Boolean] :avail Defines category&#39;s visibility status
   # @option opts [Integer] :sort_order Sort number in the list
   # @option opts [String] :modified_time Entity&#39;s date modification
-  # @option opts [String] :description Defines new category&#39;s description
-  # @option opts [String] :short_description Defines short description
   # @option opts [String] :meta_title Defines unique meta title for each entity
   # @option opts [String] :meta_description Defines unique meta description of a entity
   # @option opts [String] :meta_keywords Defines unique meta keywords for each entity
   # @option opts [String] :seo_url Defines unique category&#39;s URL for SEO
-  # @option opts [String] :lang_id Language id
   # @option opts [String] :store_id Store Id
+  # @option opts [String] :stores_ids Update category in the stores that is specified by comma-separated stores&#39; id
+  # @option opts [String] :lang_id Language id
   # @return [AccountConfigUpdate200Response]
   describe 'category_update test' do
     it 'should work' do

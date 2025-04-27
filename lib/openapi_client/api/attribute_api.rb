@@ -305,9 +305,9 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @return [ModelResponseAttributeAttributesetList]
     def attribute_attributeset_list(opts = {})
       data, _status_code, _headers = attribute_attributeset_list_with_http_info(opts)
@@ -319,9 +319,9 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @return [Array<(ModelResponseAttributeAttributesetList, Integer, Hash)>] ModelResponseAttributeAttributesetList data, response status code and response headers
     def attribute_attributeset_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -334,9 +334,9 @@ module OpenapiClient
       query_params = opts[:query_params] || {}
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
       query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -522,11 +522,11 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :attribute_set_id Attribute set id
     # @option opts [String] :lang_id Language id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :attribute_set_id Attribute set id
     # @return [ModelResponseAttributeGroupList]
     def attribute_group_list(opts = {})
       data, _status_code, _headers = attribute_group_list_with_http_info(opts)
@@ -538,11 +538,11 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :attribute_set_id Attribute set id
     # @option opts [String] :lang_id Language id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :attribute_set_id Attribute set id
     # @return [Array<(ModelResponseAttributeGroupList, Integer, Hash)>] ModelResponseAttributeGroupList data, response status code and response headers
     def attribute_group_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -555,11 +555,11 @@ module OpenapiClient
       query_params = opts[:query_params] || {}
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
+      query_params[:'attribute_set_id'] = opts[:'attribute_set_id'] if !opts[:'attribute_set_id'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
       query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
-      query_params[:'attribute_set_id'] = opts[:'attribute_set_id'] if !opts[:'attribute_set_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -602,9 +602,9 @@ module OpenapiClient
     # @option opts [String] :attribute_set_id Attribute set id
     # @option opts [String] :store_id Store Id
     # @option opts [String] :lang_id Language id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @return [AttributeInfo200Response]
     def attribute_info(id, opts = {})
       data, _status_code, _headers = attribute_info_with_http_info(id, opts)
@@ -618,9 +618,9 @@ module OpenapiClient
     # @option opts [String] :attribute_set_id Attribute set id
     # @option opts [String] :store_id Store Id
     # @option opts [String] :lang_id Language id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @return [Array<(AttributeInfo200Response, Integer, Hash)>] AttributeInfo200Response data, response status code and response headers
     def attribute_info_with_http_info(id, opts = {})
       if @api_client.config.debugging
@@ -639,9 +639,9 @@ module OpenapiClient
       query_params[:'attribute_set_id'] = opts[:'attribute_set_id'] if !opts[:'attribute_set_id'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
       query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -682,17 +682,17 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :type Defines attribute&#39;s type
     # @option opts [String] :attribute_ids Filter attributes by ids
     # @option opts [String] :attribute_set_id Filter items by attribute set id
     # @option opts [String] :store_id Store Id
     # @option opts [String] :lang_id Retrieves attributes on specified language id
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,code,type')
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :type Defines attribute&#39;s type
     # @option opts [Boolean] :visible Filter items by visibility status
     # @option opts [Boolean] :required Defines if the option is required
     # @option opts [Boolean] :system True if attribute is system
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,code,type')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [ModelResponseAttributeList]
     def attribute_list(opts = {})
       data, _status_code, _headers = attribute_list_with_http_info(opts)
@@ -704,17 +704,17 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :type Defines attribute&#39;s type
     # @option opts [String] :attribute_ids Filter attributes by ids
     # @option opts [String] :attribute_set_id Filter items by attribute set id
     # @option opts [String] :store_id Store Id
     # @option opts [String] :lang_id Retrieves attributes on specified language id
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,code,type')
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :type Defines attribute&#39;s type
     # @option opts [Boolean] :visible Filter items by visibility status
     # @option opts [Boolean] :required Defines if the option is required
     # @option opts [Boolean] :system True if attribute is system
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,code,type')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(ModelResponseAttributeList, Integer, Hash)>] ModelResponseAttributeList data, response status code and response headers
     def attribute_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -727,17 +727,17 @@ module OpenapiClient
       query_params = opts[:query_params] || {}
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
-      query_params[:'type'] = opts[:'type'] if !opts[:'type'].nil?
       query_params[:'attribute_ids'] = opts[:'attribute_ids'] if !opts[:'attribute_ids'].nil?
       query_params[:'attribute_set_id'] = opts[:'attribute_set_id'] if !opts[:'attribute_set_id'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'type'] = opts[:'type'] if !opts[:'type'].nil?
       query_params[:'visible'] = opts[:'visible'] if !opts[:'visible'].nil?
       query_params[:'required'] = opts[:'required'] if !opts[:'required'].nil?
       query_params[:'system'] = opts[:'system'] if !opts[:'system'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

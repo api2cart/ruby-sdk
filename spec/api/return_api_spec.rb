@@ -72,9 +72,9 @@ describe 'ReturnApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :order_id Defines the order id
   # @option opts [String] :store_id Store Id
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @return [ReturnInfo200Response]
   describe 'return_info test' do
     it 'should work' do
@@ -89,9 +89,6 @@ describe 'ReturnApi' do
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
   # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :order_id Defines the order id
   # @option opts [String] :order_ids Retrieves return requests specified by order ids
   # @option opts [String] :customer_id Retrieves return requests specified by customer id
@@ -102,6 +99,9 @@ describe 'ReturnApi' do
   # @option opts [String] :created_to Retrieve entities to their creation date
   # @option opts [String] :modified_from Retrieve entities from their modification date
   # @option opts [String] :modified_to Retrieve entities to their modification date
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @option opts [String] :report_request_id Report request id
   # @option opts [Boolean] :disable_report_cache Disable report cache for current request
   # @return [ModelResponseReturnList]

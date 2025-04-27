@@ -21,41 +21,47 @@ module OpenapiClient
     # Defines product's model that has to be added
     attr_accessor :model
 
-    # Defines product's sku that has to be added
-    attr_accessor :sku
-
     # Defines product's description that has to be added
     attr_accessor :description
 
     # Defines product's price that has to be added
     attr_accessor :price
 
-    # Defines product's old price
-    attr_accessor :old_price
+    # Defines product's sku that has to be added
+    attr_accessor :sku
 
-    # Defines product's model that has to be added
-    attr_accessor :special_price
+    # Defines short description
+    attr_accessor :short_description
 
-    # Defines new product's cost price
-    attr_accessor :cost_price
+    # Defines product's type
+    attr_accessor :type
 
-    # Specifies product's fixed cost shipping price
-    attr_accessor :fixed_cost_shipping_price
+    # Defines product's status
+    attr_accessor :status
 
-    # Defines the date of special price creation
-    attr_accessor :sprice_create
+    # Set visibility status
+    attr_accessor :visible
 
-    # Defines the date of special price modification
-    attr_accessor :sprice_modified
+    # Defines product add that is specified by category id
+    attr_accessor :category_id
 
-    # Defines the term of special price offer duration
-    attr_accessor :sprice_expire
+    # Defines product add that is specified by comma-separated categories id
+    attr_accessor :categories_ids
 
-    # Defines product's tier prices
-    attr_accessor :tier_prices
+    # A categorization for the product
+    attr_accessor :product_class
 
-    # Defines product's group prices
-    attr_accessor :group_prices
+    # A categorization for the product
+    attr_accessor :product_type
+
+    # Defines whether the product is virtual
+    attr_accessor :is_virtual
+
+    # Defines whether the product is downloadable
+    attr_accessor :downloadable
+
+    # If true, it indicates the product as a supply, otherwise it indicates that it is a finished product.
+    attr_accessor :is_supply
 
     # Specifies the set of visible/invisible products for users
     attr_accessor :available_for_view
@@ -63,8 +69,68 @@ module OpenapiClient
     # Specifies the set of visible/invisible products for sale
     attr_accessor :available_for_sale
 
+    # Store Id
+    attr_accessor :store_id
+
+    # Assign product to the stores that is specified by comma-separated stores' id
+    attr_accessor :stores_ids
+
+    # Language id
+    attr_accessor :lang_id
+
+    # Defines product's old price
+    attr_accessor :old_price
+
+    # Defines product's model that has to be added
+    attr_accessor :special_price
+
+    # Defines product's sale price
+    attr_accessor :wholesale_price
+
+    # Defines new product's cost price
+    attr_accessor :cost_price
+
+    # Specifies product's fixed cost shipping price
+    attr_accessor :fixed_cost_shipping_price
+
+    # Defines product's tier prices
+    attr_accessor :tier_prices
+
+    # Defines product's group prices
+    attr_accessor :group_prices
+
+    # Defines buy it now value
+    attr_accessor :buyitnow_price
+
+    # Defines reserve price value
+    attr_accessor :reserve_price
+
+    # Defines product's quantity that has to be added
+    attr_accessor :quantity
+
+    # Set stock status
+    attr_accessor :in_stock
+
+    # Defines inventory tracking for product
+    attr_accessor :manage_stock
+
+    # This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
+    attr_accessor :warehouse_id
+
+    # Set backorder status
+    attr_accessor :backorder_status
+
+    # The minimum quantity an order must contain, to be eligible to purchase this product.
+    attr_accessor :min_order_quantity
+
+    # The maximum quantity an order can contain when purchasing the product.
+    attr_accessor :max_order_quantity
+
     # Weight
     attr_accessor :weight
+
+    # Weight Unit
+    attr_accessor :weight_unit
 
     # Defines product's width
     attr_accessor :width
@@ -76,123 +142,7 @@ module OpenapiClient
     attr_accessor :length
 
     # Weight Unit
-    attr_accessor :weight_unit
-
-    # Weight Unit
     attr_accessor :dimensions_unit
-
-    # Defines short description
-    attr_accessor :short_description
-
-    # This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
-    attr_accessor :warehouse_id
-
-    # Set backorder status
-    attr_accessor :backorder_status
-
-    # Defines product's quantity that has to be added
-    attr_accessor :quantity
-
-    # Defines whether the product is downloadable
-    attr_accessor :downloadable
-
-    # Defines product's sale price
-    attr_accessor :wholesale_price
-
-    # Defines the date of entity creation
-    attr_accessor :created_at
-
-    # Defines product's manufacturer
-    attr_accessor :manufacturer
-
-    # Defines product's manufacturer by manufacturer_id
-    attr_accessor :manufacturer_id
-
-    # Defines product add that is specified by comma-separated categories id
-    attr_accessor :categories_ids
-
-    # Defines product's related products ids that has to be added
-    attr_accessor :related_products_ids
-
-    # Defines product's up-sell products ids that has to be added
-    attr_accessor :up_sell_products_ids
-
-    # Defines product's cross-sell products ids that has to be added
-    attr_accessor :cross_sell_products_ids
-
-    # Defines tax classes where entity has to be added
-    attr_accessor :tax_class_id
-
-    # Defines product's type
-    attr_accessor :type
-
-    # Defines unique meta title for each entity
-    attr_accessor :meta_title
-
-    # Defines unique meta keywords for each entity
-    attr_accessor :meta_keywords
-
-    # Defines unique meta description of a entity
-    attr_accessor :meta_description
-
-    # Defines unique product's URL
-    attr_accessor :url
-
-    # Language id
-    attr_accessor :lang_id
-
-    # Assign product to the stores that is specified by comma-separated stores' id
-    attr_accessor :stores_ids
-
-    # Defines product add that is specified by category id
-    attr_accessor :category_id
-
-    # Specifies the number of product's reviews
-    attr_accessor :viewed_count
-
-    # Defines how many times the product was ordered
-    attr_accessor :ordered_count
-
-    # Defines product’s attribute set name in Magento
-    attr_accessor :attribute_set_name
-
-    # Defines product’s attribute name separated with a comma in Magento
-    attr_accessor :attribute_name
-
-    # The numeric ID of the shipping template associated with the products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field shipping_zones[]->id.
-    attr_accessor :shipping_template_id
-
-    # Defines product's production partner ids that has to be added
-    attr_accessor :production_partner_ids
-
-    # The human-readable label for the condition (e.g., \"New\").
-    attr_accessor :condition
-
-    # Describes the number of days the seller wants the listing to be active. Look at cart.info method response for allowed values.
-    attr_accessor :listing_duration
-
-    # Indicates the selling format of the marketplace listing.
-    attr_accessor :listing_type
-
-    # Identifies the payment method (such as PayPal) that the seller will accept when the buyer pays for the item. Look at cart.info method response for allowed values.<hr><div style=\"font-style:normal\">Param structure:<div style=\"margin-left: 2%;\"><code style=\"padding:0; background-color:#ffffff;font-size:85%;font-family:monospace;\">payment_methods[0] = string</br>payment_methods[1] = string</br></code></div></div>
-    attr_accessor :payment_methods
-
-    # Indicates whether the seller allows the buyer to return the item.
-    attr_accessor :return_accepted
-
-    # The shipping details, including flat and calculated shipping costs and shipping insurance costs. Look at cart.info method response for allowed values.<hr><div style=\"font-style:normal\">Param structure:<div style=\"margin-left: 2%;\"><code style=\"padding:0; background-color:#ffffff;font-size:85%;font-family:monospace;\">shipping_details[0][<b>shipping_type</b>] = string </br>shipping_details[0][<b>shipping_service</b>] = string</br>shipping_details[0][<b>shipping_cost</b>] = decimal</br>shipping_details[1][<b>shipping_type</b>] = string </br>shipping_details[1][<b>shipping_service</b>] = string</br>shipping_details[1][<b>shipping_cost</b>] = decimal</br></code></div></div>
-    attr_accessor :shipping_details
-
-    # Valid PayPal email address for the PayPal account that the seller will use if they offer PayPal as a payment method for the listing.
-    attr_accessor :paypal_email
-
-    attr_accessor :seller_profiles
-
-    attr_accessor :package_details
-
-    attr_accessor :best_offer
-
-    attr_accessor :sales_tax
 
     # A barcode is a unique code composed of numbers used as a product identifier.
     attr_accessor :barcode
@@ -206,8 +156,34 @@ module OpenapiClient
     # International Standard Book Number. An ISBN is a unique identifier for books.
     attr_accessor :isbn
 
-    # An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields->product_specifics).         <b>The structure of the parameter is different for specific platforms.</b>
-    attr_accessor :specifics
+    # Global Trade Item Number. An GTIN is an identifier for trade items.
+    attr_accessor :gtin
+
+    # Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
+    attr_accessor :mpn
+
+    # Amazon Standard Identification Number.
+    attr_accessor :asin
+
+    # Groups all variations, that you want to combine into one product.
+    attr_accessor :product_reference
+
+    # Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
+    attr_accessor :harmonized_system_code
+
+    # The country where the inventory item was made
+    attr_accessor :country_of_origin
+
+    # Defines product's manufacturer
+    attr_accessor :manufacturer
+
+    # Defines product's manufacturer by manufacturer_id
+    attr_accessor :manufacturer_id
+
+    attr_accessor :manufacturer_info
+
+    # Defines product brand name
+    attr_accessor :brand_name
 
     # Image Url
     attr_accessor :image_url
@@ -218,95 +194,111 @@ module OpenapiClient
     # Image Url
     attr_accessor :additional_image_urls
 
-    # Defines reserve price value
-    attr_accessor :reserve_price
-
-    # Defines buy it now value
-    attr_accessor :buyitnow_price
-
-    # Detailed description of the product condition.
-    attr_accessor :condition_description
-
-    # This allows buyers to remain anonymous when the bid or buy an item.
-    attr_accessor :auction_confidentiality_level
-
-    # Defines product's logistic channel settings
-    attr_accessor :logistic_info
-
-    # Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time.
-    attr_accessor :avail_from
-
-    # Product tags
-    attr_accessor :tags
-
-    # Is cache clear required
-    attr_accessor :clear_cache
-
-    # Amazon Standard Identification Number.
-    attr_accessor :asin
-
-    # Global Trade Item Number. An GTIN is an identifier for trade items.
-    attr_accessor :gtin
-
-    # Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
-    attr_accessor :mpn
-
-    # Specifies whether a tax is charged
-    attr_accessor :taxable
-
-    # Set visibility status
-    attr_accessor :visible
-
-    # Defines product's status
-    attr_accessor :status
-
-    # Defines unique URL for SEO
-    attr_accessor :seo_url
-
-    # A categorization for the product
-    attr_accessor :product_class
-
-    # A categorization for the product
-    attr_accessor :product_type
-
-    # String containing the JSON representation of the supplied data
-    attr_accessor :marketplace_item_properties
-
-    # Defines inventory tracking for product
-    attr_accessor :manage_stock
-
-    # Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
-    attr_accessor :harmonized_system_code
-
-    # The country where the inventory item was made
-    attr_accessor :country_of_origin
-
     # File Url
     attr_accessor :files
+
+    attr_accessor :size_chart
+
+    # Defines product's related products ids that has to be added
+    attr_accessor :related_products_ids
+
+    # Defines product's up-sell products ids that has to be added
+    attr_accessor :up_sell_products_ids
+
+    # Defines product's cross-sell products ids that has to be added
+    attr_accessor :cross_sell_products_ids
+
+    # Defines product’s attribute set name in Magento
+    attr_accessor :attribute_set_name
+
+    # Defines product’s attribute name separated with a comma in Magento
+    attr_accessor :attribute_name
 
     # Defines unique search keywords
     attr_accessor :search_keywords
 
-    # Store Id
-    attr_accessor :store_id
+    # Product tags
+    attr_accessor :tags
 
-    # Defines product brand name
-    attr_accessor :brand_name
+    # A list of material strings for materials used in the product.
+    attr_accessor :materials
 
-    # Defines whether the product is virtual
-    attr_accessor :is_virtual
+    # An array of product certifications. The list of possible certifications can be obtained using the \"<i>category.info</i>\" method (<i>additional_fields->rules->product_certifications</i>).
+    attr_accessor :certifications
+
+    # An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields->product_specifics).         <b>The structure of the parameter is different for specific platforms.</b>
+    attr_accessor :specifics
+
+    # Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time.
+    attr_accessor :avail_from
+
+    # Defines the date of special price creation
+    attr_accessor :sprice_create
+
+    # Defines the date of special price modification
+    attr_accessor :sprice_modified
+
+    # Defines the term of special price offer duration
+    attr_accessor :sprice_expire
+
+    # Defines the date of entity creation
+    attr_accessor :created_at
+
+    # When true, automatically renews a listing upon its expiration.
+    attr_accessor :auto_renew
+
+    # An enumerated string for the era in which the maker made the product.
+    attr_accessor :when_made
+
+    # Defines unique meta title for each entity
+    attr_accessor :meta_title
+
+    # Defines unique meta keywords for each entity
+    attr_accessor :meta_keywords
+
+    # Defines unique meta description of a entity
+    attr_accessor :meta_description
+
+    # Defines unique product's URL
+    attr_accessor :url
+
+    # Defines unique URL for SEO
+    attr_accessor :seo_url
+
+    # Defines tax classes where entity has to be added
+    attr_accessor :tax_class_id
+
+    # Specifies whether a tax is charged
+    attr_accessor :taxable
+
+    attr_accessor :sales_tax
+
+    # The human-readable label for the condition (e.g., \"New\").
+    attr_accessor :condition
+
+    # Detailed description of the product condition.
+    attr_accessor :condition_description
+
+    # Flag used to determine whether the product condition is shown to the customer on the product page.
+    attr_accessor :allow_display_condition
+
+    # Identifies the payment method (such as PayPal) that the seller will accept when the buyer pays for the item. Look at cart.info method response for allowed values.<hr><div style=\"font-style:normal\">Param structure:<div style=\"margin-left: 2%;\"><code style=\"padding:0; background-color:#ffffff;font-size:85%;font-family:monospace;\">payment_methods[0] = string</br>payment_methods[1] = string</br></code></div></div>
+    attr_accessor :payment_methods
+
+    # Valid PayPal email address for the PayPal account that the seller will use if they offer PayPal as a payment method for the listing.
+    attr_accessor :paypal_email
+
+    # The numeric ID of the shipping template associated with the products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field shipping_zones[]->id.
+    attr_accessor :shipping_template_id
+
+    # The shipping details, including flat and calculated shipping costs and shipping insurance costs. Look at cart.info method response for allowed values.<hr><div style=\"font-style:normal\">Param structure:<div style=\"margin-left: 2%;\"><code style=\"padding:0; background-color:#ffffff;font-size:85%;font-family:monospace;\">shipping_details[0][<b>shipping_type</b>] = string </br>shipping_details[0][<b>shipping_service</b>] = string</br>shipping_details[0][<b>shipping_cost</b>] = decimal</br>shipping_details[1][<b>shipping_type</b>] = string </br>shipping_details[1][<b>shipping_service</b>] = string</br>shipping_details[1][<b>shipping_cost</b>] = decimal</br></code></div></div>
+    attr_accessor :shipping_details
 
     # Specifies product's free shipping flag that has to be added
     attr_accessor :is_free_shipping
 
-    # Set stock status
-    attr_accessor :in_stock
-
     # The delivery promise that applies to offer
     attr_accessor :delivery_code
-
-    # Groups all variations, that you want to combine into one product.
-    attr_accessor :product_reference
 
     # Defines the type of the delivery.
     attr_accessor :delivery_type
@@ -314,152 +306,160 @@ module OpenapiClient
     # Defines delivery time in days.
     attr_accessor :delivery_time
 
-    attr_accessor :size_chart
-
-    # An array of product certifications. The list of possible certifications can be obtained using the \"<i>category.info</i>\" method (<i>additional_fields->rules->product_certifications</i>).
-    attr_accessor :certifications
-
     # Defines delivery options for product by ids.
     attr_accessor :delivery_option_ids
 
-    attr_accessor :manufacturer_info
+    attr_accessor :package_details
 
-    # An enumerated string for the era in which the maker made the product.
-    attr_accessor :when_made
+    # Defines product's logistic channel settings
+    attr_accessor :logistic_info
 
-    # If true, it indicates the product as a supply, otherwise it indicates that it is a finished product.
-    attr_accessor :is_supply
+    # Describes the number of days the seller wants the listing to be active. Look at cart.info method response for allowed values.
+    attr_accessor :listing_duration
 
-    # A list of material strings for materials used in the product.
-    attr_accessor :materials
+    # Indicates the selling format of the marketplace listing.
+    attr_accessor :listing_type
 
-    # When true, automatically renews a listing upon its expiration.
-    attr_accessor :auto_renew
+    # Indicates whether the seller allows the buyer to return the item.
+    attr_accessor :return_accepted
 
-    # Flag used to determine whether the product condition is shown to the customer on the product page.
-    attr_accessor :allow_display_condition
+    attr_accessor :seller_profiles
 
-    # The minimum quantity an order must contain, to be eligible to purchase this product.
-    attr_accessor :min_order_quantity
+    # This allows buyers to remain anonymous when the bid or buy an item.
+    attr_accessor :auction_confidentiality_level
 
-    # The maximum quantity an order can contain when purchasing the product.
-    attr_accessor :max_order_quantity
+    attr_accessor :best_offer
+
+    # Defines product's production partner ids that has to be added
+    attr_accessor :production_partner_ids
+
+    # String containing the JSON representation of the supplied data
+    attr_accessor :marketplace_item_properties
+
+    # Is cache clear required
+    attr_accessor :clear_cache
+
+    # Specifies the number of product's reviews
+    attr_accessor :viewed_count
+
+    # Defines how many times the product was ordered
+    attr_accessor :ordered_count
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'name' => :'name',
         :'model' => :'model',
-        :'sku' => :'sku',
         :'description' => :'description',
         :'price' => :'price',
-        :'old_price' => :'old_price',
-        :'special_price' => :'special_price',
-        :'cost_price' => :'cost_price',
-        :'fixed_cost_shipping_price' => :'fixed_cost_shipping_price',
-        :'sprice_create' => :'sprice_create',
-        :'sprice_modified' => :'sprice_modified',
-        :'sprice_expire' => :'sprice_expire',
-        :'tier_prices' => :'tier_prices',
-        :'group_prices' => :'group_prices',
+        :'sku' => :'sku',
+        :'short_description' => :'short_description',
+        :'type' => :'type',
+        :'status' => :'status',
+        :'visible' => :'visible',
+        :'category_id' => :'category_id',
+        :'categories_ids' => :'categories_ids',
+        :'product_class' => :'product_class',
+        :'product_type' => :'product_type',
+        :'is_virtual' => :'is_virtual',
+        :'downloadable' => :'downloadable',
+        :'is_supply' => :'is_supply',
         :'available_for_view' => :'available_for_view',
         :'available_for_sale' => :'available_for_sale',
+        :'store_id' => :'store_id',
+        :'stores_ids' => :'stores_ids',
+        :'lang_id' => :'lang_id',
+        :'old_price' => :'old_price',
+        :'special_price' => :'special_price',
+        :'wholesale_price' => :'wholesale_price',
+        :'cost_price' => :'cost_price',
+        :'fixed_cost_shipping_price' => :'fixed_cost_shipping_price',
+        :'tier_prices' => :'tier_prices',
+        :'group_prices' => :'group_prices',
+        :'buyitnow_price' => :'buyitnow_price',
+        :'reserve_price' => :'reserve_price',
+        :'quantity' => :'quantity',
+        :'in_stock' => :'in_stock',
+        :'manage_stock' => :'manage_stock',
+        :'warehouse_id' => :'warehouse_id',
+        :'backorder_status' => :'backorder_status',
+        :'min_order_quantity' => :'min_order_quantity',
+        :'max_order_quantity' => :'max_order_quantity',
         :'weight' => :'weight',
+        :'weight_unit' => :'weight_unit',
         :'width' => :'width',
         :'height' => :'height',
         :'length' => :'length',
-        :'weight_unit' => :'weight_unit',
         :'dimensions_unit' => :'dimensions_unit',
-        :'short_description' => :'short_description',
-        :'warehouse_id' => :'warehouse_id',
-        :'backorder_status' => :'backorder_status',
-        :'quantity' => :'quantity',
-        :'downloadable' => :'downloadable',
-        :'wholesale_price' => :'wholesale_price',
-        :'created_at' => :'created_at',
-        :'manufacturer' => :'manufacturer',
-        :'manufacturer_id' => :'manufacturer_id',
-        :'categories_ids' => :'categories_ids',
-        :'related_products_ids' => :'related_products_ids',
-        :'up_sell_products_ids' => :'up_sell_products_ids',
-        :'cross_sell_products_ids' => :'cross_sell_products_ids',
-        :'tax_class_id' => :'tax_class_id',
-        :'type' => :'type',
-        :'meta_title' => :'meta_title',
-        :'meta_keywords' => :'meta_keywords',
-        :'meta_description' => :'meta_description',
-        :'url' => :'url',
-        :'lang_id' => :'lang_id',
-        :'stores_ids' => :'stores_ids',
-        :'category_id' => :'category_id',
-        :'viewed_count' => :'viewed_count',
-        :'ordered_count' => :'ordered_count',
-        :'attribute_set_name' => :'attribute_set_name',
-        :'attribute_name' => :'attribute_name',
-        :'shipping_template_id' => :'shipping_template_id',
-        :'production_partner_ids' => :'production_partner_ids',
-        :'condition' => :'condition',
-        :'listing_duration' => :'listing_duration',
-        :'listing_type' => :'listing_type',
-        :'payment_methods' => :'payment_methods',
-        :'return_accepted' => :'return_accepted',
-        :'shipping_details' => :'shipping_details',
-        :'paypal_email' => :'paypal_email',
-        :'seller_profiles' => :'seller_profiles',
-        :'package_details' => :'package_details',
-        :'best_offer' => :'best_offer',
-        :'sales_tax' => :'sales_tax',
         :'barcode' => :'barcode',
         :'upc' => :'upc',
         :'ean' => :'ean',
         :'isbn' => :'isbn',
-        :'specifics' => :'specifics',
+        :'gtin' => :'gtin',
+        :'mpn' => :'mpn',
+        :'asin' => :'asin',
+        :'product_reference' => :'product_reference',
+        :'harmonized_system_code' => :'harmonized_system_code',
+        :'country_of_origin' => :'country_of_origin',
+        :'manufacturer' => :'manufacturer',
+        :'manufacturer_id' => :'manufacturer_id',
+        :'manufacturer_info' => :'manufacturer_info',
+        :'brand_name' => :'brand_name',
         :'image_url' => :'image_url',
         :'image_name' => :'image_name',
         :'additional_image_urls' => :'additional_image_urls',
-        :'reserve_price' => :'reserve_price',
-        :'buyitnow_price' => :'buyitnow_price',
-        :'condition_description' => :'condition_description',
-        :'auction_confidentiality_level' => :'auction_confidentiality_level',
-        :'logistic_info' => :'logistic_info',
-        :'avail_from' => :'avail_from',
-        :'tags' => :'tags',
-        :'clear_cache' => :'clear_cache',
-        :'asin' => :'asin',
-        :'gtin' => :'gtin',
-        :'mpn' => :'mpn',
-        :'taxable' => :'taxable',
-        :'visible' => :'visible',
-        :'status' => :'status',
-        :'seo_url' => :'seo_url',
-        :'product_class' => :'product_class',
-        :'product_type' => :'product_type',
-        :'marketplace_item_properties' => :'marketplace_item_properties',
-        :'manage_stock' => :'manage_stock',
-        :'harmonized_system_code' => :'harmonized_system_code',
-        :'country_of_origin' => :'country_of_origin',
         :'files' => :'files',
+        :'size_chart' => :'size_chart',
+        :'related_products_ids' => :'related_products_ids',
+        :'up_sell_products_ids' => :'up_sell_products_ids',
+        :'cross_sell_products_ids' => :'cross_sell_products_ids',
+        :'attribute_set_name' => :'attribute_set_name',
+        :'attribute_name' => :'attribute_name',
         :'search_keywords' => :'search_keywords',
-        :'store_id' => :'store_id',
-        :'brand_name' => :'brand_name',
-        :'is_virtual' => :'is_virtual',
+        :'tags' => :'tags',
+        :'materials' => :'materials',
+        :'certifications' => :'certifications',
+        :'specifics' => :'specifics',
+        :'avail_from' => :'avail_from',
+        :'sprice_create' => :'sprice_create',
+        :'sprice_modified' => :'sprice_modified',
+        :'sprice_expire' => :'sprice_expire',
+        :'created_at' => :'created_at',
+        :'auto_renew' => :'auto_renew',
+        :'when_made' => :'when_made',
+        :'meta_title' => :'meta_title',
+        :'meta_keywords' => :'meta_keywords',
+        :'meta_description' => :'meta_description',
+        :'url' => :'url',
+        :'seo_url' => :'seo_url',
+        :'tax_class_id' => :'tax_class_id',
+        :'taxable' => :'taxable',
+        :'sales_tax' => :'sales_tax',
+        :'condition' => :'condition',
+        :'condition_description' => :'condition_description',
+        :'allow_display_condition' => :'allow_display_condition',
+        :'payment_methods' => :'payment_methods',
+        :'paypal_email' => :'paypal_email',
+        :'shipping_template_id' => :'shipping_template_id',
+        :'shipping_details' => :'shipping_details',
         :'is_free_shipping' => :'is_free_shipping',
-        :'in_stock' => :'in_stock',
         :'delivery_code' => :'delivery_code',
-        :'product_reference' => :'product_reference',
         :'delivery_type' => :'delivery_type',
         :'delivery_time' => :'delivery_time',
-        :'size_chart' => :'size_chart',
-        :'certifications' => :'certifications',
         :'delivery_option_ids' => :'delivery_option_ids',
-        :'manufacturer_info' => :'manufacturer_info',
-        :'when_made' => :'when_made',
-        :'is_supply' => :'is_supply',
-        :'materials' => :'materials',
-        :'auto_renew' => :'auto_renew',
-        :'allow_display_condition' => :'allow_display_condition',
-        :'min_order_quantity' => :'min_order_quantity',
-        :'max_order_quantity' => :'max_order_quantity'
+        :'package_details' => :'package_details',
+        :'logistic_info' => :'logistic_info',
+        :'listing_duration' => :'listing_duration',
+        :'listing_type' => :'listing_type',
+        :'return_accepted' => :'return_accepted',
+        :'seller_profiles' => :'seller_profiles',
+        :'auction_confidentiality_level' => :'auction_confidentiality_level',
+        :'best_offer' => :'best_offer',
+        :'production_partner_ids' => :'production_partner_ids',
+        :'marketplace_item_properties' => :'marketplace_item_properties',
+        :'clear_cache' => :'clear_cache',
+        :'viewed_count' => :'viewed_count',
+        :'ordered_count' => :'ordered_count'
       }
     end
 
@@ -473,116 +473,116 @@ module OpenapiClient
       {
         :'name' => :'String',
         :'model' => :'String',
-        :'sku' => :'String',
         :'description' => :'String',
         :'price' => :'Float',
-        :'old_price' => :'Float',
-        :'special_price' => :'Float',
-        :'cost_price' => :'Float',
-        :'fixed_cost_shipping_price' => :'Float',
-        :'sprice_create' => :'String',
-        :'sprice_modified' => :'String',
-        :'sprice_expire' => :'String',
-        :'tier_prices' => :'Array<ProductAddTierPricesInner>',
-        :'group_prices' => :'Array<ProductAddGroupPricesInner>',
+        :'sku' => :'String',
+        :'short_description' => :'String',
+        :'type' => :'String',
+        :'status' => :'String',
+        :'visible' => :'String',
+        :'category_id' => :'String',
+        :'categories_ids' => :'String',
+        :'product_class' => :'String',
+        :'product_type' => :'String',
+        :'is_virtual' => :'Boolean',
+        :'downloadable' => :'Boolean',
+        :'is_supply' => :'Boolean',
         :'available_for_view' => :'Boolean',
         :'available_for_sale' => :'Boolean',
+        :'store_id' => :'String',
+        :'stores_ids' => :'String',
+        :'lang_id' => :'String',
+        :'old_price' => :'Float',
+        :'special_price' => :'Float',
+        :'wholesale_price' => :'Float',
+        :'cost_price' => :'Float',
+        :'fixed_cost_shipping_price' => :'Float',
+        :'tier_prices' => :'Array<ProductAddTierPricesInner>',
+        :'group_prices' => :'Array<ProductAddGroupPricesInner>',
+        :'buyitnow_price' => :'Float',
+        :'reserve_price' => :'Float',
+        :'quantity' => :'Float',
+        :'in_stock' => :'Boolean',
+        :'manage_stock' => :'Boolean',
+        :'warehouse_id' => :'String',
+        :'backorder_status' => :'String',
+        :'min_order_quantity' => :'Float',
+        :'max_order_quantity' => :'Float',
         :'weight' => :'Float',
+        :'weight_unit' => :'String',
         :'width' => :'Float',
         :'height' => :'Float',
         :'length' => :'Float',
-        :'weight_unit' => :'String',
         :'dimensions_unit' => :'String',
-        :'short_description' => :'String',
-        :'warehouse_id' => :'String',
-        :'backorder_status' => :'String',
-        :'quantity' => :'Float',
-        :'downloadable' => :'Boolean',
-        :'wholesale_price' => :'Float',
-        :'created_at' => :'String',
-        :'manufacturer' => :'String',
-        :'manufacturer_id' => :'String',
-        :'categories_ids' => :'String',
-        :'related_products_ids' => :'String',
-        :'up_sell_products_ids' => :'String',
-        :'cross_sell_products_ids' => :'String',
-        :'tax_class_id' => :'String',
-        :'type' => :'String',
-        :'meta_title' => :'String',
-        :'meta_keywords' => :'String',
-        :'meta_description' => :'String',
-        :'url' => :'String',
-        :'lang_id' => :'String',
-        :'stores_ids' => :'String',
-        :'category_id' => :'String',
-        :'viewed_count' => :'Integer',
-        :'ordered_count' => :'Integer',
-        :'attribute_set_name' => :'String',
-        :'attribute_name' => :'String',
-        :'shipping_template_id' => :'Integer',
-        :'production_partner_ids' => :'String',
-        :'condition' => :'String',
-        :'listing_duration' => :'String',
-        :'listing_type' => :'String',
-        :'payment_methods' => :'Array<String>',
-        :'return_accepted' => :'Boolean',
-        :'shipping_details' => :'Array<ProductAddShippingDetailsInner>',
-        :'paypal_email' => :'String',
-        :'seller_profiles' => :'ProductAddSellerProfiles',
-        :'package_details' => :'ProductAddPackageDetails',
-        :'best_offer' => :'ProductAddBestOffer',
-        :'sales_tax' => :'ProductAddSalesTax',
         :'barcode' => :'String',
         :'upc' => :'String',
         :'ean' => :'String',
         :'isbn' => :'String',
-        :'specifics' => :'Array<ProductAddSpecificsInner>',
+        :'gtin' => :'String',
+        :'mpn' => :'String',
+        :'asin' => :'String',
+        :'product_reference' => :'String',
+        :'harmonized_system_code' => :'String',
+        :'country_of_origin' => :'String',
+        :'manufacturer' => :'String',
+        :'manufacturer_id' => :'String',
+        :'manufacturer_info' => :'ProductAddManufacturerInfo',
+        :'brand_name' => :'String',
         :'image_url' => :'String',
         :'image_name' => :'String',
         :'additional_image_urls' => :'Array<String>',
-        :'reserve_price' => :'Float',
-        :'buyitnow_price' => :'Float',
-        :'condition_description' => :'String',
-        :'auction_confidentiality_level' => :'String',
-        :'logistic_info' => :'Array<ProductAddLogisticInfoInner>',
-        :'avail_from' => :'String',
-        :'tags' => :'String',
-        :'clear_cache' => :'Boolean',
-        :'asin' => :'String',
-        :'gtin' => :'String',
-        :'mpn' => :'String',
-        :'taxable' => :'Boolean',
-        :'visible' => :'String',
-        :'status' => :'String',
-        :'seo_url' => :'String',
-        :'product_class' => :'String',
-        :'product_type' => :'String',
-        :'marketplace_item_properties' => :'String',
-        :'manage_stock' => :'Boolean',
-        :'harmonized_system_code' => :'String',
-        :'country_of_origin' => :'String',
         :'files' => :'Array<ProductAddFilesInner>',
+        :'size_chart' => :'ProductAddSizeChart',
+        :'related_products_ids' => :'String',
+        :'up_sell_products_ids' => :'String',
+        :'cross_sell_products_ids' => :'String',
+        :'attribute_set_name' => :'String',
+        :'attribute_name' => :'String',
         :'search_keywords' => :'String',
-        :'store_id' => :'String',
-        :'brand_name' => :'String',
-        :'is_virtual' => :'Boolean',
+        :'tags' => :'String',
+        :'materials' => :'Array<String>',
+        :'certifications' => :'Array<ProductAddCertificationsInner>',
+        :'specifics' => :'Array<ProductAddSpecificsInner>',
+        :'avail_from' => :'String',
+        :'sprice_create' => :'String',
+        :'sprice_modified' => :'String',
+        :'sprice_expire' => :'String',
+        :'created_at' => :'String',
+        :'auto_renew' => :'Boolean',
+        :'when_made' => :'String',
+        :'meta_title' => :'String',
+        :'meta_keywords' => :'String',
+        :'meta_description' => :'String',
+        :'url' => :'String',
+        :'seo_url' => :'String',
+        :'tax_class_id' => :'String',
+        :'taxable' => :'Boolean',
+        :'sales_tax' => :'ProductAddSalesTax',
+        :'condition' => :'String',
+        :'condition_description' => :'String',
+        :'allow_display_condition' => :'Boolean',
+        :'payment_methods' => :'Array<String>',
+        :'paypal_email' => :'String',
+        :'shipping_template_id' => :'Integer',
+        :'shipping_details' => :'Array<ProductAddShippingDetailsInner>',
         :'is_free_shipping' => :'Boolean',
-        :'in_stock' => :'Boolean',
         :'delivery_code' => :'String',
-        :'product_reference' => :'String',
         :'delivery_type' => :'String',
         :'delivery_time' => :'Integer',
-        :'size_chart' => :'ProductAddSizeChart',
-        :'certifications' => :'Array<ProductAddCertificationsInner>',
         :'delivery_option_ids' => :'String',
-        :'manufacturer_info' => :'ProductAddManufacturerInfo',
-        :'when_made' => :'String',
-        :'is_supply' => :'Boolean',
-        :'materials' => :'Array<String>',
-        :'auto_renew' => :'Boolean',
-        :'allow_display_condition' => :'Boolean',
-        :'min_order_quantity' => :'Float',
-        :'max_order_quantity' => :'Float'
+        :'package_details' => :'ProductAddPackageDetails',
+        :'logistic_info' => :'Array<ProductAddLogisticInfoInner>',
+        :'listing_duration' => :'String',
+        :'listing_type' => :'String',
+        :'return_accepted' => :'Boolean',
+        :'seller_profiles' => :'ProductAddSellerProfiles',
+        :'auction_confidentiality_level' => :'String',
+        :'best_offer' => :'ProductAddBestOffer',
+        :'production_partner_ids' => :'String',
+        :'marketplace_item_properties' => :'String',
+        :'clear_cache' => :'Boolean',
+        :'viewed_count' => :'Integer',
+        :'ordered_count' => :'Integer'
       }
     end
 
@@ -619,10 +619,6 @@ module OpenapiClient
         self.model = nil
       end
 
-      if attributes.key?(:'sku')
-        self.sku = attributes[:'sku']
-      end
-
       if attributes.key?(:'description')
         self.description = attributes[:'description']
       else
@@ -635,44 +631,60 @@ module OpenapiClient
         self.price = nil
       end
 
-      if attributes.key?(:'old_price')
-        self.old_price = attributes[:'old_price']
+      if attributes.key?(:'sku')
+        self.sku = attributes[:'sku']
       end
 
-      if attributes.key?(:'special_price')
-        self.special_price = attributes[:'special_price']
+      if attributes.key?(:'short_description')
+        self.short_description = attributes[:'short_description']
       end
 
-      if attributes.key?(:'cost_price')
-        self.cost_price = attributes[:'cost_price']
+      if attributes.key?(:'type')
+        self.type = attributes[:'type']
+      else
+        self.type = 'simple'
       end
 
-      if attributes.key?(:'fixed_cost_shipping_price')
-        self.fixed_cost_shipping_price = attributes[:'fixed_cost_shipping_price']
+      if attributes.key?(:'status')
+        self.status = attributes[:'status']
       end
 
-      if attributes.key?(:'sprice_create')
-        self.sprice_create = attributes[:'sprice_create']
+      if attributes.key?(:'visible')
+        self.visible = attributes[:'visible']
       end
 
-      if attributes.key?(:'sprice_modified')
-        self.sprice_modified = attributes[:'sprice_modified']
+      if attributes.key?(:'category_id')
+        self.category_id = attributes[:'category_id']
       end
 
-      if attributes.key?(:'sprice_expire')
-        self.sprice_expire = attributes[:'sprice_expire']
+      if attributes.key?(:'categories_ids')
+        self.categories_ids = attributes[:'categories_ids']
       end
 
-      if attributes.key?(:'tier_prices')
-        if (value = attributes[:'tier_prices']).is_a?(Array)
-          self.tier_prices = value
-        end
+      if attributes.key?(:'product_class')
+        self.product_class = attributes[:'product_class']
       end
 
-      if attributes.key?(:'group_prices')
-        if (value = attributes[:'group_prices']).is_a?(Array)
-          self.group_prices = value
-        end
+      if attributes.key?(:'product_type')
+        self.product_type = attributes[:'product_type']
+      end
+
+      if attributes.key?(:'is_virtual')
+        self.is_virtual = attributes[:'is_virtual']
+      else
+        self.is_virtual = false
+      end
+
+      if attributes.key?(:'downloadable')
+        self.downloadable = attributes[:'downloadable']
+      else
+        self.downloadable = false
+      end
+
+      if attributes.key?(:'is_supply')
+        self.is_supply = attributes[:'is_supply']
+      else
+        self.is_supply = true
       end
 
       if attributes.key?(:'available_for_view')
@@ -687,10 +699,96 @@ module OpenapiClient
         self.available_for_sale = true
       end
 
+      if attributes.key?(:'store_id')
+        self.store_id = attributes[:'store_id']
+      end
+
+      if attributes.key?(:'stores_ids')
+        self.stores_ids = attributes[:'stores_ids']
+      end
+
+      if attributes.key?(:'lang_id')
+        self.lang_id = attributes[:'lang_id']
+      end
+
+      if attributes.key?(:'old_price')
+        self.old_price = attributes[:'old_price']
+      end
+
+      if attributes.key?(:'special_price')
+        self.special_price = attributes[:'special_price']
+      end
+
+      if attributes.key?(:'wholesale_price')
+        self.wholesale_price = attributes[:'wholesale_price']
+      end
+
+      if attributes.key?(:'cost_price')
+        self.cost_price = attributes[:'cost_price']
+      end
+
+      if attributes.key?(:'fixed_cost_shipping_price')
+        self.fixed_cost_shipping_price = attributes[:'fixed_cost_shipping_price']
+      end
+
+      if attributes.key?(:'tier_prices')
+        if (value = attributes[:'tier_prices']).is_a?(Array)
+          self.tier_prices = value
+        end
+      end
+
+      if attributes.key?(:'group_prices')
+        if (value = attributes[:'group_prices']).is_a?(Array)
+          self.group_prices = value
+        end
+      end
+
+      if attributes.key?(:'buyitnow_price')
+        self.buyitnow_price = attributes[:'buyitnow_price']
+      end
+
+      if attributes.key?(:'reserve_price')
+        self.reserve_price = attributes[:'reserve_price']
+      end
+
+      if attributes.key?(:'quantity')
+        self.quantity = attributes[:'quantity']
+      else
+        self.quantity = 0
+      end
+
+      if attributes.key?(:'in_stock')
+        self.in_stock = attributes[:'in_stock']
+      end
+
+      if attributes.key?(:'manage_stock')
+        self.manage_stock = attributes[:'manage_stock']
+      end
+
+      if attributes.key?(:'warehouse_id')
+        self.warehouse_id = attributes[:'warehouse_id']
+      end
+
+      if attributes.key?(:'backorder_status')
+        self.backorder_status = attributes[:'backorder_status']
+      end
+
+      if attributes.key?(:'min_order_quantity')
+        self.min_order_quantity = attributes[:'min_order_quantity']
+      end
+
+      if attributes.key?(:'max_order_quantity')
+        self.max_order_quantity = attributes[:'max_order_quantity']
+      end
+
       if attributes.key?(:'weight')
         self.weight = attributes[:'weight']
       else
         self.weight = 0
+      end
+
+      if attributes.key?(:'weight_unit')
+        self.weight_unit = attributes[:'weight_unit']
       end
 
       if attributes.key?(:'width')
@@ -705,188 +803,8 @@ module OpenapiClient
         self.length = attributes[:'length']
       end
 
-      if attributes.key?(:'weight_unit')
-        self.weight_unit = attributes[:'weight_unit']
-      end
-
       if attributes.key?(:'dimensions_unit')
         self.dimensions_unit = attributes[:'dimensions_unit']
-      end
-
-      if attributes.key?(:'short_description')
-        self.short_description = attributes[:'short_description']
-      end
-
-      if attributes.key?(:'warehouse_id')
-        self.warehouse_id = attributes[:'warehouse_id']
-      end
-
-      if attributes.key?(:'backorder_status')
-        self.backorder_status = attributes[:'backorder_status']
-      end
-
-      if attributes.key?(:'quantity')
-        self.quantity = attributes[:'quantity']
-      else
-        self.quantity = 0
-      end
-
-      if attributes.key?(:'downloadable')
-        self.downloadable = attributes[:'downloadable']
-      else
-        self.downloadable = false
-      end
-
-      if attributes.key?(:'wholesale_price')
-        self.wholesale_price = attributes[:'wholesale_price']
-      end
-
-      if attributes.key?(:'created_at')
-        self.created_at = attributes[:'created_at']
-      end
-
-      if attributes.key?(:'manufacturer')
-        self.manufacturer = attributes[:'manufacturer']
-      end
-
-      if attributes.key?(:'manufacturer_id')
-        self.manufacturer_id = attributes[:'manufacturer_id']
-      end
-
-      if attributes.key?(:'categories_ids')
-        self.categories_ids = attributes[:'categories_ids']
-      end
-
-      if attributes.key?(:'related_products_ids')
-        self.related_products_ids = attributes[:'related_products_ids']
-      end
-
-      if attributes.key?(:'up_sell_products_ids')
-        self.up_sell_products_ids = attributes[:'up_sell_products_ids']
-      end
-
-      if attributes.key?(:'cross_sell_products_ids')
-        self.cross_sell_products_ids = attributes[:'cross_sell_products_ids']
-      end
-
-      if attributes.key?(:'tax_class_id')
-        self.tax_class_id = attributes[:'tax_class_id']
-      end
-
-      if attributes.key?(:'type')
-        self.type = attributes[:'type']
-      else
-        self.type = 'simple'
-      end
-
-      if attributes.key?(:'meta_title')
-        self.meta_title = attributes[:'meta_title']
-      end
-
-      if attributes.key?(:'meta_keywords')
-        self.meta_keywords = attributes[:'meta_keywords']
-      end
-
-      if attributes.key?(:'meta_description')
-        self.meta_description = attributes[:'meta_description']
-      end
-
-      if attributes.key?(:'url')
-        self.url = attributes[:'url']
-      end
-
-      if attributes.key?(:'lang_id')
-        self.lang_id = attributes[:'lang_id']
-      end
-
-      if attributes.key?(:'stores_ids')
-        self.stores_ids = attributes[:'stores_ids']
-      end
-
-      if attributes.key?(:'category_id')
-        self.category_id = attributes[:'category_id']
-      end
-
-      if attributes.key?(:'viewed_count')
-        self.viewed_count = attributes[:'viewed_count']
-      else
-        self.viewed_count = 0
-      end
-
-      if attributes.key?(:'ordered_count')
-        self.ordered_count = attributes[:'ordered_count']
-      else
-        self.ordered_count = 0
-      end
-
-      if attributes.key?(:'attribute_set_name')
-        self.attribute_set_name = attributes[:'attribute_set_name']
-      else
-        self.attribute_set_name = 'Default'
-      end
-
-      if attributes.key?(:'attribute_name')
-        self.attribute_name = attributes[:'attribute_name']
-      end
-
-      if attributes.key?(:'shipping_template_id')
-        self.shipping_template_id = attributes[:'shipping_template_id']
-      else
-        self.shipping_template_id = 0
-      end
-
-      if attributes.key?(:'production_partner_ids')
-        self.production_partner_ids = attributes[:'production_partner_ids']
-      end
-
-      if attributes.key?(:'condition')
-        self.condition = attributes[:'condition']
-      end
-
-      if attributes.key?(:'listing_duration')
-        self.listing_duration = attributes[:'listing_duration']
-      end
-
-      if attributes.key?(:'listing_type')
-        self.listing_type = attributes[:'listing_type']
-      else
-        self.listing_type = 'FixedPrice'
-      end
-
-      if attributes.key?(:'payment_methods')
-        if (value = attributes[:'payment_methods']).is_a?(Array)
-          self.payment_methods = value
-        end
-      end
-
-      if attributes.key?(:'return_accepted')
-        self.return_accepted = attributes[:'return_accepted']
-      end
-
-      if attributes.key?(:'shipping_details')
-        if (value = attributes[:'shipping_details']).is_a?(Array)
-          self.shipping_details = value
-        end
-      end
-
-      if attributes.key?(:'paypal_email')
-        self.paypal_email = attributes[:'paypal_email']
-      end
-
-      if attributes.key?(:'seller_profiles')
-        self.seller_profiles = attributes[:'seller_profiles']
-      end
-
-      if attributes.key?(:'package_details')
-        self.package_details = attributes[:'package_details']
-      end
-
-      if attributes.key?(:'best_offer')
-        self.best_offer = attributes[:'best_offer']
-      end
-
-      if attributes.key?(:'sales_tax')
-        self.sales_tax = attributes[:'sales_tax']
       end
 
       if attributes.key?(:'barcode')
@@ -905,10 +823,44 @@ module OpenapiClient
         self.isbn = attributes[:'isbn']
       end
 
-      if attributes.key?(:'specifics')
-        if (value = attributes[:'specifics']).is_a?(Array)
-          self.specifics = value
-        end
+      if attributes.key?(:'gtin')
+        self.gtin = attributes[:'gtin']
+      end
+
+      if attributes.key?(:'mpn')
+        self.mpn = attributes[:'mpn']
+      end
+
+      if attributes.key?(:'asin')
+        self.asin = attributes[:'asin']
+      end
+
+      if attributes.key?(:'product_reference')
+        self.product_reference = attributes[:'product_reference']
+      end
+
+      if attributes.key?(:'harmonized_system_code')
+        self.harmonized_system_code = attributes[:'harmonized_system_code']
+      end
+
+      if attributes.key?(:'country_of_origin')
+        self.country_of_origin = attributes[:'country_of_origin']
+      end
+
+      if attributes.key?(:'manufacturer')
+        self.manufacturer = attributes[:'manufacturer']
+      end
+
+      if attributes.key?(:'manufacturer_id')
+        self.manufacturer_id = attributes[:'manufacturer_id']
+      end
+
+      if attributes.key?(:'manufacturer_info')
+        self.manufacturer_info = attributes[:'manufacturer_info']
+      end
+
+      if attributes.key?(:'brand_name')
+        self.brand_name = attributes[:'brand_name']
       end
 
       if attributes.key?(:'image_url')
@@ -925,25 +877,61 @@ module OpenapiClient
         end
       end
 
-      if attributes.key?(:'reserve_price')
-        self.reserve_price = attributes[:'reserve_price']
+      if attributes.key?(:'files')
+        if (value = attributes[:'files']).is_a?(Array)
+          self.files = value
+        end
       end
 
-      if attributes.key?(:'buyitnow_price')
-        self.buyitnow_price = attributes[:'buyitnow_price']
+      if attributes.key?(:'size_chart')
+        self.size_chart = attributes[:'size_chart']
       end
 
-      if attributes.key?(:'condition_description')
-        self.condition_description = attributes[:'condition_description']
+      if attributes.key?(:'related_products_ids')
+        self.related_products_ids = attributes[:'related_products_ids']
       end
 
-      if attributes.key?(:'auction_confidentiality_level')
-        self.auction_confidentiality_level = attributes[:'auction_confidentiality_level']
+      if attributes.key?(:'up_sell_products_ids')
+        self.up_sell_products_ids = attributes[:'up_sell_products_ids']
       end
 
-      if attributes.key?(:'logistic_info')
-        if (value = attributes[:'logistic_info']).is_a?(Array)
-          self.logistic_info = value
+      if attributes.key?(:'cross_sell_products_ids')
+        self.cross_sell_products_ids = attributes[:'cross_sell_products_ids']
+      end
+
+      if attributes.key?(:'attribute_set_name')
+        self.attribute_set_name = attributes[:'attribute_set_name']
+      else
+        self.attribute_set_name = 'Default'
+      end
+
+      if attributes.key?(:'attribute_name')
+        self.attribute_name = attributes[:'attribute_name']
+      end
+
+      if attributes.key?(:'search_keywords')
+        self.search_keywords = attributes[:'search_keywords']
+      end
+
+      if attributes.key?(:'tags')
+        self.tags = attributes[:'tags']
+      end
+
+      if attributes.key?(:'materials')
+        if (value = attributes[:'materials']).is_a?(Array)
+          self.materials = value
+        end
+      end
+
+      if attributes.key?(:'certifications')
+        if (value = attributes[:'certifications']).is_a?(Array)
+          self.certifications = value
+        end
+      end
+
+      if attributes.key?(:'specifics')
+        if (value = attributes[:'specifics']).is_a?(Array)
+          self.specifics = value
         end
       end
 
@@ -951,26 +939,56 @@ module OpenapiClient
         self.avail_from = attributes[:'avail_from']
       end
 
-      if attributes.key?(:'tags')
-        self.tags = attributes[:'tags']
+      if attributes.key?(:'sprice_create')
+        self.sprice_create = attributes[:'sprice_create']
       end
 
-      if attributes.key?(:'clear_cache')
-        self.clear_cache = attributes[:'clear_cache']
+      if attributes.key?(:'sprice_modified')
+        self.sprice_modified = attributes[:'sprice_modified']
+      end
+
+      if attributes.key?(:'sprice_expire')
+        self.sprice_expire = attributes[:'sprice_expire']
+      end
+
+      if attributes.key?(:'created_at')
+        self.created_at = attributes[:'created_at']
+      end
+
+      if attributes.key?(:'auto_renew')
+        self.auto_renew = attributes[:'auto_renew']
       else
-        self.clear_cache = true
+        self.auto_renew = false
       end
 
-      if attributes.key?(:'asin')
-        self.asin = attributes[:'asin']
+      if attributes.key?(:'when_made')
+        self.when_made = attributes[:'when_made']
+      else
+        self.when_made = 'made_to_order'
       end
 
-      if attributes.key?(:'gtin')
-        self.gtin = attributes[:'gtin']
+      if attributes.key?(:'meta_title')
+        self.meta_title = attributes[:'meta_title']
       end
 
-      if attributes.key?(:'mpn')
-        self.mpn = attributes[:'mpn']
+      if attributes.key?(:'meta_keywords')
+        self.meta_keywords = attributes[:'meta_keywords']
+      end
+
+      if attributes.key?(:'meta_description')
+        self.meta_description = attributes[:'meta_description']
+      end
+
+      if attributes.key?(:'url')
+        self.url = attributes[:'url']
+      end
+
+      if attributes.key?(:'seo_url')
+        self.seo_url = attributes[:'seo_url']
+      end
+
+      if attributes.key?(:'tax_class_id')
+        self.tax_class_id = attributes[:'tax_class_id']
       end
 
       if attributes.key?(:'taxable')
@@ -979,80 +997,50 @@ module OpenapiClient
         self.taxable = true
       end
 
-      if attributes.key?(:'visible')
-        self.visible = attributes[:'visible']
+      if attributes.key?(:'sales_tax')
+        self.sales_tax = attributes[:'sales_tax']
       end
 
-      if attributes.key?(:'status')
-        self.status = attributes[:'status']
+      if attributes.key?(:'condition')
+        self.condition = attributes[:'condition']
       end
 
-      if attributes.key?(:'seo_url')
-        self.seo_url = attributes[:'seo_url']
+      if attributes.key?(:'condition_description')
+        self.condition_description = attributes[:'condition_description']
       end
 
-      if attributes.key?(:'product_class')
-        self.product_class = attributes[:'product_class']
+      if attributes.key?(:'allow_display_condition')
+        self.allow_display_condition = attributes[:'allow_display_condition']
       end
 
-      if attributes.key?(:'product_type')
-        self.product_type = attributes[:'product_type']
-      end
-
-      if attributes.key?(:'marketplace_item_properties')
-        self.marketplace_item_properties = attributes[:'marketplace_item_properties']
-      end
-
-      if attributes.key?(:'manage_stock')
-        self.manage_stock = attributes[:'manage_stock']
-      end
-
-      if attributes.key?(:'harmonized_system_code')
-        self.harmonized_system_code = attributes[:'harmonized_system_code']
-      end
-
-      if attributes.key?(:'country_of_origin')
-        self.country_of_origin = attributes[:'country_of_origin']
-      end
-
-      if attributes.key?(:'files')
-        if (value = attributes[:'files']).is_a?(Array)
-          self.files = value
+      if attributes.key?(:'payment_methods')
+        if (value = attributes[:'payment_methods']).is_a?(Array)
+          self.payment_methods = value
         end
       end
 
-      if attributes.key?(:'search_keywords')
-        self.search_keywords = attributes[:'search_keywords']
+      if attributes.key?(:'paypal_email')
+        self.paypal_email = attributes[:'paypal_email']
       end
 
-      if attributes.key?(:'store_id')
-        self.store_id = attributes[:'store_id']
-      end
-
-      if attributes.key?(:'brand_name')
-        self.brand_name = attributes[:'brand_name']
-      end
-
-      if attributes.key?(:'is_virtual')
-        self.is_virtual = attributes[:'is_virtual']
+      if attributes.key?(:'shipping_template_id')
+        self.shipping_template_id = attributes[:'shipping_template_id']
       else
-        self.is_virtual = false
+        self.shipping_template_id = 0
+      end
+
+      if attributes.key?(:'shipping_details')
+        if (value = attributes[:'shipping_details']).is_a?(Array)
+          self.shipping_details = value
+        end
       end
 
       if attributes.key?(:'is_free_shipping')
         self.is_free_shipping = attributes[:'is_free_shipping']
       end
 
-      if attributes.key?(:'in_stock')
-        self.in_stock = attributes[:'in_stock']
-      end
-
       if attributes.key?(:'delivery_code')
         self.delivery_code = attributes[:'delivery_code']
-      end
-
-      if attributes.key?(:'product_reference')
-        self.product_reference = attributes[:'product_reference']
       end
 
       if attributes.key?(:'delivery_type')
@@ -1063,58 +1051,70 @@ module OpenapiClient
         self.delivery_time = attributes[:'delivery_time']
       end
 
-      if attributes.key?(:'size_chart')
-        self.size_chart = attributes[:'size_chart']
-      end
-
-      if attributes.key?(:'certifications')
-        if (value = attributes[:'certifications']).is_a?(Array)
-          self.certifications = value
-        end
-      end
-
       if attributes.key?(:'delivery_option_ids')
         self.delivery_option_ids = attributes[:'delivery_option_ids']
       end
 
-      if attributes.key?(:'manufacturer_info')
-        self.manufacturer_info = attributes[:'manufacturer_info']
+      if attributes.key?(:'package_details')
+        self.package_details = attributes[:'package_details']
       end
 
-      if attributes.key?(:'when_made')
-        self.when_made = attributes[:'when_made']
-      else
-        self.when_made = 'made_to_order'
-      end
-
-      if attributes.key?(:'is_supply')
-        self.is_supply = attributes[:'is_supply']
-      else
-        self.is_supply = true
-      end
-
-      if attributes.key?(:'materials')
-        if (value = attributes[:'materials']).is_a?(Array)
-          self.materials = value
+      if attributes.key?(:'logistic_info')
+        if (value = attributes[:'logistic_info']).is_a?(Array)
+          self.logistic_info = value
         end
       end
 
-      if attributes.key?(:'auto_renew')
-        self.auto_renew = attributes[:'auto_renew']
+      if attributes.key?(:'listing_duration')
+        self.listing_duration = attributes[:'listing_duration']
+      end
+
+      if attributes.key?(:'listing_type')
+        self.listing_type = attributes[:'listing_type']
       else
-        self.auto_renew = false
+        self.listing_type = 'FixedPrice'
       end
 
-      if attributes.key?(:'allow_display_condition')
-        self.allow_display_condition = attributes[:'allow_display_condition']
+      if attributes.key?(:'return_accepted')
+        self.return_accepted = attributes[:'return_accepted']
       end
 
-      if attributes.key?(:'min_order_quantity')
-        self.min_order_quantity = attributes[:'min_order_quantity']
+      if attributes.key?(:'seller_profiles')
+        self.seller_profiles = attributes[:'seller_profiles']
       end
 
-      if attributes.key?(:'max_order_quantity')
-        self.max_order_quantity = attributes[:'max_order_quantity']
+      if attributes.key?(:'auction_confidentiality_level')
+        self.auction_confidentiality_level = attributes[:'auction_confidentiality_level']
+      end
+
+      if attributes.key?(:'best_offer')
+        self.best_offer = attributes[:'best_offer']
+      end
+
+      if attributes.key?(:'production_partner_ids')
+        self.production_partner_ids = attributes[:'production_partner_ids']
+      end
+
+      if attributes.key?(:'marketplace_item_properties')
+        self.marketplace_item_properties = attributes[:'marketplace_item_properties']
+      end
+
+      if attributes.key?(:'clear_cache')
+        self.clear_cache = attributes[:'clear_cache']
+      else
+        self.clear_cache = true
+      end
+
+      if attributes.key?(:'viewed_count')
+        self.viewed_count = attributes[:'viewed_count']
+      else
+        self.viewed_count = 0
+      end
+
+      if attributes.key?(:'ordered_count')
+        self.ordered_count = attributes[:'ordered_count']
+      else
+        self.ordered_count = 0
       end
     end
 
@@ -1160,116 +1160,116 @@ module OpenapiClient
       self.class == o.class &&
           name == o.name &&
           model == o.model &&
-          sku == o.sku &&
           description == o.description &&
           price == o.price &&
-          old_price == o.old_price &&
-          special_price == o.special_price &&
-          cost_price == o.cost_price &&
-          fixed_cost_shipping_price == o.fixed_cost_shipping_price &&
-          sprice_create == o.sprice_create &&
-          sprice_modified == o.sprice_modified &&
-          sprice_expire == o.sprice_expire &&
-          tier_prices == o.tier_prices &&
-          group_prices == o.group_prices &&
+          sku == o.sku &&
+          short_description == o.short_description &&
+          type == o.type &&
+          status == o.status &&
+          visible == o.visible &&
+          category_id == o.category_id &&
+          categories_ids == o.categories_ids &&
+          product_class == o.product_class &&
+          product_type == o.product_type &&
+          is_virtual == o.is_virtual &&
+          downloadable == o.downloadable &&
+          is_supply == o.is_supply &&
           available_for_view == o.available_for_view &&
           available_for_sale == o.available_for_sale &&
+          store_id == o.store_id &&
+          stores_ids == o.stores_ids &&
+          lang_id == o.lang_id &&
+          old_price == o.old_price &&
+          special_price == o.special_price &&
+          wholesale_price == o.wholesale_price &&
+          cost_price == o.cost_price &&
+          fixed_cost_shipping_price == o.fixed_cost_shipping_price &&
+          tier_prices == o.tier_prices &&
+          group_prices == o.group_prices &&
+          buyitnow_price == o.buyitnow_price &&
+          reserve_price == o.reserve_price &&
+          quantity == o.quantity &&
+          in_stock == o.in_stock &&
+          manage_stock == o.manage_stock &&
+          warehouse_id == o.warehouse_id &&
+          backorder_status == o.backorder_status &&
+          min_order_quantity == o.min_order_quantity &&
+          max_order_quantity == o.max_order_quantity &&
           weight == o.weight &&
+          weight_unit == o.weight_unit &&
           width == o.width &&
           height == o.height &&
           length == o.length &&
-          weight_unit == o.weight_unit &&
           dimensions_unit == o.dimensions_unit &&
-          short_description == o.short_description &&
-          warehouse_id == o.warehouse_id &&
-          backorder_status == o.backorder_status &&
-          quantity == o.quantity &&
-          downloadable == o.downloadable &&
-          wholesale_price == o.wholesale_price &&
-          created_at == o.created_at &&
-          manufacturer == o.manufacturer &&
-          manufacturer_id == o.manufacturer_id &&
-          categories_ids == o.categories_ids &&
-          related_products_ids == o.related_products_ids &&
-          up_sell_products_ids == o.up_sell_products_ids &&
-          cross_sell_products_ids == o.cross_sell_products_ids &&
-          tax_class_id == o.tax_class_id &&
-          type == o.type &&
-          meta_title == o.meta_title &&
-          meta_keywords == o.meta_keywords &&
-          meta_description == o.meta_description &&
-          url == o.url &&
-          lang_id == o.lang_id &&
-          stores_ids == o.stores_ids &&
-          category_id == o.category_id &&
-          viewed_count == o.viewed_count &&
-          ordered_count == o.ordered_count &&
-          attribute_set_name == o.attribute_set_name &&
-          attribute_name == o.attribute_name &&
-          shipping_template_id == o.shipping_template_id &&
-          production_partner_ids == o.production_partner_ids &&
-          condition == o.condition &&
-          listing_duration == o.listing_duration &&
-          listing_type == o.listing_type &&
-          payment_methods == o.payment_methods &&
-          return_accepted == o.return_accepted &&
-          shipping_details == o.shipping_details &&
-          paypal_email == o.paypal_email &&
-          seller_profiles == o.seller_profiles &&
-          package_details == o.package_details &&
-          best_offer == o.best_offer &&
-          sales_tax == o.sales_tax &&
           barcode == o.barcode &&
           upc == o.upc &&
           ean == o.ean &&
           isbn == o.isbn &&
-          specifics == o.specifics &&
+          gtin == o.gtin &&
+          mpn == o.mpn &&
+          asin == o.asin &&
+          product_reference == o.product_reference &&
+          harmonized_system_code == o.harmonized_system_code &&
+          country_of_origin == o.country_of_origin &&
+          manufacturer == o.manufacturer &&
+          manufacturer_id == o.manufacturer_id &&
+          manufacturer_info == o.manufacturer_info &&
+          brand_name == o.brand_name &&
           image_url == o.image_url &&
           image_name == o.image_name &&
           additional_image_urls == o.additional_image_urls &&
-          reserve_price == o.reserve_price &&
-          buyitnow_price == o.buyitnow_price &&
-          condition_description == o.condition_description &&
-          auction_confidentiality_level == o.auction_confidentiality_level &&
-          logistic_info == o.logistic_info &&
-          avail_from == o.avail_from &&
-          tags == o.tags &&
-          clear_cache == o.clear_cache &&
-          asin == o.asin &&
-          gtin == o.gtin &&
-          mpn == o.mpn &&
-          taxable == o.taxable &&
-          visible == o.visible &&
-          status == o.status &&
-          seo_url == o.seo_url &&
-          product_class == o.product_class &&
-          product_type == o.product_type &&
-          marketplace_item_properties == o.marketplace_item_properties &&
-          manage_stock == o.manage_stock &&
-          harmonized_system_code == o.harmonized_system_code &&
-          country_of_origin == o.country_of_origin &&
           files == o.files &&
+          size_chart == o.size_chart &&
+          related_products_ids == o.related_products_ids &&
+          up_sell_products_ids == o.up_sell_products_ids &&
+          cross_sell_products_ids == o.cross_sell_products_ids &&
+          attribute_set_name == o.attribute_set_name &&
+          attribute_name == o.attribute_name &&
           search_keywords == o.search_keywords &&
-          store_id == o.store_id &&
-          brand_name == o.brand_name &&
-          is_virtual == o.is_virtual &&
+          tags == o.tags &&
+          materials == o.materials &&
+          certifications == o.certifications &&
+          specifics == o.specifics &&
+          avail_from == o.avail_from &&
+          sprice_create == o.sprice_create &&
+          sprice_modified == o.sprice_modified &&
+          sprice_expire == o.sprice_expire &&
+          created_at == o.created_at &&
+          auto_renew == o.auto_renew &&
+          when_made == o.when_made &&
+          meta_title == o.meta_title &&
+          meta_keywords == o.meta_keywords &&
+          meta_description == o.meta_description &&
+          url == o.url &&
+          seo_url == o.seo_url &&
+          tax_class_id == o.tax_class_id &&
+          taxable == o.taxable &&
+          sales_tax == o.sales_tax &&
+          condition == o.condition &&
+          condition_description == o.condition_description &&
+          allow_display_condition == o.allow_display_condition &&
+          payment_methods == o.payment_methods &&
+          paypal_email == o.paypal_email &&
+          shipping_template_id == o.shipping_template_id &&
+          shipping_details == o.shipping_details &&
           is_free_shipping == o.is_free_shipping &&
-          in_stock == o.in_stock &&
           delivery_code == o.delivery_code &&
-          product_reference == o.product_reference &&
           delivery_type == o.delivery_type &&
           delivery_time == o.delivery_time &&
-          size_chart == o.size_chart &&
-          certifications == o.certifications &&
           delivery_option_ids == o.delivery_option_ids &&
-          manufacturer_info == o.manufacturer_info &&
-          when_made == o.when_made &&
-          is_supply == o.is_supply &&
-          materials == o.materials &&
-          auto_renew == o.auto_renew &&
-          allow_display_condition == o.allow_display_condition &&
-          min_order_quantity == o.min_order_quantity &&
-          max_order_quantity == o.max_order_quantity
+          package_details == o.package_details &&
+          logistic_info == o.logistic_info &&
+          listing_duration == o.listing_duration &&
+          listing_type == o.listing_type &&
+          return_accepted == o.return_accepted &&
+          seller_profiles == o.seller_profiles &&
+          auction_confidentiality_level == o.auction_confidentiality_level &&
+          best_offer == o.best_offer &&
+          production_partner_ids == o.production_partner_ids &&
+          marketplace_item_properties == o.marketplace_item_properties &&
+          clear_cache == o.clear_cache &&
+          viewed_count == o.viewed_count &&
+          ordered_count == o.ordered_count
     end
 
     # @see the `==` method
@@ -1281,7 +1281,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, model, sku, description, price, old_price, special_price, cost_price, fixed_cost_shipping_price, sprice_create, sprice_modified, sprice_expire, tier_prices, group_prices, available_for_view, available_for_sale, weight, width, height, length, weight_unit, dimensions_unit, short_description, warehouse_id, backorder_status, quantity, downloadable, wholesale_price, created_at, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, tax_class_id, type, meta_title, meta_keywords, meta_description, url, lang_id, stores_ids, category_id, viewed_count, ordered_count, attribute_set_name, attribute_name, shipping_template_id, production_partner_ids, condition, listing_duration, listing_type, payment_methods, return_accepted, shipping_details, paypal_email, seller_profiles, package_details, best_offer, sales_tax, barcode, upc, ean, isbn, specifics, image_url, image_name, additional_image_urls, reserve_price, buyitnow_price, condition_description, auction_confidentiality_level, logistic_info, avail_from, tags, clear_cache, asin, gtin, mpn, taxable, visible, status, seo_url, product_class, product_type, marketplace_item_properties, manage_stock, harmonized_system_code, country_of_origin, files, search_keywords, store_id, brand_name, is_virtual, is_free_shipping, in_stock, delivery_code, product_reference, delivery_type, delivery_time, size_chart, certifications, delivery_option_ids, manufacturer_info, when_made, is_supply, materials, auto_renew, allow_display_condition, min_order_quantity, max_order_quantity].hash
+      [name, model, description, price, sku, short_description, type, status, visible, category_id, categories_ids, product_class, product_type, is_virtual, downloadable, is_supply, available_for_view, available_for_sale, store_id, stores_ids, lang_id, old_price, special_price, wholesale_price, cost_price, fixed_cost_shipping_price, tier_prices, group_prices, buyitnow_price, reserve_price, quantity, in_stock, manage_stock, warehouse_id, backorder_status, min_order_quantity, max_order_quantity, weight, weight_unit, width, height, length, dimensions_unit, barcode, upc, ean, isbn, gtin, mpn, asin, product_reference, harmonized_system_code, country_of_origin, manufacturer, manufacturer_id, manufacturer_info, brand_name, image_url, image_name, additional_image_urls, files, size_chart, related_products_ids, up_sell_products_ids, cross_sell_products_ids, attribute_set_name, attribute_name, search_keywords, tags, materials, certifications, specifics, avail_from, sprice_create, sprice_modified, sprice_expire, created_at, auto_renew, when_made, meta_title, meta_keywords, meta_description, url, seo_url, tax_class_id, taxable, sales_tax, condition, condition_description, allow_display_condition, payment_methods, paypal_email, shipping_template_id, shipping_details, is_free_shipping, delivery_code, delivery_type, delivery_time, delivery_option_ids, package_details, logistic_info, listing_duration, listing_type, return_accepted, seller_profiles, auction_confidentiality_level, best_offer, production_partner_ids, marketplace_item_properties, clear_cache, viewed_count, ordered_count].hash
     end
 
     # Builds the object from hash

@@ -36,19 +36,19 @@ describe 'OrderApi' do
   # order.abandoned.list
   # Get list of orders that were left by customers before completing the order.
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :start This parameter sets the number from which you want to get entities
+  # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
+  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [String] :customer_id Retrieves orders specified by customer id
   # @option opts [String] :customer_email Retrieves orders specified by customer email
-  # @option opts [String] :created_to Retrieve entities to their creation date
-  # @option opts [String] :created_from Retrieve entities from their creation date
-  # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @option opts [String] :modified_from Retrieve entities from their modification date
-  # @option opts [Boolean] :skip_empty_email Filter empty emails
   # @option opts [String] :store_id Store Id
-  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-  # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
-  # @option opts [Integer] :start This parameter sets the number from which you want to get entities
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :created_from Retrieve entities from their creation date
+  # @option opts [String] :created_to Retrieve entities to their creation date
+  # @option opts [String] :modified_from Retrieve entities from their modification date
+  # @option opts [String] :modified_to Retrieve entities to their modification date
+  # @option opts [Boolean] :skip_empty_email Filter empty emails
   # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [ModelResponseOrderAbandonedList]
   describe 'order_abandoned_list test' do
@@ -73,17 +73,13 @@ describe 'OrderApi' do
   # order.count
   # Count orders in store
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :order_ids Counts orders specified by order ids
+  # @option opts [String] :ids Counts orders specified by ids
   # @option opts [String] :customer_id Counts orders quantity specified by customer id
+  # @option opts [String] :store_id Counts orders quantity specified by store id
   # @option opts [String] :customer_email Counts orders quantity specified by customer email
   # @option opts [String] :order_status Counts orders quantity specified by order status
   # @option opts [Array<String>] :order_status_ids Retrieves orders specified by order statuses
-  # @option opts [String] :created_to Retrieve entities to their creation date
-  # @option opts [String] :created_from Retrieve entities from their creation date
-  # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @option opts [String] :modified_from Retrieve entities from their modification date
-  # @option opts [String] :store_id Counts orders quantity specified by store id
-  # @option opts [String] :ids Counts orders specified by ids
-  # @option opts [String] :order_ids Counts orders specified by order ids
   # @option opts [String] :ebay_order_status Counts orders quantity specified by order status
   # @option opts [String] :financial_status Counts orders quantity specified by financial status
   # @option opts [Array<String>] :financial_status_ids Retrieves orders count specified by financial status ids
@@ -93,6 +89,10 @@ describe 'OrderApi' do
   # @option opts [String] :delivery_method Retrieves order with delivery method
   # @option opts [String] :tags Order tags
   # @option opts [String] :ship_node_type Retrieves order with ship node type
+  # @option opts [String] :created_from Retrieve entities from their creation date
+  # @option opts [String] :created_to Retrieve entities to their creation date
+  # @option opts [String] :modified_from Retrieve entities from their modification date
+  # @option opts [String] :modified_to Retrieve entities to their modification date
   # @return [OrderCount200Response]
   describe 'order_count test' do
     it 'should work' do
@@ -115,18 +115,18 @@ describe 'OrderApi' do
   # order.find
   # This method is deprecated and won&#39;t be supported in the future. Please use \&quot;order.list\&quot; instead.
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :start This parameter sets the number from which you want to get entities
+  # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
   # @option opts [String] :customer_id Retrieves orders specified by customer id
   # @option opts [String] :customer_email Retrieves orders specified by customer email
   # @option opts [String] :order_status Retrieves orders specified by order status
-  # @option opts [Integer] :start This parameter sets the number from which you want to get entities
-  # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+  # @option opts [String] :financial_status Retrieves orders specified by financial status
   # @option opts [String] :created_to Retrieve entities to their creation date
   # @option opts [String] :created_from Retrieve entities from their creation date
   # @option opts [String] :modified_to Retrieve entities to their modification date
   # @option opts [String] :modified_from Retrieve entities from their modification date
-  # @option opts [String] :financial_status Retrieves orders specified by financial status
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [OrderFind200Response]
   describe 'order_find test' do
     it 'should work' do
@@ -150,12 +150,12 @@ describe 'OrderApi' do
   # order.info
   # Info about a specific order by ID
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :order_id Retrieves order’s info specified by order id
   # @option opts [String] :id Retrieves order info specified by id
+  # @option opts [String] :order_id Retrieves order’s info specified by order id
+  # @option opts [String] :store_id Defines store id where the order should be found
   # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :store_id Defines store id where the order should be found
   # @option opts [Boolean] :enable_cache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache
   # @option opts [Boolean] :use_latest_api_version Use the latest platform API version
   # @return [OrderInfo200Response]
@@ -169,43 +169,43 @@ describe 'OrderApi' do
   # order.list
   # Get list of orders from store.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :customer_id Retrieves orders specified by customer id
-  # @option opts [String] :customer_email Retrieves orders specified by customer email
-  # @option opts [String] :phone Filter orders by customer&#39;s phone number
-  # @option opts [String] :order_status Retrieves orders specified by order status
-  # @option opts [Array<String>] :order_status_ids Retrieves orders specified by order statuses
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
   # @option opts [String] :page_cursor Used to retrieve orders via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+  # @option opts [String] :ids Retrieves orders specified by ids
+  # @option opts [String] :order_ids Retrieves orders specified by order ids
+  # @option opts [String] :since_id Retrieve entities starting from the specified id.
+  # @option opts [String] :store_id Store Id
+  # @option opts [String] :customer_id Retrieves orders specified by customer id
+  # @option opts [String] :customer_email Retrieves orders specified by customer email
+  # @option opts [String] :basket_id Retrieves order’s info specified by basket id.
+  # @option opts [String] :currency_id Currency Id
+  # @option opts [String] :phone Filter orders by customer&#39;s phone number
+  # @option opts [String] :order_status Retrieves orders specified by order status
+  # @option opts [Array<String>] :order_status_ids Retrieves orders specified by order statuses
+  # @option opts [String] :ebay_order_status Retrieves orders specified by order status
+  # @option opts [String] :financial_status Retrieves orders specified by financial status
+  # @option opts [Array<String>] :financial_status_ids Retrieves orders specified by financial status ids
+  # @option opts [String] :fulfillment_status Create order with fulfillment status
+  # @option opts [String] :return_status Retrieves orders specified by return status
+  # @option opts [String] :fulfillment_channel Retrieves order with a fulfillment channel
+  # @option opts [String] :shipping_method Retrieve entities according to shipping method
+  # @option opts [String] :skip_order_ids Skipped orders by ids
+  # @option opts [Boolean] :is_deleted Filter deleted orders
+  # @option opts [String] :shipping_country_iso3 Retrieve entities according to shipping country
+  # @option opts [String] :delivery_method Retrieves order with delivery method
+  # @option opts [String] :ship_node_type Retrieves order with ship node type
+  # @option opts [String] :created_to Retrieve entities to their creation date
+  # @option opts [String] :created_from Retrieve entities from their creation date
+  # @option opts [String] :modified_to Retrieve entities to their modification date
+  # @option opts [String] :modified_from Retrieve entities from their modification date
+  # @option opts [String] :tags Order tags
   # @option opts [String] :sort_by Set field to sort by
   # @option opts [String] :sort_direction Set sorting direction
   # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :created_to Retrieve entities to their creation date
-  # @option opts [String] :created_from Retrieve entities from their creation date
-  # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @option opts [String] :modified_from Retrieve entities from their modification date
-  # @option opts [String] :store_id Store Id
-  # @option opts [String] :ids Retrieves orders specified by ids
-  # @option opts [String] :order_ids Retrieves orders specified by order ids
-  # @option opts [String] :ebay_order_status Retrieves orders specified by order status
-  # @option opts [String] :basket_id Retrieves order’s info specified by basket id.
-  # @option opts [String] :financial_status Retrieves orders specified by financial status
-  # @option opts [Array<String>] :financial_status_ids Retrieves orders specified by financial status ids
-  # @option opts [String] :fulfillment_status Create order with fulfillment status
-  # @option opts [String] :fulfillment_channel Retrieves order with a fulfillment channel
-  # @option opts [String] :shipping_method Retrieve entities according to shipping method
-  # @option opts [String] :skip_order_ids Skipped orders by ids
-  # @option opts [String] :since_id Retrieve entities starting from the specified id.
-  # @option opts [Boolean] :is_deleted Filter deleted orders
-  # @option opts [String] :shipping_country_iso3 Retrieve entities according to shipping country
   # @option opts [Boolean] :enable_cache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add)
-  # @option opts [String] :delivery_method Retrieves order with delivery method
-  # @option opts [String] :tags Order tags
-  # @option opts [String] :ship_node_type Retrieves order with ship node type
-  # @option opts [String] :currency_id Currency Id
-  # @option opts [String] :return_status Retrieves orders specified by return status
   # @option opts [Boolean] :use_latest_api_version Use the latest platform API version
   # @return [ModelResponseOrderList]
   describe 'order_list test' do
@@ -321,10 +321,10 @@ describe 'OrderApi' do
   # @param order_id Defines the order id
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @option opts [String] :store_id Store Id
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [OrderShipmentInfo200Response]
   describe 'order_shipment_info test' do
     it 'should work' do
@@ -337,17 +337,17 @@ describe 'OrderApi' do
   # Get list of shipments by orders.
   # @param order_id Retrieves shipments specified by order id
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+  # @option opts [String] :store_id Store Id
   # @option opts [String] :created_from Retrieve entities from their creation date
   # @option opts [String] :created_to Retrieve entities to their creation date
   # @option opts [String] :modified_from Retrieve entities from their modification date
   # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @option opts [String] :store_id Store Id
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [ModelResponseOrderShipmentList]
   describe 'order_shipment_list test' do
     it 'should work' do
@@ -399,11 +399,11 @@ describe 'OrderApi' do
   # @param order_ids Retrieves order transactions specified by order ids
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
+  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [String] :store_id Store Id
   # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @return [ModelResponseOrderTransactionList]
   describe 'order_transaction_list test' do
     it 'should work' do
@@ -418,19 +418,19 @@ describe 'OrderApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [String] :store_id Defines store id where the order should be found
   # @option opts [String] :order_status Defines new order&#39;s status
+  # @option opts [String] :financial_status Update order financial status to specified
+  # @option opts [String] :fulfillment_status Create order with fulfillment status
   # @option opts [String] :cancellation_reason Defines the cancellation reason when the order will be canceled
+  # @option opts [String] :order_payment_method Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39;
   # @option opts [String] :comment Specifies order comment
   # @option opts [String] :admin_comment Specifies admin&#39;s order comment
   # @option opts [String] :admin_private_comment Specifies private admin&#39;s order comment
+  # @option opts [String] :invoice_admin_comment Specifies admin&#39;s order invoice comment
   # @option opts [String] :date_modified Specifies order&#39;s  modification date
   # @option opts [String] :date_finished Specifies order&#39;s  finished date
-  # @option opts [String] :financial_status Update order financial status to specified
-  # @option opts [String] :fulfillment_status Create order with fulfillment status
-  # @option opts [String] :order_payment_method Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39;
   # @option opts [Boolean] :send_notifications Send notifications to customer after order was created
-  # @option opts [String] :origin The source of the order
   # @option opts [Boolean] :create_invoice Determines whether an invoice should be created if it has not already been created
-  # @option opts [String] :invoice_admin_comment Specifies admin&#39;s order invoice comment
+  # @option opts [String] :origin The source of the order
   # @return [AccountConfigUpdate200Response]
   describe 'order_update test' do
     it 'should work' do

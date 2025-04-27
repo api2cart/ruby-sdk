@@ -77,6 +77,7 @@
 | **shopline_access_token** | **String** | Shopline APP Key | [optional] |
 | **shopline_app_key** | **String** | Shopline APP Key | [optional] |
 | **shopline_app_secret** | **String** | Shopline App Secret | [optional] |
+| **shopline_shared_secret** | **String** | Shopline Shared Secret | [optional] |
 | **shopify_access_token** | **String** | Access token authorizing the app to access resources on behalf of a user | [optional] |
 | **shopify_api_key** | **String** | Shopify API Key | [optional] |
 | **shopify_api_password** | **String** | Shopify API Password | [optional] |
@@ -232,6 +233,7 @@ instance = OpenapiClient::AccountCartAdd.new(
   shopline_access_token: igse8e4rdmzkxdi937qe69d59en1imw,
   shopline_app_key: 737cf6bd2879cb6c7e5a8ff9cd63f3d46b0b5b7b,
   shopline_app_secret: 1701d123bb5cc14cd2732dcaed90638316c0a09,
+  shopline_shared_secret: 1701d123bb5cc14cd2732dcaed90638316c0a09,
   shopify_access_token: igse8e4rdmzkxdi937qe69d59en1imw,
   shopify_api_key: bbca57d8ff3c3677128112c15556d9e3,
   shopify_api_password: 860f3a6fc87632301a42cd88e4b5ab3d,

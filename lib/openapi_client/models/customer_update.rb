@@ -54,14 +54,14 @@ module OpenapiClient
     # Defines customer's gender
     attr_accessor :gender
 
-    # Store Id
-    attr_accessor :store_id
-
     # The customer note.
     attr_accessor :note
 
     # Defines customer's status
     attr_accessor :status
+
+    # Store Id
+    attr_accessor :store_id
 
     attr_accessor :address
 
@@ -81,9 +81,9 @@ module OpenapiClient
         :'consents' => :'consents',
         :'tags' => :'tags',
         :'gender' => :'gender',
-        :'store_id' => :'store_id',
         :'note' => :'note',
         :'status' => :'status',
+        :'store_id' => :'store_id',
         :'address' => :'address'
       }
     end
@@ -109,9 +109,9 @@ module OpenapiClient
         :'consents' => :'Array<CustomerAddConsentsInner>',
         :'tags' => :'String',
         :'gender' => :'String',
-        :'store_id' => :'String',
         :'note' => :'String',
         :'status' => :'String',
+        :'store_id' => :'String',
         :'address' => :'Array<CustomerUpdateAddressInner>'
       }
     end
@@ -191,16 +191,16 @@ module OpenapiClient
         self.gender = attributes[:'gender']
       end
 
-      if attributes.key?(:'store_id')
-        self.store_id = attributes[:'store_id']
-      end
-
       if attributes.key?(:'note')
         self.note = attributes[:'note']
       end
 
       if attributes.key?(:'status')
         self.status = attributes[:'status']
+      end
+
+      if attributes.key?(:'store_id')
+        self.store_id = attributes[:'store_id']
       end
 
       if attributes.key?(:'address')
@@ -262,9 +262,9 @@ module OpenapiClient
           consents == o.consents &&
           tags == o.tags &&
           gender == o.gender &&
-          store_id == o.store_id &&
           note == o.note &&
           status == o.status &&
+          store_id == o.store_id &&
           address == o.address
     end
 
@@ -277,7 +277,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, group_id, group_ids, group, email, phone, first_name, last_name, birth_day, news_letter_subscription, consents, tags, gender, store_id, note, status, address].hash
+      [id, group_id, group_ids, group, email, phone, first_name, last_name, birth_day, news_letter_subscription, consents, tags, gender, note, status, store_id, address].hash
     end
 
     # Builds the object from hash

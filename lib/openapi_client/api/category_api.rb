@@ -23,20 +23,20 @@ module OpenapiClient
     # Add new category in store
     # @param name [String] Defines category&#39;s name that has to be added
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :parent_id Adds categories specified by parent id
-    # @option opts [String] :stores_ids Create category in the stores that is specified by comma-separated stores&#39; id
-    # @option opts [String] :store_id Store Id
-    # @option opts [String] :lang_id Language id
-    # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
-    # @option opts [Integer] :sort_order Sort number in the list (default to 0)
-    # @option opts [String] :created_time Entity&#39;s date creation
-    # @option opts [String] :modified_time Entity&#39;s date modification
     # @option opts [String] :description Defines category&#39;s description
     # @option opts [String] :short_description Defines short description
+    # @option opts [String] :parent_id Adds categories specified by parent id
+    # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
+    # @option opts [String] :created_time Entity&#39;s date creation
+    # @option opts [String] :modified_time Entity&#39;s date modification
+    # @option opts [Integer] :sort_order Sort number in the list (default to 0)
     # @option opts [String] :meta_title Defines unique meta title for each entity
     # @option opts [String] :meta_description Defines unique meta description of a entity
     # @option opts [String] :meta_keywords Defines unique meta keywords for each entity
     # @option opts [String] :seo_url Defines unique category&#39;s URL for SEO
+    # @option opts [String] :store_id Store Id
+    # @option opts [String] :stores_ids Create category in the stores that is specified by comma-separated stores&#39; id
+    # @option opts [String] :lang_id Language id
     # @return [CategoryAdd200Response]
     def category_add(name, opts = {})
       data, _status_code, _headers = category_add_with_http_info(name, opts)
@@ -47,20 +47,20 @@ module OpenapiClient
     # Add new category in store
     # @param name [String] Defines category&#39;s name that has to be added
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :parent_id Adds categories specified by parent id
-    # @option opts [String] :stores_ids Create category in the stores that is specified by comma-separated stores&#39; id
-    # @option opts [String] :store_id Store Id
-    # @option opts [String] :lang_id Language id
-    # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
-    # @option opts [Integer] :sort_order Sort number in the list (default to 0)
-    # @option opts [String] :created_time Entity&#39;s date creation
-    # @option opts [String] :modified_time Entity&#39;s date modification
     # @option opts [String] :description Defines category&#39;s description
     # @option opts [String] :short_description Defines short description
+    # @option opts [String] :parent_id Adds categories specified by parent id
+    # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
+    # @option opts [String] :created_time Entity&#39;s date creation
+    # @option opts [String] :modified_time Entity&#39;s date modification
+    # @option opts [Integer] :sort_order Sort number in the list (default to 0)
     # @option opts [String] :meta_title Defines unique meta title for each entity
     # @option opts [String] :meta_description Defines unique meta description of a entity
     # @option opts [String] :meta_keywords Defines unique meta keywords for each entity
     # @option opts [String] :seo_url Defines unique category&#39;s URL for SEO
+    # @option opts [String] :store_id Store Id
+    # @option opts [String] :stores_ids Create category in the stores that is specified by comma-separated stores&#39; id
+    # @option opts [String] :lang_id Language id
     # @return [Array<(CategoryAdd200Response, Integer, Hash)>] CategoryAdd200Response data, response status code and response headers
     def category_add_with_http_info(name, opts = {})
       if @api_client.config.debugging
@@ -76,20 +76,20 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'name'] = name
-      query_params[:'parent_id'] = opts[:'parent_id'] if !opts[:'parent_id'].nil?
-      query_params[:'stores_ids'] = opts[:'stores_ids'] if !opts[:'stores_ids'].nil?
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
-      query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
-      query_params[:'avail'] = opts[:'avail'] if !opts[:'avail'].nil?
-      query_params[:'sort_order'] = opts[:'sort_order'] if !opts[:'sort_order'].nil?
-      query_params[:'created_time'] = opts[:'created_time'] if !opts[:'created_time'].nil?
-      query_params[:'modified_time'] = opts[:'modified_time'] if !opts[:'modified_time'].nil?
       query_params[:'description'] = opts[:'description'] if !opts[:'description'].nil?
       query_params[:'short_description'] = opts[:'short_description'] if !opts[:'short_description'].nil?
+      query_params[:'parent_id'] = opts[:'parent_id'] if !opts[:'parent_id'].nil?
+      query_params[:'avail'] = opts[:'avail'] if !opts[:'avail'].nil?
+      query_params[:'created_time'] = opts[:'created_time'] if !opts[:'created_time'].nil?
+      query_params[:'modified_time'] = opts[:'modified_time'] if !opts[:'modified_time'].nil?
+      query_params[:'sort_order'] = opts[:'sort_order'] if !opts[:'sort_order'].nil?
       query_params[:'meta_title'] = opts[:'meta_title'] if !opts[:'meta_title'].nil?
       query_params[:'meta_description'] = opts[:'meta_description'] if !opts[:'meta_description'].nil?
       query_params[:'meta_keywords'] = opts[:'meta_keywords'] if !opts[:'meta_keywords'].nil?
       query_params[:'seo_url'] = opts[:'seo_url'] if !opts[:'seo_url'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'stores_ids'] = opts[:'stores_ids'] if !opts[:'stores_ids'].nil?
+      query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -195,42 +195,42 @@ module OpenapiClient
 
     # category.assign
     # Assign category to product
-    # @param product_id [String] Defines category assign to the product, specified by product id
     # @param category_id [String] Defines category assign, specified by category id
+    # @param product_id [String] Defines category assign to the product, specified by product id
     # @param [Hash] opts the optional parameters
     # @option opts [String] :store_id Store Id
     # @return [CartConfigUpdate200Response]
-    def category_assign(product_id, category_id, opts = {})
-      data, _status_code, _headers = category_assign_with_http_info(product_id, category_id, opts)
+    def category_assign(category_id, product_id, opts = {})
+      data, _status_code, _headers = category_assign_with_http_info(category_id, product_id, opts)
       data
     end
 
     # category.assign
     # Assign category to product
-    # @param product_id [String] Defines category assign to the product, specified by product id
     # @param category_id [String] Defines category assign, specified by category id
+    # @param product_id [String] Defines category assign to the product, specified by product id
     # @param [Hash] opts the optional parameters
     # @option opts [String] :store_id Store Id
     # @return [Array<(CartConfigUpdate200Response, Integer, Hash)>] CartConfigUpdate200Response data, response status code and response headers
-    def category_assign_with_http_info(product_id, category_id, opts = {})
+    def category_assign_with_http_info(category_id, product_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CategoryApi.category_assign ...'
-      end
-      # verify the required parameter 'product_id' is set
-      if @api_client.config.client_side_validation && product_id.nil?
-        fail ArgumentError, "Missing the required parameter 'product_id' when calling CategoryApi.category_assign"
       end
       # verify the required parameter 'category_id' is set
       if @api_client.config.client_side_validation && category_id.nil?
         fail ArgumentError, "Missing the required parameter 'category_id' when calling CategoryApi.category_assign"
+      end
+      # verify the required parameter 'product_id' is set
+      if @api_client.config.client_side_validation && product_id.nil?
+        fail ArgumentError, "Missing the required parameter 'product_id' when calling CategoryApi.category_assign"
       end
       # resource path
       local_var_path = '/category.assign.json'
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'product_id'] = product_id
       query_params[:'category_id'] = category_id
+      query_params[:'product_id'] = product_id
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
 
       # header parameters
@@ -273,11 +273,11 @@ module OpenapiClient
     # @option opts [String] :parent_id Counts categories specified by parent id
     # @option opts [String] :store_id Counts category specified by store id
     # @option opts [String] :lang_id Counts category specified by language id
+    # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
     # @option opts [String] :product_type A categorization for the product
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Counts categories that are searched specified by field
@@ -295,11 +295,11 @@ module OpenapiClient
     # @option opts [String] :parent_id Counts categories specified by parent id
     # @option opts [String] :store_id Counts category specified by store id
     # @option opts [String] :lang_id Counts category specified by language id
+    # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
     # @option opts [String] :product_type A categorization for the product
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Counts categories that are searched specified by field
@@ -318,11 +318,11 @@ module OpenapiClient
       query_params[:'parent_id'] = opts[:'parent_id'] if !opts[:'parent_id'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
+      query_params[:'avail'] = opts[:'avail'] if !opts[:'avail'].nil?
       query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
       query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
       query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
       query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
-      query_params[:'avail'] = opts[:'avail'] if !opts[:'avail'].nil?
       query_params[:'product_type'] = opts[:'product_type'] if !opts[:'product_type'].nil?
       query_params[:'find_value'] = opts[:'find_value'] if !opts[:'find_value'].nil?
       query_params[:'find_where'] = opts[:'find_where'] if !opts[:'find_where'].nil?
@@ -513,10 +513,10 @@ module OpenapiClient
     # @param url [String] Defines URL of the image that has to be added
     # @param type [String] Defines image&#39;s types that are specified by comma-separated list
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :store_id Store Id
     # @option opts [String] :label Defines alternative text that has to be attached to the picture
     # @option opts [String] :mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
     # @option opts [Integer] :position Defines image’s position in the list (default to 0)
-    # @option opts [String] :store_id Store Id
     # @return [CategoryImageAdd200Response]
     def category_image_add(category_id, image_name, url, type, opts = {})
       data, _status_code, _headers = category_image_add_with_http_info(category_id, image_name, url, type, opts)
@@ -530,10 +530,10 @@ module OpenapiClient
     # @param url [String] Defines URL of the image that has to be added
     # @param type [String] Defines image&#39;s types that are specified by comma-separated list
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :store_id Store Id
     # @option opts [String] :label Defines alternative text that has to be attached to the picture
     # @option opts [String] :mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
     # @option opts [Integer] :position Defines image’s position in the list (default to 0)
-    # @option opts [String] :store_id Store Id
     # @return [Array<(CategoryImageAdd200Response, Integer, Hash)>] CategoryImageAdd200Response data, response status code and response headers
     def category_image_add_with_http_info(category_id, image_name, url, type, opts = {})
       if @api_client.config.debugging
@@ -569,10 +569,10 @@ module OpenapiClient
       query_params[:'image_name'] = image_name
       query_params[:'url'] = url
       query_params[:'type'] = type
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'label'] = opts[:'label'] if !opts[:'label'].nil?
       query_params[:'mime'] = opts[:'mime'] if !opts[:'mime'].nil?
       query_params[:'position'] = opts[:'position'] if !opts[:'position'].nil?
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -686,12 +686,12 @@ module OpenapiClient
     # Get category info about category ID*** or specify other category ID.
     # @param id [String] Retrieves category&#39;s info specified by category id
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,parent_id,name,description')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :store_id Retrieves category info  specified by store id
     # @option opts [String] :lang_id Retrieves category info  specified by language id
     # @option opts [String] :schema_type The name of the requirements set for the provided schema.
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,parent_id,name,description')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :report_request_id Report request id
     # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
     # @return [CategoryInfo200Response]
@@ -704,12 +704,12 @@ module OpenapiClient
     # Get category info about category ID*** or specify other category ID.
     # @param id [String] Retrieves category&#39;s info specified by category id
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,parent_id,name,description')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :store_id Retrieves category info  specified by store id
     # @option opts [String] :lang_id Retrieves category info  specified by language id
     # @option opts [String] :schema_type The name of the requirements set for the provided schema.
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,parent_id,name,description')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :report_request_id Report request id
     # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
     # @return [Array<(CategoryInfo200Response, Integer, Hash)>] CategoryInfo200Response data, response status code and response headers
@@ -727,12 +727,12 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'id'] = id
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
       query_params[:'schema_type'] = opts[:'schema_type'] if !opts[:'schema_type'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
       query_params[:'report_request_id'] = opts[:'report_request_id'] if !opts[:'report_request_id'].nil?
       query_params[:'disable_report_cache'] = opts[:'disable_report_cache'] if !opts[:'disable_report_cache'].nil?
 
@@ -776,20 +776,20 @@ module OpenapiClient
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-    # @option opts [String] :parent_id Retrieves categories specified by parent id
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,parent_id,name,description')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :store_id Retrieves categories specified by store id
     # @option opts [String] :lang_id Retrieves categorys specified by language id
+    # @option opts [String] :parent_id Retrieves categories specified by parent id
+    # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
+    # @option opts [String] :product_type A categorization for the product
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
-    # @option opts [String] :product_type A categorization for the product
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Category search that is specified by field
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,parent_id,name,description')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :report_request_id Report request id
     # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
     # @option opts [Boolean] :disable_cache Disable cache for current request (default to false)
@@ -805,20 +805,20 @@ module OpenapiClient
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-    # @option opts [String] :parent_id Retrieves categories specified by parent id
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,parent_id,name,description')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :store_id Retrieves categories specified by store id
     # @option opts [String] :lang_id Retrieves categorys specified by language id
+    # @option opts [String] :parent_id Retrieves categories specified by parent id
+    # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
+    # @option opts [String] :product_type A categorization for the product
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
-    # @option opts [String] :product_type A categorization for the product
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Category search that is specified by field
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,parent_id,name,description')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :report_request_id Report request id
     # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
     # @option opts [Boolean] :disable_cache Disable cache for current request (default to false)
@@ -835,20 +835,20 @@ module OpenapiClient
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
       query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
-      query_params[:'parent_id'] = opts[:'parent_id'] if !opts[:'parent_id'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
+      query_params[:'parent_id'] = opts[:'parent_id'] if !opts[:'parent_id'].nil?
+      query_params[:'avail'] = opts[:'avail'] if !opts[:'avail'].nil?
+      query_params[:'product_type'] = opts[:'product_type'] if !opts[:'product_type'].nil?
       query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
       query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
       query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
       query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
-      query_params[:'avail'] = opts[:'avail'] if !opts[:'avail'].nil?
-      query_params[:'product_type'] = opts[:'product_type'] if !opts[:'product_type'].nil?
       query_params[:'find_value'] = opts[:'find_value'] if !opts[:'find_value'].nil?
       query_params[:'find_where'] = opts[:'find_where'] if !opts[:'find_where'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
       query_params[:'report_request_id'] = opts[:'report_request_id'] if !opts[:'report_request_id'].nil?
       query_params[:'disable_report_cache'] = opts[:'disable_report_cache'] if !opts[:'disable_report_cache'].nil?
       query_params[:'disable_cache'] = opts[:'disable_cache'] if !opts[:'disable_cache'].nil?
@@ -966,19 +966,19 @@ module OpenapiClient
     # @param id [String] Defines category update specified by category id
     # @param [Hash] opts the optional parameters
     # @option opts [String] :name Defines new category’s name
+    # @option opts [String] :description Defines new category&#39;s description
+    # @option opts [String] :short_description Defines short description
     # @option opts [String] :parent_id Defines new parent category id
-    # @option opts [String] :stores_ids Update category in the stores that is specified by comma-separated stores&#39; id
     # @option opts [Boolean] :avail Defines category&#39;s visibility status
     # @option opts [Integer] :sort_order Sort number in the list
     # @option opts [String] :modified_time Entity&#39;s date modification
-    # @option opts [String] :description Defines new category&#39;s description
-    # @option opts [String] :short_description Defines short description
     # @option opts [String] :meta_title Defines unique meta title for each entity
     # @option opts [String] :meta_description Defines unique meta description of a entity
     # @option opts [String] :meta_keywords Defines unique meta keywords for each entity
     # @option opts [String] :seo_url Defines unique category&#39;s URL for SEO
-    # @option opts [String] :lang_id Language id
     # @option opts [String] :store_id Store Id
+    # @option opts [String] :stores_ids Update category in the stores that is specified by comma-separated stores&#39; id
+    # @option opts [String] :lang_id Language id
     # @return [AccountConfigUpdate200Response]
     def category_update(id, opts = {})
       data, _status_code, _headers = category_update_with_http_info(id, opts)
@@ -990,19 +990,19 @@ module OpenapiClient
     # @param id [String] Defines category update specified by category id
     # @param [Hash] opts the optional parameters
     # @option opts [String] :name Defines new category’s name
+    # @option opts [String] :description Defines new category&#39;s description
+    # @option opts [String] :short_description Defines short description
     # @option opts [String] :parent_id Defines new parent category id
-    # @option opts [String] :stores_ids Update category in the stores that is specified by comma-separated stores&#39; id
     # @option opts [Boolean] :avail Defines category&#39;s visibility status
     # @option opts [Integer] :sort_order Sort number in the list
     # @option opts [String] :modified_time Entity&#39;s date modification
-    # @option opts [String] :description Defines new category&#39;s description
-    # @option opts [String] :short_description Defines short description
     # @option opts [String] :meta_title Defines unique meta title for each entity
     # @option opts [String] :meta_description Defines unique meta description of a entity
     # @option opts [String] :meta_keywords Defines unique meta keywords for each entity
     # @option opts [String] :seo_url Defines unique category&#39;s URL for SEO
-    # @option opts [String] :lang_id Language id
     # @option opts [String] :store_id Store Id
+    # @option opts [String] :stores_ids Update category in the stores that is specified by comma-separated stores&#39; id
+    # @option opts [String] :lang_id Language id
     # @return [Array<(AccountConfigUpdate200Response, Integer, Hash)>] AccountConfigUpdate200Response data, response status code and response headers
     def category_update_with_http_info(id, opts = {})
       if @api_client.config.debugging
@@ -1019,19 +1019,19 @@ module OpenapiClient
       query_params = opts[:query_params] || {}
       query_params[:'id'] = id
       query_params[:'name'] = opts[:'name'] if !opts[:'name'].nil?
+      query_params[:'description'] = opts[:'description'] if !opts[:'description'].nil?
+      query_params[:'short_description'] = opts[:'short_description'] if !opts[:'short_description'].nil?
       query_params[:'parent_id'] = opts[:'parent_id'] if !opts[:'parent_id'].nil?
-      query_params[:'stores_ids'] = opts[:'stores_ids'] if !opts[:'stores_ids'].nil?
       query_params[:'avail'] = opts[:'avail'] if !opts[:'avail'].nil?
       query_params[:'sort_order'] = opts[:'sort_order'] if !opts[:'sort_order'].nil?
       query_params[:'modified_time'] = opts[:'modified_time'] if !opts[:'modified_time'].nil?
-      query_params[:'description'] = opts[:'description'] if !opts[:'description'].nil?
-      query_params[:'short_description'] = opts[:'short_description'] if !opts[:'short_description'].nil?
       query_params[:'meta_title'] = opts[:'meta_title'] if !opts[:'meta_title'].nil?
       query_params[:'meta_description'] = opts[:'meta_description'] if !opts[:'meta_description'].nil?
       query_params[:'meta_keywords'] = opts[:'meta_keywords'] if !opts[:'meta_keywords'].nil?
       query_params[:'seo_url'] = opts[:'seo_url'] if !opts[:'seo_url'].nil?
-      query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'stores_ids'] = opts[:'stores_ids'] if !opts[:'stores_ids'].nil?
+      query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

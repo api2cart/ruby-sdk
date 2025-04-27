@@ -30,95 +30,14 @@ module OpenapiClient
     # Defines order status.
     attr_accessor :order_status
 
-    # Send notifications to customer after order was created
-    attr_accessor :send_notifications
+    # Create order with fulfillment status
+    attr_accessor :fulfillment_status
 
-    # Notify admin when new order was created.
-    attr_accessor :send_admin_notifications
+    # Create order with financial status
+    attr_accessor :financial_status
 
     # Defines the customer specified by email for whom order has to be created
     attr_accessor :customer_email
-
-    # Specifies billing first name
-    attr_accessor :bill_first_name
-
-    # Specifies billing last name
-    attr_accessor :bill_last_name
-
-    # Specifies first billing address
-    attr_accessor :bill_address_1
-
-    # Specifies billing city
-    attr_accessor :bill_city
-
-    # Specifies billing postcode
-    attr_accessor :bill_postcode
-
-    # Specifies billing state code
-    attr_accessor :bill_state
-
-    # Specifies billing country code
-    attr_accessor :bill_country
-
-    # Specifies shipping first name
-    attr_accessor :shipp_first_name
-
-    # Specifies shipping last name
-    attr_accessor :shipp_last_name
-
-    # Specifies first shipping address
-    attr_accessor :shipp_address_1
-
-    # Specifies shipping city
-    attr_accessor :shipp_city
-
-    # Specifies shipping postcode
-    attr_accessor :shipp_postcode
-
-    # Specifies shipping state code
-    attr_accessor :shipp_state
-
-    # Specifies shipping country code
-    attr_accessor :shipp_country
-
-    # Defines order's total price
-    attr_accessor :total_price
-
-    # Specifies an order creation date in format Y-m-d H:i:s
-    attr_accessor :date
-
-    # Defines order payment method.<br/>Setting order_payment_method on Shopify will also change financial_status field value to 'paid'
-    attr_accessor :order_payment_method
-
-    # Payment transaction id
-    attr_accessor :transaction_id
-
-    # Defines order shipping method
-    attr_accessor :order_shipping_method
-
-    # Currency code of order
-    attr_accessor :currency
-
-    # Specifies second billing address
-    attr_accessor :bill_address_2
-
-    # Specifies billing company
-    attr_accessor :bill_company
-
-    # Specifies billing phone
-    attr_accessor :bill_phone
-
-    # Specifies billing fax
-    attr_accessor :bill_fax
-
-    # Specifies order comment
-    attr_accessor :comment
-
-    # Specifies admin's order comment
-    attr_accessor :admin_comment
-
-    # Specifies private admin's order comment
-    attr_accessor :admin_private_comment
 
     # Specifies customer's first name
     attr_accessor :customer_first_name
@@ -138,8 +57,80 @@ module OpenapiClient
     # Specifies customer’s fax
     attr_accessor :customer_fax
 
+    # Defines order payment method.<br/>Setting order_payment_method on Shopify will also change financial_status field value to 'paid'
+    attr_accessor :order_payment_method
+
+    # Payment transaction id
+    attr_accessor :transaction_id
+
+    # Currency code of order
+    attr_accessor :currency
+
+    # Specifies an order creation date in format Y-m-d H:i:s
+    attr_accessor :date
+
+    # Specifies order's  modification date
+    attr_accessor :date_modified
+
+    # Specifies order's  finished date
+    attr_accessor :date_finished
+
+    # Specifies billing first name
+    attr_accessor :bill_first_name
+
+    # Specifies billing last name
+    attr_accessor :bill_last_name
+
+    # Specifies first billing address
+    attr_accessor :bill_address_1
+
+    # Specifies second billing address
+    attr_accessor :bill_address_2
+
+    # Specifies billing city
+    attr_accessor :bill_city
+
+    # Specifies billing postcode
+    attr_accessor :bill_postcode
+
+    # Specifies billing state code
+    attr_accessor :bill_state
+
+    # Specifies billing country code
+    attr_accessor :bill_country
+
+    # Specifies billing company
+    attr_accessor :bill_company
+
+    # Specifies billing phone
+    attr_accessor :bill_phone
+
+    # Specifies billing fax
+    attr_accessor :bill_fax
+
+    # Specifies shipping first name
+    attr_accessor :shipp_first_name
+
+    # Specifies shipping last name
+    attr_accessor :shipp_last_name
+
+    # Specifies first shipping address
+    attr_accessor :shipp_address_1
+
     # Specifies second address line of a shipping street address
     attr_accessor :shipp_address_2
+
+    # Specifies shipping city
+    attr_accessor :shipp_city
+
+    # Specifies shipping postcode
+    attr_accessor :shipp_postcode
+
+    # Specifies shipping state code
+    attr_accessor :shipp_state
+
+    # Specifies shipping country code
+    attr_accessor :shipp_country
 
     # Specifies shipping company
     attr_accessor :shipp_company
@@ -150,17 +141,20 @@ module OpenapiClient
     # Specifies shipping fax
     attr_accessor :shipp_fax
 
-    # Specifies order's  modification date
-    attr_accessor :date_modified
-
-    # Specifies order's  finished date
-    attr_accessor :date_finished
-
     # Total price of all ordered products multiplied by their number, excluding tax, shipping price and discounts
     attr_accessor :subtotal_price
 
     # The value of tax cost for order
     attr_accessor :tax_price
+
+    # Defines order's total price
+    attr_accessor :total_price
+
+    # Defines total paid amount for the order
+    attr_accessor :total_paid
+
+    # Defines the sum of all line item weights in grams for the order
+    attr_accessor :total_weight
 
     # Indicates whether prices and subtotal includes tax.
     attr_accessor :prices_inc_tax
@@ -171,38 +165,47 @@ module OpenapiClient
     # Specifies order's shipping price tax
     attr_accessor :shipping_tax
 
-    # Defines tracking carrier id
-    attr_accessor :carrier_id
-
-    # This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
-    attr_accessor :warehouse_id
-
     # Specifies order's discount
     attr_accessor :discount
 
     # Specifies order's coupon discount
     attr_accessor :coupon_discount
 
-    # Coupons that will be applied to order
-    attr_accessor :coupons
-
     # Discounts for order with gift certificates
     attr_accessor :gift_certificate_discount
 
-    # Create order with fulfillment status
-    attr_accessor :fulfillment_status
+    # Defines order shipping method
+    attr_accessor :order_shipping_method
 
-    # Create order with financial status
-    attr_accessor :financial_status
+    # Defines tracking carrier id
+    attr_accessor :carrier_id
 
-    # Defines total paid amount for the order
-    attr_accessor :total_paid
+    # This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
+    attr_accessor :warehouse_id
 
-    # Identifying the system used to generate the order
-    attr_accessor :external_source
+    # Coupons that will be applied to order
+    attr_accessor :coupons
 
     # Order tags
     attr_accessor :tags
+
+    # Specifies order comment
+    attr_accessor :comment
+
+    # Specifies admin's order comment
+    attr_accessor :admin_comment
+
+    # Specifies private admin's order comment
+    attr_accessor :admin_private_comment
+
+    # Send notifications to customer after order was created
+    attr_accessor :send_notifications
+
+    # Notify admin when new order was created.
+    attr_accessor :send_admin_notifications
+
+    # Identifying the system used to generate the order
+    attr_accessor :external_source
 
     # The behaviour to use when updating inventory.<hr><div style=\"font-style:normal\">Values description:<div style=\"margin-left: 2%; padding-top: 2%\"><div style=\"font-size:85%\"><b>bypass</b> = Do not claim inventory </br></br><b>decrement_ignoring_policy</b> = Ignore the product's </br> inventory policy and claim amounts</br></br><b>decrement_obeying_policy</b> =  Obey the product's </br> inventory policy.</br></br></div></div></div>
     attr_accessor :inventory_behaviour
@@ -212,9 +215,6 @@ module OpenapiClient
 
     # Defines note attributes
     attr_accessor :note_attributes
-
-    # Defines the sum of all line item weights in grams for the order
-    attr_accessor :total_weight
 
     # Is cache clear required
     attr_accessor :clear_cache
@@ -232,68 +232,68 @@ module OpenapiClient
         :'store_id' => :'store_id',
         :'channel_id' => :'channel_id',
         :'order_status' => :'order_status',
-        :'send_notifications' => :'send_notifications',
-        :'send_admin_notifications' => :'send_admin_notifications',
+        :'fulfillment_status' => :'fulfillment_status',
+        :'financial_status' => :'financial_status',
         :'customer_email' => :'customer_email',
-        :'bill_first_name' => :'bill_first_name',
-        :'bill_last_name' => :'bill_last_name',
-        :'bill_address_1' => :'bill_address_1',
-        :'bill_city' => :'bill_city',
-        :'bill_postcode' => :'bill_postcode',
-        :'bill_state' => :'bill_state',
-        :'bill_country' => :'bill_country',
-        :'shipp_first_name' => :'shipp_first_name',
-        :'shipp_last_name' => :'shipp_last_name',
-        :'shipp_address_1' => :'shipp_address_1',
-        :'shipp_city' => :'shipp_city',
-        :'shipp_postcode' => :'shipp_postcode',
-        :'shipp_state' => :'shipp_state',
-        :'shipp_country' => :'shipp_country',
-        :'total_price' => :'total_price',
-        :'date' => :'date',
-        :'order_payment_method' => :'order_payment_method',
-        :'transaction_id' => :'transaction_id',
-        :'order_shipping_method' => :'order_shipping_method',
-        :'currency' => :'currency',
-        :'bill_address_2' => :'bill_address_2',
-        :'bill_company' => :'bill_company',
-        :'bill_phone' => :'bill_phone',
-        :'bill_fax' => :'bill_fax',
-        :'comment' => :'comment',
-        :'admin_comment' => :'admin_comment',
-        :'admin_private_comment' => :'admin_private_comment',
         :'customer_first_name' => :'customer_first_name',
         :'customer_last_name' => :'customer_last_name',
         :'customer_phone' => :'customer_phone',
         :'customer_country' => :'customer_country',
         :'customer_birthday' => :'customer_birthday',
         :'customer_fax' => :'customer_fax',
+        :'order_payment_method' => :'order_payment_method',
+        :'transaction_id' => :'transaction_id',
+        :'currency' => :'currency',
+        :'date' => :'date',
+        :'date_modified' => :'date_modified',
+        :'date_finished' => :'date_finished',
+        :'bill_first_name' => :'bill_first_name',
+        :'bill_last_name' => :'bill_last_name',
+        :'bill_address_1' => :'bill_address_1',
+        :'bill_address_2' => :'bill_address_2',
+        :'bill_city' => :'bill_city',
+        :'bill_postcode' => :'bill_postcode',
+        :'bill_state' => :'bill_state',
+        :'bill_country' => :'bill_country',
+        :'bill_company' => :'bill_company',
+        :'bill_phone' => :'bill_phone',
+        :'bill_fax' => :'bill_fax',
+        :'shipp_first_name' => :'shipp_first_name',
+        :'shipp_last_name' => :'shipp_last_name',
+        :'shipp_address_1' => :'shipp_address_1',
         :'shipp_address_2' => :'shipp_address_2',
+        :'shipp_city' => :'shipp_city',
+        :'shipp_postcode' => :'shipp_postcode',
+        :'shipp_state' => :'shipp_state',
+        :'shipp_country' => :'shipp_country',
         :'shipp_company' => :'shipp_company',
         :'shipp_phone' => :'shipp_phone',
         :'shipp_fax' => :'shipp_fax',
-        :'date_modified' => :'date_modified',
-        :'date_finished' => :'date_finished',
         :'subtotal_price' => :'subtotal_price',
         :'tax_price' => :'tax_price',
+        :'total_price' => :'total_price',
+        :'total_paid' => :'total_paid',
+        :'total_weight' => :'total_weight',
         :'prices_inc_tax' => :'prices_inc_tax',
         :'shipping_price' => :'shipping_price',
         :'shipping_tax' => :'shipping_tax',
-        :'carrier_id' => :'carrier_id',
-        :'warehouse_id' => :'warehouse_id',
         :'discount' => :'discount',
         :'coupon_discount' => :'coupon_discount',
-        :'coupons' => :'coupons',
         :'gift_certificate_discount' => :'gift_certificate_discount',
-        :'fulfillment_status' => :'fulfillment_status',
-        :'financial_status' => :'financial_status',
-        :'total_paid' => :'total_paid',
-        :'external_source' => :'external_source',
+        :'order_shipping_method' => :'order_shipping_method',
+        :'carrier_id' => :'carrier_id',
+        :'warehouse_id' => :'warehouse_id',
+        :'coupons' => :'coupons',
         :'tags' => :'tags',
+        :'comment' => :'comment',
+        :'admin_comment' => :'admin_comment',
+        :'admin_private_comment' => :'admin_private_comment',
+        :'send_notifications' => :'send_notifications',
+        :'send_admin_notifications' => :'send_admin_notifications',
+        :'external_source' => :'external_source',
         :'inventory_behaviour' => :'inventory_behaviour',
         :'create_invoice' => :'create_invoice',
         :'note_attributes' => :'note_attributes',
-        :'total_weight' => :'total_weight',
         :'clear_cache' => :'clear_cache',
         :'origin' => :'origin',
         :'order_item' => :'order_item'
@@ -313,68 +313,68 @@ module OpenapiClient
         :'store_id' => :'String',
         :'channel_id' => :'String',
         :'order_status' => :'String',
-        :'send_notifications' => :'Boolean',
-        :'send_admin_notifications' => :'Boolean',
+        :'fulfillment_status' => :'String',
+        :'financial_status' => :'String',
         :'customer_email' => :'String',
-        :'bill_first_name' => :'String',
-        :'bill_last_name' => :'String',
-        :'bill_address_1' => :'String',
-        :'bill_city' => :'String',
-        :'bill_postcode' => :'String',
-        :'bill_state' => :'String',
-        :'bill_country' => :'String',
-        :'shipp_first_name' => :'String',
-        :'shipp_last_name' => :'String',
-        :'shipp_address_1' => :'String',
-        :'shipp_city' => :'String',
-        :'shipp_postcode' => :'String',
-        :'shipp_state' => :'String',
-        :'shipp_country' => :'String',
-        :'total_price' => :'Float',
-        :'date' => :'String',
-        :'order_payment_method' => :'String',
-        :'transaction_id' => :'String',
-        :'order_shipping_method' => :'String',
-        :'currency' => :'String',
-        :'bill_address_2' => :'String',
-        :'bill_company' => :'String',
-        :'bill_phone' => :'String',
-        :'bill_fax' => :'String',
-        :'comment' => :'String',
-        :'admin_comment' => :'String',
-        :'admin_private_comment' => :'String',
         :'customer_first_name' => :'String',
         :'customer_last_name' => :'String',
         :'customer_phone' => :'String',
         :'customer_country' => :'String',
         :'customer_birthday' => :'String',
         :'customer_fax' => :'String',
+        :'order_payment_method' => :'String',
+        :'transaction_id' => :'String',
+        :'currency' => :'String',
+        :'date' => :'String',
+        :'date_modified' => :'String',
+        :'date_finished' => :'String',
+        :'bill_first_name' => :'String',
+        :'bill_last_name' => :'String',
+        :'bill_address_1' => :'String',
+        :'bill_address_2' => :'String',
+        :'bill_city' => :'String',
+        :'bill_postcode' => :'String',
+        :'bill_state' => :'String',
+        :'bill_country' => :'String',
+        :'bill_company' => :'String',
+        :'bill_phone' => :'String',
+        :'bill_fax' => :'String',
+        :'shipp_first_name' => :'String',
+        :'shipp_last_name' => :'String',
+        :'shipp_address_1' => :'String',
         :'shipp_address_2' => :'String',
+        :'shipp_city' => :'String',
+        :'shipp_postcode' => :'String',
+        :'shipp_state' => :'String',
+        :'shipp_country' => :'String',
         :'shipp_company' => :'String',
         :'shipp_phone' => :'String',
         :'shipp_fax' => :'String',
-        :'date_modified' => :'String',
-        :'date_finished' => :'String',
         :'subtotal_price' => :'Float',
         :'tax_price' => :'Float',
+        :'total_price' => :'Float',
+        :'total_paid' => :'Float',
+        :'total_weight' => :'Integer',
         :'prices_inc_tax' => :'Boolean',
         :'shipping_price' => :'Float',
         :'shipping_tax' => :'Float',
-        :'carrier_id' => :'String',
-        :'warehouse_id' => :'String',
         :'discount' => :'Float',
         :'coupon_discount' => :'Float',
-        :'coupons' => :'Array<String>',
         :'gift_certificate_discount' => :'Float',
-        :'fulfillment_status' => :'String',
-        :'financial_status' => :'String',
-        :'total_paid' => :'Float',
-        :'external_source' => :'String',
+        :'order_shipping_method' => :'String',
+        :'carrier_id' => :'String',
+        :'warehouse_id' => :'String',
+        :'coupons' => :'Array<String>',
         :'tags' => :'String',
+        :'comment' => :'String',
+        :'admin_comment' => :'String',
+        :'admin_private_comment' => :'String',
+        :'send_notifications' => :'Boolean',
+        :'send_admin_notifications' => :'Boolean',
+        :'external_source' => :'String',
         :'inventory_behaviour' => :'String',
         :'create_invoice' => :'Boolean',
         :'note_attributes' => :'Array<OrderAddNoteAttributesInner>',
-        :'total_weight' => :'Integer',
         :'clear_cache' => :'Boolean',
         :'origin' => :'String',
         :'order_item' => :'Array<OrderAddOrderItemInner>'
@@ -424,144 +424,18 @@ module OpenapiClient
         self.order_status = nil
       end
 
-      if attributes.key?(:'send_notifications')
-        self.send_notifications = attributes[:'send_notifications']
-      else
-        self.send_notifications = false
+      if attributes.key?(:'fulfillment_status')
+        self.fulfillment_status = attributes[:'fulfillment_status']
       end
 
-      if attributes.key?(:'send_admin_notifications')
-        self.send_admin_notifications = attributes[:'send_admin_notifications']
-      else
-        self.send_admin_notifications = false
+      if attributes.key?(:'financial_status')
+        self.financial_status = attributes[:'financial_status']
       end
 
       if attributes.key?(:'customer_email')
         self.customer_email = attributes[:'customer_email']
       else
         self.customer_email = nil
-      end
-
-      if attributes.key?(:'bill_first_name')
-        self.bill_first_name = attributes[:'bill_first_name']
-      else
-        self.bill_first_name = nil
-      end
-
-      if attributes.key?(:'bill_last_name')
-        self.bill_last_name = attributes[:'bill_last_name']
-      else
-        self.bill_last_name = nil
-      end
-
-      if attributes.key?(:'bill_address_1')
-        self.bill_address_1 = attributes[:'bill_address_1']
-      else
-        self.bill_address_1 = nil
-      end
-
-      if attributes.key?(:'bill_city')
-        self.bill_city = attributes[:'bill_city']
-      else
-        self.bill_city = nil
-      end
-
-      if attributes.key?(:'bill_postcode')
-        self.bill_postcode = attributes[:'bill_postcode']
-      else
-        self.bill_postcode = nil
-      end
-
-      if attributes.key?(:'bill_state')
-        self.bill_state = attributes[:'bill_state']
-      else
-        self.bill_state = nil
-      end
-
-      if attributes.key?(:'bill_country')
-        self.bill_country = attributes[:'bill_country']
-      else
-        self.bill_country = nil
-      end
-
-      if attributes.key?(:'shipp_first_name')
-        self.shipp_first_name = attributes[:'shipp_first_name']
-      end
-
-      if attributes.key?(:'shipp_last_name')
-        self.shipp_last_name = attributes[:'shipp_last_name']
-      end
-
-      if attributes.key?(:'shipp_address_1')
-        self.shipp_address_1 = attributes[:'shipp_address_1']
-      end
-
-      if attributes.key?(:'shipp_city')
-        self.shipp_city = attributes[:'shipp_city']
-      end
-
-      if attributes.key?(:'shipp_postcode')
-        self.shipp_postcode = attributes[:'shipp_postcode']
-      end
-
-      if attributes.key?(:'shipp_state')
-        self.shipp_state = attributes[:'shipp_state']
-      end
-
-      if attributes.key?(:'shipp_country')
-        self.shipp_country = attributes[:'shipp_country']
-      end
-
-      if attributes.key?(:'total_price')
-        self.total_price = attributes[:'total_price']
-      end
-
-      if attributes.key?(:'date')
-        self.date = attributes[:'date']
-      end
-
-      if attributes.key?(:'order_payment_method')
-        self.order_payment_method = attributes[:'order_payment_method']
-      end
-
-      if attributes.key?(:'transaction_id')
-        self.transaction_id = attributes[:'transaction_id']
-      end
-
-      if attributes.key?(:'order_shipping_method')
-        self.order_shipping_method = attributes[:'order_shipping_method']
-      end
-
-      if attributes.key?(:'currency')
-        self.currency = attributes[:'currency']
-      end
-
-      if attributes.key?(:'bill_address_2')
-        self.bill_address_2 = attributes[:'bill_address_2']
-      end
-
-      if attributes.key?(:'bill_company')
-        self.bill_company = attributes[:'bill_company']
-      end
-
-      if attributes.key?(:'bill_phone')
-        self.bill_phone = attributes[:'bill_phone']
-      end
-
-      if attributes.key?(:'bill_fax')
-        self.bill_fax = attributes[:'bill_fax']
-      end
-
-      if attributes.key?(:'comment')
-        self.comment = attributes[:'comment']
-      end
-
-      if attributes.key?(:'admin_comment')
-        self.admin_comment = attributes[:'admin_comment']
-      end
-
-      if attributes.key?(:'admin_private_comment')
-        self.admin_private_comment = attributes[:'admin_private_comment']
       end
 
       if attributes.key?(:'customer_first_name')
@@ -588,8 +462,118 @@ module OpenapiClient
         self.customer_fax = attributes[:'customer_fax']
       end
 
+      if attributes.key?(:'order_payment_method')
+        self.order_payment_method = attributes[:'order_payment_method']
+      end
+
+      if attributes.key?(:'transaction_id')
+        self.transaction_id = attributes[:'transaction_id']
+      end
+
+      if attributes.key?(:'currency')
+        self.currency = attributes[:'currency']
+      end
+
+      if attributes.key?(:'date')
+        self.date = attributes[:'date']
+      end
+
+      if attributes.key?(:'date_modified')
+        self.date_modified = attributes[:'date_modified']
+      end
+
+      if attributes.key?(:'date_finished')
+        self.date_finished = attributes[:'date_finished']
+      end
+
+      if attributes.key?(:'bill_first_name')
+        self.bill_first_name = attributes[:'bill_first_name']
+      else
+        self.bill_first_name = nil
+      end
+
+      if attributes.key?(:'bill_last_name')
+        self.bill_last_name = attributes[:'bill_last_name']
+      else
+        self.bill_last_name = nil
+      end
+
+      if attributes.key?(:'bill_address_1')
+        self.bill_address_1 = attributes[:'bill_address_1']
+      else
+        self.bill_address_1 = nil
+      end
+
+      if attributes.key?(:'bill_address_2')
+        self.bill_address_2 = attributes[:'bill_address_2']
+      end
+
+      if attributes.key?(:'bill_city')
+        self.bill_city = attributes[:'bill_city']
+      else
+        self.bill_city = nil
+      end
+
+      if attributes.key?(:'bill_postcode')
+        self.bill_postcode = attributes[:'bill_postcode']
+      else
+        self.bill_postcode = nil
+      end
+
+      if attributes.key?(:'bill_state')
+        self.bill_state = attributes[:'bill_state']
+      else
+        self.bill_state = nil
+      end
+
+      if attributes.key?(:'bill_country')
+        self.bill_country = attributes[:'bill_country']
+      else
+        self.bill_country = nil
+      end
+
+      if attributes.key?(:'bill_company')
+        self.bill_company = attributes[:'bill_company']
+      end
+
+      if attributes.key?(:'bill_phone')
+        self.bill_phone = attributes[:'bill_phone']
+      end
+
+      if attributes.key?(:'bill_fax')
+        self.bill_fax = attributes[:'bill_fax']
+      end
+
+      if attributes.key?(:'shipp_first_name')
+        self.shipp_first_name = attributes[:'shipp_first_name']
+      end
+
+      if attributes.key?(:'shipp_last_name')
+        self.shipp_last_name = attributes[:'shipp_last_name']
+      end
+
+      if attributes.key?(:'shipp_address_1')
+        self.shipp_address_1 = attributes[:'shipp_address_1']
+      end
+
       if attributes.key?(:'shipp_address_2')
         self.shipp_address_2 = attributes[:'shipp_address_2']
+      end
+
+      if attributes.key?(:'shipp_city')
+        self.shipp_city = attributes[:'shipp_city']
+      end
+
+      if attributes.key?(:'shipp_postcode')
+        self.shipp_postcode = attributes[:'shipp_postcode']
+      end
+
+      if attributes.key?(:'shipp_state')
+        self.shipp_state = attributes[:'shipp_state']
+      end
+
+      if attributes.key?(:'shipp_country')
+        self.shipp_country = attributes[:'shipp_country']
       end
 
       if attributes.key?(:'shipp_company')
@@ -604,14 +588,6 @@ module OpenapiClient
         self.shipp_fax = attributes[:'shipp_fax']
       end
 
-      if attributes.key?(:'date_modified')
-        self.date_modified = attributes[:'date_modified']
-      end
-
-      if attributes.key?(:'date_finished')
-        self.date_finished = attributes[:'date_finished']
-      end
-
       if attributes.key?(:'subtotal_price')
         self.subtotal_price = attributes[:'subtotal_price']
       end
@@ -620,6 +596,18 @@ module OpenapiClient
         self.tax_price = attributes[:'tax_price']
       else
         self.tax_price = 0
+      end
+
+      if attributes.key?(:'total_price')
+        self.total_price = attributes[:'total_price']
+      end
+
+      if attributes.key?(:'total_paid')
+        self.total_paid = attributes[:'total_paid']
+      end
+
+      if attributes.key?(:'total_weight')
+        self.total_weight = attributes[:'total_weight']
       end
 
       if attributes.key?(:'prices_inc_tax')
@@ -638,14 +626,6 @@ module OpenapiClient
         self.shipping_tax = attributes[:'shipping_tax']
       end
 
-      if attributes.key?(:'carrier_id')
-        self.carrier_id = attributes[:'carrier_id']
-      end
-
-      if attributes.key?(:'warehouse_id')
-        self.warehouse_id = attributes[:'warehouse_id']
-      end
-
       if attributes.key?(:'discount')
         self.discount = attributes[:'discount']
       end
@@ -654,34 +634,58 @@ module OpenapiClient
         self.coupon_discount = attributes[:'coupon_discount']
       end
 
+      if attributes.key?(:'gift_certificate_discount')
+        self.gift_certificate_discount = attributes[:'gift_certificate_discount']
+      end
+
+      if attributes.key?(:'order_shipping_method')
+        self.order_shipping_method = attributes[:'order_shipping_method']
+      end
+
+      if attributes.key?(:'carrier_id')
+        self.carrier_id = attributes[:'carrier_id']
+      end
+
+      if attributes.key?(:'warehouse_id')
+        self.warehouse_id = attributes[:'warehouse_id']
+      end
+
       if attributes.key?(:'coupons')
         if (value = attributes[:'coupons']).is_a?(Array)
           self.coupons = value
         end
       end
 
-      if attributes.key?(:'gift_certificate_discount')
-        self.gift_certificate_discount = attributes[:'gift_certificate_discount']
+      if attributes.key?(:'tags')
+        self.tags = attributes[:'tags']
       end
 
-      if attributes.key?(:'fulfillment_status')
-        self.fulfillment_status = attributes[:'fulfillment_status']
+      if attributes.key?(:'comment')
+        self.comment = attributes[:'comment']
       end
 
-      if attributes.key?(:'financial_status')
-        self.financial_status = attributes[:'financial_status']
+      if attributes.key?(:'admin_comment')
+        self.admin_comment = attributes[:'admin_comment']
       end
 
-      if attributes.key?(:'total_paid')
-        self.total_paid = attributes[:'total_paid']
+      if attributes.key?(:'admin_private_comment')
+        self.admin_private_comment = attributes[:'admin_private_comment']
+      end
+
+      if attributes.key?(:'send_notifications')
+        self.send_notifications = attributes[:'send_notifications']
+      else
+        self.send_notifications = false
+      end
+
+      if attributes.key?(:'send_admin_notifications')
+        self.send_admin_notifications = attributes[:'send_admin_notifications']
+      else
+        self.send_admin_notifications = false
       end
 
       if attributes.key?(:'external_source')
         self.external_source = attributes[:'external_source']
-      end
-
-      if attributes.key?(:'tags')
-        self.tags = attributes[:'tags']
       end
 
       if attributes.key?(:'inventory_behaviour')
@@ -700,10 +704,6 @@ module OpenapiClient
         if (value = attributes[:'note_attributes']).is_a?(Array)
           self.note_attributes = value
         end
-      end
-
-      if attributes.key?(:'total_weight')
-        self.total_weight = attributes[:'total_weight']
       end
 
       if attributes.key?(:'clear_cache')
@@ -819,68 +819,68 @@ module OpenapiClient
           store_id == o.store_id &&
           channel_id == o.channel_id &&
           order_status == o.order_status &&
-          send_notifications == o.send_notifications &&
-          send_admin_notifications == o.send_admin_notifications &&
+          fulfillment_status == o.fulfillment_status &&
+          financial_status == o.financial_status &&
           customer_email == o.customer_email &&
-          bill_first_name == o.bill_first_name &&
-          bill_last_name == o.bill_last_name &&
-          bill_address_1 == o.bill_address_1 &&
-          bill_city == o.bill_city &&
-          bill_postcode == o.bill_postcode &&
-          bill_state == o.bill_state &&
-          bill_country == o.bill_country &&
-          shipp_first_name == o.shipp_first_name &&
-          shipp_last_name == o.shipp_last_name &&
-          shipp_address_1 == o.shipp_address_1 &&
-          shipp_city == o.shipp_city &&
-          shipp_postcode == o.shipp_postcode &&
-          shipp_state == o.shipp_state &&
-          shipp_country == o.shipp_country &&
-          total_price == o.total_price &&
-          date == o.date &&
-          order_payment_method == o.order_payment_method &&
-          transaction_id == o.transaction_id &&
-          order_shipping_method == o.order_shipping_method &&
-          currency == o.currency &&
-          bill_address_2 == o.bill_address_2 &&
-          bill_company == o.bill_company &&
-          bill_phone == o.bill_phone &&
-          bill_fax == o.bill_fax &&
-          comment == o.comment &&
-          admin_comment == o.admin_comment &&
-          admin_private_comment == o.admin_private_comment &&
           customer_first_name == o.customer_first_name &&
           customer_last_name == o.customer_last_name &&
           customer_phone == o.customer_phone &&
           customer_country == o.customer_country &&
           customer_birthday == o.customer_birthday &&
           customer_fax == o.customer_fax &&
+          order_payment_method == o.order_payment_method &&
+          transaction_id == o.transaction_id &&
+          currency == o.currency &&
+          date == o.date &&
+          date_modified == o.date_modified &&
+          date_finished == o.date_finished &&
+          bill_first_name == o.bill_first_name &&
+          bill_last_name == o.bill_last_name &&
+          bill_address_1 == o.bill_address_1 &&
+          bill_address_2 == o.bill_address_2 &&
+          bill_city == o.bill_city &&
+          bill_postcode == o.bill_postcode &&
+          bill_state == o.bill_state &&
+          bill_country == o.bill_country &&
+          bill_company == o.bill_company &&
+          bill_phone == o.bill_phone &&
+          bill_fax == o.bill_fax &&
+          shipp_first_name == o.shipp_first_name &&
+          shipp_last_name == o.shipp_last_name &&
+          shipp_address_1 == o.shipp_address_1 &&
           shipp_address_2 == o.shipp_address_2 &&
+          shipp_city == o.shipp_city &&
+          shipp_postcode == o.shipp_postcode &&
+          shipp_state == o.shipp_state &&
+          shipp_country == o.shipp_country &&
           shipp_company == o.shipp_company &&
           shipp_phone == o.shipp_phone &&
           shipp_fax == o.shipp_fax &&
-          date_modified == o.date_modified &&
-          date_finished == o.date_finished &&
           subtotal_price == o.subtotal_price &&
           tax_price == o.tax_price &&
+          total_price == o.total_price &&
+          total_paid == o.total_paid &&
+          total_weight == o.total_weight &&
           prices_inc_tax == o.prices_inc_tax &&
           shipping_price == o.shipping_price &&
           shipping_tax == o.shipping_tax &&
-          carrier_id == o.carrier_id &&
-          warehouse_id == o.warehouse_id &&
           discount == o.discount &&
           coupon_discount == o.coupon_discount &&
-          coupons == o.coupons &&
           gift_certificate_discount == o.gift_certificate_discount &&
-          fulfillment_status == o.fulfillment_status &&
-          financial_status == o.financial_status &&
-          total_paid == o.total_paid &&
-          external_source == o.external_source &&
+          order_shipping_method == o.order_shipping_method &&
+          carrier_id == o.carrier_id &&
+          warehouse_id == o.warehouse_id &&
+          coupons == o.coupons &&
           tags == o.tags &&
+          comment == o.comment &&
+          admin_comment == o.admin_comment &&
+          admin_private_comment == o.admin_private_comment &&
+          send_notifications == o.send_notifications &&
+          send_admin_notifications == o.send_admin_notifications &&
+          external_source == o.external_source &&
           inventory_behaviour == o.inventory_behaviour &&
           create_invoice == o.create_invoice &&
           note_attributes == o.note_attributes &&
-          total_weight == o.total_weight &&
           clear_cache == o.clear_cache &&
           origin == o.origin &&
           order_item == o.order_item
@@ -895,7 +895,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, order_id, store_id, channel_id, order_status, send_notifications, send_admin_notifications, customer_email, bill_first_name, bill_last_name, bill_address_1, bill_city, bill_postcode, bill_state, bill_country, shipp_first_name, shipp_last_name, shipp_address_1, shipp_city, shipp_postcode, shipp_state, shipp_country, total_price, date, order_payment_method, transaction_id, order_shipping_method, currency, bill_address_2, bill_company, bill_phone, bill_fax, comment, admin_comment, admin_private_comment, customer_first_name, customer_last_name, customer_phone, customer_country, customer_birthday, customer_fax, shipp_address_2, shipp_company, shipp_phone, shipp_fax, date_modified, date_finished, subtotal_price, tax_price, prices_inc_tax, shipping_price, shipping_tax, carrier_id, warehouse_id, discount, coupon_discount, coupons, gift_certificate_discount, fulfillment_status, financial_status, total_paid, external_source, tags, inventory_behaviour, create_invoice, note_attributes, total_weight, clear_cache, origin, order_item].hash
+      [id, order_id, store_id, channel_id, order_status, fulfillment_status, financial_status, customer_email, customer_first_name, customer_last_name, customer_phone, customer_country, customer_birthday, customer_fax, order_payment_method, transaction_id, currency, date, date_modified, date_finished, bill_first_name, bill_last_name, bill_address_1, bill_address_2, bill_city, bill_postcode, bill_state, bill_country, bill_company, bill_phone, bill_fax, shipp_first_name, shipp_last_name, shipp_address_1, shipp_address_2, shipp_city, shipp_postcode, shipp_state, shipp_country, shipp_company, shipp_phone, shipp_fax, subtotal_price, tax_price, total_price, total_paid, total_weight, prices_inc_tax, shipping_price, shipping_tax, discount, coupon_discount, gift_certificate_discount, order_shipping_method, carrier_id, warehouse_id, coupons, tags, comment, admin_comment, admin_private_comment, send_notifications, send_admin_notifications, external_source, inventory_behaviour, create_invoice, note_attributes, clear_cache, origin, order_item].hash
     end
 
     # Builds the object from hash

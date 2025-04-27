@@ -38,9 +38,9 @@ describe 'BasketApi' do
   # @param id Entity id
   # @param [Hash] opts the optional parameters
   # @option opts [String] :store_id Store Id
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @return [BasketInfo200Response]
   describe 'basket_info test' do
     it 'should work' do
@@ -94,9 +94,9 @@ describe 'BasketApi' do
   # basket.live_shipping_service.list
   # Retrieve a list of live shipping rate services.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :store_id Store Id
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
+  # @option opts [String] :store_id Store Id
   # @return [BasketLiveShippingServiceList200Response]
   describe 'basket_live_shipping_service_list test' do
     it 'should work' do

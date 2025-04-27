@@ -45,7 +45,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::CustomerApi.new
-customer_add = OpenapiClient::CustomerAdd.new({email: 'mail@example.com', first_name: 'John', last_name: 'Smith'}) # CustomerAdd | 
+customer_add = OpenapiClient::CustomerAdd.new({email: 'mail@example.com'}) # CustomerAdd | 
 
 begin
   # customer.add
@@ -203,9 +203,9 @@ opts = {
   page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   store_id: '1', # String | Store Id
   lang_id: '3', # String | Language id
+  response_fields: '{return_code,return_message,pagination,result}', # String | Set this parameter in order to choose which entity fields you want to retrieve
   params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'false', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  response_fields: '{return_code,return_message,pagination,result}' # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'false' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
 begin
@@ -244,9 +244,9 @@ end
 | **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **store_id** | **String** | Store Id | [optional] |
 | **lang_id** | **String** | Language id | [optional] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;force_all&#39;] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 
 ### Return type
 
@@ -290,18 +290,18 @@ end
 
 api_instance = OpenapiClient::CustomerApi.new
 opts = {
-  group_id: '3', # String | Customer group_id
-  created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
-  created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
-  modified_from: '2010-07-29 13:45:52', # String | Retrieve entities from their modification date
-  modified_to: '2100-08-29 13:45:52', # String | Retrieve entities to their modification date
-  store_id: '1', # String | Counts customer specified by store id
+  ids: '24,25', # String | Counts customers specified by ids
+  since_id: '56', # String | Retrieve entities starting from the specified id.
   customer_list_id: 'exampleListId', # String | The numeric ID of the customer list in Demandware.
+  group_id: '3', # String | Customer group_id
+  store_id: '1', # String | Counts customer specified by store id
   avail: false, # Boolean | Defines category's visibility status
   find_value: 'mail@gmail.com', # String | Entity search that is specified by some value
   find_where: 'email', # String | Counts customers that are searched specified by field
-  ids: '24,25', # String | Counts customers specified by ids
-  since_id: '56' # String | Retrieve entities starting from the specified id.
+  created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
+  created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
+  modified_from: '2010-07-29 13:45:52', # String | Retrieve entities from their modification date
+  modified_to: '2100-08-29 13:45:52' # String | Retrieve entities to their modification date
 }
 
 begin
@@ -335,18 +335,18 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **ids** | **String** | Counts customers specified by ids | [optional] |
+| **since_id** | **String** | Retrieve entities starting from the specified id. | [optional] |
+| **customer_list_id** | **String** | The numeric ID of the customer list in Demandware. | [optional] |
 | **group_id** | **String** | Customer group_id | [optional] |
+| **store_id** | **String** | Counts customer specified by store id | [optional] |
+| **avail** | **Boolean** | Defines category&#39;s visibility status | [optional][default to true] |
+| **find_value** | **String** | Entity search that is specified by some value | [optional] |
+| **find_where** | **String** | Counts customers that are searched specified by field | [optional] |
 | **created_from** | **String** | Retrieve entities from their creation date | [optional] |
 | **created_to** | **String** | Retrieve entities to their creation date | [optional] |
 | **modified_from** | **String** | Retrieve entities from their modification date | [optional] |
 | **modified_to** | **String** | Retrieve entities to their modification date | [optional] |
-| **store_id** | **String** | Counts customer specified by store id | [optional] |
-| **customer_list_id** | **String** | The numeric ID of the customer list in Demandware. | [optional] |
-| **avail** | **Boolean** | Defines category&#39;s visibility status | [optional][default to true] |
-| **find_value** | **String** | Entity search that is specified by some value | [optional] |
-| **find_where** | **String** | Counts customers that are searched specified by field | [optional] |
-| **ids** | **String** | Counts customers specified by ids | [optional] |
-| **since_id** | **String** | Retrieve entities starting from the specified id. | [optional] |
 
 ### Return type
 
@@ -632,16 +632,16 @@ end
 
 api_instance = OpenapiClient::CustomerApi.new
 opts = {
-  disable_cache: false, # Boolean | Disable cache for current request
-  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+  group_ids: '1,2,3', # String | Groups that will be assigned to a customer
   store_id: '1', # String | Store Id
   lang_id: '3', # String | Language id
-  group_ids: '1,2,3', # String | Groups that will be assigned to a customer
+  response_fields: '{return_code,return_message,pagination,result}', # String | Set this parameter in order to choose which entity fields you want to retrieve
   params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
   exclude: 'false', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  response_fields: '{return_code,return_message,pagination,result}' # String | Set this parameter in order to choose which entity fields you want to retrieve
+  disable_cache: false # Boolean | Disable cache for current request
 }
 
 begin
@@ -675,16 +675,16 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **disable_cache** | **Boolean** | Disable cache for current request | [optional][default to false] |
-| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
+| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
+| **group_ids** | **String** | Groups that will be assigned to a customer | [optional] |
 | **store_id** | **String** | Store Id | [optional] |
 | **lang_id** | **String** | Language id | [optional] |
-| **group_ids** | **String** | Groups that will be assigned to a customer | [optional] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,additional_fields&#39;] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **disable_cache** | **Boolean** | Disable cache for current request | [optional][default to false] |
 
 ### Return type
 
@@ -729,10 +729,10 @@ end
 api_instance = OpenapiClient::CustomerApi.new
 id = '10' # String | Retrieves customer's info specified by customer id
 opts = {
-  params: 'id,email', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  store_id: '1', # String | Retrieves customer info specified by store id
   response_fields: '{result{id,parent_id,sku,upc,images,combination}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'id,email', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  store_id: '1' # String | Retrieves customer info specified by store id
+  params: 'id,email', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'id,email' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
 begin
@@ -767,10 +767,10 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Retrieves customer&#39;s info specified by customer id |  |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,email,first_name,last_name&#39;] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **store_id** | **String** | Retrieves customer info specified by store id | [optional] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,email,first_name,last_name&#39;] |
+| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -814,26 +814,26 @@ end
 
 api_instance = OpenapiClient::CustomerApi.new
 opts = {
-  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+  ids: '24,25', # String | Retrieves customers specified by ids
+  since_id: '56', # String | Retrieve entities starting from the specified id.
+  customer_list_id: 'exampleListId', # String | The numeric ID of the customer list in Demandware.
+  group_id: '3', # String | Customer group_id
+  store_id: '1', # String | Retrieves customers specified by store id
+  avail: false, # Boolean | Defines category's visibility status
+  find_value: 'mail@gmail.com', # String | Entity search that is specified by some value
+  find_where: 'email', # String | Customer search that is specified by field
   created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
   created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
   modified_from: '2010-07-29 13:45:52', # String | Retrieve entities from their modification date
   modified_to: '2100-08-29 13:45:52', # String | Retrieve entities to their modification date
-  params: 'id,email', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  response_fields: '{result{customer}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'id,email', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  group_id: '3', # String | Customer group_id
-  store_id: '1', # String | Retrieves customers specified by store id
-  customer_list_id: 'exampleListId', # String | The numeric ID of the customer list in Demandware.
-  avail: false, # Boolean | Defines category's visibility status
-  find_value: 'mail@gmail.com', # String | Entity search that is specified by some value
-  find_where: 'email', # String | Customer search that is specified by field
   sort_by: 'value_id', # String | Set field to sort by
   sort_direction: 'asc', # String | Set sorting direction
-  ids: '24,25', # String | Retrieves customers specified by ids
-  since_id: '56' # String | Retrieve entities starting from the specified id.
+  response_fields: '{result{customer}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  params: 'id,email', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'id,email' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
 begin
@@ -867,26 +867,26 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
+| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
+| **ids** | **String** | Retrieves customers specified by ids | [optional] |
+| **since_id** | **String** | Retrieve entities starting from the specified id. | [optional] |
+| **customer_list_id** | **String** | The numeric ID of the customer list in Demandware. | [optional] |
+| **group_id** | **String** | Customer group_id | [optional] |
+| **store_id** | **String** | Retrieves customers specified by store id | [optional] |
+| **avail** | **Boolean** | Defines category&#39;s visibility status | [optional][default to true] |
+| **find_value** | **String** | Entity search that is specified by some value | [optional] |
+| **find_where** | **String** | Customer search that is specified by field | [optional] |
 | **created_from** | **String** | Retrieve entities from their creation date | [optional] |
 | **created_to** | **String** | Retrieve entities to their creation date | [optional] |
 | **modified_from** | **String** | Retrieve entities from their modification date | [optional] |
 | **modified_to** | **String** | Retrieve entities to their modification date | [optional] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,email,first_name,last_name&#39;] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **group_id** | **String** | Customer group_id | [optional] |
-| **store_id** | **String** | Retrieves customers specified by store id | [optional] |
-| **customer_list_id** | **String** | The numeric ID of the customer list in Demandware. | [optional] |
-| **avail** | **Boolean** | Defines category&#39;s visibility status | [optional][default to true] |
-| **find_value** | **String** | Entity search that is specified by some value | [optional] |
-| **find_where** | **String** | Customer search that is specified by field | [optional] |
 | **sort_by** | **String** | Set field to sort by | [optional][default to &#39;created_time&#39;] |
 | **sort_direction** | **String** | Set sorting direction | [optional][default to &#39;asc&#39;] |
-| **ids** | **String** | Retrieves customers specified by ids | [optional] |
-| **since_id** | **String** | Retrieve entities starting from the specified id. | [optional] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,email,first_name,last_name&#39;] |
+| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -1007,11 +1007,11 @@ end
 api_instance = OpenapiClient::CustomerApi.new
 customer_id = '5' # String | Retrieves orders specified by customer id
 opts = {
-  id: '10', # String | Entity id
-  store_id: '1', # String | Store Id
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
   page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+  id: '10', # String | Entity id
+  store_id: '1', # String | Store Id
   response_fields: '{return_code,return_message,pagination,result}' # String | Set this parameter in order to choose which entity fields you want to retrieve
 }
 
@@ -1047,11 +1047,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **customer_id** | **String** | Retrieves orders specified by customer id |  |
-| **id** | **String** | Entity id | [optional] |
-| **store_id** | **String** | Store Id | [optional] |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
 | **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
+| **id** | **String** | Entity id | [optional] |
+| **store_id** | **String** | Store Id | [optional] |
 | **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;{return_code,return_message,pagination,result}&#39;] |
 
 ### Return type

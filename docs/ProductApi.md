@@ -239,19 +239,19 @@ end
 api_instance = OpenapiClient::ProductApi.new
 product_id = '10' # String | Retrieves attributes specified by product id
 opts = {
-  attribute_id: '156', # String | Retrieves info for specified attribute_id
-  variant_id: '45', # String | Defines product's variants specified by variant id
-  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+  attribute_id: '156', # String | Retrieves info for specified attribute_id
+  variant_id: '45', # String | Defines product's variants specified by variant id
   attribute_group_id: '202', # String | Filter by attribute_group_id
-  set_name: 'Shoes', # String | Retrieves attributes specified by set_name in Magento
   lang_id: '3', # String | Retrieves attributes specified by language id
   store_id: '1', # String | Retrieves attributes specified by store id
+  set_name: 'Shoes', # String | Retrieves attributes specified by set_name in Magento
   sort_by: 'value', # String | Set field to sort by
   sort_direction: 'asc', # String | Set sorting direction
-  params: 'attribute_id,name', # String | Set this parameter in order to choose which entity fields you want to retrieve
   response_fields: '{pagination,result{attribute}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  params: 'attribute_id,name', # String | Set this parameter in order to choose which entity fields you want to retrieve
   exclude: 'attribute_id,name' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
@@ -287,19 +287,19 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **product_id** | **String** | Retrieves attributes specified by product id |  |
-| **attribute_id** | **String** | Retrieves info for specified attribute_id | [optional] |
-| **variant_id** | **String** | Defines product&#39;s variants specified by variant id | [optional] |
-| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
+| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
+| **attribute_id** | **String** | Retrieves info for specified attribute_id | [optional] |
+| **variant_id** | **String** | Defines product&#39;s variants specified by variant id | [optional] |
 | **attribute_group_id** | **String** | Filter by attribute_group_id | [optional] |
-| **set_name** | **String** | Retrieves attributes specified by set_name in Magento | [optional] |
 | **lang_id** | **String** | Retrieves attributes specified by language id | [optional] |
 | **store_id** | **String** | Retrieves attributes specified by store id | [optional] |
+| **set_name** | **String** | Retrieves attributes specified by set_name in Magento | [optional] |
 | **sort_by** | **String** | Set field to sort by | [optional][default to &#39;attribute_id&#39;] |
 | **sort_direction** | **String** | Set sorting direction | [optional][default to &#39;asc&#39;] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;attribute_id,name&#39;] |
 | **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;attribute_id,name&#39;] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
@@ -527,20 +527,20 @@ opts = {
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
   page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
   brand_ids: '4,5', # String | Retrieves brands specified by brand ids
-  exclude: 'false', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   category_id: '6', # String | Retrieves product brands specified by category id
+  parent_id: '6', # String | Retrieves brands specified by parent id
   store_id: '1', # String | Store Id
   lang_id: '3', # String | Language id
+  find_where: 'name', # String | Entity search that is specified by the comma-separated unique fields
+  find_value: 'Phone', # String | Entity search that is specified by some value
   created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
   created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
   modified_from: '2010-07-29 13:45:52', # String | Retrieve entities from their modification date
   modified_to: '2100-08-29 13:45:52', # String | Retrieve entities to their modification date
-  parent_id: '6', # String | Retrieves brands specified by parent id
   response_fields: '{return_code,return_message,pagination,result}', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  find_where: 'name', # String | Entity search that is specified by the comma-separated unique fields
-  find_value: 'Phone' # String | Entity search that is specified by some value
+  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'false' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
 begin
@@ -577,20 +577,20 @@ end
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
 | **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,short_description,active,url&#39;] |
 | **brand_ids** | **String** | Retrieves brands specified by brand ids | [optional] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **category_id** | **String** | Retrieves product brands specified by category id | [optional] |
+| **parent_id** | **String** | Retrieves brands specified by parent id | [optional] |
 | **store_id** | **String** | Store Id | [optional] |
 | **lang_id** | **String** | Language id | [optional] |
+| **find_where** | **String** | Entity search that is specified by the comma-separated unique fields | [optional] |
+| **find_value** | **String** | Entity search that is specified by some value | [optional] |
 | **created_from** | **String** | Retrieve entities from their creation date | [optional] |
 | **created_to** | **String** | Retrieve entities to their creation date | [optional] |
 | **modified_from** | **String** | Retrieve entities from their modification date | [optional] |
 | **modified_to** | **String** | Retrieve entities to their modification date | [optional] |
-| **parent_id** | **String** | Retrieves brands specified by parent id | [optional] |
 | **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **find_where** | **String** | Entity search that is specified by the comma-separated unique fields | [optional] |
-| **find_value** | **String** | Entity search that is specified by some value | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,short_description,active,url&#39;] |
+| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -720,12 +720,12 @@ api_instance = OpenapiClient::ProductApi.new
 product_id = '10' # String | Filter by parent product id
 id = '10' # String | Entity id
 opts = {
-  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  response_fields: '{result{id,parent_id,sku,upc,images,combination}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'false', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   store_id: '1', # String | Store Id
   lang_id: '3', # String | Language id
   currency_id: 'usd', # String | Currency Id
+  response_fields: '{result{id,parent_id,sku,upc,images,combination}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'false', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   use_latest_api_version: true # Boolean | Use the latest platform API version
 }
 
@@ -762,12 +762,12 @@ end
 | ---- | ---- | ----------- | ----- |
 | **product_id** | **String** | Filter by parent product id |  |
 | **id** | **String** | Entity id |  |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;force_all&#39;] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **store_id** | **String** | Store Id | [optional] |
 | **lang_id** | **String** | Language id | [optional] |
 | **currency_id** | **String** | Currency Id | [optional] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;force_all&#39;] |
+| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **use_latest_api_version** | **Boolean** | Use the latest platform API version | [optional][default to false] |
 
 ### Return type
@@ -812,16 +812,9 @@ end
 
 api_instance = OpenapiClient::ProductApi.new
 opts = {
-  page_cursor: 'page_cursor_example', # String | Used to retrieve products child items via cursor-based pagination (it can't be used with any other filtering parameter)
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  response_fields: '{result{children{id,parent_id,sku,upc,images,combination}}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'false', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
-  created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
-  modified_from: '2010-07-29 13:45:52', # String | Retrieve entities from their modification date
-  modified_to: '2100-08-29 13:45:52', # String | Retrieve entities to their modification date
+  page_cursor: 'page_cursor_example', # String | Used to retrieve products child items via cursor-based pagination (it can't be used with any other filtering parameter)
   product_id: '10', # String | Filter by parent product id
   product_ids: '4,5', # String | Filter by parent product ids
   sku: 'bag_01', # String | Filter by products variant's sku
@@ -831,10 +824,17 @@ opts = {
   avail_sale: false, # Boolean | Specifies the set of available/not available products for sale
   find_value: 'bundled-item-123-', # String | Entity search that is specified by some value
   find_where: 'sku', # String | Child products search that is specified by field
+  created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
+  created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
+  modified_from: '2010-07-29 13:45:52', # String | Retrieve entities from their modification date
+  modified_to: '2100-08-29 13:45:52', # String | Retrieve entities to their modification date
+  return_global: false, # Boolean | Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.
+  response_fields: '{result{children{id,parent_id,sku,upc,images,combination}}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'false', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   report_request_id: '105245017661', # String | Report request id
   disable_report_cache: false, # Boolean | Disable report cache for current request
-  use_latest_api_version: true, # Boolean | Use the latest platform API version
-  return_global: false # Boolean | Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.
+  use_latest_api_version: true # Boolean | Use the latest platform API version
 }
 
 begin
@@ -868,16 +868,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **page_cursor** | **String** | Used to retrieve products child items via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;force_all&#39;] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **created_from** | **String** | Retrieve entities from their creation date | [optional] |
-| **created_to** | **String** | Retrieve entities to their creation date | [optional] |
-| **modified_from** | **String** | Retrieve entities from their modification date | [optional] |
-| **modified_to** | **String** | Retrieve entities to their modification date | [optional] |
+| **page_cursor** | **String** | Used to retrieve products child items via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **product_id** | **String** | Filter by parent product id | [optional] |
 | **product_ids** | **String** | Filter by parent product ids | [optional] |
 | **sku** | **String** | Filter by products variant&#39;s sku | [optional] |
@@ -887,10 +880,17 @@ end
 | **avail_sale** | **Boolean** | Specifies the set of available/not available products for sale | [optional] |
 | **find_value** | **String** | Entity search that is specified by some value | [optional] |
 | **find_where** | **String** | Child products search that is specified by field | [optional] |
+| **created_from** | **String** | Retrieve entities from their creation date | [optional] |
+| **created_to** | **String** | Retrieve entities to their creation date | [optional] |
+| **modified_from** | **String** | Retrieve entities from their modification date | [optional] |
+| **modified_to** | **String** | Retrieve entities to their modification date | [optional] |
+| **return_global** | **Boolean** | Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. | [optional][default to false] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;force_all&#39;] |
+| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **report_request_id** | **String** | Report request id | [optional] |
 | **disable_report_cache** | **Boolean** | Disable report cache for current request | [optional][default to false] |
 | **use_latest_api_version** | **Boolean** | Use the latest platform API version | [optional][default to false] |
-| **return_global** | **Boolean** | Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. | [optional][default to false] |
 
 ### Return type
 
@@ -934,28 +934,28 @@ end
 
 api_instance = OpenapiClient::ProductApi.new
 opts = {
+  product_ids: '4,5', # String | Counts products specified by product ids
+  since_id: '56', # String | Retrieve entities starting from the specified id.
+  categories_ids: '23,56', # String | Defines product add that is specified by comma-separated categories id
   category_id: '6', # String | Counts products specified by category id
+  store_id: '1', # String | Counts products specified by store id
+  lang_id: '3', # String | Counts products specified by language id
+  avail_view: true, # Boolean | Specifies the set of visible/invisible products
+  avail_sale: false, # Boolean | Specifies the set of available/not available products for sale
   created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
   created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
   modified_from: '2010-07-29 13:45:52', # String | Retrieve entities from their modification date
   modified_to: '2100-08-29 13:45:52', # String | Retrieve entities to their modification date
-  avail_view: true, # Boolean | Specifies the set of visible/invisible products
-  avail_sale: false, # Boolean | Specifies the set of available/not available products for sale
-  store_id: '1', # String | Counts products specified by store id
-  lang_id: '3', # String | Counts products specified by language id
-  product_ids: '4,5', # String | Counts products specified by product ids
-  since_id: '56', # String | Retrieve entities starting from the specified id.
-  report_request_id: '105245017661', # String | Report request id
-  disable_report_cache: false, # Boolean | Disable report cache for current request
   brand_name: 'Abidas', # String | Retrieves brands specified by brand name
   product_attributes: ['inner_example'], # Array<String> | Defines product attributes
   status: 'disabled', # String | Defines product's status
   type: 'simple', # String | Defines products's type
   find_value: 'Phone', # String | Entity search that is specified by some value
   find_where: 'name', # String | Counts products that are searched specified by field
-  use_latest_api_version: true, # Boolean | Use the latest platform API version
+  report_request_id: '105245017661', # String | Report request id
   return_global: false, # Boolean | Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.
-  categories_ids: '23,56' # String | Defines product add that is specified by comma-separated categories id
+  disable_report_cache: false, # Boolean | Disable report cache for current request
+  use_latest_api_version: true # Boolean | Use the latest platform API version
 }
 
 begin
@@ -989,28 +989,28 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **product_ids** | **String** | Counts products specified by product ids | [optional] |
+| **since_id** | **String** | Retrieve entities starting from the specified id. | [optional] |
+| **categories_ids** | **String** | Defines product add that is specified by comma-separated categories id | [optional] |
 | **category_id** | **String** | Counts products specified by category id | [optional] |
+| **store_id** | **String** | Counts products specified by store id | [optional] |
+| **lang_id** | **String** | Counts products specified by language id | [optional] |
+| **avail_view** | **Boolean** | Specifies the set of visible/invisible products | [optional] |
+| **avail_sale** | **Boolean** | Specifies the set of available/not available products for sale | [optional] |
 | **created_from** | **String** | Retrieve entities from their creation date | [optional] |
 | **created_to** | **String** | Retrieve entities to their creation date | [optional] |
 | **modified_from** | **String** | Retrieve entities from their modification date | [optional] |
 | **modified_to** | **String** | Retrieve entities to their modification date | [optional] |
-| **avail_view** | **Boolean** | Specifies the set of visible/invisible products | [optional] |
-| **avail_sale** | **Boolean** | Specifies the set of available/not available products for sale | [optional] |
-| **store_id** | **String** | Counts products specified by store id | [optional] |
-| **lang_id** | **String** | Counts products specified by language id | [optional] |
-| **product_ids** | **String** | Counts products specified by product ids | [optional] |
-| **since_id** | **String** | Retrieve entities starting from the specified id. | [optional] |
-| **report_request_id** | **String** | Report request id | [optional] |
-| **disable_report_cache** | **Boolean** | Disable report cache for current request | [optional][default to false] |
 | **brand_name** | **String** | Retrieves brands specified by brand name | [optional] |
 | **product_attributes** | [**Array&lt;String&gt;**](String.md) | Defines product attributes | [optional] |
 | **status** | **String** | Defines product&#39;s status | [optional] |
 | **type** | **String** | Defines products&#39;s type | [optional] |
 | **find_value** | **String** | Entity search that is specified by some value | [optional] |
 | **find_where** | **String** | Counts products that are searched specified by field | [optional] |
-| **use_latest_api_version** | **Boolean** | Use the latest platform API version | [optional][default to false] |
+| **report_request_id** | **String** | Report request id | [optional] |
 | **return_global** | **Boolean** | Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. | [optional][default to false] |
-| **categories_ids** | **String** | Defines product add that is specified by comma-separated categories id | [optional] |
+| **disable_report_cache** | **Boolean** | Disable report cache for current request | [optional][default to false] |
+| **use_latest_api_version** | **Boolean** | Use the latest platform API version | [optional][default to false] |
 
 ### Return type
 
@@ -1146,12 +1146,12 @@ api_instance = OpenapiClient::ProductApi.new
 opts = {
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-  params: 'name,iso3,default,avail', # String | Set this parameter in order to choose which entity fields you want to retrieve
   page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-  exclude: 'name,iso3,default,avail', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  response_fields: '{return_message,pagination,result{currency}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
   default: true, # Boolean | Specifies the set of default/not default currencies
-  avail: false # Boolean | Specifies the set of available/not available currencies
+  avail: false, # Boolean | Specifies the set of available/not available currencies
+  response_fields: '{return_message,pagination,result{currency}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  params: 'name,iso3,default,avail', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'name,iso3,default,avail' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
 begin
@@ -1187,12 +1187,12 @@ end
 | ---- | ---- | ----------- | ----- |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;name,iso3,default,avail&#39;] |
 | **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **default** | **Boolean** | Specifies the set of default/not default currencies | [optional] |
 | **avail** | **Boolean** | Specifies the set of available/not available currencies | [optional] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;name,iso3,default,avail&#39;] |
+| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -1552,7 +1552,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::ProductApi.new
-product_image_add = OpenapiClient::ProductImageAdd.new({image_name: 'bag-gray.png', type: 'small'}) # ProductImageAdd | 
+product_image_add = OpenapiClient::ProductImageAdd.new({type: 'small', image_name: 'bag-gray.png'}) # ProductImageAdd | 
 
 begin
   # product.image.add
@@ -1714,12 +1714,12 @@ product_id = '10' # String | Defines product id where the image should be update
 id = '10' # String | Defines image update specified by image id
 opts = {
   variant_ids: '1,2,3,4,5', # String | Defines product's variants ids
+  store_id: '1', # String | Store Id
+  lang_id: '3', # String | Language id
   image_name: 'data/product/main/product_69_bag-gray.png', # String | Defines image's name
   type: 'thumbnail', # String | Defines image's types that are specified by comma-separated list
   label: 'This cool image', # String | Defines alternative text that has to be attached to the picture
   position: 5, # Integer | Defines image’s position in the list
-  store_id: '1', # String | Store Id
-  lang_id: '3', # String | Language id
   hidden: true # Boolean | Define is hide image
 }
 
@@ -1757,12 +1757,12 @@ end
 | **product_id** | **String** | Defines product id where the image should be updated |  |
 | **id** | **String** | Defines image update specified by image id |  |
 | **variant_ids** | **String** | Defines product&#39;s variants ids | [optional] |
+| **store_id** | **String** | Store Id | [optional] |
+| **lang_id** | **String** | Language id | [optional] |
 | **image_name** | **String** | Defines image&#39;s name | [optional] |
 | **type** | **String** | Defines image&#39;s types that are specified by comma-separated list | [optional][default to &#39;additional&#39;] |
 | **label** | **String** | Defines alternative text that has to be attached to the picture | [optional] |
 | **position** | **Integer** | Defines image’s position in the list | [optional] |
-| **store_id** | **String** | Store Id | [optional] |
-| **lang_id** | **String** | Language id | [optional] |
 | **hidden** | **Boolean** | Define is hide image | [optional] |
 
 ### Return type
@@ -1808,12 +1808,12 @@ end
 api_instance = OpenapiClient::ProductApi.new
 id = '10' # String | Retrieves product's info specified by product id
 opts = {
-  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  response_fields: '{result{id,name,price,images}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'false', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   store_id: '1', # String | Retrieves product info specified by store id
   lang_id: '3', # String | Retrieves product info specified by language id
   currency_id: 'usd', # String | Currency Id
+  response_fields: '{result{id,name,price,images}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'false', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   report_request_id: '105245017661', # String | Report request id
   disable_report_cache: false, # Boolean | Disable report cache for current request
   use_latest_api_version: true # Boolean | Use the latest platform API version
@@ -1851,12 +1851,12 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Retrieves product&#39;s info specified by product id |  |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,description,price,categories_ids&#39;] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **store_id** | **String** | Retrieves product info specified by store id | [optional] |
 | **lang_id** | **String** | Retrieves product info specified by language id | [optional] |
 | **currency_id** | **String** | Currency Id | [optional] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,description,price,categories_ids&#39;] |
+| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **report_request_id** | **String** | Report request id | [optional] |
 | **disable_report_cache** | **Boolean** | Disable report cache for current request | [optional][default to false] |
 | **use_latest_api_version** | **Boolean** | Use the latest platform API version | [optional][default to false] |
@@ -1903,39 +1903,39 @@ end
 
 api_instance = OpenapiClient::ProductApi.new
 opts = {
-  page_cursor: 'page_cursor_example', # String | Used to retrieve products via cursor-based pagination (it can't be used with any other filtering parameter)
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  response_fields: '{return_code,pagination,result{product{id,name,price,images}}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'false', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+  page_cursor: 'page_cursor_example', # String | Used to retrieve products via cursor-based pagination (it can't be used with any other filtering parameter)
+  product_ids: '4,5', # String | Retrieves products specified by product ids
+  since_id: '56', # String | Retrieve entities starting from the specified id.
+  categories_ids: '23,56', # String | Retrieves products specified by categories ids
   category_id: '6', # String | Retrieves products specified by category id
+  store_id: '1', # String | Retrieves products specified by store id
+  lang_id: '3', # String | Retrieves products specified by language id
+  currency_id: 'usd', # String | Currency Id
+  avail_view: true, # Boolean | Specifies the set of visible/invisible products
+  avail_sale: false, # Boolean | Specifies the set of available/not available products for sale
   created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
   created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
   modified_from: '2010-07-29 13:45:52', # String | Retrieve entities from their modification date
   modified_to: '2100-08-29 13:45:52', # String | Retrieve entities to their modification date
-  avail_view: true, # Boolean | Specifies the set of visible/invisible products
-  avail_sale: false, # Boolean | Specifies the set of available/not available products for sale
-  store_id: '1', # String | Retrieves products specified by store id
-  lang_id: '3', # String | Retrieves products specified by language id
-  currency_id: 'usd', # String | Currency Id
-  product_ids: '4,5', # String | Retrieves products specified by product ids
-  since_id: '56', # String | Retrieve entities starting from the specified id.
-  report_request_id: '105245017661', # String | Report request id
-  disable_report_cache: false, # Boolean | Disable report cache for current request
-  sort_by: 'value_id', # String | Set field to sort by
-  sort_direction: 'asc', # String | Set sorting direction
   sku: 'bag_01', # String | Filter by product's sku
-  disable_cache: false, # Boolean | Disable cache for current request
   brand_name: 'Abidas', # String | Retrieves brands specified by brand name
   product_attributes: ['inner_example'], # Array<String> | Defines product attributes
   status: 'disabled', # String | Defines product's status
   type: 'simple', # String | Defines products's type
   find_value: 'Phone', # String | Entity search that is specified by some value
   find_where: 'name', # String | Product search that is specified by field
-  use_latest_api_version: true, # Boolean | Use the latest platform API version
   return_global: false, # Boolean | Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.
-  categories_ids: '23,56' # String | Retrieves products specified by categories ids
+  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  response_fields: '{return_code,pagination,result{product{id,name,price,images}}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'false', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+  sort_by: 'value_id', # String | Set field to sort by
+  sort_direction: 'asc', # String | Set sorting direction
+  report_request_id: '105245017661', # String | Report request id
+  disable_cache: false, # Boolean | Disable cache for current request
+  disable_report_cache: false, # Boolean | Disable report cache for current request
+  use_latest_api_version: true # Boolean | Use the latest platform API version
 }
 
 begin
@@ -1969,39 +1969,39 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **page_cursor** | **String** | Used to retrieve products via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,description,price,categories_ids&#39;] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **page_cursor** | **String** | Used to retrieve products via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
+| **product_ids** | **String** | Retrieves products specified by product ids | [optional] |
+| **since_id** | **String** | Retrieve entities starting from the specified id. | [optional] |
+| **categories_ids** | **String** | Retrieves products specified by categories ids | [optional] |
 | **category_id** | **String** | Retrieves products specified by category id | [optional] |
+| **store_id** | **String** | Retrieves products specified by store id | [optional] |
+| **lang_id** | **String** | Retrieves products specified by language id | [optional] |
+| **currency_id** | **String** | Currency Id | [optional] |
+| **avail_view** | **Boolean** | Specifies the set of visible/invisible products | [optional] |
+| **avail_sale** | **Boolean** | Specifies the set of available/not available products for sale | [optional] |
 | **created_from** | **String** | Retrieve entities from their creation date | [optional] |
 | **created_to** | **String** | Retrieve entities to their creation date | [optional] |
 | **modified_from** | **String** | Retrieve entities from their modification date | [optional] |
 | **modified_to** | **String** | Retrieve entities to their modification date | [optional] |
-| **avail_view** | **Boolean** | Specifies the set of visible/invisible products | [optional] |
-| **avail_sale** | **Boolean** | Specifies the set of available/not available products for sale | [optional] |
-| **store_id** | **String** | Retrieves products specified by store id | [optional] |
-| **lang_id** | **String** | Retrieves products specified by language id | [optional] |
-| **currency_id** | **String** | Currency Id | [optional] |
-| **product_ids** | **String** | Retrieves products specified by product ids | [optional] |
-| **since_id** | **String** | Retrieve entities starting from the specified id. | [optional] |
-| **report_request_id** | **String** | Report request id | [optional] |
-| **disable_report_cache** | **Boolean** | Disable report cache for current request | [optional][default to false] |
-| **sort_by** | **String** | Set field to sort by | [optional][default to &#39;id&#39;] |
-| **sort_direction** | **String** | Set sorting direction | [optional][default to &#39;asc&#39;] |
 | **sku** | **String** | Filter by product&#39;s sku | [optional] |
-| **disable_cache** | **Boolean** | Disable cache for current request | [optional][default to false] |
 | **brand_name** | **String** | Retrieves brands specified by brand name | [optional] |
 | **product_attributes** | [**Array&lt;String&gt;**](String.md) | Defines product attributes | [optional] |
 | **status** | **String** | Defines product&#39;s status | [optional] |
 | **type** | **String** | Defines products&#39;s type | [optional] |
 | **find_value** | **String** | Entity search that is specified by some value | [optional] |
 | **find_where** | **String** | Product search that is specified by field | [optional] |
-| **use_latest_api_version** | **Boolean** | Use the latest platform API version | [optional][default to false] |
 | **return_global** | **Boolean** | Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. | [optional][default to false] |
-| **categories_ids** | **String** | Retrieves products specified by categories ids | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,description,price,categories_ids&#39;] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **sort_by** | **String** | Set field to sort by | [optional][default to &#39;id&#39;] |
+| **sort_direction** | **String** | Set sorting direction | [optional][default to &#39;asc&#39;] |
+| **report_request_id** | **String** | Report request id | [optional] |
+| **disable_cache** | **Boolean** | Disable cache for current request | [optional][default to false] |
+| **disable_report_cache** | **Boolean** | Disable report cache for current request | [optional][default to false] |
+| **use_latest_api_version** | **Boolean** | Use the latest platform API version | [optional][default to false] |
 
 ### Return type
 
@@ -2375,12 +2375,12 @@ api_instance = OpenapiClient::ProductApi.new
 opts = {
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-  params: 'id,name,sort_order', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'id,name,sort_order', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  response_fields: '{return_code,return_message,pagination,result}', # String | Set this parameter in order to choose which entity fields you want to retrieve
   product_id: '10', # String | Retrieves products' options specified by product id
   lang_id: '3', # String | Language id
-  store_id: '1' # String | Store Id
+  store_id: '1', # String | Store Id
+  response_fields: '{return_code,return_message,pagination,result}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  params: 'id,name,sort_order', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'id,name,sort_order' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
 begin
@@ -2416,12 +2416,12 @@ end
 | ---- | ---- | ----------- | ----- |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,description&#39;] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **product_id** | **String** | Retrieves products&#39; options specified by product id | [optional] |
 | **lang_id** | **String** | Language id | [optional] |
 | **store_id** | **String** | Store Id | [optional] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,description&#39;] |
+| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -3049,14 +3049,14 @@ api_instance = OpenapiClient::ProductApi.new
 product_id = '10' # String | Product id
 opts = {
   start: 0, # Integer | This parameter sets the number from which you want to get entities
-  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   ids: '24,25', # String | Retrieves reviews specified by ids
   store_id: '1', # String | Store Id
   status: 'disabled', # String | Defines status
+  response_fields: '{return_code,return_message,pagination,result}', # String | Set this parameter in order to choose which entity fields you want to retrieve
   params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'false', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  response_fields: '{return_code,return_message,pagination,result}' # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'false' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
 begin
@@ -3092,14 +3092,14 @@ end
 | ---- | ---- | ----------- | ----- |
 | **product_id** | **String** | Product id |  |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
-| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
+| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **ids** | **String** | Retrieves reviews specified by ids | [optional] |
 | **store_id** | **String** | Store Id | [optional] |
 | **status** | **String** | Defines status | [optional] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time&#39;] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 
 ### Return type
 
@@ -3602,12 +3602,12 @@ end
 api_instance = OpenapiClient::ProductApi.new
 product_id = '10' # String | Retrieves products' variants specified by product id
 opts = {
+  category_id: '6', # String | Counts products’ variants specified by category id
+  store_id: '1', # String | Retrieves variants specified by store id
   created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
   created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
   modified_from: '2010-07-29 13:45:52', # String | Retrieve entities from their modification date
-  modified_to: '2100-08-29 13:45:52', # String | Retrieve entities to their modification date
-  category_id: '6', # String | Counts products’ variants specified by category id
-  store_id: '1' # String | Retrieves variants specified by store id
+  modified_to: '2100-08-29 13:45:52' # String | Retrieve entities to their modification date
 }
 
 begin
@@ -3642,12 +3642,12 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **product_id** | **String** | Retrieves products&#39; variants specified by product id |  |
+| **category_id** | **String** | Counts products’ variants specified by category id | [optional] |
+| **store_id** | **String** | Retrieves variants specified by store id | [optional] |
 | **created_from** | **String** | Retrieve entities from their creation date | [optional] |
 | **created_to** | **String** | Retrieve entities to their creation date | [optional] |
 | **modified_from** | **String** | Retrieve entities from their modification date | [optional] |
 | **modified_to** | **String** | Retrieve entities to their modification date | [optional] |
-| **category_id** | **String** | Counts products’ variants specified by category id | [optional] |
-| **store_id** | **String** | Retrieves variants specified by store id | [optional] |
 
 ### Return type
 
@@ -4010,9 +4010,9 @@ end
 api_instance = OpenapiClient::ProductApi.new
 id = '10' # String | Retrieves variant's info specified by variant id
 opts = {
+  store_id: '1', # String | Retrieves variant info specified by store id
   params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'false', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  store_id: '1' # String | Retrieves variant info specified by store id
+  exclude: 'false' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
 begin
@@ -4047,9 +4047,9 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Retrieves variant&#39;s info specified by variant id |  |
+| **store_id** | **String** | Retrieves variant info specified by store id | [optional] |
 | **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,description,price&#39;] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **store_id** | **String** | Retrieves variant info specified by store id | [optional] |
 
 ### Return type
 
@@ -4095,15 +4095,15 @@ api_instance = OpenapiClient::ProductApi.new
 opts = {
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'false', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+  product_id: '10', # String | Retrieves products' variants specified by product id
+  category_id: '6', # String | Retrieves products’ variants specified by category id
+  store_id: '1', # String | Retrieves variants specified by store id
   created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
   created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
   modified_from: '2010-07-29 13:45:52', # String | Retrieve entities from their modification date
   modified_to: '2100-08-29 13:45:52', # String | Retrieve entities to their modification date
-  category_id: '6', # String | Retrieves products’ variants specified by category id
-  product_id: '10', # String | Retrieves products' variants specified by product id
-  store_id: '1' # String | Retrieves variants specified by store id
+  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'false' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
 begin
@@ -4139,15 +4139,15 @@ end
 | ---- | ---- | ----------- | ----- |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,description,price&#39;] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **product_id** | **String** | Retrieves products&#39; variants specified by product id | [optional] |
+| **category_id** | **String** | Retrieves products’ variants specified by category id | [optional] |
+| **store_id** | **String** | Retrieves variants specified by store id | [optional] |
 | **created_from** | **String** | Retrieve entities from their creation date | [optional] |
 | **created_to** | **String** | Retrieve entities to their creation date | [optional] |
 | **modified_from** | **String** | Retrieve entities from their modification date | [optional] |
 | **modified_to** | **String** | Retrieve entities to their modification date | [optional] |
-| **category_id** | **String** | Retrieves products’ variants specified by category id | [optional] |
-| **product_id** | **String** | Retrieves products&#39; variants specified by product id | [optional] |
-| **store_id** | **String** | Retrieves variants specified by store id | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,description,price&#39;] |
+| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 

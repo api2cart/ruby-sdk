@@ -41,9 +41,9 @@ api_instance = OpenapiClient::BasketApi.new
 id = '10' # String | Entity id
 opts = {
   store_id: '1', # String | Store Id
+  response_fields: '{result}', # String | Set this parameter in order to choose which entity fields you want to retrieve
   params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'false', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  response_fields: '{result}' # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'false' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
 begin
@@ -79,9 +79,9 @@ end
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Entity id |  |
 | **store_id** | **String** | Store Id | [optional] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;force_all&#39;] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 
 ### Return type
 
@@ -369,9 +369,9 @@ end
 
 api_instance = OpenapiClient::BasketApi.new
 opts = {
-  store_id: '1', # String | Store Id
   start: 0, # Integer | This parameter sets the number from which you want to get entities
-  count: 20 # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  store_id: '1' # String | Store Id
 }
 
 begin
@@ -405,9 +405,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **store_id** | **String** | Store Id | [optional] |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
+| **store_id** | **String** | Store Id | [optional] |
 
 ### Return type
 

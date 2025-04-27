@@ -91,13 +91,13 @@ describe 'WebhookApi' do
   # webhook.list
   # List registered webhook on the store.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
   # @option opts [String] :entity The entity you want to filter webhooks by (e.g. order or product)
   # @option opts [String] :action The action you want to filter webhooks by (e.g. add, update, or delete)
   # @option opts [Boolean] :active The webhook status you want to filter webhooks by
   # @option opts [String] :ids List of сomma-separated webhook ids
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @return [WebhookList200Response]
   describe 'webhook_list test' do
     it 'should work' do

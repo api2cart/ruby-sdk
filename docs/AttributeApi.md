@@ -334,9 +334,9 @@ api_instance = OpenapiClient::AttributeApi.new
 opts = {
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  response_fields: '{result}', # String | Set this parameter in order to choose which entity fields you want to retrieve
   params: 'id,name', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'id,name', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  response_fields: '{result}' # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'id,name' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
 begin
@@ -372,9 +372,9 @@ end
 | ---- | ---- | ----------- | ----- |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name&#39;] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 
 ### Return type
 
@@ -590,11 +590,11 @@ api_instance = OpenapiClient::AttributeApi.new
 opts = {
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  attribute_set_id: '4', # String | Attribute set id
   lang_id: '3', # String | Language id
-  params: 'id,name', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'id,name', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   response_fields: '{result}', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  attribute_set_id: '4' # String | Attribute set id
+  params: 'id,name', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'id,name' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
 begin
@@ -630,11 +630,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
+| **attribute_set_id** | **String** | Attribute set id | [optional] |
 | **lang_id** | **String** | Language id | [optional] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name&#39;] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **attribute_set_id** | **String** | Attribute set id | [optional] |
 
 ### Return type
 
@@ -682,9 +682,9 @@ opts = {
   attribute_set_id: '4', # String | Attribute set id
   store_id: '1', # String | Store Id
   lang_id: '3', # String | Language id
+  response_fields: '{result}', # String | Set this parameter in order to choose which entity fields you want to retrieve
   params: 'force_all', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'name', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  response_fields: '{result}' # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'name' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
 begin
@@ -722,9 +722,9 @@ end
 | **attribute_set_id** | **String** | Attribute set id | [optional] |
 | **store_id** | **String** | Store Id | [optional] |
 | **lang_id** | **String** | Language id | [optional] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;force_all&#39;] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 
 ### Return type
 
@@ -770,17 +770,17 @@ api_instance = OpenapiClient::AttributeApi.new
 opts = {
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-  type: 'text', # String | Defines attribute's type
   attribute_ids: '1,2,3', # String | Filter attributes by ids
   attribute_set_id: '4', # String | Filter items by attribute set id
   store_id: '1', # String | Store Id
   lang_id: '3', # String | Retrieves attributes on specified language id
-  params: 'id,name', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'id,name', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  response_fields: '{return_code,return_message,pagination,result}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  type: 'text', # String | Defines attribute's type
   visible: true, # Boolean | Filter items by visibility status
   required: true, # Boolean | Defines if the option is required
-  system: false # Boolean | True if attribute is system
+  system: false, # Boolean | True if attribute is system
+  response_fields: '{return_code,return_message,pagination,result}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  params: 'id,name', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'id,name' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
 begin
@@ -816,17 +816,17 @@ end
 | ---- | ---- | ----------- | ----- |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
-| **type** | **String** | Defines attribute&#39;s type | [optional] |
 | **attribute_ids** | **String** | Filter attributes by ids | [optional] |
 | **attribute_set_id** | **String** | Filter items by attribute set id | [optional] |
 | **store_id** | **String** | Store Id | [optional] |
 | **lang_id** | **String** | Retrieves attributes on specified language id | [optional] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,code,type&#39;] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **type** | **String** | Defines attribute&#39;s type | [optional] |
 | **visible** | **Boolean** | Filter items by visibility status | [optional] |
 | **required** | **Boolean** | Defines if the option is required | [optional] |
 | **system** | **Boolean** | True if attribute is system | [optional] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,code,type&#39;] |
+| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 

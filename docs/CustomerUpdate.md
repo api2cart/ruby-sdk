@@ -17,9 +17,9 @@
 | **consents** | [**Array&lt;CustomerAddConsentsInner&gt;**](CustomerAddConsentsInner.md) | Defines consents to notifications | [optional] |
 | **tags** | **String** | Customer tags | [optional] |
 | **gender** | **String** | Defines customer&#39;s gender | [optional] |
-| **store_id** | **String** | Store Id | [optional] |
 | **note** | **String** | The customer note. | [optional] |
 | **status** | **String** | Defines customer&#39;s status | [optional] |
+| **store_id** | **String** | Store Id | [optional] |
 | **address** | [**Array&lt;CustomerUpdateAddressInner&gt;**](CustomerUpdateAddressInner.md) |  | [optional] |
 
 ## Example
@@ -41,9 +41,9 @@ instance = OpenapiClient::CustomerUpdate.new(
   consents: null,
   tags: tag1,tag2,
   gender: male,
-  store_id: 1,
   note: Customer note,
   status: disabled,
+  store_id: 1,
   address: null
 )
 ```

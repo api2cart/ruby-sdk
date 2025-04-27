@@ -15,29 +15,14 @@ require 'time'
 
 module OpenapiClient
   class ProductImageAdd
-    # Defines product id where the image should be added
-    attr_accessor :product_id
+    # Defines image's types that are specified by comma-separated list
+    attr_accessor :type
 
     # Defines image's name
     attr_accessor :image_name
 
-    # Defines image's types that are specified by comma-separated list
-    attr_accessor :type
-
-    # Defines URL of the image that has to be added
-    attr_accessor :url
-
-    # Defines alternative text that has to be attached to the picture
-    attr_accessor :label
-
-    # Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
-    attr_accessor :mime
-
-    # Defines image’s position in the list
-    attr_accessor :position
-
-    # Content(body) encoded in base64 of image file
-    attr_accessor :content
+    # Defines product id where the image should be added
+    attr_accessor :product_id
 
     # Defines product's variants specified by variant id
     attr_accessor :product_variant_id
@@ -53,6 +38,21 @@ module OpenapiClient
 
     # Add product image on specified language id
     attr_accessor :lang_id
+
+    # Defines URL of the image that has to be added
+    attr_accessor :url
+
+    # Content(body) encoded in base64 of image file
+    attr_accessor :content
+
+    # Defines alternative text that has to be attached to the picture
+    attr_accessor :label
+
+    # Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
+    attr_accessor :mime
+
+    # Defines image’s position in the list
+    attr_accessor :position
 
     # Use the latest platform API version
     attr_accessor :use_latest_api_version
@@ -82,19 +82,19 @@ module OpenapiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'product_id' => :'product_id',
-        :'image_name' => :'image_name',
         :'type' => :'type',
-        :'url' => :'url',
-        :'label' => :'label',
-        :'mime' => :'mime',
-        :'position' => :'position',
-        :'content' => :'content',
+        :'image_name' => :'image_name',
+        :'product_id' => :'product_id',
         :'product_variant_id' => :'product_variant_id',
         :'variant_ids' => :'variant_ids',
         :'option_value_ids' => :'option_value_ids',
         :'store_id' => :'store_id',
         :'lang_id' => :'lang_id',
+        :'url' => :'url',
+        :'content' => :'content',
+        :'label' => :'label',
+        :'mime' => :'mime',
+        :'position' => :'position',
         :'use_latest_api_version' => :'use_latest_api_version'
       }
     end
@@ -107,19 +107,19 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'product_id' => :'String',
-        :'image_name' => :'String',
         :'type' => :'String',
-        :'url' => :'String',
-        :'label' => :'String',
-        :'mime' => :'String',
-        :'position' => :'Integer',
-        :'content' => :'String',
+        :'image_name' => :'String',
+        :'product_id' => :'String',
         :'product_variant_id' => :'String',
         :'variant_ids' => :'String',
         :'option_value_ids' => :'String',
         :'store_id' => :'String',
         :'lang_id' => :'String',
+        :'url' => :'String',
+        :'content' => :'String',
+        :'label' => :'String',
+        :'mime' => :'String',
+        :'position' => :'Integer',
         :'use_latest_api_version' => :'Boolean'
       }
     end
@@ -145,8 +145,10 @@ module OpenapiClient
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'product_id')
-        self.product_id = attributes[:'product_id']
+      if attributes.key?(:'type')
+        self.type = attributes[:'type']
+      else
+        self.type = nil
       end
 
       if attributes.key?(:'image_name')
@@ -155,32 +157,8 @@ module OpenapiClient
         self.image_name = nil
       end
 
-      if attributes.key?(:'type')
-        self.type = attributes[:'type']
-      else
-        self.type = nil
-      end
-
-      if attributes.key?(:'url')
-        self.url = attributes[:'url']
-      end
-
-      if attributes.key?(:'label')
-        self.label = attributes[:'label']
-      end
-
-      if attributes.key?(:'mime')
-        self.mime = attributes[:'mime']
-      end
-
-      if attributes.key?(:'position')
-        self.position = attributes[:'position']
-      else
-        self.position = 0
-      end
-
-      if attributes.key?(:'content')
-        self.content = attributes[:'content']
+      if attributes.key?(:'product_id')
+        self.product_id = attributes[:'product_id']
       end
 
       if attributes.key?(:'product_variant_id')
@@ -203,6 +181,28 @@ module OpenapiClient
         self.lang_id = attributes[:'lang_id']
       end
 
+      if attributes.key?(:'url')
+        self.url = attributes[:'url']
+      end
+
+      if attributes.key?(:'content')
+        self.content = attributes[:'content']
+      end
+
+      if attributes.key?(:'label')
+        self.label = attributes[:'label']
+      end
+
+      if attributes.key?(:'mime')
+        self.mime = attributes[:'mime']
+      end
+
+      if attributes.key?(:'position')
+        self.position = attributes[:'position']
+      else
+        self.position = 0
+      end
+
       if attributes.key?(:'use_latest_api_version')
         self.use_latest_api_version = attributes[:'use_latest_api_version']
       else
@@ -215,12 +215,12 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
-      if @image_name.nil?
-        invalid_properties.push('invalid value for "image_name", image_name cannot be nil.')
-      end
-
       if @type.nil?
         invalid_properties.push('invalid value for "type", type cannot be nil.')
+      end
+
+      if @image_name.nil?
+        invalid_properties.push('invalid value for "image_name", image_name cannot be nil.')
       end
 
       invalid_properties
@@ -230,10 +230,10 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
-      return false if @image_name.nil?
       return false if @type.nil?
       type_validator = EnumAttributeValidator.new('String', ["small", "base", "additional", "thumbnail"])
       return false unless type_validator.valid?(@type)
+      return false if @image_name.nil?
       true
     end
 
@@ -252,19 +252,19 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          product_id == o.product_id &&
-          image_name == o.image_name &&
           type == o.type &&
-          url == o.url &&
-          label == o.label &&
-          mime == o.mime &&
-          position == o.position &&
-          content == o.content &&
+          image_name == o.image_name &&
+          product_id == o.product_id &&
           product_variant_id == o.product_variant_id &&
           variant_ids == o.variant_ids &&
           option_value_ids == o.option_value_ids &&
           store_id == o.store_id &&
           lang_id == o.lang_id &&
+          url == o.url &&
+          content == o.content &&
+          label == o.label &&
+          mime == o.mime &&
+          position == o.position &&
           use_latest_api_version == o.use_latest_api_version
     end
 
@@ -277,7 +277,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [product_id, image_name, type, url, label, mime, position, content, product_variant_id, variant_ids, option_value_ids, store_id, lang_id, use_latest_api_version].hash
+      [type, image_name, product_id, product_variant_id, variant_ids, option_value_ids, store_id, lang_id, url, content, label, mime, position, use_latest_api_version].hash
     end
 
     # Builds the object from hash

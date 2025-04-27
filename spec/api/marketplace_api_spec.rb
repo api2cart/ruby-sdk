@@ -36,20 +36,20 @@ describe 'MarketplaceApi' do
   # marketplace.product.find
   # Search product in global catalog.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :store_id Store Id
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
   # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-  # @option opts [String] :categories_ids Defines product add that is specified by comma-separated categories id
   # @option opts [String] :keyword Defines search keyword
+  # @option opts [String] :categories_ids Defines product add that is specified by comma-separated categories id
+  # @option opts [String] :store_id Store Id
   # @option opts [String] :asin Amazon Standard Identification Number.
   # @option opts [String] :ean European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products.
   # @option opts [String] :gtin Global Trade Item Number. An GTIN is an identifier for trade items.
   # @option opts [String] :upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products.
   # @option opts [String] :mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
   # @option opts [String] :isbn International Standard Book Number. An ISBN is a unique identifier for books.
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @return [ModelResponseMarketplaceProductFind]
   describe 'marketplace_product_find test' do
     it 'should work' do

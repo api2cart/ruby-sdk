@@ -47,20 +47,20 @@ end
 api_instance = OpenapiClient::CategoryApi.new
 name = 'Shoes' # String | Defines category's name that has to be added
 opts = {
-  parent_id: '6', # String | Adds categories specified by parent id
-  stores_ids: '1,2', # String | Create category in the stores that is specified by comma-separated stores' id
-  store_id: '1', # String | Store Id
-  lang_id: '3', # String | Language id
-  avail: false, # Boolean | Defines category's visibility status
-  sort_order: 2, # Integer | Sort number in the list
-  created_time: '2014-01-30 15:58:41', # String | Entity's date creation
-  modified_time: '2014-07-30 15:58:41', # String | Entity's date modification
   description: 'Test category', # String | Defines category's description
   short_description: 'Short description. This is very short description', # String | Defines short description
+  parent_id: '6', # String | Adds categories specified by parent id
+  avail: false, # Boolean | Defines category's visibility status
+  created_time: '2014-01-30 15:58:41', # String | Entity's date creation
+  modified_time: '2014-07-30 15:58:41', # String | Entity's date modification
+  sort_order: 2, # Integer | Sort number in the list
   meta_title: 'category,test', # String | Defines unique meta title for each entity
   meta_description: 'category,test', # String | Defines unique meta description of a entity
   meta_keywords: 'category,test', # String | Defines unique meta keywords for each entity
-  seo_url: 'category,test' # String | Defines unique category's URL for SEO
+  seo_url: 'category,test', # String | Defines unique category's URL for SEO
+  store_id: '1', # String | Store Id
+  stores_ids: '1,2', # String | Create category in the stores that is specified by comma-separated stores' id
+  lang_id: '3' # String | Language id
 }
 
 begin
@@ -95,20 +95,20 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | Defines category&#39;s name that has to be added |  |
-| **parent_id** | **String** | Adds categories specified by parent id | [optional] |
-| **stores_ids** | **String** | Create category in the stores that is specified by comma-separated stores&#39; id | [optional] |
-| **store_id** | **String** | Store Id | [optional] |
-| **lang_id** | **String** | Language id | [optional] |
-| **avail** | **Boolean** | Defines category&#39;s visibility status | [optional][default to true] |
-| **sort_order** | **Integer** | Sort number in the list | [optional][default to 0] |
-| **created_time** | **String** | Entity&#39;s date creation | [optional] |
-| **modified_time** | **String** | Entity&#39;s date modification | [optional] |
 | **description** | **String** | Defines category&#39;s description | [optional] |
 | **short_description** | **String** | Defines short description | [optional] |
+| **parent_id** | **String** | Adds categories specified by parent id | [optional] |
+| **avail** | **Boolean** | Defines category&#39;s visibility status | [optional][default to true] |
+| **created_time** | **String** | Entity&#39;s date creation | [optional] |
+| **modified_time** | **String** | Entity&#39;s date modification | [optional] |
+| **sort_order** | **Integer** | Sort number in the list | [optional][default to 0] |
 | **meta_title** | **String** | Defines unique meta title for each entity | [optional] |
 | **meta_description** | **String** | Defines unique meta description of a entity | [optional] |
 | **meta_keywords** | **String** | Defines unique meta keywords for each entity | [optional] |
 | **seo_url** | **String** | Defines unique category&#39;s URL for SEO | [optional] |
+| **store_id** | **String** | Store Id | [optional] |
+| **stores_ids** | **String** | Create category in the stores that is specified by comma-separated stores&#39; id | [optional] |
+| **lang_id** | **String** | Language id | [optional] |
 
 ### Return type
 
@@ -202,7 +202,7 @@ end
 
 ## category_assign
 
-> <CartConfigUpdate200Response> category_assign(product_id, category_id, opts)
+> <CartConfigUpdate200Response> category_assign(category_id, product_id, opts)
 
 category.assign
 
@@ -227,15 +227,15 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::CategoryApi.new
-product_id = '10' # String | Defines category assign to the product, specified by product id
 category_id = '6' # String | Defines category assign, specified by category id
+product_id = '10' # String | Defines category assign to the product, specified by product id
 opts = {
   store_id: '1' # String | Store Id
 }
 
 begin
   # category.assign
-  result = api_instance.category_assign(product_id, category_id, opts)
+  result = api_instance.category_assign(category_id, product_id, opts)
   p result
 rescue OpenapiClient::ApiError => e
   puts "Error when calling CategoryApi->category_assign: #{e}"
@@ -246,12 +246,12 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CartConfigUpdate200Response>, Integer, Hash)> category_assign_with_http_info(product_id, category_id, opts)
+> <Array(<CartConfigUpdate200Response>, Integer, Hash)> category_assign_with_http_info(category_id, product_id, opts)
 
 ```ruby
 begin
   # category.assign
-  data, status_code, headers = api_instance.category_assign_with_http_info(product_id, category_id, opts)
+  data, status_code, headers = api_instance.category_assign_with_http_info(category_id, product_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => <CartConfigUpdate200Response>
@@ -264,8 +264,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **product_id** | **String** | Defines category assign to the product, specified by product id |  |
 | **category_id** | **String** | Defines category assign, specified by category id |  |
+| **product_id** | **String** | Defines category assign to the product, specified by product id |  |
 | **store_id** | **String** | Store Id | [optional] |
 
 ### Return type
@@ -313,11 +313,11 @@ opts = {
   parent_id: '6', # String | Counts categories specified by parent id
   store_id: '1', # String | Counts category specified by store id
   lang_id: '3', # String | Counts category specified by language id
+  avail: false, # Boolean | Defines category's visibility status
   created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
   created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
   modified_from: '2010-07-29 13:45:52', # String | Retrieve entities from their modification date
   modified_to: '2100-08-29 13:45:52', # String | Retrieve entities to their modification date
-  avail: false, # Boolean | Defines category's visibility status
   product_type: 'BICYCLE', # String | A categorization for the product
   find_value: 'Demo category 1', # String | Entity search that is specified by some value
   find_where: 'email', # String | Counts categories that are searched specified by field
@@ -359,11 +359,11 @@ end
 | **parent_id** | **String** | Counts categories specified by parent id | [optional] |
 | **store_id** | **String** | Counts category specified by store id | [optional] |
 | **lang_id** | **String** | Counts category specified by language id | [optional] |
+| **avail** | **Boolean** | Defines category&#39;s visibility status | [optional][default to true] |
 | **created_from** | **String** | Retrieve entities from their creation date | [optional] |
 | **created_to** | **String** | Retrieve entities to their creation date | [optional] |
 | **modified_from** | **String** | Retrieve entities from their modification date | [optional] |
 | **modified_to** | **String** | Retrieve entities to their modification date | [optional] |
-| **avail** | **Boolean** | Defines category&#39;s visibility status | [optional][default to true] |
 | **product_type** | **String** | A categorization for the product | [optional] |
 | **find_value** | **String** | Entity search that is specified by some value | [optional] |
 | **find_where** | **String** | Counts categories that are searched specified by field | [optional] |
@@ -582,10 +582,10 @@ image_name = 'bag-gray.png' # String | Defines image's name
 url = 'http://docs.api2cart.com/img/logo.png' # String | Defines URL of the image that has to be added
 type = 'base' # String | Defines image's types that are specified by comma-separated list
 opts = {
+  store_id: '1', # String | Store Id
   label: 'This cool image', # String | Defines alternative text that has to be attached to the picture
   mime: 'image/jpeg', # String | Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
-  position: 5, # Integer | Defines image’s position in the list
-  store_id: '1' # String | Store Id
+  position: 5 # Integer | Defines image’s position in the list
 }
 
 begin
@@ -623,10 +623,10 @@ end
 | **image_name** | **String** | Defines image&#39;s name |  |
 | **url** | **String** | Defines URL of the image that has to be added |  |
 | **type** | **String** | Defines image&#39;s types that are specified by comma-separated list |  |
+| **store_id** | **String** | Store Id | [optional] |
 | **label** | **String** | Defines alternative text that has to be attached to the picture | [optional] |
 | **mime** | **String** | Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. | [optional] |
 | **position** | **Integer** | Defines image’s position in the list | [optional][default to 0] |
-| **store_id** | **String** | Store Id | [optional] |
 
 ### Return type
 
@@ -753,12 +753,12 @@ end
 api_instance = OpenapiClient::CategoryApi.new
 id = '10' # String | Retrieves category's info specified by category id
 opts = {
-  params: 'id,parent_id,name', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  response_fields: '{result{id,name,parent_id,modified_at{value},images}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'id,parent_id,name', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   store_id: '1', # String | Retrieves category info  specified by store id
   lang_id: '3', # String | Retrieves category info  specified by language id
   schema_type: 'LISTING', # String | The name of the requirements set for the provided schema.
+  response_fields: '{result{id,name,parent_id,modified_at{value},images}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  params: 'id,parent_id,name', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'id,parent_id,name', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   report_request_id: '105245017661', # String | Report request id
   disable_report_cache: false # Boolean | Disable report cache for current request
 }
@@ -795,12 +795,12 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Retrieves category&#39;s info specified by category id |  |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,parent_id,name,description&#39;] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **store_id** | **String** | Retrieves category info  specified by store id | [optional] |
 | **lang_id** | **String** | Retrieves category info  specified by language id | [optional] |
 | **schema_type** | **String** | The name of the requirements set for the provided schema. | [optional] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,parent_id,name,description&#39;] |
+| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **report_request_id** | **String** | Report request id | [optional] |
 | **disable_report_cache** | **Boolean** | Disable report cache for current request | [optional][default to false] |
 
@@ -849,20 +849,20 @@ opts = {
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
   page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-  parent_id: '6', # String | Retrieves categories specified by parent id
-  params: 'id,parent_id,name', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  response_fields: '{result{categories_count,category{id,parent_id,modified_at{value},images}}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'id,parent_id,name', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   store_id: '1', # String | Retrieves categories specified by store id
   lang_id: '3', # String | Retrieves categorys specified by language id
+  parent_id: '6', # String | Retrieves categories specified by parent id
+  avail: false, # Boolean | Defines category's visibility status
+  product_type: 'BICYCLE', # String | A categorization for the product
   created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
   created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
   modified_from: '2010-07-29 13:45:52', # String | Retrieve entities from their modification date
   modified_to: '2100-08-29 13:45:52', # String | Retrieve entities to their modification date
-  avail: false, # Boolean | Defines category's visibility status
-  product_type: 'BICYCLE', # String | A categorization for the product
   find_value: 'Demo category 1', # String | Entity search that is specified by some value
   find_where: 'name', # String | Category search that is specified by field
+  response_fields: '{result{categories_count,category{id,parent_id,modified_at{value},images}}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  params: 'id,parent_id,name', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'id,parent_id,name', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
   report_request_id: '105245017661', # String | Report request id
   disable_report_cache: false, # Boolean | Disable report cache for current request
   disable_cache: false # Boolean | Disable cache for current request
@@ -902,20 +902,20 @@ end
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
 | **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
-| **parent_id** | **String** | Retrieves categories specified by parent id | [optional] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,parent_id,name,description&#39;] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **store_id** | **String** | Retrieves categories specified by store id | [optional] |
 | **lang_id** | **String** | Retrieves categorys specified by language id | [optional] |
+| **parent_id** | **String** | Retrieves categories specified by parent id | [optional] |
+| **avail** | **Boolean** | Defines category&#39;s visibility status | [optional][default to true] |
+| **product_type** | **String** | A categorization for the product | [optional] |
 | **created_from** | **String** | Retrieve entities from their creation date | [optional] |
 | **created_to** | **String** | Retrieve entities to their creation date | [optional] |
 | **modified_from** | **String** | Retrieve entities from their modification date | [optional] |
 | **modified_to** | **String** | Retrieve entities to their modification date | [optional] |
-| **avail** | **Boolean** | Defines category&#39;s visibility status | [optional][default to true] |
-| **product_type** | **String** | A categorization for the product | [optional] |
 | **find_value** | **String** | Entity search that is specified by some value | [optional] |
 | **find_where** | **String** | Category search that is specified by field | [optional] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,parent_id,name,description&#39;] |
+| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **report_request_id** | **String** | Report request id | [optional] |
 | **disable_report_cache** | **Boolean** | Disable report cache for current request | [optional][default to false] |
 | **disable_cache** | **Boolean** | Disable cache for current request | [optional][default to false] |
@@ -1046,19 +1046,19 @@ api_instance = OpenapiClient::CategoryApi.new
 id = '10' # String | Defines category update specified by category id
 opts = {
   name: 'NEW Shoes', # String | Defines new category’s name
+  description: 'New test category', # String | Defines new category's description
+  short_description: 'Short description. This is very short description', # String | Defines short description
   parent_id: '6', # String | Defines new parent category id
-  stores_ids: '1,2', # String | Update category in the stores that is specified by comma-separated stores' id
   avail: false, # Boolean | Defines category's visibility status
   sort_order: 2, # Integer | Sort number in the list
   modified_time: '2014-07-30 15:58:41', # String | Entity's date modification
-  description: 'New test category', # String | Defines new category's description
-  short_description: 'Short description. This is very short description', # String | Defines short description
   meta_title: 'category,test', # String | Defines unique meta title for each entity
   meta_description: 'category,test', # String | Defines unique meta description of a entity
   meta_keywords: 'category,test', # String | Defines unique meta keywords for each entity
   seo_url: 'category,test', # String | Defines unique category's URL for SEO
-  lang_id: '3', # String | Language id
-  store_id: '1' # String | Store Id
+  store_id: '1', # String | Store Id
+  stores_ids: '1,2', # String | Update category in the stores that is specified by comma-separated stores' id
+  lang_id: '3' # String | Language id
 }
 
 begin
@@ -1094,19 +1094,19 @@ end
 | ---- | ---- | ----------- | ----- |
 | **id** | **String** | Defines category update specified by category id |  |
 | **name** | **String** | Defines new category’s name | [optional] |
+| **description** | **String** | Defines new category&#39;s description | [optional] |
+| **short_description** | **String** | Defines short description | [optional] |
 | **parent_id** | **String** | Defines new parent category id | [optional] |
-| **stores_ids** | **String** | Update category in the stores that is specified by comma-separated stores&#39; id | [optional] |
 | **avail** | **Boolean** | Defines category&#39;s visibility status | [optional] |
 | **sort_order** | **Integer** | Sort number in the list | [optional] |
 | **modified_time** | **String** | Entity&#39;s date modification | [optional] |
-| **description** | **String** | Defines new category&#39;s description | [optional] |
-| **short_description** | **String** | Defines short description | [optional] |
 | **meta_title** | **String** | Defines unique meta title for each entity | [optional] |
 | **meta_description** | **String** | Defines unique meta description of a entity | [optional] |
 | **meta_keywords** | **String** | Defines unique meta keywords for each entity | [optional] |
 | **seo_url** | **String** | Defines unique category&#39;s URL for SEO | [optional] |
-| **lang_id** | **String** | Language id | [optional] |
 | **store_id** | **String** | Store Id | [optional] |
+| **stores_ids** | **String** | Update category in the stores that is specified by comma-separated stores&#39; id | [optional] |
+| **lang_id** | **String** | Language id | [optional] |
 
 ### Return type
 

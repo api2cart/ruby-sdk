@@ -24,9 +24,9 @@ module OpenapiClient
     # @param id [String] Entity id
     # @param [Hash] opts the optional parameters
     # @option opts [String] :store_id Store Id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @return [BasketInfo200Response]
     def basket_info(id, opts = {})
       data, _status_code, _headers = basket_info_with_http_info(id, opts)
@@ -38,9 +38,9 @@ module OpenapiClient
     # @param id [String] Entity id
     # @param [Hash] opts the optional parameters
     # @option opts [String] :store_id Store Id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @return [Array<(BasketInfo200Response, Integer, Hash)>] BasketInfo200Response data, response status code and response headers
     def basket_info_with_http_info(id, opts = {})
       if @api_client.config.debugging
@@ -57,9 +57,9 @@ module OpenapiClient
       query_params = opts[:query_params] || {}
       query_params[:'id'] = id
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
       query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -316,9 +316,9 @@ module OpenapiClient
     # basket.live_shipping_service.list
     # Retrieve a list of live shipping rate services.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :store_id Store Id
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :store_id Store Id
     # @return [BasketLiveShippingServiceList200Response]
     def basket_live_shipping_service_list(opts = {})
       data, _status_code, _headers = basket_live_shipping_service_list_with_http_info(opts)
@@ -328,9 +328,9 @@ module OpenapiClient
     # basket.live_shipping_service.list
     # Retrieve a list of live shipping rate services.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :store_id Store Id
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :store_id Store Id
     # @return [Array<(BasketLiveShippingServiceList200Response, Integer, Hash)>] BasketLiveShippingServiceList200Response data, response status code and response headers
     def basket_live_shipping_service_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -341,9 +341,9 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

@@ -33,6 +33,9 @@ module OpenapiClient
     # Groups that will be assigned to a customer
     attr_accessor :group_ids
 
+    # Defines customer's status
+    attr_accessor :status
+
     # Entity's date creation
     attr_accessor :created_time
 
@@ -48,9 +51,6 @@ module OpenapiClient
     # Defines customer's birthday
     attr_accessor :birth_day
 
-    # Defines customer's status
-    attr_accessor :status
-
     # Defines whether the newsletter subscription is available for the user
     attr_accessor :news_letter_subscription
 
@@ -62,9 +62,6 @@ module OpenapiClient
 
     # Link to customer website
     attr_accessor :website
-
-    # Store Id
-    attr_accessor :store_id
 
     # Defines customer's fax
     attr_accessor :fax
@@ -81,6 +78,9 @@ module OpenapiClient
     # Specifies ISO code or name of country
     attr_accessor :country
 
+    # Store Id
+    attr_accessor :store_id
+
     attr_accessor :address
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -92,22 +92,22 @@ module OpenapiClient
         :'password' => :'password',
         :'group' => :'group',
         :'group_ids' => :'group_ids',
+        :'status' => :'status',
         :'created_time' => :'created_time',
         :'modified_time' => :'modified_time',
         :'login' => :'login',
         :'last_login' => :'last_login',
         :'birth_day' => :'birth_day',
-        :'status' => :'status',
         :'news_letter_subscription' => :'news_letter_subscription',
         :'consents' => :'consents',
         :'gender' => :'gender',
         :'website' => :'website',
-        :'store_id' => :'store_id',
         :'fax' => :'fax',
         :'company' => :'company',
         :'phone' => :'phone',
         :'note' => :'note',
         :'country' => :'country',
+        :'store_id' => :'store_id',
         :'address' => :'address'
       }
     end
@@ -126,22 +126,22 @@ module OpenapiClient
         :'password' => :'String',
         :'group' => :'String',
         :'group_ids' => :'String',
+        :'status' => :'String',
         :'created_time' => :'String',
         :'modified_time' => :'String',
         :'login' => :'String',
         :'last_login' => :'String',
         :'birth_day' => :'String',
-        :'status' => :'String',
         :'news_letter_subscription' => :'Boolean',
         :'consents' => :'Array<CustomerAddConsentsInner>',
         :'gender' => :'String',
         :'website' => :'String',
-        :'store_id' => :'String',
         :'fax' => :'String',
         :'company' => :'String',
         :'phone' => :'String',
         :'note' => :'String',
         :'country' => :'String',
+        :'store_id' => :'String',
         :'address' => :'Array<CustomerAddAddressInner>'
       }
     end
@@ -175,14 +175,10 @@ module OpenapiClient
 
       if attributes.key?(:'first_name')
         self.first_name = attributes[:'first_name']
-      else
-        self.first_name = nil
       end
 
       if attributes.key?(:'last_name')
         self.last_name = attributes[:'last_name']
-      else
-        self.last_name = nil
       end
 
       if attributes.key?(:'password')
@@ -195,6 +191,12 @@ module OpenapiClient
 
       if attributes.key?(:'group_ids')
         self.group_ids = attributes[:'group_ids']
+      end
+
+      if attributes.key?(:'status')
+        self.status = attributes[:'status']
+      else
+        self.status = 'enabled'
       end
 
       if attributes.key?(:'created_time')
@@ -217,16 +219,8 @@ module OpenapiClient
         self.birth_day = attributes[:'birth_day']
       end
 
-      if attributes.key?(:'status')
-        self.status = attributes[:'status']
-      else
-        self.status = 'enabled'
-      end
-
       if attributes.key?(:'news_letter_subscription')
         self.news_letter_subscription = attributes[:'news_letter_subscription']
-      else
-        self.news_letter_subscription = false
       end
 
       if attributes.key?(:'consents')
@@ -241,10 +235,6 @@ module OpenapiClient
 
       if attributes.key?(:'website')
         self.website = attributes[:'website']
-      end
-
-      if attributes.key?(:'store_id')
-        self.store_id = attributes[:'store_id']
       end
 
       if attributes.key?(:'fax')
@@ -267,6 +257,10 @@ module OpenapiClient
         self.country = attributes[:'country']
       end
 
+      if attributes.key?(:'store_id')
+        self.store_id = attributes[:'store_id']
+      end
+
       if attributes.key?(:'address')
         if (value = attributes[:'address']).is_a?(Array)
           self.address = value
@@ -283,14 +277,6 @@ module OpenapiClient
         invalid_properties.push('invalid value for "email", email cannot be nil.')
       end
 
-      if @first_name.nil?
-        invalid_properties.push('invalid value for "first_name", first_name cannot be nil.')
-      end
-
-      if @last_name.nil?
-        invalid_properties.push('invalid value for "last_name", last_name cannot be nil.')
-      end
-
       if !@consents.nil? && @consents.length < 1
         invalid_properties.push('invalid value for "consents", number of items must be greater than or equal to 1.')
       end
@@ -303,8 +289,6 @@ module OpenapiClient
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
       return false if @email.nil?
-      return false if @first_name.nil?
-      return false if @last_name.nil?
       return false if !@consents.nil? && @consents.length < 1
       true
     end
@@ -334,22 +318,22 @@ module OpenapiClient
           password == o.password &&
           group == o.group &&
           group_ids == o.group_ids &&
+          status == o.status &&
           created_time == o.created_time &&
           modified_time == o.modified_time &&
           login == o.login &&
           last_login == o.last_login &&
           birth_day == o.birth_day &&
-          status == o.status &&
           news_letter_subscription == o.news_letter_subscription &&
           consents == o.consents &&
           gender == o.gender &&
           website == o.website &&
-          store_id == o.store_id &&
           fax == o.fax &&
           company == o.company &&
           phone == o.phone &&
           note == o.note &&
           country == o.country &&
+          store_id == o.store_id &&
           address == o.address
     end
 
@@ -362,7 +346,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [email, first_name, last_name, password, group, group_ids, created_time, modified_time, login, last_login, birth_day, status, news_letter_subscription, consents, gender, website, store_id, fax, company, phone, note, country, address].hash
+      [email, first_name, last_name, password, group, group_ids, status, created_time, modified_time, login, last_login, birth_day, news_letter_subscription, consents, gender, website, fax, company, phone, note, country, store_id, address].hash
     end
 
     # Builds the object from hash

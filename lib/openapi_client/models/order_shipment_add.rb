@@ -18,11 +18,11 @@ module OpenapiClient
     # Defines the order for which the shipment will be created
     attr_accessor :order_id
 
-    # Store Id
-    attr_accessor :store_id
-
     # This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
     attr_accessor :warehouse_id
+
+    # Store Id
+    attr_accessor :store_id
 
     # Defines company name that provide tracking of shipment
     attr_accessor :shipment_provider
@@ -33,23 +33,23 @@ module OpenapiClient
     # Defines items in the order that will be shipped
     attr_accessor :items
 
-    # Send notifications to customer after shipment was created
-    attr_accessor :send_notifications
-
     # Defines shipment's tracking numbers that have to be added</br> How set tracking numbers to appropriate carrier:<ul><li>tracking_numbers[]=a2c.demo1,a2c.demo2 - set default carrier</li><li>tracking_numbers[<b>carrier_id</b>]=a2c.demo - set appropriate carrier</li></ul>To get the list of carriers IDs that are available in your store, use the <a href = \"https://api2cart.com/docs/#/cart/CartInfo\">cart.info</a > method
     attr_accessor :tracking_numbers
-
-    # This parameter is used for adjust stock.
-    attr_accessor :adjust_stock
-
-    # If the value is 'true' and order exist in our cache, we will use order.info from cache to prepare shipment items.
-    attr_accessor :enable_cache
 
     # Defines custom tracking link
     attr_accessor :tracking_link
 
     # Defines shipment's status
     attr_accessor :is_shipped
+
+    # Send notifications to customer after shipment was created
+    attr_accessor :send_notifications
+
+    # This parameter is used for adjust stock.
+    attr_accessor :adjust_stock
+
+    # If the value is 'true' and order exist in our cache, we will use order.info from cache to prepare shipment items.
+    attr_accessor :enable_cache
 
     # Disable or enable check process status. Please note that the response will be slower due to additional requests to the store.
     attr_accessor :check_process_status
@@ -61,17 +61,17 @@ module OpenapiClient
     def self.attribute_map
       {
         :'order_id' => :'order_id',
-        :'store_id' => :'store_id',
         :'warehouse_id' => :'warehouse_id',
+        :'store_id' => :'store_id',
         :'shipment_provider' => :'shipment_provider',
         :'shipping_method' => :'shipping_method',
         :'items' => :'items',
-        :'send_notifications' => :'send_notifications',
         :'tracking_numbers' => :'tracking_numbers',
-        :'adjust_stock' => :'adjust_stock',
-        :'enable_cache' => :'enable_cache',
         :'tracking_link' => :'tracking_link',
         :'is_shipped' => :'is_shipped',
+        :'send_notifications' => :'send_notifications',
+        :'adjust_stock' => :'adjust_stock',
+        :'enable_cache' => :'enable_cache',
         :'check_process_status' => :'check_process_status',
         :'use_latest_api_version' => :'use_latest_api_version'
       }
@@ -86,17 +86,17 @@ module OpenapiClient
     def self.openapi_types
       {
         :'order_id' => :'String',
-        :'store_id' => :'String',
         :'warehouse_id' => :'String',
+        :'store_id' => :'String',
         :'shipment_provider' => :'String',
         :'shipping_method' => :'String',
         :'items' => :'Array<OrderShipmentAddItemsInner>',
-        :'send_notifications' => :'Boolean',
         :'tracking_numbers' => :'Array<OrderShipmentAddTrackingNumbersInner>',
-        :'adjust_stock' => :'Boolean',
-        :'enable_cache' => :'Boolean',
         :'tracking_link' => :'String',
         :'is_shipped' => :'Boolean',
+        :'send_notifications' => :'Boolean',
+        :'adjust_stock' => :'Boolean',
+        :'enable_cache' => :'Boolean',
         :'check_process_status' => :'Boolean',
         :'use_latest_api_version' => :'Boolean'
       }
@@ -127,12 +127,12 @@ module OpenapiClient
         self.order_id = attributes[:'order_id']
       end
 
-      if attributes.key?(:'store_id')
-        self.store_id = attributes[:'store_id']
-      end
-
       if attributes.key?(:'warehouse_id')
         self.warehouse_id = attributes[:'warehouse_id']
+      end
+
+      if attributes.key?(:'store_id')
+        self.store_id = attributes[:'store_id']
       end
 
       if attributes.key?(:'shipment_provider')
@@ -149,16 +149,26 @@ module OpenapiClient
         end
       end
 
-      if attributes.key?(:'send_notifications')
-        self.send_notifications = attributes[:'send_notifications']
-      else
-        self.send_notifications = false
-      end
-
       if attributes.key?(:'tracking_numbers')
         if (value = attributes[:'tracking_numbers']).is_a?(Array)
           self.tracking_numbers = value
         end
+      end
+
+      if attributes.key?(:'tracking_link')
+        self.tracking_link = attributes[:'tracking_link']
+      end
+
+      if attributes.key?(:'is_shipped')
+        self.is_shipped = attributes[:'is_shipped']
+      else
+        self.is_shipped = true
+      end
+
+      if attributes.key?(:'send_notifications')
+        self.send_notifications = attributes[:'send_notifications']
+      else
+        self.send_notifications = false
       end
 
       if attributes.key?(:'adjust_stock')
@@ -171,16 +181,6 @@ module OpenapiClient
         self.enable_cache = attributes[:'enable_cache']
       else
         self.enable_cache = false
-      end
-
-      if attributes.key?(:'tracking_link')
-        self.tracking_link = attributes[:'tracking_link']
-      end
-
-      if attributes.key?(:'is_shipped')
-        self.is_shipped = attributes[:'is_shipped']
-      else
-        self.is_shipped = true
       end
 
       if attributes.key?(:'check_process_status')
@@ -217,17 +217,17 @@ module OpenapiClient
       return true if self.equal?(o)
       self.class == o.class &&
           order_id == o.order_id &&
-          store_id == o.store_id &&
           warehouse_id == o.warehouse_id &&
+          store_id == o.store_id &&
           shipment_provider == o.shipment_provider &&
           shipping_method == o.shipping_method &&
           items == o.items &&
-          send_notifications == o.send_notifications &&
           tracking_numbers == o.tracking_numbers &&
-          adjust_stock == o.adjust_stock &&
-          enable_cache == o.enable_cache &&
           tracking_link == o.tracking_link &&
           is_shipped == o.is_shipped &&
+          send_notifications == o.send_notifications &&
+          adjust_stock == o.adjust_stock &&
+          enable_cache == o.enable_cache &&
           check_process_status == o.check_process_status &&
           use_latest_api_version == o.use_latest_api_version
     end
@@ -241,7 +241,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [order_id, store_id, warehouse_id, shipment_provider, shipping_method, items, send_notifications, tracking_numbers, adjust_stock, enable_cache, tracking_link, is_shipped, check_process_status, use_latest_api_version].hash
+      [order_id, warehouse_id, store_id, shipment_provider, shipping_method, items, tracking_numbers, tracking_link, is_shipped, send_notifications, adjust_stock, enable_cache, check_process_status, use_latest_api_version].hash
     end
 
     # Builds the object from hash

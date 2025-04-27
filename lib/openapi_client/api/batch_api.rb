@@ -24,11 +24,11 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+    # @option opts [String] :ids Filter batch jobs by ids
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :processed_from Retrieve entities according to their processing datetime
     # @option opts [String] :processed_to Retrieve entities according to their processing datetime
-    # @option opts [String] :ids Filter batch jobs by ids
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve (default to '{return_code,return_message,pagination,result}')
     # @return [ModelResponseBatchJobList]
     def batch_job_list(opts = {})
@@ -41,11 +41,11 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+    # @option opts [String] :ids Filter batch jobs by ids
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :processed_from Retrieve entities according to their processing datetime
     # @option opts [String] :processed_to Retrieve entities according to their processing datetime
-    # @option opts [String] :ids Filter batch jobs by ids
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve (default to '{return_code,return_message,pagination,result}')
     # @return [Array<(ModelResponseBatchJobList, Integer, Hash)>] ModelResponseBatchJobList data, response status code and response headers
     def batch_job_list_with_http_info(opts = {})
@@ -59,11 +59,11 @@ module OpenapiClient
       query_params = opts[:query_params] || {}
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
       query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
+      query_params[:'ids'] = opts[:'ids'] if !opts[:'ids'].nil?
       query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
       query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
       query_params[:'processed_from'] = opts[:'processed_from'] if !opts[:'processed_from'].nil?
       query_params[:'processed_to'] = opts[:'processed_to'] if !opts[:'processed_to'].nil?
-      query_params[:'ids'] = opts[:'ids'] if !opts[:'ids'].nil?
       query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
 
       # header parameters

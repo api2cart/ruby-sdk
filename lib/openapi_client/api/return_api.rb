@@ -172,9 +172,9 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :order_id Defines the order id
     # @option opts [String] :store_id Store Id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,order_products')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @return [ReturnInfo200Response]
     def return_info(id, opts = {})
       data, _status_code, _headers = return_info_with_http_info(id, opts)
@@ -187,9 +187,9 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [String] :order_id Defines the order id
     # @option opts [String] :store_id Store Id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,order_products')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @return [Array<(ReturnInfo200Response, Integer, Hash)>] ReturnInfo200Response data, response status code and response headers
     def return_info_with_http_info(id, opts = {})
       if @api_client.config.debugging
@@ -207,9 +207,9 @@ module OpenapiClient
       query_params[:'id'] = id
       query_params[:'order_id'] = opts[:'order_id'] if !opts[:'order_id'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
       query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -251,9 +251,6 @@ module OpenapiClient
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,order_products')
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :order_id Defines the order id
     # @option opts [String] :order_ids Retrieves return requests specified by order ids
     # @option opts [String] :customer_id Retrieves return requests specified by customer id
@@ -264,6 +261,9 @@ module OpenapiClient
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,order_products')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :report_request_id Report request id
     # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
     # @return [ModelResponseReturnList]
@@ -278,9 +278,6 @@ module OpenapiClient
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,order_products')
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :order_id Defines the order id
     # @option opts [String] :order_ids Retrieves return requests specified by order ids
     # @option opts [String] :customer_id Retrieves return requests specified by customer id
@@ -291,6 +288,9 @@ module OpenapiClient
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,order_products')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :report_request_id Report request id
     # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
     # @return [Array<(ModelResponseReturnList, Integer, Hash)>] ModelResponseReturnList data, response status code and response headers
@@ -306,9 +306,6 @@ module OpenapiClient
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
       query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
       query_params[:'order_id'] = opts[:'order_id'] if !opts[:'order_id'].nil?
       query_params[:'order_ids'] = opts[:'order_ids'] if !opts[:'order_ids'].nil?
       query_params[:'customer_id'] = opts[:'customer_id'] if !opts[:'customer_id'].nil?
@@ -319,6 +316,9 @@ module OpenapiClient
       query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
       query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
       query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
       query_params[:'report_request_id'] = opts[:'report_request_id'] if !opts[:'report_request_id'].nil?
       query_params[:'disable_report_cache'] = opts[:'disable_report_cache'] if !opts[:'disable_report_cache'].nil?
 

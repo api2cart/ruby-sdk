@@ -15,9 +15,6 @@ require 'time'
 
 module OpenapiClient
   class OrderShipmentTrackingAdd
-    # Store Id
-    attr_accessor :store_id
-
     # Defines the order id
     attr_accessor :order_id
 
@@ -26,6 +23,9 @@ module OpenapiClient
 
     # Defines tracking carrier id
     attr_accessor :carrier_id
+
+    # Store Id
+    attr_accessor :store_id
 
     # Defines name of the company which provides shipment tracking
     attr_accessor :tracking_provider
@@ -42,10 +42,10 @@ module OpenapiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'store_id' => :'store_id',
         :'order_id' => :'order_id',
         :'shipment_id' => :'shipment_id',
         :'carrier_id' => :'carrier_id',
+        :'store_id' => :'store_id',
         :'tracking_provider' => :'tracking_provider',
         :'tracking_number' => :'tracking_number',
         :'tracking_link' => :'tracking_link',
@@ -61,10 +61,10 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'store_id' => :'String',
         :'order_id' => :'String',
         :'shipment_id' => :'String',
         :'carrier_id' => :'String',
+        :'store_id' => :'String',
         :'tracking_provider' => :'String',
         :'tracking_number' => :'String',
         :'tracking_link' => :'String',
@@ -93,10 +93,6 @@ module OpenapiClient
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'store_id')
-        self.store_id = attributes[:'store_id']
-      end
-
       if attributes.key?(:'order_id')
         self.order_id = attributes[:'order_id']
       end
@@ -109,6 +105,10 @@ module OpenapiClient
 
       if attributes.key?(:'carrier_id')
         self.carrier_id = attributes[:'carrier_id']
+      end
+
+      if attributes.key?(:'store_id')
+        self.store_id = attributes[:'store_id']
       end
 
       if attributes.key?(:'tracking_provider')
@@ -162,10 +162,10 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          store_id == o.store_id &&
           order_id == o.order_id &&
           shipment_id == o.shipment_id &&
           carrier_id == o.carrier_id &&
+          store_id == o.store_id &&
           tracking_provider == o.tracking_provider &&
           tracking_number == o.tracking_number &&
           tracking_link == o.tracking_link &&
@@ -181,7 +181,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [store_id, order_id, shipment_id, carrier_id, tracking_provider, tracking_number, tracking_link, send_notifications].hash
+      [order_id, shipment_id, carrier_id, store_id, tracking_provider, tracking_number, tracking_link, send_notifications].hash
     end
 
     # Builds the object from hash

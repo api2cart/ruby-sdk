@@ -21,6 +21,9 @@ module OpenapiClient
     # Defines product's variants specified by variant id
     attr_accessor :product_variant_id
 
+    # Store Id
+    attr_accessor :store_id
+
     # Defines image's name
     attr_accessor :image_name
 
@@ -41,9 +44,6 @@ module OpenapiClient
 
     # Defines image’s position in the list
     attr_accessor :position
-
-    # Store Id
-    attr_accessor :store_id
 
     # Defines option id of the product variant for which the image will be added
     attr_accessor :option_id
@@ -75,6 +75,7 @@ module OpenapiClient
       {
         :'product_id' => :'product_id',
         :'product_variant_id' => :'product_variant_id',
+        :'store_id' => :'store_id',
         :'image_name' => :'image_name',
         :'type' => :'type',
         :'url' => :'url',
@@ -82,7 +83,6 @@ module OpenapiClient
         :'label' => :'label',
         :'mime' => :'mime',
         :'position' => :'position',
-        :'store_id' => :'store_id',
         :'option_id' => :'option_id'
       }
     end
@@ -97,6 +97,7 @@ module OpenapiClient
       {
         :'product_id' => :'String',
         :'product_variant_id' => :'String',
+        :'store_id' => :'String',
         :'image_name' => :'String',
         :'type' => :'String',
         :'url' => :'String',
@@ -104,7 +105,6 @@ module OpenapiClient
         :'label' => :'String',
         :'mime' => :'String',
         :'position' => :'Integer',
-        :'store_id' => :'String',
         :'option_id' => :'String'
       }
     end
@@ -140,6 +140,10 @@ module OpenapiClient
         self.product_variant_id = nil
       end
 
+      if attributes.key?(:'store_id')
+        self.store_id = attributes[:'store_id']
+      end
+
       if attributes.key?(:'image_name')
         self.image_name = attributes[:'image_name']
       else
@@ -172,10 +176,6 @@ module OpenapiClient
         self.position = attributes[:'position']
       else
         self.position = 0
-      end
-
-      if attributes.key?(:'store_id')
-        self.store_id = attributes[:'store_id']
       end
 
       if attributes.key?(:'option_id')
@@ -232,6 +232,7 @@ module OpenapiClient
       self.class == o.class &&
           product_id == o.product_id &&
           product_variant_id == o.product_variant_id &&
+          store_id == o.store_id &&
           image_name == o.image_name &&
           type == o.type &&
           url == o.url &&
@@ -239,7 +240,6 @@ module OpenapiClient
           label == o.label &&
           mime == o.mime &&
           position == o.position &&
-          store_id == o.store_id &&
           option_id == o.option_id
     end
 
@@ -252,7 +252,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [product_id, product_variant_id, image_name, type, url, content, label, mime, position, store_id, option_id].hash
+      [product_id, product_variant_id, store_id, image_name, type, url, content, label, mime, position, option_id].hash
     end
 
     # Builds the object from hash

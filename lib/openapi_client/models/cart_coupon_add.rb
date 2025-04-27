@@ -15,17 +15,8 @@ require 'time'
 
 module OpenapiClient
   class CartCouponAdd
-    # Store Id
-    attr_accessor :store_id
-
     # Coupon code
     attr_accessor :code
-
-    # Coupon name
-    attr_accessor :name
-
-    # Entity codes
-    attr_accessor :codes
 
     # Coupon discount type
     attr_accessor :action_type
@@ -38,6 +29,12 @@ module OpenapiClient
 
     # Defines the discount amount value.
     attr_accessor :action_amount
+
+    # Entity codes
+    attr_accessor :codes
+
+    # Coupon name
+    attr_accessor :name
 
     # Date start
     attr_accessor :date_start
@@ -66,6 +63,9 @@ module OpenapiClient
     # Indicates whether to apply a discount for taxes.
     attr_accessor :include_tax
 
+    # Store Id
+    attr_accessor :store_id
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -91,14 +91,13 @@ module OpenapiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'store_id' => :'store_id',
         :'code' => :'code',
-        :'name' => :'name',
-        :'codes' => :'codes',
         :'action_type' => :'action_type',
         :'action_apply_to' => :'action_apply_to',
         :'action_scope' => :'action_scope',
         :'action_amount' => :'action_amount',
+        :'codes' => :'codes',
+        :'name' => :'name',
         :'date_start' => :'date_start',
         :'date_end' => :'date_end',
         :'usage_limit' => :'usage_limit',
@@ -107,7 +106,8 @@ module OpenapiClient
         :'action_condition_key' => :'action_condition_key',
         :'action_condition_operator' => :'action_condition_operator',
         :'action_condition_value' => :'action_condition_value',
-        :'include_tax' => :'include_tax'
+        :'include_tax' => :'include_tax',
+        :'store_id' => :'store_id'
       }
     end
 
@@ -119,14 +119,13 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'store_id' => :'String',
         :'code' => :'String',
-        :'name' => :'String',
-        :'codes' => :'Array<String>',
         :'action_type' => :'String',
         :'action_apply_to' => :'String',
         :'action_scope' => :'String',
         :'action_amount' => :'Float',
+        :'codes' => :'Array<String>',
+        :'name' => :'String',
         :'date_start' => :'String',
         :'date_end' => :'String',
         :'usage_limit' => :'Integer',
@@ -135,7 +134,8 @@ module OpenapiClient
         :'action_condition_key' => :'String',
         :'action_condition_operator' => :'String',
         :'action_condition_value' => :'String',
-        :'include_tax' => :'Boolean'
+        :'include_tax' => :'Boolean',
+        :'store_id' => :'String'
       }
     end
 
@@ -160,24 +160,10 @@ module OpenapiClient
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'store_id')
-        self.store_id = attributes[:'store_id']
-      end
-
       if attributes.key?(:'code')
         self.code = attributes[:'code']
       else
         self.code = nil
-      end
-
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.key?(:'codes')
-        if (value = attributes[:'codes']).is_a?(Array)
-          self.codes = value
-        end
       end
 
       if attributes.key?(:'action_type')
@@ -202,6 +188,16 @@ module OpenapiClient
         self.action_amount = attributes[:'action_amount']
       else
         self.action_amount = nil
+      end
+
+      if attributes.key?(:'codes')
+        if (value = attributes[:'codes']).is_a?(Array)
+          self.codes = value
+        end
+      end
+
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
       end
 
       if attributes.key?(:'date_start')
@@ -242,6 +238,10 @@ module OpenapiClient
         self.include_tax = attributes[:'include_tax']
       else
         self.include_tax = false
+      end
+
+      if attributes.key?(:'store_id')
+        self.store_id = attributes[:'store_id']
       end
     end
 
@@ -326,14 +326,13 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          store_id == o.store_id &&
           code == o.code &&
-          name == o.name &&
-          codes == o.codes &&
           action_type == o.action_type &&
           action_apply_to == o.action_apply_to &&
           action_scope == o.action_scope &&
           action_amount == o.action_amount &&
+          codes == o.codes &&
+          name == o.name &&
           date_start == o.date_start &&
           date_end == o.date_end &&
           usage_limit == o.usage_limit &&
@@ -342,7 +341,8 @@ module OpenapiClient
           action_condition_key == o.action_condition_key &&
           action_condition_operator == o.action_condition_operator &&
           action_condition_value == o.action_condition_value &&
-          include_tax == o.include_tax
+          include_tax == o.include_tax &&
+          store_id == o.store_id
     end
 
     # @see the `==` method
@@ -354,7 +354,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [store_id, code, name, codes, action_type, action_apply_to, action_scope, action_amount, date_start, date_end, usage_limit, usage_limit_per_customer, action_condition_entity, action_condition_key, action_condition_operator, action_condition_value, include_tax].hash
+      [code, action_type, action_apply_to, action_scope, action_amount, codes, name, date_start, date_end, usage_limit, usage_limit_per_customer, action_condition_entity, action_condition_key, action_condition_operator, action_condition_value, include_tax, store_id].hash
     end
 
     # Builds the object from hash

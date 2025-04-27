@@ -205,12 +205,12 @@ end
 
 api_instance = OpenapiClient::CartApi.new
 opts = {
-  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   ids: '24,25', # String | Retrieves  catalog_price_rules by ids
-  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
   response_fields: '{result{catalog_price_rules_count,catalog_price_rules{id,type,name,avail,usage_count,actions,conditions}}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
   exclude: 'false' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
@@ -245,12 +245,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
+| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **ids** | **String** | Retrieves  catalog_price_rules by ids | [optional] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,description&#39;] |
 | **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,description&#39;] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
@@ -608,10 +608,10 @@ key = 'total' # String | Defines condition entity attribute key
 operator = '==' # String | Defines condition operator
 value = '2' # String | Defines condition value, can be comma separated according to the operator.
 opts = {
-  store_id: '1', # String | Store Id
   target: 'coupon_action', # String | Defines condition operator
   include_tax: true, # Boolean | Indicates whether to apply a discount for taxes.
-  include_shipping: true # Boolean | Indicates whether to apply a discount for shipping.
+  include_shipping: true, # Boolean | Indicates whether to apply a discount for shipping.
+  store_id: '1' # String | Store Id
 }
 
 begin
@@ -650,10 +650,10 @@ end
 | **key** | **String** | Defines condition entity attribute key |  |
 | **operator** | **String** | Defines condition operator |  |
 | **value** | **String** | Defines condition value, can be comma separated according to the operator. |  |
-| **store_id** | **String** | Store Id | [optional] |
 | **target** | **String** | Defines condition operator | [optional][default to &#39;coupon_prerequisite&#39;] |
 | **include_tax** | **Boolean** | Indicates whether to apply a discount for taxes. | [optional][default to false] |
 | **include_shipping** | **Boolean** | Indicates whether to apply a discount for shipping. | [optional][default to false] |
+| **store_id** | **String** | Store Id | [optional] |
 
 ### Return type
 
@@ -698,11 +698,11 @@ end
 api_instance = OpenapiClient::CartApi.new
 opts = {
   store_id: '1', # String | Store Id
+  avail: false, # Boolean | Defines category's visibility status
   date_start_from: '2016-12-29 16:44:30', # String | Filter entity by date_start (greater or equal)
   date_start_to: '2016-12-29 16:44:30', # String | Filter entity by date_start (less or equal)
   date_end_from: '2016-12-29 16:44:30', # String | Filter entity by date_end (greater or equal)
-  date_end_to: '2016-12-29 16:44:30', # String | Filter entity by date_end (less or equal)
-  avail: false # Boolean | Defines category's visibility status
+  date_end_to: '2016-12-29 16:44:30' # String | Filter entity by date_end (less or equal)
 }
 
 begin
@@ -737,11 +737,11 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **store_id** | **String** | Store Id | [optional] |
+| **avail** | **Boolean** | Defines category&#39;s visibility status | [optional][default to true] |
 | **date_start_from** | **String** | Filter entity by date_start (greater or equal) | [optional] |
 | **date_start_to** | **String** | Filter entity by date_start (less or equal) | [optional] |
 | **date_end_from** | **String** | Filter entity by date_end (greater or equal) | [optional] |
 | **date_end_to** | **String** | Filter entity by date_end (less or equal) | [optional] |
-| **avail** | **Boolean** | Defines category&#39;s visibility status | [optional][default to true] |
 
 ### Return type
 
@@ -865,19 +865,19 @@ end
 
 api_instance = OpenapiClient::CartApi.new
 opts = {
-  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   coupons_ids: '1,2,3', # String | Filter coupons by ids
   store_id: '1', # String | Filter coupons by store id
+  lang_id: '3', # String | Language id
+  avail: false, # Boolean | Filter coupons by avail status
   date_start_from: '2016-12-29 16:44:30', # String | Filter entity by date_start (greater or equal)
   date_start_to: '2016-12-29 16:44:30', # String | Filter entity by date_start (less or equal)
   date_end_from: '2016-12-29 16:44:30', # String | Filter entity by date_end (greater or equal)
   date_end_to: '2016-12-29 16:44:30', # String | Filter entity by date_end (less or equal)
-  avail: false, # Boolean | Filter coupons by avail status
-  lang_id: '3', # String | Language id
-  params: 'id,code,type,amount', # String | Set this parameter in order to choose which entity fields you want to retrieve
   response_fields: '{pagination,result{coupon_count,coupon{id,code,name,conditions,actions{scope,amount,conditions{id,value,sub-conditions}},date_start,avail}}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  params: 'id,code,type,amount', # String | Set this parameter in order to choose which entity fields you want to retrieve
   exclude: 'usage_history,type' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
@@ -912,19 +912,19 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
+| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **coupons_ids** | **String** | Filter coupons by ids | [optional] |
 | **store_id** | **String** | Filter coupons by store id | [optional] |
+| **lang_id** | **String** | Language id | [optional] |
+| **avail** | **Boolean** | Filter coupons by avail status | [optional] |
 | **date_start_from** | **String** | Filter entity by date_start (greater or equal) | [optional] |
 | **date_start_to** | **String** | Filter entity by date_start (less or equal) | [optional] |
 | **date_end_from** | **String** | Filter entity by date_end (greater or equal) | [optional] |
 | **date_end_to** | **String** | Filter entity by date_end (less or equal) | [optional] |
-| **avail** | **Boolean** | Filter coupons by avail status | [optional] |
-| **lang_id** | **String** | Language id | [optional] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,code,name,description&#39;] |
 | **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,code,name,description&#39;] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
@@ -1438,12 +1438,12 @@ end
 
 api_instance = OpenapiClient::CartApi.new
 opts = {
-  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   store_id: '1', # String | Store Id
-  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
   response_fields: '{pagination,result{gift_card{id,code,amount,status}}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
   exclude: 'false' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
@@ -1478,12 +1478,12 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
+| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **store_id** | **String** | Store Id | [optional] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,code,name&#39;] |
 | **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,code,name&#39;] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
@@ -1528,10 +1528,10 @@ end
 
 api_instance = OpenapiClient::CartApi.new
 opts = {
-  params: 'name,url', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  store_id: '1', # String | Store Id
   response_fields: '{result{name,url,stores_info{store_id,name,currency{id,iso3},store_owner_info}}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'name,url', # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-  store_id: '1' # String | Store Id
+  params: 'name,url', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  exclude: 'name,url' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
 begin
@@ -1565,10 +1565,10 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;store_name,store_url,db_prefix&#39;] |
-| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **store_id** | **String** | Store Id | [optional] |
+| **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;store_name,store_url,db_prefix&#39;] |
+| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -1681,14 +1681,14 @@ end
 api_instance = OpenapiClient::CartApi.new
 entity_id = '1' # String | Entity Id
 opts = {
+  count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   entity: 'order', # String | Entity
   store_id: '1', # String | Store Id
   lang_id: '3', # String | Language id
   key: 'subtotal', # String | Key
-  count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
   response_fields: '{result{items{key,value}}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
   exclude: 'false' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
@@ -1724,14 +1724,14 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **entity_id** | **String** | Entity Id |  |
+| **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
+| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **entity** | **String** | Entity | [optional][default to &#39;product&#39;] |
 | **store_id** | **String** | Store Id | [optional] |
 | **lang_id** | **String** | Language id | [optional] |
 | **key** | **String** | Key | [optional] |
-| **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
-| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;key,value&#39;] |
 | **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;key,value&#39;] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
@@ -2025,9 +2025,9 @@ end
 
 api_instance = OpenapiClient::CartApi.new
 opts = {
-  store_id: '1', # String | Store Id
   start: 0, # Integer | This parameter sets the number from which you want to get entities
-  count: 20 # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  store_id: '1' # String | Store Id
 }
 
 begin
@@ -2061,9 +2061,9 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **store_id** | **String** | Store Id | [optional] |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
+| **store_id** | **String** | Store Id | [optional] |
 
 ### Return type
 
@@ -2279,17 +2279,17 @@ end
 
 api_instance = OpenapiClient::CartApi.new
 opts = {
-  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+  page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+  script_ids: '34023324,34024032', # String | Retrieves only scripts with specific ids
+  store_id: '1', # String | Store Id
   created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
   created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
   modified_from: '2010-07-29 13:45:52', # String | Retrieve entities from their modification date
   modified_to: '2100-08-29 13:45:52', # String | Retrieve entities to their modification date
-  script_ids: '34023324,34024032', # String | Retrieves only scripts with specific ids
-  store_id: '1', # String | Store Id
-  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
   response_fields: '{pagination,result{total_count,scripts{id,name,src,created_time{value}}}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
   exclude: 'false' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
@@ -2324,17 +2324,17 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
+| **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
+| **script_ids** | **String** | Retrieves only scripts with specific ids | [optional] |
+| **store_id** | **String** | Store Id | [optional] |
 | **created_from** | **String** | Retrieve entities from their creation date | [optional] |
 | **created_to** | **String** | Retrieve entities to their creation date | [optional] |
 | **modified_from** | **String** | Retrieve entities from their modification date | [optional] |
 | **modified_to** | **String** | Retrieve entities to their modification date | [optional] |
-| **script_ids** | **String** | Retrieves only scripts with specific ids | [optional] |
-| **store_id** | **String** | Store Id | [optional] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,description&#39;] |
 | **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,description&#39;] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
@@ -2379,11 +2379,11 @@ end
 
 api_instance = OpenapiClient::CartApi.new
 opts = {
-  store_id: '1', # String | Store Id
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  store_id: '1', # String | Store Id
   response_fields: '{result{id,name,enabled,countries,shipping_methods{name,rates}}}', # String | Set this parameter in order to choose which entity fields you want to retrieve
+  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
   exclude: 'false' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 }
 
@@ -2418,11 +2418,11 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **store_id** | **String** | Store Id | [optional] |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,enabled&#39;] |
+| **store_id** | **String** | Store Id | [optional] |
 | **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,enabled&#39;] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type

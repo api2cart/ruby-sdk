@@ -136,12 +136,12 @@ module OpenapiClient
     # cart.catalog_price_rules.list
     # Get cart catalog price rules discounts.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :ids Retrieves  catalog_price_rules by ids
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [ModelResponseCartCatalogPriceRulesList]
     def cart_catalog_price_rules_list(opts = {})
@@ -152,12 +152,12 @@ module OpenapiClient
     # cart.catalog_price_rules.list
     # Get cart catalog price rules discounts.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :ids Retrieves  catalog_price_rules by ids
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(ModelResponseCartCatalogPriceRulesList, Integer, Hash)>] ModelResponseCartCatalogPriceRulesList data, response status code and response headers
     def cart_catalog_price_rules_list_with_http_info(opts = {})
@@ -169,12 +169,12 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
+      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'ids'] = opts[:'ids'] if !opts[:'ids'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
@@ -482,10 +482,10 @@ module OpenapiClient
     # @param operator [String] Defines condition operator
     # @param value [String] Defines condition value, can be comma separated according to the operator.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :store_id Store Id
     # @option opts [String] :target Defines condition operator (default to 'coupon_prerequisite')
     # @option opts [Boolean] :include_tax Indicates whether to apply a discount for taxes. (default to false)
     # @option opts [Boolean] :include_shipping Indicates whether to apply a discount for shipping. (default to false)
+    # @option opts [String] :store_id Store Id
     # @return [BasketLiveShippingServiceDelete200Response]
     def cart_coupon_condition_add(coupon_id, entity, key, operator, value, opts = {})
       data, _status_code, _headers = cart_coupon_condition_add_with_http_info(coupon_id, entity, key, operator, value, opts)
@@ -500,10 +500,10 @@ module OpenapiClient
     # @param operator [String] Defines condition operator
     # @param value [String] Defines condition value, can be comma separated according to the operator.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :store_id Store Id
     # @option opts [String] :target Defines condition operator (default to 'coupon_prerequisite')
     # @option opts [Boolean] :include_tax Indicates whether to apply a discount for taxes. (default to false)
     # @option opts [Boolean] :include_shipping Indicates whether to apply a discount for shipping. (default to false)
+    # @option opts [String] :store_id Store Id
     # @return [Array<(BasketLiveShippingServiceDelete200Response, Integer, Hash)>] BasketLiveShippingServiceDelete200Response data, response status code and response headers
     def cart_coupon_condition_add_with_http_info(coupon_id, entity, key, operator, value, opts = {})
       if @api_client.config.debugging
@@ -549,10 +549,10 @@ module OpenapiClient
       query_params[:'key'] = key
       query_params[:'operator'] = operator
       query_params[:'value'] = value
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'target'] = opts[:'target'] if !opts[:'target'].nil?
       query_params[:'include_tax'] = opts[:'include_tax'] if !opts[:'include_tax'].nil?
       query_params[:'include_shipping'] = opts[:'include_shipping'] if !opts[:'include_shipping'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -592,11 +592,11 @@ module OpenapiClient
     # This method allows you to get the number of coupons. On some platforms, you can filter the coupons by the date they were active.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :store_id Store Id
+    # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
     # @option opts [String] :date_start_from Filter entity by date_start (greater or equal)
     # @option opts [String] :date_start_to Filter entity by date_start (less or equal)
     # @option opts [String] :date_end_from Filter entity by date_end (greater or equal)
     # @option opts [String] :date_end_to Filter entity by date_end (less or equal)
-    # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
     # @return [CartCouponCount200Response]
     def cart_coupon_count(opts = {})
       data, _status_code, _headers = cart_coupon_count_with_http_info(opts)
@@ -607,11 +607,11 @@ module OpenapiClient
     # This method allows you to get the number of coupons. On some platforms, you can filter the coupons by the date they were active.
     # @param [Hash] opts the optional parameters
     # @option opts [String] :store_id Store Id
+    # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
     # @option opts [String] :date_start_from Filter entity by date_start (greater or equal)
     # @option opts [String] :date_start_to Filter entity by date_start (less or equal)
     # @option opts [String] :date_end_from Filter entity by date_end (greater or equal)
     # @option opts [String] :date_end_to Filter entity by date_end (less or equal)
-    # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
     # @return [Array<(CartCouponCount200Response, Integer, Hash)>] CartCouponCount200Response data, response status code and response headers
     def cart_coupon_count_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -623,11 +623,11 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'avail'] = opts[:'avail'] if !opts[:'avail'].nil?
       query_params[:'date_start_from'] = opts[:'date_start_from'] if !opts[:'date_start_from'].nil?
       query_params[:'date_start_to'] = opts[:'date_start_to'] if !opts[:'date_start_to'].nil?
       query_params[:'date_end_from'] = opts[:'date_end_from'] if !opts[:'date_end_from'].nil?
       query_params[:'date_end_to'] = opts[:'date_end_to'] if !opts[:'date_end_to'].nil?
-      query_params[:'avail'] = opts[:'avail'] if !opts[:'avail'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -733,19 +733,19 @@ module OpenapiClient
     # cart.coupon.list
     # Get cart coupon discounts.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :coupons_ids Filter coupons by ids
     # @option opts [String] :store_id Filter coupons by store id
+    # @option opts [String] :lang_id Language id
+    # @option opts [Boolean] :avail Filter coupons by avail status
     # @option opts [String] :date_start_from Filter entity by date_start (greater or equal)
     # @option opts [String] :date_start_to Filter entity by date_start (less or equal)
     # @option opts [String] :date_end_from Filter entity by date_end (greater or equal)
     # @option opts [String] :date_end_to Filter entity by date_end (less or equal)
-    # @option opts [Boolean] :avail Filter coupons by avail status
-    # @option opts [String] :lang_id Language id
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,code,name,description')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,code,name,description')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [ModelResponseCartCouponList]
     def cart_coupon_list(opts = {})
@@ -756,19 +756,19 @@ module OpenapiClient
     # cart.coupon.list
     # Get cart coupon discounts.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :coupons_ids Filter coupons by ids
     # @option opts [String] :store_id Filter coupons by store id
+    # @option opts [String] :lang_id Language id
+    # @option opts [Boolean] :avail Filter coupons by avail status
     # @option opts [String] :date_start_from Filter entity by date_start (greater or equal)
     # @option opts [String] :date_start_to Filter entity by date_start (less or equal)
     # @option opts [String] :date_end_from Filter entity by date_end (greater or equal)
     # @option opts [String] :date_end_to Filter entity by date_end (less or equal)
-    # @option opts [Boolean] :avail Filter coupons by avail status
-    # @option opts [String] :lang_id Language id
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,code,name,description')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,code,name,description')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(ModelResponseCartCouponList, Integer, Hash)>] ModelResponseCartCouponList data, response status code and response headers
     def cart_coupon_list_with_http_info(opts = {})
@@ -780,19 +780,19 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
+      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'coupons_ids'] = opts[:'coupons_ids'] if !opts[:'coupons_ids'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
+      query_params[:'avail'] = opts[:'avail'] if !opts[:'avail'].nil?
       query_params[:'date_start_from'] = opts[:'date_start_from'] if !opts[:'date_start_from'].nil?
       query_params[:'date_start_to'] = opts[:'date_start_to'] if !opts[:'date_start_to'].nil?
       query_params[:'date_end_from'] = opts[:'date_end_from'] if !opts[:'date_end_from'].nil?
       query_params[:'date_end_to'] = opts[:'date_end_to'] if !opts[:'date_end_to'].nil?
-      query_params[:'avail'] = opts[:'avail'] if !opts[:'avail'].nil?
-      query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
@@ -1223,12 +1223,12 @@ module OpenapiClient
     # cart.giftcard.list
     # Get gift cards list.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :store_id Store Id
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,code,name')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,code,name')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [ModelResponseCartGiftCardList]
     def cart_giftcard_list(opts = {})
@@ -1239,12 +1239,12 @@ module OpenapiClient
     # cart.giftcard.list
     # Get gift cards list.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :store_id Store Id
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,code,name')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,code,name')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(ModelResponseCartGiftCardList, Integer, Hash)>] ModelResponseCartGiftCardList data, response status code and response headers
     def cart_giftcard_list_with_http_info(opts = {})
@@ -1256,12 +1256,12 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
+      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
@@ -1301,10 +1301,10 @@ module OpenapiClient
     # cart.info
     # This method allows you to get various information about the store, including a list of stores (in the case of a multistore configuration), a list of supported languages, currencies, carriers, warehouses, and many other information. This information contains data that is relatively stable and rarely changes, so API2Cart can cache certain data to reduce the load on the store and speed up the execution of the request. We also recommend that you cache the response of this method on your side to save requests. If you need to clear the cache for a specific store, then use the cart.validate method.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'store_name,store_url,db_prefix')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :store_id Store Id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'store_name,store_url,db_prefix')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [CartInfo200Response]
     def cart_info(opts = {})
       data, _status_code, _headers = cart_info_with_http_info(opts)
@@ -1314,10 +1314,10 @@ module OpenapiClient
     # cart.info
     # This method allows you to get various information about the store, including a list of stores (in the case of a multistore configuration), a list of supported languages, currencies, carriers, warehouses, and many other information. This information contains data that is relatively stable and rarely changes, so API2Cart can cache certain data to reduce the load on the store and speed up the execution of the request. We also recommend that you cache the response of this method on your side to save requests. If you need to clear the cache for a specific store, then use the cart.validate method.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'store_name,store_url,db_prefix')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :store_id Store Id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'store_name,store_url,db_prefix')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(CartInfo200Response, Integer, Hash)>] CartInfo200Response data, response status code and response headers
     def cart_info_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -1328,10 +1328,10 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -1428,14 +1428,14 @@ module OpenapiClient
     # Using this method, you can get a list of metadata for various entities (products, options, customers, orders). Usually this is data created by third-party plugins.
     # @param entity_id [String] Entity Id
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :entity Entity (default to 'product')
     # @option opts [String] :store_id Store Id
     # @option opts [String] :lang_id Language id
     # @option opts [String] :key Key
-    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'key,value')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'key,value')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [ModelResponseCartMetaDataList]
     def cart_meta_data_list(entity_id, opts = {})
@@ -1447,14 +1447,14 @@ module OpenapiClient
     # Using this method, you can get a list of metadata for various entities (products, options, customers, orders). Usually this is data created by third-party plugins.
     # @param entity_id [String] Entity Id
     # @param [Hash] opts the optional parameters
+    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :entity Entity (default to 'product')
     # @option opts [String] :store_id Store Id
     # @option opts [String] :lang_id Language id
     # @option opts [String] :key Key
-    # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'key,value')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'key,value')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(ModelResponseCartMetaDataList, Integer, Hash)>] ModelResponseCartMetaDataList data, response status code and response headers
     def cart_meta_data_list_with_http_info(entity_id, opts = {})
@@ -1471,14 +1471,14 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'entity_id'] = entity_id
+      query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
+      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'entity'] = opts[:'entity'] if !opts[:'entity'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
       query_params[:'key'] = opts[:'key'] if !opts[:'key'].nil?
-      query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
-      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
@@ -1753,9 +1753,9 @@ module OpenapiClient
     # cart.plugin.list
     # Get a list of third-party plugins installed on the store.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :store_id Store Id
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :store_id Store Id
     # @return [CartPluginList200Response]
     def cart_plugin_list(opts = {})
       data, _status_code, _headers = cart_plugin_list_with_http_info(opts)
@@ -1765,9 +1765,9 @@ module OpenapiClient
     # cart.plugin.list
     # Get a list of third-party plugins installed on the store.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :store_id Store Id
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :store_id Store Id
     # @return [Array<(CartPluginList200Response, Integer, Hash)>] CartPluginList200Response data, response status code and response headers
     def cart_plugin_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -1778,9 +1778,9 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -1967,17 +1967,17 @@ module OpenapiClient
     # cart.script.list
     # Get scripts installed to the storefront
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+    # @option opts [String] :script_ids Retrieves only scripts with specific ids
+    # @option opts [String] :store_id Store Id
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [String] :script_ids Retrieves only scripts with specific ids
-    # @option opts [String] :store_id Store Id
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [ModelResponseCartScriptList]
     def cart_script_list(opts = {})
@@ -1988,17 +1988,17 @@ module OpenapiClient
     # cart.script.list
     # Get scripts installed to the storefront
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+    # @option opts [String] :script_ids Retrieves only scripts with specific ids
+    # @option opts [String] :store_id Store Id
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [String] :script_ids Retrieves only scripts with specific ids
-    # @option opts [String] :store_id Store Id
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(ModelResponseCartScriptList, Integer, Hash)>] ModelResponseCartScriptList data, response status code and response headers
     def cart_script_list_with_http_info(opts = {})
@@ -2010,17 +2010,17 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
+      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
+      query_params[:'script_ids'] = opts[:'script_ids'] if !opts[:'script_ids'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
       query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
       query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
       query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
-      query_params[:'script_ids'] = opts[:'script_ids'] if !opts[:'script_ids'].nil?
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
@@ -2060,11 +2060,11 @@ module OpenapiClient
     # cart.shipping_zones.list
     # Get list of shipping zones
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :store_id Store Id
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,enabled')
+    # @option opts [String] :store_id Store Id
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,enabled')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [ModelResponseCartShippingZonesList]
     def cart_shipping_zones_list(opts = {})
@@ -2075,11 +2075,11 @@ module OpenapiClient
     # cart.shipping_zones.list
     # Get list of shipping zones
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :store_id Store Id
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,enabled')
+    # @option opts [String] :store_id Store Id
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,enabled')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(ModelResponseCartShippingZonesList, Integer, Hash)>] ModelResponseCartShippingZonesList data, response status code and response headers
     def cart_shipping_zones_list_with_http_info(opts = {})
@@ -2091,11 +2091,11 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters

@@ -15,14 +15,71 @@ require 'time'
 
 module OpenapiClient
   class ProductVariantUpdate
-    # Defines store id where the variant should be found
-    attr_accessor :store_id
-
     # Defines variant update specified by variant id
     attr_accessor :id
 
     # Defines product's id where the variant has to be updated
     attr_accessor :product_id
+
+    # Defines store id where the variant should be found
+    attr_accessor :store_id
+
+    # Language id
+    attr_accessor :lang_id
+
+    # Defines variant's options list
+    attr_accessor :options
+
+    # Defines variant's name that has to be updated
+    attr_accessor :name
+
+    # Specifies variant's description
+    attr_accessor :description
+
+    # Defines short description
+    attr_accessor :short_description
+
+    # Specifies variant's model that has to be added
+    attr_accessor :model
+
+    # Defines new product's variant sku
+    attr_accessor :sku
+
+    # Set visibility status
+    attr_accessor :visible
+
+    # Defines product variant's status
+    attr_accessor :status
+
+    # Set backorder status
+    attr_accessor :backorder_status
+
+    # Specifies the set of visible/invisible product's variants for sale
+    attr_accessor :available_for_sale
+
+    # Defines category's visibility status
+    attr_accessor :avail
+
+    # Defines as a default variant
+    attr_accessor :is_default
+
+    # Specifies variant's free shipping flag that has to be added
+    attr_accessor :is_free_shipping
+
+    # Specifies whether a tax is charged
+    attr_accessor :taxable
+
+    # Defines tax classes where entity has to be added
+    attr_accessor :tax_class_id
+
+    # Defines whether the product is virtual
+    attr_accessor :is_virtual
+
+    # Defines inventory tracking for product variant
+    attr_accessor :manage_stock
+
+    # Set stock status
+    attr_accessor :in_stock
 
     # This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
     attr_accessor :warehouse_id
@@ -63,62 +120,11 @@ module OpenapiClient
     # Defines the term of special price offer duration
     attr_accessor :sprice_expire
 
-    # Defines inventory tracking for product variant
-    attr_accessor :manage_stock
-
-    # Set stock status
-    attr_accessor :in_stock
-
-    # Defines variant's name that has to be updated
-    attr_accessor :name
-
-    # Specifies variant's description
-    attr_accessor :description
-
-    # Defines new product's variant sku
-    attr_accessor :sku
-
-    # Defines unique meta title for each entity
-    attr_accessor :meta_title
-
-    # Defines unique meta description of a entity
-    attr_accessor :meta_description
-
-    # Defines unique meta keywords for each entity
-    attr_accessor :meta_keywords
-
-    # Defines short description
-    attr_accessor :short_description
-
-    # Set visibility status
-    attr_accessor :visible
-
-    # Defines product variant's status
-    attr_accessor :status
-
-    # Set backorder status
-    attr_accessor :backorder_status
-
     # Weight
     attr_accessor :weight
 
     # A barcode is a unique code composed of numbers used as a product identifier.
     attr_accessor :barcode
-
-    # Is reindex required
-    attr_accessor :reindex
-
-    # Specifies whether a tax is charged
-    attr_accessor :taxable
-
-    # Defines variant's options list
-    attr_accessor :options
-
-    # Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
-    attr_accessor :harmonized_system_code
-
-    # The country where the inventory item was made
-    attr_accessor :country_of_origin
 
     # Defines product's width
     attr_accessor :width
@@ -135,18 +141,6 @@ module OpenapiClient
     # Global Trade Item Number. An GTIN is an identifier for trade items.
     attr_accessor :gtin
 
-    # Is cache clear required
-    attr_accessor :clear_cache
-
-    # Language id
-    attr_accessor :lang_id
-
-    # Specifies variant's model that has to be added
-    attr_accessor :model
-
-    # Specifies the set of visible/invisible product's variants for sale
-    attr_accessor :available_for_sale
-
     # Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products.
     attr_accessor :upc
 
@@ -159,27 +153,52 @@ module OpenapiClient
     # International Standard Book Number. An ISBN is a unique identifier for books.
     attr_accessor :isbn
 
-    # Defines category's visibility status
-    attr_accessor :avail
+    # Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
+    attr_accessor :harmonized_system_code
 
-    # Defines as a default variant
-    attr_accessor :is_default
+    # The country where the inventory item was made
+    attr_accessor :country_of_origin
 
-    # Specifies variant's free shipping flag that has to be added
-    attr_accessor :is_free_shipping
+    # Defines unique meta title for each entity
+    attr_accessor :meta_title
 
-    # Defines tax classes where entity has to be added
-    attr_accessor :tax_class_id
+    # Defines unique meta description of a entity
+    attr_accessor :meta_description
 
-    # Defines whether the product is virtual
-    attr_accessor :is_virtual
+    # Defines unique meta keywords for each entity
+    attr_accessor :meta_keywords
+
+    # Is reindex required
+    attr_accessor :reindex
+
+    # Is cache clear required
+    attr_accessor :clear_cache
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'store_id' => :'store_id',
         :'id' => :'id',
         :'product_id' => :'product_id',
+        :'store_id' => :'store_id',
+        :'lang_id' => :'lang_id',
+        :'options' => :'options',
+        :'name' => :'name',
+        :'description' => :'description',
+        :'short_description' => :'short_description',
+        :'model' => :'model',
+        :'sku' => :'sku',
+        :'visible' => :'visible',
+        :'status' => :'status',
+        :'backorder_status' => :'backorder_status',
+        :'available_for_sale' => :'available_for_sale',
+        :'avail' => :'avail',
+        :'is_default' => :'is_default',
+        :'is_free_shipping' => :'is_free_shipping',
+        :'taxable' => :'taxable',
+        :'tax_class_id' => :'tax_class_id',
+        :'is_virtual' => :'is_virtual',
+        :'manage_stock' => :'manage_stock',
+        :'in_stock' => :'in_stock',
         :'warehouse_id' => :'warehouse_id',
         :'reserve_quantity' => :'reserve_quantity',
         :'quantity' => :'quantity',
@@ -193,43 +212,24 @@ module OpenapiClient
         :'fixed_cost_shipping_price' => :'fixed_cost_shipping_price',
         :'sprice_create' => :'sprice_create',
         :'sprice_expire' => :'sprice_expire',
-        :'manage_stock' => :'manage_stock',
-        :'in_stock' => :'in_stock',
-        :'name' => :'name',
-        :'description' => :'description',
-        :'sku' => :'sku',
-        :'meta_title' => :'meta_title',
-        :'meta_description' => :'meta_description',
-        :'meta_keywords' => :'meta_keywords',
-        :'short_description' => :'short_description',
-        :'visible' => :'visible',
-        :'status' => :'status',
-        :'backorder_status' => :'backorder_status',
         :'weight' => :'weight',
         :'barcode' => :'barcode',
-        :'reindex' => :'reindex',
-        :'taxable' => :'taxable',
-        :'options' => :'options',
-        :'harmonized_system_code' => :'harmonized_system_code',
-        :'country_of_origin' => :'country_of_origin',
         :'width' => :'width',
         :'weight_unit' => :'weight_unit',
         :'height' => :'height',
         :'length' => :'length',
         :'gtin' => :'gtin',
-        :'clear_cache' => :'clear_cache',
-        :'lang_id' => :'lang_id',
-        :'model' => :'model',
-        :'available_for_sale' => :'available_for_sale',
         :'upc' => :'upc',
         :'mpn' => :'mpn',
         :'ean' => :'ean',
         :'isbn' => :'isbn',
-        :'avail' => :'avail',
-        :'is_default' => :'is_default',
-        :'is_free_shipping' => :'is_free_shipping',
-        :'tax_class_id' => :'tax_class_id',
-        :'is_virtual' => :'is_virtual'
+        :'harmonized_system_code' => :'harmonized_system_code',
+        :'country_of_origin' => :'country_of_origin',
+        :'meta_title' => :'meta_title',
+        :'meta_description' => :'meta_description',
+        :'meta_keywords' => :'meta_keywords',
+        :'reindex' => :'reindex',
+        :'clear_cache' => :'clear_cache'
       }
     end
 
@@ -241,9 +241,28 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'store_id' => :'String',
         :'id' => :'String',
         :'product_id' => :'String',
+        :'store_id' => :'String',
+        :'lang_id' => :'String',
+        :'options' => :'Array<ProductVariantUpdateOptionsInner>',
+        :'name' => :'String',
+        :'description' => :'String',
+        :'short_description' => :'String',
+        :'model' => :'String',
+        :'sku' => :'String',
+        :'visible' => :'String',
+        :'status' => :'String',
+        :'backorder_status' => :'String',
+        :'available_for_sale' => :'Boolean',
+        :'avail' => :'Boolean',
+        :'is_default' => :'Boolean',
+        :'is_free_shipping' => :'Boolean',
+        :'taxable' => :'Boolean',
+        :'tax_class_id' => :'String',
+        :'is_virtual' => :'Boolean',
+        :'manage_stock' => :'Boolean',
+        :'in_stock' => :'Boolean',
         :'warehouse_id' => :'String',
         :'reserve_quantity' => :'Float',
         :'quantity' => :'Float',
@@ -257,43 +276,24 @@ module OpenapiClient
         :'fixed_cost_shipping_price' => :'Float',
         :'sprice_create' => :'String',
         :'sprice_expire' => :'String',
-        :'manage_stock' => :'Boolean',
-        :'in_stock' => :'Boolean',
-        :'name' => :'String',
-        :'description' => :'String',
-        :'sku' => :'String',
-        :'meta_title' => :'String',
-        :'meta_description' => :'String',
-        :'meta_keywords' => :'String',
-        :'short_description' => :'String',
-        :'visible' => :'String',
-        :'status' => :'String',
-        :'backorder_status' => :'String',
         :'weight' => :'Float',
         :'barcode' => :'String',
-        :'reindex' => :'Boolean',
-        :'taxable' => :'Boolean',
-        :'options' => :'Array<ProductVariantUpdateOptionsInner>',
-        :'harmonized_system_code' => :'String',
-        :'country_of_origin' => :'String',
         :'width' => :'Float',
         :'weight_unit' => :'String',
         :'height' => :'Float',
         :'length' => :'Float',
         :'gtin' => :'String',
-        :'clear_cache' => :'Boolean',
-        :'lang_id' => :'String',
-        :'model' => :'String',
-        :'available_for_sale' => :'Boolean',
         :'upc' => :'String',
         :'mpn' => :'String',
         :'ean' => :'String',
         :'isbn' => :'String',
-        :'avail' => :'Boolean',
-        :'is_default' => :'Boolean',
-        :'is_free_shipping' => :'Boolean',
-        :'tax_class_id' => :'String',
-        :'is_virtual' => :'Boolean'
+        :'harmonized_system_code' => :'String',
+        :'country_of_origin' => :'String',
+        :'meta_title' => :'String',
+        :'meta_description' => :'String',
+        :'meta_keywords' => :'String',
+        :'reindex' => :'Boolean',
+        :'clear_cache' => :'Boolean'
       }
     end
 
@@ -318,16 +318,102 @@ module OpenapiClient
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'store_id')
-        self.store_id = attributes[:'store_id']
-      end
-
       if attributes.key?(:'id')
         self.id = attributes[:'id']
       end
 
       if attributes.key?(:'product_id')
         self.product_id = attributes[:'product_id']
+      end
+
+      if attributes.key?(:'store_id')
+        self.store_id = attributes[:'store_id']
+      end
+
+      if attributes.key?(:'lang_id')
+        self.lang_id = attributes[:'lang_id']
+      end
+
+      if attributes.key?(:'options')
+        if (value = attributes[:'options']).is_a?(Array)
+          self.options = value
+        end
+      end
+
+      if attributes.key?(:'name')
+        self.name = attributes[:'name']
+      end
+
+      if attributes.key?(:'description')
+        self.description = attributes[:'description']
+      end
+
+      if attributes.key?(:'short_description')
+        self.short_description = attributes[:'short_description']
+      end
+
+      if attributes.key?(:'model')
+        self.model = attributes[:'model']
+      end
+
+      if attributes.key?(:'sku')
+        self.sku = attributes[:'sku']
+      end
+
+      if attributes.key?(:'visible')
+        self.visible = attributes[:'visible']
+      end
+
+      if attributes.key?(:'status')
+        self.status = attributes[:'status']
+      end
+
+      if attributes.key?(:'backorder_status')
+        self.backorder_status = attributes[:'backorder_status']
+      end
+
+      if attributes.key?(:'available_for_sale')
+        self.available_for_sale = attributes[:'available_for_sale']
+      else
+        self.available_for_sale = true
+      end
+
+      if attributes.key?(:'avail')
+        self.avail = attributes[:'avail']
+      else
+        self.avail = true
+      end
+
+      if attributes.key?(:'is_default')
+        self.is_default = attributes[:'is_default']
+      end
+
+      if attributes.key?(:'is_free_shipping')
+        self.is_free_shipping = attributes[:'is_free_shipping']
+      end
+
+      if attributes.key?(:'taxable')
+        self.taxable = attributes[:'taxable']
+      else
+        self.taxable = true
+      end
+
+      if attributes.key?(:'tax_class_id')
+        self.tax_class_id = attributes[:'tax_class_id']
+      end
+
+      if attributes.key?(:'is_virtual')
+        self.is_virtual = attributes[:'is_virtual']
+      else
+        self.is_virtual = false
+      end
+
+      if attributes.key?(:'manage_stock')
+        self.manage_stock = attributes[:'manage_stock']
+      end
+
+      if attributes.key?(:'in_stock')
+        self.in_stock = attributes[:'in_stock']
       end
 
       if attributes.key?(:'warehouse_id')
@@ -386,54 +472,6 @@ module OpenapiClient
         self.sprice_expire = attributes[:'sprice_expire']
       end
 
-      if attributes.key?(:'manage_stock')
-        self.manage_stock = attributes[:'manage_stock']
-      end
-
-      if attributes.key?(:'in_stock')
-        self.in_stock = attributes[:'in_stock']
-      end
-
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.key?(:'description')
-        self.description = attributes[:'description']
-      end
-
-      if attributes.key?(:'sku')
-        self.sku = attributes[:'sku']
-      end
-
-      if attributes.key?(:'meta_title')
-        self.meta_title = attributes[:'meta_title']
-      end
-
-      if attributes.key?(:'meta_description')
-        self.meta_description = attributes[:'meta_description']
-      end
-
-      if attributes.key?(:'meta_keywords')
-        self.meta_keywords = attributes[:'meta_keywords']
-      end
-
-      if attributes.key?(:'short_description')
-        self.short_description = attributes[:'short_description']
-      end
-
-      if attributes.key?(:'visible')
-        self.visible = attributes[:'visible']
-      end
-
-      if attributes.key?(:'status')
-        self.status = attributes[:'status']
-      end
-
-      if attributes.key?(:'backorder_status')
-        self.backorder_status = attributes[:'backorder_status']
-      end
-
       if attributes.key?(:'weight')
         self.weight = attributes[:'weight']
       else
@@ -442,32 +480,6 @@ module OpenapiClient
 
       if attributes.key?(:'barcode')
         self.barcode = attributes[:'barcode']
-      end
-
-      if attributes.key?(:'reindex')
-        self.reindex = attributes[:'reindex']
-      else
-        self.reindex = true
-      end
-
-      if attributes.key?(:'taxable')
-        self.taxable = attributes[:'taxable']
-      else
-        self.taxable = true
-      end
-
-      if attributes.key?(:'options')
-        if (value = attributes[:'options']).is_a?(Array)
-          self.options = value
-        end
-      end
-
-      if attributes.key?(:'harmonized_system_code')
-        self.harmonized_system_code = attributes[:'harmonized_system_code']
-      end
-
-      if attributes.key?(:'country_of_origin')
-        self.country_of_origin = attributes[:'country_of_origin']
       end
 
       if attributes.key?(:'width')
@@ -490,26 +502,6 @@ module OpenapiClient
         self.gtin = attributes[:'gtin']
       end
 
-      if attributes.key?(:'clear_cache')
-        self.clear_cache = attributes[:'clear_cache']
-      else
-        self.clear_cache = true
-      end
-
-      if attributes.key?(:'lang_id')
-        self.lang_id = attributes[:'lang_id']
-      end
-
-      if attributes.key?(:'model')
-        self.model = attributes[:'model']
-      end
-
-      if attributes.key?(:'available_for_sale')
-        self.available_for_sale = attributes[:'available_for_sale']
-      else
-        self.available_for_sale = true
-      end
-
       if attributes.key?(:'upc')
         self.upc = attributes[:'upc']
       end
@@ -526,28 +518,36 @@ module OpenapiClient
         self.isbn = attributes[:'isbn']
       end
 
-      if attributes.key?(:'avail')
-        self.avail = attributes[:'avail']
+      if attributes.key?(:'harmonized_system_code')
+        self.harmonized_system_code = attributes[:'harmonized_system_code']
+      end
+
+      if attributes.key?(:'country_of_origin')
+        self.country_of_origin = attributes[:'country_of_origin']
+      end
+
+      if attributes.key?(:'meta_title')
+        self.meta_title = attributes[:'meta_title']
+      end
+
+      if attributes.key?(:'meta_description')
+        self.meta_description = attributes[:'meta_description']
+      end
+
+      if attributes.key?(:'meta_keywords')
+        self.meta_keywords = attributes[:'meta_keywords']
+      end
+
+      if attributes.key?(:'reindex')
+        self.reindex = attributes[:'reindex']
       else
-        self.avail = true
+        self.reindex = true
       end
 
-      if attributes.key?(:'is_default')
-        self.is_default = attributes[:'is_default']
-      end
-
-      if attributes.key?(:'is_free_shipping')
-        self.is_free_shipping = attributes[:'is_free_shipping']
-      end
-
-      if attributes.key?(:'tax_class_id')
-        self.tax_class_id = attributes[:'tax_class_id']
-      end
-
-      if attributes.key?(:'is_virtual')
-        self.is_virtual = attributes[:'is_virtual']
+      if attributes.key?(:'clear_cache')
+        self.clear_cache = attributes[:'clear_cache']
       else
-        self.is_virtual = false
+        self.clear_cache = true
       end
     end
 
@@ -571,9 +571,28 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          store_id == o.store_id &&
           id == o.id &&
           product_id == o.product_id &&
+          store_id == o.store_id &&
+          lang_id == o.lang_id &&
+          options == o.options &&
+          name == o.name &&
+          description == o.description &&
+          short_description == o.short_description &&
+          model == o.model &&
+          sku == o.sku &&
+          visible == o.visible &&
+          status == o.status &&
+          backorder_status == o.backorder_status &&
+          available_for_sale == o.available_for_sale &&
+          avail == o.avail &&
+          is_default == o.is_default &&
+          is_free_shipping == o.is_free_shipping &&
+          taxable == o.taxable &&
+          tax_class_id == o.tax_class_id &&
+          is_virtual == o.is_virtual &&
+          manage_stock == o.manage_stock &&
+          in_stock == o.in_stock &&
           warehouse_id == o.warehouse_id &&
           reserve_quantity == o.reserve_quantity &&
           quantity == o.quantity &&
@@ -587,43 +606,24 @@ module OpenapiClient
           fixed_cost_shipping_price == o.fixed_cost_shipping_price &&
           sprice_create == o.sprice_create &&
           sprice_expire == o.sprice_expire &&
-          manage_stock == o.manage_stock &&
-          in_stock == o.in_stock &&
-          name == o.name &&
-          description == o.description &&
-          sku == o.sku &&
-          meta_title == o.meta_title &&
-          meta_description == o.meta_description &&
-          meta_keywords == o.meta_keywords &&
-          short_description == o.short_description &&
-          visible == o.visible &&
-          status == o.status &&
-          backorder_status == o.backorder_status &&
           weight == o.weight &&
           barcode == o.barcode &&
-          reindex == o.reindex &&
-          taxable == o.taxable &&
-          options == o.options &&
-          harmonized_system_code == o.harmonized_system_code &&
-          country_of_origin == o.country_of_origin &&
           width == o.width &&
           weight_unit == o.weight_unit &&
           height == o.height &&
           length == o.length &&
           gtin == o.gtin &&
-          clear_cache == o.clear_cache &&
-          lang_id == o.lang_id &&
-          model == o.model &&
-          available_for_sale == o.available_for_sale &&
           upc == o.upc &&
           mpn == o.mpn &&
           ean == o.ean &&
           isbn == o.isbn &&
-          avail == o.avail &&
-          is_default == o.is_default &&
-          is_free_shipping == o.is_free_shipping &&
-          tax_class_id == o.tax_class_id &&
-          is_virtual == o.is_virtual
+          harmonized_system_code == o.harmonized_system_code &&
+          country_of_origin == o.country_of_origin &&
+          meta_title == o.meta_title &&
+          meta_description == o.meta_description &&
+          meta_keywords == o.meta_keywords &&
+          reindex == o.reindex &&
+          clear_cache == o.clear_cache
     end
 
     # @see the `==` method
@@ -635,7 +635,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [store_id, id, product_id, warehouse_id, reserve_quantity, quantity, increase_quantity, reduce_quantity, price, special_price, retail_price, old_price, cost_price, fixed_cost_shipping_price, sprice_create, sprice_expire, manage_stock, in_stock, name, description, sku, meta_title, meta_description, meta_keywords, short_description, visible, status, backorder_status, weight, barcode, reindex, taxable, options, harmonized_system_code, country_of_origin, width, weight_unit, height, length, gtin, clear_cache, lang_id, model, available_for_sale, upc, mpn, ean, isbn, avail, is_default, is_free_shipping, tax_class_id, is_virtual].hash
+      [id, product_id, store_id, lang_id, options, name, description, short_description, model, sku, visible, status, backorder_status, available_for_sale, avail, is_default, is_free_shipping, taxable, tax_class_id, is_virtual, manage_stock, in_stock, warehouse_id, reserve_quantity, quantity, increase_quantity, reduce_quantity, price, special_price, retail_price, old_price, cost_price, fixed_cost_shipping_price, sprice_create, sprice_expire, weight, barcode, width, weight_unit, height, length, gtin, upc, mpn, ean, isbn, harmonized_system_code, country_of_origin, meta_title, meta_description, meta_keywords, reindex, clear_cache].hash
     end
 
     # Builds the object from hash

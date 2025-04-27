@@ -98,9 +98,9 @@ describe 'AttributeApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @return [ModelResponseAttributeAttributesetList]
   describe 'attribute_attributeset_list test' do
     it 'should work' do
@@ -145,11 +145,11 @@ describe 'AttributeApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
+  # @option opts [String] :attribute_set_id Attribute set id
   # @option opts [String] :lang_id Language id
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :attribute_set_id Attribute set id
   # @return [ModelResponseAttributeGroupList]
   describe 'attribute_group_list test' do
     it 'should work' do
@@ -165,9 +165,9 @@ describe 'AttributeApi' do
   # @option opts [String] :attribute_set_id Attribute set id
   # @option opts [String] :store_id Store Id
   # @option opts [String] :lang_id Language id
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @return [AttributeInfo200Response]
   describe 'attribute_info test' do
     it 'should work' do
@@ -181,17 +181,17 @@ describe 'AttributeApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
-  # @option opts [String] :type Defines attribute&#39;s type
   # @option opts [String] :attribute_ids Filter attributes by ids
   # @option opts [String] :attribute_set_id Filter items by attribute set id
   # @option opts [String] :store_id Store Id
   # @option opts [String] :lang_id Retrieves attributes on specified language id
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :type Defines attribute&#39;s type
   # @option opts [Boolean] :visible Filter items by visibility status
   # @option opts [Boolean] :required Defines if the option is required
   # @option opts [Boolean] :system True if attribute is system
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [ModelResponseAttributeList]
   describe 'attribute_list test' do
     it 'should work' do

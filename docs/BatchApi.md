@@ -38,11 +38,11 @@ api_instance = OpenapiClient::BatchApi.new
 opts = {
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
   page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+  ids: '24,25', # String | Filter batch jobs by ids
   created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
   created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
   processed_from: '2100-08-29 13:45:52', # String | Retrieve entities according to their processing datetime
   processed_to: '2100-08-29 13:45:52', # String | Retrieve entities according to their processing datetime
-  ids: '24,25', # String | Filter batch jobs by ids
   response_fields: '{result}' # String | Set this parameter in order to choose which entity fields you want to retrieve
 }
 
@@ -79,11 +79,11 @@ end
 | ---- | ---- | ----------- | ----- |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
 | **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
+| **ids** | **String** | Filter batch jobs by ids | [optional] |
 | **created_from** | **String** | Retrieve entities from their creation date | [optional] |
 | **created_to** | **String** | Retrieve entities to their creation date | [optional] |
 | **processed_from** | **String** | Retrieve entities according to their processing datetime | [optional] |
 | **processed_to** | **String** | Retrieve entities according to their processing datetime | [optional] |
-| **ids** | **String** | Filter batch jobs by ids | [optional] |
 | **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;{return_code,return_message,pagination,result}&#39;] |
 
 ### Return type

@@ -65,9 +65,9 @@ describe 'CustomerApi' do
   # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [String] :store_id Store Id
   # @option opts [String] :lang_id Language id
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @return [ModelResponseCustomerAttributeList]
   describe 'customer_attribute_list test' do
     it 'should work' do
@@ -79,18 +79,18 @@ describe 'CustomerApi' do
   # customer.count
   # Get number of customers from store.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :ids Counts customers specified by ids
+  # @option opts [String] :since_id Retrieve entities starting from the specified id.
+  # @option opts [String] :customer_list_id The numeric ID of the customer list in Demandware.
   # @option opts [String] :group_id Customer group_id
+  # @option opts [String] :store_id Counts customer specified by store id
+  # @option opts [Boolean] :avail Defines category&#39;s visibility status
+  # @option opts [String] :find_value Entity search that is specified by some value
+  # @option opts [String] :find_where Counts customers that are searched specified by field
   # @option opts [String] :created_from Retrieve entities from their creation date
   # @option opts [String] :created_to Retrieve entities to their creation date
   # @option opts [String] :modified_from Retrieve entities from their modification date
   # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @option opts [String] :store_id Counts customer specified by store id
-  # @option opts [String] :customer_list_id The numeric ID of the customer list in Demandware.
-  # @option opts [Boolean] :avail Defines category&#39;s visibility status
-  # @option opts [String] :find_value Entity search that is specified by some value
-  # @option opts [String] :find_where Counts customers that are searched specified by field
-  # @option opts [String] :ids Counts customers specified by ids
-  # @option opts [String] :since_id Retrieve entities starting from the specified id.
   # @return [CustomerCount200Response]
   describe 'customer_count test' do
     it 'should work' do
@@ -143,16 +143,16 @@ describe 'CustomerApi' do
   # customer.group.list
   # Get list of customers groups.
   # @param [Hash] opts the optional parameters
-  # @option opts [Boolean] :disable_cache Disable cache for current request
-  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
+  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+  # @option opts [String] :group_ids Groups that will be assigned to a customer
   # @option opts [String] :store_id Store Id
   # @option opts [String] :lang_id Language id
-  # @option opts [String] :group_ids Groups that will be assigned to a customer
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [Boolean] :disable_cache Disable cache for current request
   # @return [ModelResponseCustomerGroupList]
   describe 'customer_group_list test' do
     it 'should work' do
@@ -165,10 +165,10 @@ describe 'CustomerApi' do
   # Get customers&#39; details from store.
   # @param id Retrieves customer&#39;s info specified by customer id
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @option opts [String] :store_id Retrieves customer info specified by store id
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [CustomerInfo200Response]
   describe 'customer_info test' do
     it 'should work' do
@@ -180,26 +180,26 @@ describe 'CustomerApi' do
   # customer.list
   # Get list of customers from store.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
+  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+  # @option opts [String] :ids Retrieves customers specified by ids
+  # @option opts [String] :since_id Retrieve entities starting from the specified id.
+  # @option opts [String] :customer_list_id The numeric ID of the customer list in Demandware.
+  # @option opts [String] :group_id Customer group_id
+  # @option opts [String] :store_id Retrieves customers specified by store id
+  # @option opts [Boolean] :avail Defines category&#39;s visibility status
+  # @option opts [String] :find_value Entity search that is specified by some value
+  # @option opts [String] :find_where Customer search that is specified by field
   # @option opts [String] :created_from Retrieve entities from their creation date
   # @option opts [String] :created_to Retrieve entities to their creation date
   # @option opts [String] :modified_from Retrieve entities from their modification date
   # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :group_id Customer group_id
-  # @option opts [String] :store_id Retrieves customers specified by store id
-  # @option opts [String] :customer_list_id The numeric ID of the customer list in Demandware.
-  # @option opts [Boolean] :avail Defines category&#39;s visibility status
-  # @option opts [String] :find_value Entity search that is specified by some value
-  # @option opts [String] :find_where Customer search that is specified by field
   # @option opts [String] :sort_by Set field to sort by
   # @option opts [String] :sort_direction Set sorting direction
-  # @option opts [String] :ids Retrieves customers specified by ids
-  # @option opts [String] :since_id Retrieve entities starting from the specified id.
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [ModelResponseCustomerList]
   describe 'customer_list test' do
     it 'should work' do
@@ -224,11 +224,11 @@ describe 'CustomerApi' do
   # Get a Wish List of customer from the store.
   # @param customer_id Retrieves orders specified by customer id
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :id Entity id
-  # @option opts [String] :store_id Store Id
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
   # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+  # @option opts [String] :id Entity id
+  # @option opts [String] :store_id Store Id
   # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @return [ModelResponseCustomerWishlistList]
   describe 'customer_wishlist_list test' do

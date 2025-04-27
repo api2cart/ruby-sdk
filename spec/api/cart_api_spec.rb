@@ -58,12 +58,12 @@ describe 'CartApi' do
   # cart.catalog_price_rules.list
   # Get cart catalog price rules discounts.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
+  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [String] :ids Retrieves  catalog_price_rules by ids
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [ModelResponseCartCatalogPriceRulesList]
   describe 'cart_catalog_price_rules_list test' do
@@ -130,10 +130,10 @@ describe 'CartApi' do
   # @param operator Defines condition operator
   # @param value Defines condition value, can be comma separated according to the operator.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :store_id Store Id
   # @option opts [String] :target Defines condition operator
   # @option opts [Boolean] :include_tax Indicates whether to apply a discount for taxes.
   # @option opts [Boolean] :include_shipping Indicates whether to apply a discount for shipping.
+  # @option opts [String] :store_id Store Id
   # @return [BasketLiveShippingServiceDelete200Response]
   describe 'cart_coupon_condition_add test' do
     it 'should work' do
@@ -146,11 +146,11 @@ describe 'CartApi' do
   # This method allows you to get the number of coupons. On some platforms, you can filter the coupons by the date they were active.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :store_id Store Id
+  # @option opts [Boolean] :avail Defines category&#39;s visibility status
   # @option opts [String] :date_start_from Filter entity by date_start (greater or equal)
   # @option opts [String] :date_start_to Filter entity by date_start (less or equal)
   # @option opts [String] :date_end_from Filter entity by date_end (greater or equal)
   # @option opts [String] :date_end_to Filter entity by date_end (less or equal)
-  # @option opts [Boolean] :avail Defines category&#39;s visibility status
   # @return [CartCouponCount200Response]
   describe 'cart_coupon_count test' do
     it 'should work' do
@@ -175,19 +175,19 @@ describe 'CartApi' do
   # cart.coupon.list
   # Get cart coupon discounts.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
+  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [String] :coupons_ids Filter coupons by ids
   # @option opts [String] :store_id Filter coupons by store id
+  # @option opts [String] :lang_id Language id
+  # @option opts [Boolean] :avail Filter coupons by avail status
   # @option opts [String] :date_start_from Filter entity by date_start (greater or equal)
   # @option opts [String] :date_start_to Filter entity by date_start (less or equal)
   # @option opts [String] :date_end_from Filter entity by date_end (greater or equal)
   # @option opts [String] :date_end_to Filter entity by date_end (less or equal)
-  # @option opts [Boolean] :avail Filter coupons by avail status
-  # @option opts [String] :lang_id Language id
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [ModelResponseCartCouponList]
   describe 'cart_coupon_list test' do
@@ -277,12 +277,12 @@ describe 'CartApi' do
   # cart.giftcard.list
   # Get gift cards list.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
+  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [String] :store_id Store Id
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [ModelResponseCartGiftCardList]
   describe 'cart_giftcard_list test' do
@@ -295,10 +295,10 @@ describe 'CartApi' do
   # cart.info
   # This method allows you to get various information about the store, including a list of stores (in the case of a multistore configuration), a list of supported languages, currencies, carriers, warehouses, and many other information. This information contains data that is relatively stable and rarely changes, so API2Cart can cache certain data to reduce the load on the store and speed up the execution of the request. We also recommend that you cache the response of this method on your side to save requests. If you need to clear the cache for a specific store, then use the cart.validate method.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @option opts [String] :store_id Store Id
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [CartInfo200Response]
   describe 'cart_info test' do
     it 'should work' do
@@ -322,14 +322,14 @@ describe 'CartApi' do
   # Using this method, you can get a list of metadata for various entities (products, options, customers, orders). Usually this is data created by third-party plugins.
   # @param entity_id Entity Id
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
+  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [String] :entity Entity
   # @option opts [String] :store_id Store Id
   # @option opts [String] :lang_id Language id
   # @option opts [String] :key Key
-  # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
-  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [ModelResponseCartMetaDataList]
   describe 'cart_meta_data_list test' do
@@ -387,9 +387,9 @@ describe 'CartApi' do
   # cart.plugin.list
   # Get a list of third-party plugins installed on the store.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :store_id Store Id
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
+  # @option opts [String] :store_id Store Id
   # @return [CartPluginList200Response]
   describe 'cart_plugin_list test' do
     it 'should work' do
@@ -433,17 +433,17 @@ describe 'CartApi' do
   # cart.script.list
   # Get scripts installed to the storefront
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
+  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+  # @option opts [String] :script_ids Retrieves only scripts with specific ids
+  # @option opts [String] :store_id Store Id
   # @option opts [String] :created_from Retrieve entities from their creation date
   # @option opts [String] :created_to Retrieve entities to their creation date
   # @option opts [String] :modified_from Retrieve entities from their modification date
   # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @option opts [String] :script_ids Retrieves only scripts with specific ids
-  # @option opts [String] :store_id Store Id
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [ModelResponseCartScriptList]
   describe 'cart_script_list test' do
@@ -456,11 +456,11 @@ describe 'CartApi' do
   # cart.shipping_zones.list
   # Get list of shipping zones
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :store_id Store Id
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :store_id Store Id
   # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [ModelResponseCartShippingZonesList]
   describe 'cart_shipping_zones_list test' do

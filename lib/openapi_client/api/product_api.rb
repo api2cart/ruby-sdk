@@ -159,19 +159,19 @@ module OpenapiClient
     # Get list of attributes and values.
     # @param product_id [String] Retrieves attributes specified by product id
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :attribute_id Retrieves info for specified attribute_id
-    # @option opts [String] :variant_id Defines product&#39;s variants specified by variant id
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+    # @option opts [String] :attribute_id Retrieves info for specified attribute_id
+    # @option opts [String] :variant_id Defines product&#39;s variants specified by variant id
     # @option opts [String] :attribute_group_id Filter by attribute_group_id
-    # @option opts [String] :set_name Retrieves attributes specified by set_name in Magento
     # @option opts [String] :lang_id Retrieves attributes specified by language id
     # @option opts [String] :store_id Retrieves attributes specified by store id
+    # @option opts [String] :set_name Retrieves attributes specified by set_name in Magento
     # @option opts [String] :sort_by Set field to sort by (default to 'attribute_id')
     # @option opts [String] :sort_direction Set sorting direction (default to 'asc')
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'attribute_id,name')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'attribute_id,name')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [ModelResponseProductAttributeList]
     def product_attribute_list(product_id, opts = {})
@@ -183,19 +183,19 @@ module OpenapiClient
     # Get list of attributes and values.
     # @param product_id [String] Retrieves attributes specified by product id
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :attribute_id Retrieves info for specified attribute_id
-    # @option opts [String] :variant_id Defines product&#39;s variants specified by variant id
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+    # @option opts [String] :attribute_id Retrieves info for specified attribute_id
+    # @option opts [String] :variant_id Defines product&#39;s variants specified by variant id
     # @option opts [String] :attribute_group_id Filter by attribute_group_id
-    # @option opts [String] :set_name Retrieves attributes specified by set_name in Magento
     # @option opts [String] :lang_id Retrieves attributes specified by language id
     # @option opts [String] :store_id Retrieves attributes specified by store id
+    # @option opts [String] :set_name Retrieves attributes specified by set_name in Magento
     # @option opts [String] :sort_by Set field to sort by (default to 'attribute_id')
     # @option opts [String] :sort_direction Set sorting direction (default to 'asc')
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'attribute_id,name')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'attribute_id,name')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(ModelResponseProductAttributeList, Integer, Hash)>] ModelResponseProductAttributeList data, response status code and response headers
     def product_attribute_list_with_http_info(product_id, opts = {})
@@ -212,19 +212,19 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'product_id'] = product_id
-      query_params[:'attribute_id'] = opts[:'attribute_id'] if !opts[:'attribute_id'].nil?
-      query_params[:'variant_id'] = opts[:'variant_id'] if !opts[:'variant_id'].nil?
-      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
+      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
+      query_params[:'attribute_id'] = opts[:'attribute_id'] if !opts[:'attribute_id'].nil?
+      query_params[:'variant_id'] = opts[:'variant_id'] if !opts[:'variant_id'].nil?
       query_params[:'attribute_group_id'] = opts[:'attribute_group_id'] if !opts[:'attribute_group_id'].nil?
-      query_params[:'set_name'] = opts[:'set_name'] if !opts[:'set_name'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'set_name'] = opts[:'set_name'] if !opts[:'set_name'].nil?
       query_params[:'sort_by'] = opts[:'sort_by'] if !opts[:'sort_by'].nil?
       query_params[:'sort_direction'] = opts[:'sort_direction'] if !opts[:'sort_direction'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
@@ -435,20 +435,20 @@ module OpenapiClient
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,short_description,active,url')
     # @option opts [String] :brand_ids Retrieves brands specified by brand ids
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :category_id Retrieves product brands specified by category id
+    # @option opts [String] :parent_id Retrieves brands specified by parent id
     # @option opts [String] :store_id Store Id
     # @option opts [String] :lang_id Language id
+    # @option opts [String] :find_where Entity search that is specified by the comma-separated unique fields
+    # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [String] :parent_id Retrieves brands specified by parent id
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :find_where Entity search that is specified by the comma-separated unique fields
-    # @option opts [String] :find_value Entity search that is specified by some value
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,short_description,active,url')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [ModelResponseProductBrandList]
     def product_brand_list(opts = {})
       data, _status_code, _headers = product_brand_list_with_http_info(opts)
@@ -461,20 +461,20 @@ module OpenapiClient
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,short_description,active,url')
     # @option opts [String] :brand_ids Retrieves brands specified by brand ids
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :category_id Retrieves product brands specified by category id
+    # @option opts [String] :parent_id Retrieves brands specified by parent id
     # @option opts [String] :store_id Store Id
     # @option opts [String] :lang_id Language id
+    # @option opts [String] :find_where Entity search that is specified by the comma-separated unique fields
+    # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [String] :parent_id Retrieves brands specified by parent id
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :find_where Entity search that is specified by the comma-separated unique fields
-    # @option opts [String] :find_value Entity search that is specified by some value
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,short_description,active,url')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(ModelResponseProductBrandList, Integer, Hash)>] ModelResponseProductBrandList data, response status code and response headers
     def product_brand_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -488,20 +488,20 @@ module OpenapiClient
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
       query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'brand_ids'] = opts[:'brand_ids'] if !opts[:'brand_ids'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
       query_params[:'category_id'] = opts[:'category_id'] if !opts[:'category_id'].nil?
+      query_params[:'parent_id'] = opts[:'parent_id'] if !opts[:'parent_id'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
+      query_params[:'find_where'] = opts[:'find_where'] if !opts[:'find_where'].nil?
+      query_params[:'find_value'] = opts[:'find_value'] if !opts[:'find_value'].nil?
       query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
       query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
       query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
       query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
-      query_params[:'parent_id'] = opts[:'parent_id'] if !opts[:'parent_id'].nil?
       query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
-      query_params[:'find_where'] = opts[:'find_where'] if !opts[:'find_where'].nil?
-      query_params[:'find_value'] = opts[:'find_value'] if !opts[:'find_value'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -611,12 +611,12 @@ module OpenapiClient
     # @param product_id [String] Filter by parent product id
     # @param id [String] Entity id
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :store_id Store Id
     # @option opts [String] :lang_id Language id
     # @option opts [String] :currency_id Currency Id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
     # @return [ProductChildItemInfo200Response]
     def product_child_item_info(product_id, id, opts = {})
@@ -629,12 +629,12 @@ module OpenapiClient
     # @param product_id [String] Filter by parent product id
     # @param id [String] Entity id
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :store_id Store Id
     # @option opts [String] :lang_id Language id
     # @option opts [String] :currency_id Currency Id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
     # @return [Array<(ProductChildItemInfo200Response, Integer, Hash)>] ProductChildItemInfo200Response data, response status code and response headers
     def product_child_item_info_with_http_info(product_id, id, opts = {})
@@ -656,12 +656,12 @@ module OpenapiClient
       query_params = opts[:query_params] || {}
       query_params[:'product_id'] = product_id
       query_params[:'id'] = id
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
       query_params[:'currency_id'] = opts[:'currency_id'] if !opts[:'currency_id'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
       query_params[:'use_latest_api_version'] = opts[:'use_latest_api_version'] if !opts[:'use_latest_api_version'].nil?
 
       # header parameters
@@ -701,16 +701,9 @@ module OpenapiClient
     # product.child_item.list
     # Get a list of a product's child items, such as variants or bundle components. The total_count field in the response indicates the total number of items in the context of the current filter.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :page_cursor Used to retrieve products child items via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :created_from Retrieve entities from their creation date
-    # @option opts [String] :created_to Retrieve entities to their creation date
-    # @option opts [String] :modified_from Retrieve entities from their modification date
-    # @option opts [String] :modified_to Retrieve entities to their modification date
+    # @option opts [String] :page_cursor Used to retrieve products child items via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :product_id Filter by parent product id
     # @option opts [String] :product_ids Filter by parent product ids
     # @option opts [String] :sku Filter by products variant&#39;s sku
@@ -720,10 +713,17 @@ module OpenapiClient
     # @option opts [Boolean] :avail_sale Specifies the set of available/not available products for sale
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Child products search that is specified by field
+    # @option opts [String] :created_from Retrieve entities from their creation date
+    # @option opts [String] :created_to Retrieve entities to their creation date
+    # @option opts [String] :modified_from Retrieve entities from their modification date
+    # @option opts [String] :modified_to Retrieve entities to their modification date
+    # @option opts [Boolean] :return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (default to false)
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :report_request_id Report request id
     # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
     # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
-    # @option opts [Boolean] :return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (default to false)
     # @return [ModelResponseProductChildItemList]
     def product_child_item_list(opts = {})
       data, _status_code, _headers = product_child_item_list_with_http_info(opts)
@@ -733,16 +733,9 @@ module OpenapiClient
     # product.child_item.list
     # Get a list of a product&#39;s child items, such as variants or bundle components. The total_count field in the response indicates the total number of items in the context of the current filter.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :page_cursor Used to retrieve products child items via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :created_from Retrieve entities from their creation date
-    # @option opts [String] :created_to Retrieve entities to their creation date
-    # @option opts [String] :modified_from Retrieve entities from their modification date
-    # @option opts [String] :modified_to Retrieve entities to their modification date
+    # @option opts [String] :page_cursor Used to retrieve products child items via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :product_id Filter by parent product id
     # @option opts [String] :product_ids Filter by parent product ids
     # @option opts [String] :sku Filter by products variant&#39;s sku
@@ -752,10 +745,17 @@ module OpenapiClient
     # @option opts [Boolean] :avail_sale Specifies the set of available/not available products for sale
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Child products search that is specified by field
+    # @option opts [String] :created_from Retrieve entities from their creation date
+    # @option opts [String] :created_to Retrieve entities to their creation date
+    # @option opts [String] :modified_from Retrieve entities from their modification date
+    # @option opts [String] :modified_to Retrieve entities to their modification date
+    # @option opts [Boolean] :return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (default to false)
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'force_all')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :report_request_id Report request id
     # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
     # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
-    # @option opts [Boolean] :return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (default to false)
     # @return [Array<(ModelResponseProductChildItemList, Integer, Hash)>] ModelResponseProductChildItemList data, response status code and response headers
     def product_child_item_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -766,16 +766,9 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
-      query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
-      query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
-      query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
+      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'product_id'] = opts[:'product_id'] if !opts[:'product_id'].nil?
       query_params[:'product_ids'] = opts[:'product_ids'] if !opts[:'product_ids'].nil?
       query_params[:'sku'] = opts[:'sku'] if !opts[:'sku'].nil?
@@ -785,10 +778,17 @@ module OpenapiClient
       query_params[:'avail_sale'] = opts[:'avail_sale'] if !opts[:'avail_sale'].nil?
       query_params[:'find_value'] = opts[:'find_value'] if !opts[:'find_value'].nil?
       query_params[:'find_where'] = opts[:'find_where'] if !opts[:'find_where'].nil?
+      query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
+      query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
+      query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
+      query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
+      query_params[:'return_global'] = opts[:'return_global'] if !opts[:'return_global'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
       query_params[:'report_request_id'] = opts[:'report_request_id'] if !opts[:'report_request_id'].nil?
       query_params[:'disable_report_cache'] = opts[:'disable_report_cache'] if !opts[:'disable_report_cache'].nil?
       query_params[:'use_latest_api_version'] = opts[:'use_latest_api_version'] if !opts[:'use_latest_api_version'].nil?
-      query_params[:'return_global'] = opts[:'return_global'] if !opts[:'return_global'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -827,28 +827,28 @@ module OpenapiClient
     # product.count
     # Count products in store.
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :product_ids Counts products specified by product ids
+    # @option opts [String] :since_id Retrieve entities starting from the specified id.
+    # @option opts [String] :categories_ids Defines product add that is specified by comma-separated categories id
     # @option opts [String] :category_id Counts products specified by category id
+    # @option opts [String] :store_id Counts products specified by store id
+    # @option opts [String] :lang_id Counts products specified by language id
+    # @option opts [Boolean] :avail_view Specifies the set of visible/invisible products
+    # @option opts [Boolean] :avail_sale Specifies the set of available/not available products for sale
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [Boolean] :avail_view Specifies the set of visible/invisible products
-    # @option opts [Boolean] :avail_sale Specifies the set of available/not available products for sale
-    # @option opts [String] :store_id Counts products specified by store id
-    # @option opts [String] :lang_id Counts products specified by language id
-    # @option opts [String] :product_ids Counts products specified by product ids
-    # @option opts [String] :since_id Retrieve entities starting from the specified id.
-    # @option opts [String] :report_request_id Report request id
-    # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
     # @option opts [String] :brand_name Retrieves brands specified by brand name
     # @option opts [Array<String>] :product_attributes Defines product attributes
     # @option opts [String] :status Defines product&#39;s status
     # @option opts [String] :type Defines products&#39;s type
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Counts products that are searched specified by field
-    # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
+    # @option opts [String] :report_request_id Report request id
     # @option opts [Boolean] :return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (default to false)
-    # @option opts [String] :categories_ids Defines product add that is specified by comma-separated categories id
+    # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
+    # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
     # @return [ProductCount200Response]
     def product_count(opts = {})
       data, _status_code, _headers = product_count_with_http_info(opts)
@@ -858,28 +858,28 @@ module OpenapiClient
     # product.count
     # Count products in store.
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :product_ids Counts products specified by product ids
+    # @option opts [String] :since_id Retrieve entities starting from the specified id.
+    # @option opts [String] :categories_ids Defines product add that is specified by comma-separated categories id
     # @option opts [String] :category_id Counts products specified by category id
+    # @option opts [String] :store_id Counts products specified by store id
+    # @option opts [String] :lang_id Counts products specified by language id
+    # @option opts [Boolean] :avail_view Specifies the set of visible/invisible products
+    # @option opts [Boolean] :avail_sale Specifies the set of available/not available products for sale
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [Boolean] :avail_view Specifies the set of visible/invisible products
-    # @option opts [Boolean] :avail_sale Specifies the set of available/not available products for sale
-    # @option opts [String] :store_id Counts products specified by store id
-    # @option opts [String] :lang_id Counts products specified by language id
-    # @option opts [String] :product_ids Counts products specified by product ids
-    # @option opts [String] :since_id Retrieve entities starting from the specified id.
-    # @option opts [String] :report_request_id Report request id
-    # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
     # @option opts [String] :brand_name Retrieves brands specified by brand name
     # @option opts [Array<String>] :product_attributes Defines product attributes
     # @option opts [String] :status Defines product&#39;s status
     # @option opts [String] :type Defines products&#39;s type
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Counts products that are searched specified by field
-    # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
+    # @option opts [String] :report_request_id Report request id
     # @option opts [Boolean] :return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (default to false)
-    # @option opts [String] :categories_ids Defines product add that is specified by comma-separated categories id
+    # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
+    # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
     # @return [Array<(ProductCount200Response, Integer, Hash)>] ProductCount200Response data, response status code and response headers
     def product_count_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -890,28 +890,28 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'product_ids'] = opts[:'product_ids'] if !opts[:'product_ids'].nil?
+      query_params[:'since_id'] = opts[:'since_id'] if !opts[:'since_id'].nil?
+      query_params[:'categories_ids'] = opts[:'categories_ids'] if !opts[:'categories_ids'].nil?
       query_params[:'category_id'] = opts[:'category_id'] if !opts[:'category_id'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
+      query_params[:'avail_view'] = opts[:'avail_view'] if !opts[:'avail_view'].nil?
+      query_params[:'avail_sale'] = opts[:'avail_sale'] if !opts[:'avail_sale'].nil?
       query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
       query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
       query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
       query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
-      query_params[:'avail_view'] = opts[:'avail_view'] if !opts[:'avail_view'].nil?
-      query_params[:'avail_sale'] = opts[:'avail_sale'] if !opts[:'avail_sale'].nil?
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
-      query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
-      query_params[:'product_ids'] = opts[:'product_ids'] if !opts[:'product_ids'].nil?
-      query_params[:'since_id'] = opts[:'since_id'] if !opts[:'since_id'].nil?
-      query_params[:'report_request_id'] = opts[:'report_request_id'] if !opts[:'report_request_id'].nil?
-      query_params[:'disable_report_cache'] = opts[:'disable_report_cache'] if !opts[:'disable_report_cache'].nil?
       query_params[:'brand_name'] = opts[:'brand_name'] if !opts[:'brand_name'].nil?
       query_params[:'product_attributes'] = @api_client.build_collection_param(opts[:'product_attributes'], :multi) if !opts[:'product_attributes'].nil?
       query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
       query_params[:'type'] = opts[:'type'] if !opts[:'type'].nil?
       query_params[:'find_value'] = opts[:'find_value'] if !opts[:'find_value'].nil?
       query_params[:'find_where'] = opts[:'find_where'] if !opts[:'find_where'].nil?
-      query_params[:'use_latest_api_version'] = opts[:'use_latest_api_version'] if !opts[:'use_latest_api_version'].nil?
+      query_params[:'report_request_id'] = opts[:'report_request_id'] if !opts[:'report_request_id'].nil?
       query_params[:'return_global'] = opts[:'return_global'] if !opts[:'return_global'].nil?
-      query_params[:'categories_ids'] = opts[:'categories_ids'] if !opts[:'categories_ids'].nil?
+      query_params[:'disable_report_cache'] = opts[:'disable_report_cache'] if !opts[:'disable_report_cache'].nil?
+      query_params[:'use_latest_api_version'] = opts[:'use_latest_api_version'] if !opts[:'use_latest_api_version'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -1038,12 +1038,12 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'name,iso3,default,avail')
     # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [Boolean] :default Specifies the set of default/not default currencies
     # @option opts [Boolean] :avail Specifies the set of available/not available currencies
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'name,iso3,default,avail')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [ModelResponseProductCurrencyList]
     def product_currency_list(opts = {})
       data, _status_code, _headers = product_currency_list_with_http_info(opts)
@@ -1055,12 +1055,12 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'name,iso3,default,avail')
     # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [Boolean] :default Specifies the set of default/not default currencies
     # @option opts [Boolean] :avail Specifies the set of available/not available currencies
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'name,iso3,default,avail')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(ModelResponseProductCurrencyList, Integer, Hash)>] ModelResponseProductCurrencyList data, response status code and response headers
     def product_currency_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -1073,12 +1073,12 @@ module OpenapiClient
       query_params = opts[:query_params] || {}
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
       query_params[:'default'] = opts[:'default'] if !opts[:'default'].nil?
       query_params[:'avail'] = opts[:'avail'] if !opts[:'avail'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -1533,12 +1533,12 @@ module OpenapiClient
     # @param id [String] Defines image update specified by image id
     # @param [Hash] opts the optional parameters
     # @option opts [String] :variant_ids Defines product&#39;s variants ids
+    # @option opts [String] :store_id Store Id
+    # @option opts [String] :lang_id Language id
     # @option opts [String] :image_name Defines image&#39;s name
     # @option opts [String] :type Defines image&#39;s types that are specified by comma-separated list (default to 'additional')
     # @option opts [String] :label Defines alternative text that has to be attached to the picture
     # @option opts [Integer] :position Defines image’s position in the list
-    # @option opts [String] :store_id Store Id
-    # @option opts [String] :lang_id Language id
     # @option opts [Boolean] :hidden Define is hide image
     # @return [ProductImageUpdate200Response]
     def product_image_update(product_id, id, opts = {})
@@ -1552,12 +1552,12 @@ module OpenapiClient
     # @param id [String] Defines image update specified by image id
     # @param [Hash] opts the optional parameters
     # @option opts [String] :variant_ids Defines product&#39;s variants ids
+    # @option opts [String] :store_id Store Id
+    # @option opts [String] :lang_id Language id
     # @option opts [String] :image_name Defines image&#39;s name
     # @option opts [String] :type Defines image&#39;s types that are specified by comma-separated list (default to 'additional')
     # @option opts [String] :label Defines alternative text that has to be attached to the picture
     # @option opts [Integer] :position Defines image’s position in the list
-    # @option opts [String] :store_id Store Id
-    # @option opts [String] :lang_id Language id
     # @option opts [Boolean] :hidden Define is hide image
     # @return [Array<(ProductImageUpdate200Response, Integer, Hash)>] ProductImageUpdate200Response data, response status code and response headers
     def product_image_update_with_http_info(product_id, id, opts = {})
@@ -1580,12 +1580,12 @@ module OpenapiClient
       query_params[:'product_id'] = product_id
       query_params[:'id'] = id
       query_params[:'variant_ids'] = opts[:'variant_ids'] if !opts[:'variant_ids'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
       query_params[:'image_name'] = opts[:'image_name'] if !opts[:'image_name'].nil?
       query_params[:'type'] = opts[:'type'] if !opts[:'type'].nil?
       query_params[:'label'] = opts[:'label'] if !opts[:'label'].nil?
       query_params[:'position'] = opts[:'position'] if !opts[:'position'].nil?
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
-      query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
       query_params[:'hidden'] = opts[:'hidden'] if !opts[:'hidden'].nil?
 
       # header parameters
@@ -1626,12 +1626,12 @@ module OpenapiClient
     # Get information about a specific product by its ID. In the case of a multistore configuration, use the store_id filter to get a response in the context of a specific store.
     # @param id [String] Retrieves product&#39;s info specified by product id
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description,price,categories_ids')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :store_id Retrieves product info specified by store id
     # @option opts [String] :lang_id Retrieves product info specified by language id
     # @option opts [String] :currency_id Currency Id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description,price,categories_ids')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :report_request_id Report request id
     # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
     # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
@@ -1645,12 +1645,12 @@ module OpenapiClient
     # Get information about a specific product by its ID. In the case of a multistore configuration, use the store_id filter to get a response in the context of a specific store.
     # @param id [String] Retrieves product&#39;s info specified by product id
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description,price,categories_ids')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :store_id Retrieves product info specified by store id
     # @option opts [String] :lang_id Retrieves product info specified by language id
     # @option opts [String] :currency_id Currency Id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description,price,categories_ids')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [String] :report_request_id Report request id
     # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
     # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
@@ -1669,12 +1669,12 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'id'] = id
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
       query_params[:'currency_id'] = opts[:'currency_id'] if !opts[:'currency_id'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
       query_params[:'report_request_id'] = opts[:'report_request_id'] if !opts[:'report_request_id'].nil?
       query_params[:'disable_report_cache'] = opts[:'disable_report_cache'] if !opts[:'disable_report_cache'].nil?
       query_params[:'use_latest_api_version'] = opts[:'use_latest_api_version'] if !opts[:'use_latest_api_version'].nil?
@@ -1716,39 +1716,39 @@ module OpenapiClient
     # product.list
     # Get list of products from your store. Returns 10 products by default.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :page_cursor Used to retrieve products via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description,price,categories_ids')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+    # @option opts [String] :page_cursor Used to retrieve products via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+    # @option opts [String] :product_ids Retrieves products specified by product ids
+    # @option opts [String] :since_id Retrieve entities starting from the specified id.
+    # @option opts [String] :categories_ids Retrieves products specified by categories ids
     # @option opts [String] :category_id Retrieves products specified by category id
+    # @option opts [String] :store_id Retrieves products specified by store id
+    # @option opts [String] :lang_id Retrieves products specified by language id
+    # @option opts [String] :currency_id Currency Id
+    # @option opts [Boolean] :avail_view Specifies the set of visible/invisible products
+    # @option opts [Boolean] :avail_sale Specifies the set of available/not available products for sale
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [Boolean] :avail_view Specifies the set of visible/invisible products
-    # @option opts [Boolean] :avail_sale Specifies the set of available/not available products for sale
-    # @option opts [String] :store_id Retrieves products specified by store id
-    # @option opts [String] :lang_id Retrieves products specified by language id
-    # @option opts [String] :currency_id Currency Id
-    # @option opts [String] :product_ids Retrieves products specified by product ids
-    # @option opts [String] :since_id Retrieve entities starting from the specified id.
-    # @option opts [String] :report_request_id Report request id
-    # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
-    # @option opts [String] :sort_by Set field to sort by (default to 'id')
-    # @option opts [String] :sort_direction Set sorting direction (default to 'asc')
     # @option opts [String] :sku Filter by product&#39;s sku
-    # @option opts [Boolean] :disable_cache Disable cache for current request (default to false)
     # @option opts [String] :brand_name Retrieves brands specified by brand name
     # @option opts [Array<String>] :product_attributes Defines product attributes
     # @option opts [String] :status Defines product&#39;s status
     # @option opts [String] :type Defines products&#39;s type
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Product search that is specified by field
-    # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
     # @option opts [Boolean] :return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (default to false)
-    # @option opts [String] :categories_ids Retrieves products specified by categories ids
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description,price,categories_ids')
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+    # @option opts [String] :sort_by Set field to sort by (default to 'id')
+    # @option opts [String] :sort_direction Set sorting direction (default to 'asc')
+    # @option opts [String] :report_request_id Report request id
+    # @option opts [Boolean] :disable_cache Disable cache for current request (default to false)
+    # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
+    # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
     # @return [ModelResponseProductList]
     def product_list(opts = {})
       data, _status_code, _headers = product_list_with_http_info(opts)
@@ -1758,39 +1758,39 @@ module OpenapiClient
     # product.list
     # Get list of products from your store. Returns 10 products by default.
     # @param [Hash] opts the optional parameters
-    # @option opts [String] :page_cursor Used to retrieve products via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description,price,categories_ids')
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+    # @option opts [String] :page_cursor Used to retrieve products via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+    # @option opts [String] :product_ids Retrieves products specified by product ids
+    # @option opts [String] :since_id Retrieve entities starting from the specified id.
+    # @option opts [String] :categories_ids Retrieves products specified by categories ids
     # @option opts [String] :category_id Retrieves products specified by category id
+    # @option opts [String] :store_id Retrieves products specified by store id
+    # @option opts [String] :lang_id Retrieves products specified by language id
+    # @option opts [String] :currency_id Currency Id
+    # @option opts [Boolean] :avail_view Specifies the set of visible/invisible products
+    # @option opts [Boolean] :avail_sale Specifies the set of available/not available products for sale
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [Boolean] :avail_view Specifies the set of visible/invisible products
-    # @option opts [Boolean] :avail_sale Specifies the set of available/not available products for sale
-    # @option opts [String] :store_id Retrieves products specified by store id
-    # @option opts [String] :lang_id Retrieves products specified by language id
-    # @option opts [String] :currency_id Currency Id
-    # @option opts [String] :product_ids Retrieves products specified by product ids
-    # @option opts [String] :since_id Retrieve entities starting from the specified id.
-    # @option opts [String] :report_request_id Report request id
-    # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
-    # @option opts [String] :sort_by Set field to sort by (default to 'id')
-    # @option opts [String] :sort_direction Set sorting direction (default to 'asc')
     # @option opts [String] :sku Filter by product&#39;s sku
-    # @option opts [Boolean] :disable_cache Disable cache for current request (default to false)
     # @option opts [String] :brand_name Retrieves brands specified by brand name
     # @option opts [Array<String>] :product_attributes Defines product attributes
     # @option opts [String] :status Defines product&#39;s status
     # @option opts [String] :type Defines products&#39;s type
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Product search that is specified by field
-    # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
     # @option opts [Boolean] :return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (default to false)
-    # @option opts [String] :categories_ids Retrieves products specified by categories ids
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description,price,categories_ids')
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+    # @option opts [String] :sort_by Set field to sort by (default to 'id')
+    # @option opts [String] :sort_direction Set sorting direction (default to 'asc')
+    # @option opts [String] :report_request_id Report request id
+    # @option opts [Boolean] :disable_cache Disable cache for current request (default to false)
+    # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
+    # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
     # @return [Array<(ModelResponseProductList, Integer, Hash)>] ModelResponseProductList data, response status code and response headers
     def product_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -1801,39 +1801,39 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
-      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
+      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
+      query_params[:'product_ids'] = opts[:'product_ids'] if !opts[:'product_ids'].nil?
+      query_params[:'since_id'] = opts[:'since_id'] if !opts[:'since_id'].nil?
+      query_params[:'categories_ids'] = opts[:'categories_ids'] if !opts[:'categories_ids'].nil?
       query_params[:'category_id'] = opts[:'category_id'] if !opts[:'category_id'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
+      query_params[:'currency_id'] = opts[:'currency_id'] if !opts[:'currency_id'].nil?
+      query_params[:'avail_view'] = opts[:'avail_view'] if !opts[:'avail_view'].nil?
+      query_params[:'avail_sale'] = opts[:'avail_sale'] if !opts[:'avail_sale'].nil?
       query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
       query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
       query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
       query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
-      query_params[:'avail_view'] = opts[:'avail_view'] if !opts[:'avail_view'].nil?
-      query_params[:'avail_sale'] = opts[:'avail_sale'] if !opts[:'avail_sale'].nil?
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
-      query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
-      query_params[:'currency_id'] = opts[:'currency_id'] if !opts[:'currency_id'].nil?
-      query_params[:'product_ids'] = opts[:'product_ids'] if !opts[:'product_ids'].nil?
-      query_params[:'since_id'] = opts[:'since_id'] if !opts[:'since_id'].nil?
-      query_params[:'report_request_id'] = opts[:'report_request_id'] if !opts[:'report_request_id'].nil?
-      query_params[:'disable_report_cache'] = opts[:'disable_report_cache'] if !opts[:'disable_report_cache'].nil?
-      query_params[:'sort_by'] = opts[:'sort_by'] if !opts[:'sort_by'].nil?
-      query_params[:'sort_direction'] = opts[:'sort_direction'] if !opts[:'sort_direction'].nil?
       query_params[:'sku'] = opts[:'sku'] if !opts[:'sku'].nil?
-      query_params[:'disable_cache'] = opts[:'disable_cache'] if !opts[:'disable_cache'].nil?
       query_params[:'brand_name'] = opts[:'brand_name'] if !opts[:'brand_name'].nil?
       query_params[:'product_attributes'] = @api_client.build_collection_param(opts[:'product_attributes'], :multi) if !opts[:'product_attributes'].nil?
       query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
       query_params[:'type'] = opts[:'type'] if !opts[:'type'].nil?
       query_params[:'find_value'] = opts[:'find_value'] if !opts[:'find_value'].nil?
       query_params[:'find_where'] = opts[:'find_where'] if !opts[:'find_where'].nil?
-      query_params[:'use_latest_api_version'] = opts[:'use_latest_api_version'] if !opts[:'use_latest_api_version'].nil?
       query_params[:'return_global'] = opts[:'return_global'] if !opts[:'return_global'].nil?
-      query_params[:'categories_ids'] = opts[:'categories_ids'] if !opts[:'categories_ids'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
+      query_params[:'sort_by'] = opts[:'sort_by'] if !opts[:'sort_by'].nil?
+      query_params[:'sort_direction'] = opts[:'sort_direction'] if !opts[:'sort_direction'].nil?
+      query_params[:'report_request_id'] = opts[:'report_request_id'] if !opts[:'report_request_id'].nil?
+      query_params[:'disable_cache'] = opts[:'disable_cache'] if !opts[:'disable_cache'].nil?
+      query_params[:'disable_report_cache'] = opts[:'disable_report_cache'] if !opts[:'disable_report_cache'].nil?
+      query_params[:'use_latest_api_version'] = opts[:'use_latest_api_version'] if !opts[:'use_latest_api_version'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -2173,12 +2173,12 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description')
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :product_id Retrieves products&#39; options specified by product id
     # @option opts [String] :lang_id Language id
     # @option opts [String] :store_id Store Id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [ModelResponseProductOptionList]
     def product_option_list(opts = {})
       data, _status_code, _headers = product_option_list_with_http_info(opts)
@@ -2190,12 +2190,12 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description')
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :product_id Retrieves products&#39; options specified by product id
     # @option opts [String] :lang_id Language id
     # @option opts [String] :store_id Store Id
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(ModelResponseProductOptionList, Integer, Hash)>] ModelResponseProductOptionList data, response status code and response headers
     def product_option_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -2208,12 +2208,12 @@ module OpenapiClient
       query_params = opts[:query_params] || {}
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
       query_params[:'product_id'] = opts[:'product_id'] if !opts[:'product_id'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -2794,14 +2794,14 @@ module OpenapiClient
     # @param product_id [String] Product id
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :ids Retrieves reviews specified by ids
     # @option opts [String] :store_id Store Id
     # @option opts [String] :status Defines status
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @return [ModelResponseProductReviewList]
     def product_review_list(product_id, opts = {})
       data, _status_code, _headers = product_review_list_with_http_info(product_id, opts)
@@ -2813,14 +2813,14 @@ module OpenapiClient
     # @param product_id [String] Product id
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
-    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
+    # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :ids Retrieves reviews specified by ids
     # @option opts [String] :store_id Store Id
     # @option opts [String] :status Defines status
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @return [Array<(ModelResponseProductReviewList, Integer, Hash)>] ModelResponseProductReviewList data, response status code and response headers
     def product_review_list_with_http_info(product_id, opts = {})
       if @api_client.config.debugging
@@ -2837,14 +2837,14 @@ module OpenapiClient
       query_params = opts[:query_params] || {}
       query_params[:'product_id'] = product_id
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
-      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
+      query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'ids'] = opts[:'ids'] if !opts[:'ids'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
       query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -3295,12 +3295,12 @@ module OpenapiClient
     # Get count variants.
     # @param product_id [String] Retrieves products&#39; variants specified by product id
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :category_id Counts products’ variants specified by category id
+    # @option opts [String] :store_id Retrieves variants specified by store id
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [String] :category_id Counts products’ variants specified by category id
-    # @option opts [String] :store_id Retrieves variants specified by store id
     # @return [ProductVariantCount200Response]
     def product_variant_count(product_id, opts = {})
       data, _status_code, _headers = product_variant_count_with_http_info(product_id, opts)
@@ -3311,12 +3311,12 @@ module OpenapiClient
     # Get count variants.
     # @param product_id [String] Retrieves products&#39; variants specified by product id
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :category_id Counts products’ variants specified by category id
+    # @option opts [String] :store_id Retrieves variants specified by store id
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [String] :category_id Counts products’ variants specified by category id
-    # @option opts [String] :store_id Retrieves variants specified by store id
     # @return [Array<(ProductVariantCount200Response, Integer, Hash)>] ProductVariantCount200Response data, response status code and response headers
     def product_variant_count_with_http_info(product_id, opts = {})
       if @api_client.config.debugging
@@ -3332,12 +3332,12 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'product_id'] = product_id
+      query_params[:'category_id'] = opts[:'category_id'] if !opts[:'category_id'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
       query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
       query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
       query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
-      query_params[:'category_id'] = opts[:'category_id'] if !opts[:'category_id'].nil?
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -3668,9 +3668,9 @@ module OpenapiClient
     # Get variant info. This method is deprecated, and its development is stopped. Please use \"product.child_item.info\" instead.
     # @param id [String] Retrieves variant&#39;s info specified by variant id
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :store_id Retrieves variant info specified by store id
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description,price')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :store_id Retrieves variant info specified by store id
     # @return [ProductInfo200Response]
     def product_variant_info(id, opts = {})
       data, _status_code, _headers = product_variant_info_with_http_info(id, opts)
@@ -3681,9 +3681,9 @@ module OpenapiClient
     # Get variant info. This method is deprecated, and its development is stopped. Please use \&quot;product.child_item.info\&quot; instead.
     # @param id [String] Retrieves variant&#39;s info specified by variant id
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :store_id Retrieves variant info specified by store id
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description,price')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-    # @option opts [String] :store_id Retrieves variant info specified by store id
     # @return [Array<(ProductInfo200Response, Integer, Hash)>] ProductInfo200Response data, response status code and response headers
     def product_variant_info_with_http_info(id, opts = {})
       if @api_client.config.debugging
@@ -3699,9 +3699,9 @@ module OpenapiClient
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'id'] = id
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -3742,15 +3742,15 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description,price')
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+    # @option opts [String] :product_id Retrieves products&#39; variants specified by product id
+    # @option opts [String] :category_id Retrieves products’ variants specified by category id
+    # @option opts [String] :store_id Retrieves variants specified by store id
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [String] :category_id Retrieves products’ variants specified by category id
-    # @option opts [String] :product_id Retrieves products&#39; variants specified by product id
-    # @option opts [String] :store_id Retrieves variants specified by store id
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description,price')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [ProductVariantList200Response]
     def product_variant_list(opts = {})
       data, _status_code, _headers = product_variant_list_with_http_info(opts)
@@ -3762,15 +3762,15 @@ module OpenapiClient
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
-    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description,price')
-    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+    # @option opts [String] :product_id Retrieves products&#39; variants specified by product id
+    # @option opts [String] :category_id Retrieves products’ variants specified by category id
+    # @option opts [String] :store_id Retrieves variants specified by store id
     # @option opts [String] :created_from Retrieve entities from their creation date
     # @option opts [String] :created_to Retrieve entities to their creation date
     # @option opts [String] :modified_from Retrieve entities from their modification date
     # @option opts [String] :modified_to Retrieve entities to their modification date
-    # @option opts [String] :category_id Retrieves products’ variants specified by category id
-    # @option opts [String] :product_id Retrieves products&#39; variants specified by product id
-    # @option opts [String] :store_id Retrieves variants specified by store id
+    # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,name,description,price')
+    # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @return [Array<(ProductVariantList200Response, Integer, Hash)>] ProductVariantList200Response data, response status code and response headers
     def product_variant_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -3783,15 +3783,15 @@ module OpenapiClient
       query_params = opts[:query_params] || {}
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
-      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
-      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
+      query_params[:'product_id'] = opts[:'product_id'] if !opts[:'product_id'].nil?
+      query_params[:'category_id'] = opts[:'category_id'] if !opts[:'category_id'].nil?
+      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
       query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
       query_params[:'modified_from'] = opts[:'modified_from'] if !opts[:'modified_from'].nil?
       query_params[:'modified_to'] = opts[:'modified_to'] if !opts[:'modified_to'].nil?
-      query_params[:'category_id'] = opts[:'category_id'] if !opts[:'category_id'].nil?
-      query_params[:'product_id'] = opts[:'product_id'] if !opts[:'product_id'].nil?
-      query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
+      query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

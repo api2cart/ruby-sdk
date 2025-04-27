@@ -361,13 +361,13 @@ end
 
 api_instance = OpenapiClient::WebhookApi.new
 opts = {
-  params: 'id,entity,callback,fields', # String | Set this parameter in order to choose which entity fields you want to retrieve
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
   entity: 'product', # String | The entity you want to filter webhooks by (e.g. order or product)
   action: 'add', # String | The action you want to filter webhooks by (e.g. add, update, or delete)
   active: true, # Boolean | The webhook status you want to filter webhooks by
-  ids: '3,14,25' # String | List of сomma-separated webhook ids
+  ids: '3,14,25', # String | List of сomma-separated webhook ids
+  params: 'id,entity,callback,fields' # String | Set this parameter in order to choose which entity fields you want to retrieve
 }
 
 begin
@@ -401,13 +401,13 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,entity,action,callback&#39;] |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
 | **entity** | **String** | The entity you want to filter webhooks by (e.g. order or product) | [optional] |
 | **action** | **String** | The action you want to filter webhooks by (e.g. add, update, or delete) | [optional] |
 | **active** | **Boolean** | The webhook status you want to filter webhooks by | [optional] |
 | **ids** | **String** | List of сomma-separated webhook ids | [optional] |
+| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,entity,action,callback&#39;] |
 
 ### Return type
 

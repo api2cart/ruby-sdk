@@ -38,11 +38,11 @@ describe 'BatchApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
   # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+  # @option opts [String] :ids Filter batch jobs by ids
   # @option opts [String] :created_from Retrieve entities from their creation date
   # @option opts [String] :created_to Retrieve entities to their creation date
   # @option opts [String] :processed_from Retrieve entities according to their processing datetime
   # @option opts [String] :processed_to Retrieve entities according to their processing datetime
-  # @option opts [String] :ids Filter batch jobs by ids
   # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @return [ModelResponseBatchJobList]
   describe 'batch_job_list test' do

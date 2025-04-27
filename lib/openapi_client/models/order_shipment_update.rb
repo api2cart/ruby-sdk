@@ -15,45 +15,45 @@ require 'time'
 
 module OpenapiClient
   class OrderShipmentUpdate
-    # Store Id
-    attr_accessor :store_id
-
     # Shipment id indicates the number of delivery
     attr_accessor :shipment_id
 
     # Defines the order that will be updated
     attr_accessor :order_id
 
-    # Defines shipment's tracking numbers that have to be added</br> How set tracking numbers to appropriate carrier:<ul><li>tracking_numbers[]=a2c.demo1,a2c.demo2 - set default carrier</li><li>tracking_numbers[<b>carrier_id</b>]=a2c.demo - set appropriate carrier</li></ul>To get the list of carriers IDs that are available in your store, use the <a href = \"https://api2cart.com/docs/#/cart/CartInfo\">cart.info</a > method
-    attr_accessor :tracking_numbers
-
-    # Allows rewrite tracking numbers
-    attr_accessor :replace
-
-    # Defines shipment's status
-    attr_accessor :is_shipped
-
-    # Defines custom tracking link
-    attr_accessor :tracking_link
-
-    # Defines the date of delivery
-    attr_accessor :delivered_at
+    # Store Id
+    attr_accessor :store_id
 
     # Defines company name that provide tracking of shipment
     attr_accessor :shipment_provider
 
+    # Defines shipment's tracking numbers that have to be added</br> How set tracking numbers to appropriate carrier:<ul><li>tracking_numbers[]=a2c.demo1,a2c.demo2 - set default carrier</li><li>tracking_numbers[<b>carrier_id</b>]=a2c.demo - set appropriate carrier</li></ul>To get the list of carriers IDs that are available in your store, use the <a href = \"https://api2cart.com/docs/#/cart/CartInfo\">cart.info</a > method
+    attr_accessor :tracking_numbers
+
+    # Defines custom tracking link
+    attr_accessor :tracking_link
+
+    # Defines shipment's status
+    attr_accessor :is_shipped
+
+    # Defines the date of delivery
+    attr_accessor :delivered_at
+
+    # Allows rewrite tracking numbers
+    attr_accessor :replace
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'store_id' => :'store_id',
         :'shipment_id' => :'shipment_id',
         :'order_id' => :'order_id',
+        :'store_id' => :'store_id',
+        :'shipment_provider' => :'shipment_provider',
         :'tracking_numbers' => :'tracking_numbers',
-        :'replace' => :'replace',
-        :'is_shipped' => :'is_shipped',
         :'tracking_link' => :'tracking_link',
+        :'is_shipped' => :'is_shipped',
         :'delivered_at' => :'delivered_at',
-        :'shipment_provider' => :'shipment_provider'
+        :'replace' => :'replace'
       }
     end
 
@@ -65,15 +65,15 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'store_id' => :'String',
         :'shipment_id' => :'String',
         :'order_id' => :'String',
+        :'store_id' => :'String',
+        :'shipment_provider' => :'String',
         :'tracking_numbers' => :'Array<OrderShipmentAddTrackingNumbersInner>',
-        :'replace' => :'Boolean',
-        :'is_shipped' => :'Boolean',
         :'tracking_link' => :'String',
+        :'is_shipped' => :'Boolean',
         :'delivered_at' => :'String',
-        :'shipment_provider' => :'String'
+        :'replace' => :'Boolean'
       }
     end
 
@@ -98,10 +98,6 @@ module OpenapiClient
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'store_id')
-        self.store_id = attributes[:'store_id']
-      end
-
       if attributes.key?(:'shipment_id')
         self.shipment_id = attributes[:'shipment_id']
       else
@@ -112,16 +108,22 @@ module OpenapiClient
         self.order_id = attributes[:'order_id']
       end
 
+      if attributes.key?(:'store_id')
+        self.store_id = attributes[:'store_id']
+      end
+
+      if attributes.key?(:'shipment_provider')
+        self.shipment_provider = attributes[:'shipment_provider']
+      end
+
       if attributes.key?(:'tracking_numbers')
         if (value = attributes[:'tracking_numbers']).is_a?(Array)
           self.tracking_numbers = value
         end
       end
 
-      if attributes.key?(:'replace')
-        self.replace = attributes[:'replace']
-      else
-        self.replace = true
+      if attributes.key?(:'tracking_link')
+        self.tracking_link = attributes[:'tracking_link']
       end
 
       if attributes.key?(:'is_shipped')
@@ -130,16 +132,14 @@ module OpenapiClient
         self.is_shipped = true
       end
 
-      if attributes.key?(:'tracking_link')
-        self.tracking_link = attributes[:'tracking_link']
-      end
-
       if attributes.key?(:'delivered_at')
         self.delivered_at = attributes[:'delivered_at']
       end
 
-      if attributes.key?(:'shipment_provider')
-        self.shipment_provider = attributes[:'shipment_provider']
+      if attributes.key?(:'replace')
+        self.replace = attributes[:'replace']
+      else
+        self.replace = true
       end
     end
 
@@ -168,15 +168,15 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          store_id == o.store_id &&
           shipment_id == o.shipment_id &&
           order_id == o.order_id &&
+          store_id == o.store_id &&
+          shipment_provider == o.shipment_provider &&
           tracking_numbers == o.tracking_numbers &&
-          replace == o.replace &&
-          is_shipped == o.is_shipped &&
           tracking_link == o.tracking_link &&
+          is_shipped == o.is_shipped &&
           delivered_at == o.delivered_at &&
-          shipment_provider == o.shipment_provider
+          replace == o.replace
     end
 
     # @see the `==` method
@@ -188,7 +188,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [store_id, shipment_id, order_id, tracking_numbers, replace, is_shipped, tracking_link, delivered_at, shipment_provider].hash
+      [shipment_id, order_id, store_id, shipment_provider, tracking_numbers, tracking_link, is_shipped, delivered_at, replace].hash
     end
 
     # Builds the object from hash

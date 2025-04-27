@@ -48,12 +48,12 @@ describe 'AccountApi' do
   # account.cart.list
   # This method lets you get a list of online stores connected to your API2Cart account. You can get the number of API requests to each store if you specify a period using parameters (request_from_date, request_to_date). The total_calls field is displayed only if there are parameters (request_from_date, request_to_date).
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :request_from_date Retrieve entities from their creation date
-  # @option opts [String] :request_to_date Retrieve entities to their creation date
   # @option opts [String] :store_url A web address of a store
   # @option opts [String] :store_key Find store by store key
+  # @option opts [String] :request_from_date Retrieve entities from their creation date
+  # @option opts [String] :request_to_date Retrieve entities to their creation date
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [AccountCartList200Response]
   describe 'account_cart_list test' do
     it 'should work' do
@@ -124,6 +124,7 @@ describe 'AccountApi' do
   # @option opts [String] :shopline_access_token Shopline APP Key
   # @option opts [String] :shopline_app_key Shopline APP Key
   # @option opts [String] :shopline_app_secret Shopline App Secret
+  # @option opts [String] :shopline_shared_secret Shopline Shared Secret
   # @option opts [String] :shopify_access_token Access token authorizing the app to access resources on behalf of a user
   # @option opts [String] :shopify_api_key Shopify API Key
   # @option opts [String] :shopify_api_password Shopify API Password
@@ -217,8 +218,8 @@ describe 'AccountApi' do
   # account.failed_webhooks
   # If the callback of your service for some reason could not accept webhooks from API2Cart, then with the help of this method you can get a list of missed webhooks to perform synchronization again using entity_id. Please note that we keep such records for 24 hours.
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
+  # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
   # @option opts [String] :ids List of сomma-separated webhook ids
   # @return [AccountFailedWebhooks200Response]
   describe 'account_failed_webhooks test' do

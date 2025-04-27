@@ -61,19 +61,19 @@ describe 'ProductApi' do
   # Get list of attributes and values.
   # @param product_id Retrieves attributes specified by product id
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :attribute_id Retrieves info for specified attribute_id
-  # @option opts [String] :variant_id Defines product&#39;s variants specified by variant id
-  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
+  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+  # @option opts [String] :attribute_id Retrieves info for specified attribute_id
+  # @option opts [String] :variant_id Defines product&#39;s variants specified by variant id
   # @option opts [String] :attribute_group_id Filter by attribute_group_id
-  # @option opts [String] :set_name Retrieves attributes specified by set_name in Magento
   # @option opts [String] :lang_id Retrieves attributes specified by language id
   # @option opts [String] :store_id Retrieves attributes specified by store id
+  # @option opts [String] :set_name Retrieves attributes specified by set_name in Magento
   # @option opts [String] :sort_by Set field to sort by
   # @option opts [String] :sort_direction Set sorting direction
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [ModelResponseProductAttributeList]
   describe 'product_attribute_list test' do
@@ -125,20 +125,20 @@ describe 'ProductApi' do
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
   # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :brand_ids Retrieves brands specified by brand ids
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @option opts [String] :category_id Retrieves product brands specified by category id
+  # @option opts [String] :parent_id Retrieves brands specified by parent id
   # @option opts [String] :store_id Store Id
   # @option opts [String] :lang_id Language id
+  # @option opts [String] :find_where Entity search that is specified by the comma-separated unique fields
+  # @option opts [String] :find_value Entity search that is specified by some value
   # @option opts [String] :created_from Retrieve entities from their creation date
   # @option opts [String] :created_to Retrieve entities to their creation date
   # @option opts [String] :modified_from Retrieve entities from their modification date
   # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @option opts [String] :parent_id Retrieves brands specified by parent id
   # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :find_where Entity search that is specified by the comma-separated unique fields
-  # @option opts [String] :find_value Entity search that is specified by some value
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [ModelResponseProductBrandList]
   describe 'product_brand_list test' do
     it 'should work' do
@@ -167,12 +167,12 @@ describe 'ProductApi' do
   # @param product_id Filter by parent product id
   # @param id Entity id
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @option opts [String] :store_id Store Id
   # @option opts [String] :lang_id Language id
   # @option opts [String] :currency_id Currency Id
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @option opts [Boolean] :use_latest_api_version Use the latest platform API version
   # @return [ProductChildItemInfo200Response]
   describe 'product_child_item_info test' do
@@ -185,16 +185,9 @@ describe 'ProductApi' do
   # product.child_item.list
   # Get a list of a product&#39;s child items, such as variants or bundle components. The total_count field in the response indicates the total number of items in the context of the current filter.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :page_cursor Used to retrieve products child items via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :created_from Retrieve entities from their creation date
-  # @option opts [String] :created_to Retrieve entities to their creation date
-  # @option opts [String] :modified_from Retrieve entities from their modification date
-  # @option opts [String] :modified_to Retrieve entities to their modification date
+  # @option opts [String] :page_cursor Used to retrieve products child items via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [String] :product_id Filter by parent product id
   # @option opts [String] :product_ids Filter by parent product ids
   # @option opts [String] :sku Filter by products variant&#39;s sku
@@ -204,10 +197,17 @@ describe 'ProductApi' do
   # @option opts [Boolean] :avail_sale Specifies the set of available/not available products for sale
   # @option opts [String] :find_value Entity search that is specified by some value
   # @option opts [String] :find_where Child products search that is specified by field
+  # @option opts [String] :created_from Retrieve entities from their creation date
+  # @option opts [String] :created_to Retrieve entities to their creation date
+  # @option opts [String] :modified_from Retrieve entities from their modification date
+  # @option opts [String] :modified_to Retrieve entities to their modification date
+  # @option opts [Boolean] :return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned.
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @option opts [String] :report_request_id Report request id
   # @option opts [Boolean] :disable_report_cache Disable report cache for current request
   # @option opts [Boolean] :use_latest_api_version Use the latest platform API version
-  # @option opts [Boolean] :return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned.
   # @return [ModelResponseProductChildItemList]
   describe 'product_child_item_list test' do
     it 'should work' do
@@ -219,28 +219,28 @@ describe 'ProductApi' do
   # product.count
   # Count products in store.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :product_ids Counts products specified by product ids
+  # @option opts [String] :since_id Retrieve entities starting from the specified id.
+  # @option opts [String] :categories_ids Defines product add that is specified by comma-separated categories id
   # @option opts [String] :category_id Counts products specified by category id
+  # @option opts [String] :store_id Counts products specified by store id
+  # @option opts [String] :lang_id Counts products specified by language id
+  # @option opts [Boolean] :avail_view Specifies the set of visible/invisible products
+  # @option opts [Boolean] :avail_sale Specifies the set of available/not available products for sale
   # @option opts [String] :created_from Retrieve entities from their creation date
   # @option opts [String] :created_to Retrieve entities to their creation date
   # @option opts [String] :modified_from Retrieve entities from their modification date
   # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @option opts [Boolean] :avail_view Specifies the set of visible/invisible products
-  # @option opts [Boolean] :avail_sale Specifies the set of available/not available products for sale
-  # @option opts [String] :store_id Counts products specified by store id
-  # @option opts [String] :lang_id Counts products specified by language id
-  # @option opts [String] :product_ids Counts products specified by product ids
-  # @option opts [String] :since_id Retrieve entities starting from the specified id.
-  # @option opts [String] :report_request_id Report request id
-  # @option opts [Boolean] :disable_report_cache Disable report cache for current request
   # @option opts [String] :brand_name Retrieves brands specified by brand name
   # @option opts [Array<String>] :product_attributes Defines product attributes
   # @option opts [String] :status Defines product&#39;s status
   # @option opts [String] :type Defines products&#39;s type
   # @option opts [String] :find_value Entity search that is specified by some value
   # @option opts [String] :find_where Counts products that are searched specified by field
-  # @option opts [Boolean] :use_latest_api_version Use the latest platform API version
+  # @option opts [String] :report_request_id Report request id
   # @option opts [Boolean] :return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned.
-  # @option opts [String] :categories_ids Defines product add that is specified by comma-separated categories id
+  # @option opts [Boolean] :disable_report_cache Disable report cache for current request
+  # @option opts [Boolean] :use_latest_api_version Use the latest platform API version
   # @return [ProductCount200Response]
   describe 'product_count test' do
     it 'should work' do
@@ -272,12 +272,12 @@ describe 'ProductApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [Boolean] :default Specifies the set of default/not default currencies
   # @option opts [Boolean] :avail Specifies the set of available/not available currencies
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [ModelResponseProductCurrencyList]
   describe 'product_currency_list test' do
     it 'should work' do
@@ -371,12 +371,12 @@ describe 'ProductApi' do
   # @param id Defines image update specified by image id
   # @param [Hash] opts the optional parameters
   # @option opts [String] :variant_ids Defines product&#39;s variants ids
+  # @option opts [String] :store_id Store Id
+  # @option opts [String] :lang_id Language id
   # @option opts [String] :image_name Defines image&#39;s name
   # @option opts [String] :type Defines image&#39;s types that are specified by comma-separated list
   # @option opts [String] :label Defines alternative text that has to be attached to the picture
   # @option opts [Integer] :position Defines image’s position in the list
-  # @option opts [String] :store_id Store Id
-  # @option opts [String] :lang_id Language id
   # @option opts [Boolean] :hidden Define is hide image
   # @return [ProductImageUpdate200Response]
   describe 'product_image_update test' do
@@ -390,12 +390,12 @@ describe 'ProductApi' do
   # Get information about a specific product by its ID. In the case of a multistore configuration, use the store_id filter to get a response in the context of a specific store.
   # @param id Retrieves product&#39;s info specified by product id
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @option opts [String] :store_id Retrieves product info specified by store id
   # @option opts [String] :lang_id Retrieves product info specified by language id
   # @option opts [String] :currency_id Currency Id
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @option opts [String] :report_request_id Report request id
   # @option opts [Boolean] :disable_report_cache Disable report cache for current request
   # @option opts [Boolean] :use_latest_api_version Use the latest platform API version
@@ -410,39 +410,39 @@ describe 'ProductApi' do
   # product.list
   # Get list of products from your store. Returns 10 products by default.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :page_cursor Used to retrieve products via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+  # @option opts [String] :page_cursor Used to retrieve products via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
+  # @option opts [String] :product_ids Retrieves products specified by product ids
+  # @option opts [String] :since_id Retrieve entities starting from the specified id.
+  # @option opts [String] :categories_ids Retrieves products specified by categories ids
   # @option opts [String] :category_id Retrieves products specified by category id
+  # @option opts [String] :store_id Retrieves products specified by store id
+  # @option opts [String] :lang_id Retrieves products specified by language id
+  # @option opts [String] :currency_id Currency Id
+  # @option opts [Boolean] :avail_view Specifies the set of visible/invisible products
+  # @option opts [Boolean] :avail_sale Specifies the set of available/not available products for sale
   # @option opts [String] :created_from Retrieve entities from their creation date
   # @option opts [String] :created_to Retrieve entities to their creation date
   # @option opts [String] :modified_from Retrieve entities from their modification date
   # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @option opts [Boolean] :avail_view Specifies the set of visible/invisible products
-  # @option opts [Boolean] :avail_sale Specifies the set of available/not available products for sale
-  # @option opts [String] :store_id Retrieves products specified by store id
-  # @option opts [String] :lang_id Retrieves products specified by language id
-  # @option opts [String] :currency_id Currency Id
-  # @option opts [String] :product_ids Retrieves products specified by product ids
-  # @option opts [String] :since_id Retrieve entities starting from the specified id.
-  # @option opts [String] :report_request_id Report request id
-  # @option opts [Boolean] :disable_report_cache Disable report cache for current request
-  # @option opts [String] :sort_by Set field to sort by
-  # @option opts [String] :sort_direction Set sorting direction
   # @option opts [String] :sku Filter by product&#39;s sku
-  # @option opts [Boolean] :disable_cache Disable cache for current request
   # @option opts [String] :brand_name Retrieves brands specified by brand name
   # @option opts [Array<String>] :product_attributes Defines product attributes
   # @option opts [String] :status Defines product&#39;s status
   # @option opts [String] :type Defines products&#39;s type
   # @option opts [String] :find_value Entity search that is specified by some value
   # @option opts [String] :find_where Product search that is specified by field
-  # @option opts [Boolean] :use_latest_api_version Use the latest platform API version
   # @option opts [Boolean] :return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned.
-  # @option opts [String] :categories_ids Retrieves products specified by categories ids
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+  # @option opts [String] :sort_by Set field to sort by
+  # @option opts [String] :sort_direction Set sorting direction
+  # @option opts [String] :report_request_id Report request id
+  # @option opts [Boolean] :disable_cache Disable cache for current request
+  # @option opts [Boolean] :disable_report_cache Disable report cache for current request
+  # @option opts [Boolean] :use_latest_api_version Use the latest platform API version
   # @return [ModelResponseProductList]
   describe 'product_list test' do
     it 'should work' do
@@ -513,12 +513,12 @@ describe 'ProductApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :product_id Retrieves products&#39; options specified by product id
   # @option opts [String] :lang_id Language id
   # @option opts [String] :store_id Store Id
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [ModelResponseProductOptionList]
   describe 'product_option_list test' do
     it 'should work' do
@@ -636,14 +636,14 @@ describe 'ProductApi' do
   # @param product_id Product id
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
-  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
+  # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [String] :ids Retrieves reviews specified by ids
   # @option opts [String] :store_id Store Id
   # @option opts [String] :status Defines status
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @return [ModelResponseProductReviewList]
   describe 'product_review_list test' do
     it 'should work' do
@@ -729,12 +729,12 @@ describe 'ProductApi' do
   # Get count variants.
   # @param product_id Retrieves products&#39; variants specified by product id
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :category_id Counts products’ variants specified by category id
+  # @option opts [String] :store_id Retrieves variants specified by store id
   # @option opts [String] :created_from Retrieve entities from their creation date
   # @option opts [String] :created_to Retrieve entities to their creation date
   # @option opts [String] :modified_from Retrieve entities from their modification date
   # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @option opts [String] :category_id Counts products’ variants specified by category id
-  # @option opts [String] :store_id Retrieves variants specified by store id
   # @return [ProductVariantCount200Response]
   describe 'product_variant_count test' do
     it 'should work' do
@@ -800,9 +800,9 @@ describe 'ProductApi' do
   # Get variant info. This method is deprecated, and its development is stopped. Please use \&quot;product.child_item.info\&quot; instead.
   # @param id Retrieves variant&#39;s info specified by variant id
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :store_id Retrieves variant info specified by store id
   # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @option opts [String] :store_id Retrieves variant info specified by store id
   # @return [ProductInfo200Response]
   describe 'product_variant_info test' do
     it 'should work' do
@@ -816,15 +816,15 @@ describe 'ProductApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
+  # @option opts [String] :product_id Retrieves products&#39; variants specified by product id
+  # @option opts [String] :category_id Retrieves products’ variants specified by category id
+  # @option opts [String] :store_id Retrieves variants specified by store id
   # @option opts [String] :created_from Retrieve entities from their creation date
   # @option opts [String] :created_to Retrieve entities to their creation date
   # @option opts [String] :modified_from Retrieve entities from their modification date
   # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @option opts [String] :category_id Retrieves products’ variants specified by category id
-  # @option opts [String] :product_id Retrieves products&#39; variants specified by product id
-  # @option opts [String] :store_id Retrieves variants specified by store id
+  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
+  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [ProductVariantList200Response]
   describe 'product_variant_list test' do
     it 'should work' do
