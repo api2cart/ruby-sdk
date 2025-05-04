@@ -33,7 +33,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::AccountApi.new
-account_cart_add = OpenapiClient::AccountCartAdd.new({cart_id: '3DCart', wix_app_id: '6b0b5b7b-7d87-45b5-bf34-ac6b438e63da', wix_app_secret_key: '316c0a09-f195-42be-74f6-a02cebb9cae6'}) # AccountCartAdd | 
+account_cart_add = OpenapiClient::AccountCartAdd.new({cart_id: '3DCart', bigcartel_user_name: 'subdomain', bigcartel_password: '4GrrZCLNNoSUuhAjesKuchxo9SL', wix_app_id: '6b0b5b7b-7d87-45b5-bf34-ac6b438e63da', wix_app_secret_key: '316c0a09-f195-42be-74f6-a02cebb9cae6'}) # AccountCartAdd | 
 
 begin
   # account.cart.add
@@ -264,6 +264,8 @@ opts = {
   shopware_access_key: 'SWSCS3O1RJBSRNBYQLFIYJN2ZQ', # String | Shopware access key
   shopware_api_key: 'SWSCS3O1RJBSRNBYQLFIYJN2ZQ', # String | Shopware api key
   shopware_api_secret: 'V3NYNWg2b1dZdHBUWDN1cmdKdGhnenp5enVJYlJ0WlJvOFF2bnQ', # String | Shopware client secret access key
+  bigcartel_user_name: 'subdomain', # String | Subdomain of store
+  bigcartel_password: '4GrrZCLNNoSUuhAjesKuchxo9SL', # String | BigCartel account password
   volusion_login: 'admin', # String | It's a Volusion account for which API is enabled
   volusion_password: '7943CA5F3990E00D9A4CCF0BD998211F', # String | Volusion API Password
   walmart_client_id: '423f6A24-123z-8654-989u-6fa96478289', # String | Walmart client ID. For the region 'ca' use Consumer ID
@@ -444,6 +446,8 @@ end
 | **shopware_access_key** | **String** | Shopware access key | [optional] |
 | **shopware_api_key** | **String** | Shopware api key | [optional] |
 | **shopware_api_secret** | **String** | Shopware client secret access key | [optional] |
+| **bigcartel_user_name** | **String** | Subdomain of store | [optional] |
+| **bigcartel_password** | **String** | BigCartel account password | [optional] |
 | **volusion_login** | **String** | It&#39;s a Volusion account for which API is enabled | [optional] |
 | **volusion_password** | **String** | Volusion API Password | [optional] |
 | **walmart_client_id** | **String** | Walmart client ID. For the region &#39;ca&#39; use Consumer ID | [optional] |

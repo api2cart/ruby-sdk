@@ -54,6 +54,9 @@ module OpenapiClient
     # Disable or enable check process status. Please note that the response will be slower due to additional requests to the store.
     attr_accessor :check_process_status
 
+    # Defines name of the company which provides shipment tracking
+    attr_accessor :tracking_provider
+
     # Use the latest platform API version
     attr_accessor :use_latest_api_version
 
@@ -73,6 +76,7 @@ module OpenapiClient
         :'adjust_stock' => :'adjust_stock',
         :'enable_cache' => :'enable_cache',
         :'check_process_status' => :'check_process_status',
+        :'tracking_provider' => :'tracking_provider',
         :'use_latest_api_version' => :'use_latest_api_version'
       }
     end
@@ -98,6 +102,7 @@ module OpenapiClient
         :'adjust_stock' => :'Boolean',
         :'enable_cache' => :'Boolean',
         :'check_process_status' => :'Boolean',
+        :'tracking_provider' => :'String',
         :'use_latest_api_version' => :'Boolean'
       }
     end
@@ -189,6 +194,10 @@ module OpenapiClient
         self.check_process_status = false
       end
 
+      if attributes.key?(:'tracking_provider')
+        self.tracking_provider = attributes[:'tracking_provider']
+      end
+
       if attributes.key?(:'use_latest_api_version')
         self.use_latest_api_version = attributes[:'use_latest_api_version']
       else
@@ -229,6 +238,7 @@ module OpenapiClient
           adjust_stock == o.adjust_stock &&
           enable_cache == o.enable_cache &&
           check_process_status == o.check_process_status &&
+          tracking_provider == o.tracking_provider &&
           use_latest_api_version == o.use_latest_api_version
     end
 
@@ -241,7 +251,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [order_id, warehouse_id, store_id, shipment_provider, shipping_method, items, tracking_numbers, tracking_link, is_shipped, send_notifications, adjust_stock, enable_cache, check_process_status, use_latest_api_version].hash
+      [order_id, warehouse_id, store_id, shipment_provider, shipping_method, items, tracking_numbers, tracking_link, is_shipped, send_notifications, adjust_stock, enable_cache, check_process_status, tracking_provider, use_latest_api_version].hash
     end
 
     # Builds the object from hash

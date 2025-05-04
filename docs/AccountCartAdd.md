@@ -38,6 +38,8 @@
 | **bol_api_key** | **String** | Bol API Key | [optional] |
 | **bol_api_secret** | **String** | Bol API Secret | [optional] |
 | **bol_retailer_id** | **Integer** | Bol Retailer ID | [optional] |
+| **bigcartel_user_name** | **String** | Subdomain of store |  |
+| **bigcartel_password** | **String** | BigCartel account password |  |
 | **demandware_client_id** | **String** | Demandware client id | [optional] |
 | **demandware_api_password** | **String** | Demandware api password | [optional] |
 | **demandware_user_name** | **String** | Demandware user name | [optional] |
@@ -194,6 +196,8 @@ instance = OpenapiClient::AccountCartAdd.new(
   bol_api_key: 51369628-feee-11ed-be56-0242ac120002,
   bol_api_secret: 8fGzEsbEP5z2MNZubmIil87m-sWzTkj?KDQKrmzmU!fA6aAUNMdKRp7LMWHwE!G37UMfnWByHBGSXJHkAG?QcuYTO2uklv4idIHwUMLHK!OO1yfRlWh!,
   bol_retailer_id: 145001,
+  bigcartel_user_name: subdomain,
+  bigcartel_password: 4GrrZCLNNoSUuhAjesKuchxo9SL,
   demandware_client_id: b849eb85-v8b9-1dw8-9fe2-97e1d6ffc7b0,
   demandware_api_password: testpassword,
   demandware_user_name: admin,

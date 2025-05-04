@@ -17,6 +17,7 @@
 | **adjust_stock** | **Boolean** | This parameter is used for adjust stock. | [optional][default to false] |
 | **enable_cache** | **Boolean** | If the value is &#39;true&#39; and order exist in our cache, we will use order.info from cache to prepare shipment items. | [optional][default to false] |
 | **check_process_status** | **Boolean** | Disable or enable check process status. Please note that the response will be slower due to additional requests to the store. | [optional][default to false] |
+| **tracking_provider** | **String** | Defines name of the company which provides shipment tracking | [optional] |
 | **use_latest_api_version** | **Boolean** | Use the latest platform API version | [optional][default to false] |
 
 ## Example
@@ -38,6 +39,7 @@ instance = OpenapiClient::OrderShipmentAdd.new(
   adjust_stock: true,
   enable_cache: true,
   check_process_status: false,
+  tracking_provider: Custom tracker,
   use_latest_api_version: true
 )
 ```

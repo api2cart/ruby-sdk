@@ -42,6 +42,15 @@ module OpenapiClient
     # Allows rewrite tracking numbers
     attr_accessor :replace
 
+    # Send notifications to customer after order was created
+    attr_accessor :send_notifications
+
+    # Defines name of the company which provides shipment tracking
+    attr_accessor :tracking_provider
+
+    # Defines items in the order that will be shipped
+    attr_accessor :items
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -53,7 +62,10 @@ module OpenapiClient
         :'tracking_link' => :'tracking_link',
         :'is_shipped' => :'is_shipped',
         :'delivered_at' => :'delivered_at',
-        :'replace' => :'replace'
+        :'replace' => :'replace',
+        :'send_notifications' => :'send_notifications',
+        :'tracking_provider' => :'tracking_provider',
+        :'items' => :'items'
       }
     end
 
@@ -73,7 +85,10 @@ module OpenapiClient
         :'tracking_link' => :'String',
         :'is_shipped' => :'Boolean',
         :'delivered_at' => :'String',
-        :'replace' => :'Boolean'
+        :'replace' => :'Boolean',
+        :'send_notifications' => :'Boolean',
+        :'tracking_provider' => :'String',
+        :'items' => :'Array<OrderShipmentAddItemsInner>'
       }
     end
 
@@ -141,6 +156,22 @@ module OpenapiClient
       else
         self.replace = true
       end
+
+      if attributes.key?(:'send_notifications')
+        self.send_notifications = attributes[:'send_notifications']
+      else
+        self.send_notifications = false
+      end
+
+      if attributes.key?(:'tracking_provider')
+        self.tracking_provider = attributes[:'tracking_provider']
+      end
+
+      if attributes.key?(:'items')
+        if (value = attributes[:'items']).is_a?(Array)
+          self.items = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -176,7 +207,10 @@ module OpenapiClient
           tracking_link == o.tracking_link &&
           is_shipped == o.is_shipped &&
           delivered_at == o.delivered_at &&
-          replace == o.replace
+          replace == o.replace &&
+          send_notifications == o.send_notifications &&
+          tracking_provider == o.tracking_provider &&
+          items == o.items
     end
 
     # @see the `==` method
@@ -188,7 +222,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [shipment_id, order_id, store_id, shipment_provider, tracking_numbers, tracking_link, is_shipped, delivered_at, replace].hash
+      [shipment_id, order_id, store_id, shipment_provider, tracking_numbers, tracking_link, is_shipped, delivered_at, replace, send_notifications, tracking_provider, items].hash
     end
 
     # Builds the object from hash

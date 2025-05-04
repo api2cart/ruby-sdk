@@ -13,6 +13,9 @@
 | **is_shipped** | **Boolean** | Defines shipment&#39;s status | [optional][default to true] |
 | **delivered_at** | **String** | Defines the date of delivery | [optional] |
 | **replace** | **Boolean** | Allows rewrite tracking numbers | [optional][default to true] |
+| **send_notifications** | **Boolean** | Send notifications to customer after order was created | [optional][default to false] |
+| **tracking_provider** | **String** | Defines name of the company which provides shipment tracking | [optional] |
+| **items** | [**Array&lt;OrderShipmentAddItemsInner&gt;**](OrderShipmentAddItemsInner.md) | Defines items in the order that will be shipped | [optional] |
 
 ## Example
 
@@ -28,7 +31,10 @@ instance = OpenapiClient::OrderShipmentUpdate.new(
   tracking_link: http://example.com?someParam&#x3D;value,
   is_shipped: true,
   delivered_at: 2024-08-25T23:56:12+00:00,
-  replace: false
+  replace: false,
+  send_notifications: true,
+  tracking_provider: Custom tracker,
+  items: null
 )
 ```
 
