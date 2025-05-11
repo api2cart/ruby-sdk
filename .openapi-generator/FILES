@@ -291,6 +291,7 @@ docs/ProductAddGroupPricesInner.md
 docs/ProductAddLogisticInfoInner.md
 docs/ProductAddManufacturerInfo.md
 docs/ProductAddPackageDetails.md
+docs/ProductAddPersonalizationDetails.md
 docs/ProductAddSalesTax.md
 docs/ProductAddSellerProfiles.md
 docs/ProductAddShippingDetailsInner.md
@@ -753,6 +754,7 @@ lib/openapi_client/models/product_add_group_prices_inner.rb
 lib/openapi_client/models/product_add_logistic_info_inner.rb
 lib/openapi_client/models/product_add_manufacturer_info.rb
 lib/openapi_client/models/product_add_package_details.rb
+lib/openapi_client/models/product_add_personalization_details.rb
 lib/openapi_client/models/product_add_sales_tax.rb
 lib/openapi_client/models/product_add_seller_profiles.rb
 lib/openapi_client/models/product_add_shipping_details_inner.rb
@@ -1205,6 +1207,7 @@ spec/models/product_add_group_prices_inner_spec.rb
 spec/models/product_add_logistic_info_inner_spec.rb
 spec/models/product_add_manufacturer_info_spec.rb
 spec/models/product_add_package_details_spec.rb
+spec/models/product_add_personalization_details_spec.rb
 spec/models/product_add_sales_tax_spec.rb
 spec/models/product_add_seller_profiles_spec.rb
 spec/models/product_add_shipping_details_inner_spec.rb

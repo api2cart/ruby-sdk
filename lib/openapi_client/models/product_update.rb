@@ -259,6 +259,14 @@ module OpenapiClient
     # Disable or enable check process status. Please note that the response will be slower due to additional requests to the store.
     attr_accessor :check_process_status
 
+    # An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields->product_specifics).         <b>The structure of the parameter is different for specific platforms.</b>
+    attr_accessor :specifics
+
+    # Add Shop Section Id
+    attr_accessor :shop_section_id
+
+    attr_accessor :personalization_details
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -343,7 +351,10 @@ module OpenapiClient
         :'disable_report_cache' => :'disable_report_cache',
         :'reindex' => :'reindex',
         :'clear_cache' => :'clear_cache',
-        :'check_process_status' => :'check_process_status'
+        :'check_process_status' => :'check_process_status',
+        :'specifics' => :'specifics',
+        :'shop_section_id' => :'shop_section_id',
+        :'personalization_details' => :'personalization_details'
       }
     end
 
@@ -436,7 +447,10 @@ module OpenapiClient
         :'disable_report_cache' => :'Boolean',
         :'reindex' => :'Boolean',
         :'clear_cache' => :'Boolean',
-        :'check_process_status' => :'Boolean'
+        :'check_process_status' => :'Boolean',
+        :'specifics' => :'Array<ProductAddSpecificsInner>',
+        :'shop_section_id' => :'Integer',
+        :'personalization_details' => :'ProductAddPersonalizationDetails'
       }
     end
 
@@ -818,6 +832,20 @@ module OpenapiClient
       else
         self.check_process_status = false
       end
+
+      if attributes.key?(:'specifics')
+        if (value = attributes[:'specifics']).is_a?(Array)
+          self.specifics = value
+        end
+      end
+
+      if attributes.key?(:'shop_section_id')
+        self.shop_section_id = attributes[:'shop_section_id']
+      end
+
+      if attributes.key?(:'personalization_details')
+        self.personalization_details = attributes[:'personalization_details']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -921,7 +949,10 @@ module OpenapiClient
           disable_report_cache == o.disable_report_cache &&
           reindex == o.reindex &&
           clear_cache == o.clear_cache &&
-          check_process_status == o.check_process_status
+          check_process_status == o.check_process_status &&
+          specifics == o.specifics &&
+          shop_section_id == o.shop_section_id &&
+          personalization_details == o.personalization_details
     end
 
     # @see the `==` method
@@ -933,7 +964,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, model, sku, name, description, short_description, price, old_price, special_price, sprice_create, sprice_expire, cost_price, fixed_cost_shipping_price, retail_price, tier_prices, reserve_price, buyitnow_price, taxable, tax_class_id, type, status, condition, visible, in_stock, avail, avail_from, product_class, available_for_view, stores_ids, store_id, lang_id, quantity, reserve_quantity, manage_stock, backorder_status, increase_quantity, reduce_quantity, warehouse_id, weight, weight_unit, height, length, width, dimensions_unit, is_virtual, is_free_shipping, gtin, upc, mpn, ean, isbn, barcode, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, meta_title, meta_keywords, meta_description, seo_url, search_keywords, tags, delivery_code, package_details, country_of_origin, harmonized_system_code, shipping_template_id, when_made, is_supply, downloadable, materials, auto_renew, on_sale, production_partner_ids, manufacturer_info, report_request_id, disable_report_cache, reindex, clear_cache, check_process_status].hash
+      [id, model, sku, name, description, short_description, price, old_price, special_price, sprice_create, sprice_expire, cost_price, fixed_cost_shipping_price, retail_price, tier_prices, reserve_price, buyitnow_price, taxable, tax_class_id, type, status, condition, visible, in_stock, avail, avail_from, product_class, available_for_view, stores_ids, store_id, lang_id, quantity, reserve_quantity, manage_stock, backorder_status, increase_quantity, reduce_quantity, warehouse_id, weight, weight_unit, height, length, width, dimensions_unit, is_virtual, is_free_shipping, gtin, upc, mpn, ean, isbn, barcode, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, meta_title, meta_keywords, meta_description, seo_url, search_keywords, tags, delivery_code, package_details, country_of_origin, harmonized_system_code, shipping_template_id, when_made, is_supply, downloadable, materials, auto_renew, on_sale, production_partner_ids, manufacturer_info, report_request_id, disable_report_cache, reindex, clear_cache, check_process_status, specifics, shop_section_id, personalization_details].hash
     end
 
     # Builds the object from hash

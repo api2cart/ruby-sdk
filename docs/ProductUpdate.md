@@ -86,6 +86,9 @@
 | **reindex** | **Boolean** | Is reindex required | [optional][default to true] |
 | **clear_cache** | **Boolean** | Is cache clear required | [optional][default to true] |
 | **check_process_status** | **Boolean** | Disable or enable check process status. Please note that the response will be slower due to additional requests to the store. | [optional][default to false] |
+| **specifics** | [**Array&lt;ProductAddSpecificsInner&gt;**](ProductAddSpecificsInner.md) | An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields-&gt;product_specifics).         &lt;b&gt;The structure of the parameter is different for specific platforms.&lt;/b&gt; | [optional] |
+| **shop_section_id** | **Integer** | Add Shop Section Id | [optional] |
+| **personalization_details** | [**ProductAddPersonalizationDetails**](ProductAddPersonalizationDetails.md) |  | [optional] |
 
 ## Example
 
@@ -174,7 +177,10 @@ instance = OpenapiClient::ProductUpdate.new(
   disable_report_cache: false,
   reindex: false,
   clear_cache: false,
-  check_process_status: false
+  check_process_status: false,
+  specifics: null,
+  shop_section_id: &#x60;12345678&#x60;,
+  personalization_details: null
 )
 ```
 

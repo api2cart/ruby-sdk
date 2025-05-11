@@ -35,6 +35,7 @@ end
 
 api_instance = OpenapiClient::SubscriberApi.new
 opts = {
+  ids: '24,25', # String | Retrieves subscribers specified by ids
   start: 0, # Integer | This parameter sets the number from which you want to get entities
   count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
   page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
@@ -81,6 +82,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
+| **ids** | **String** | Retrieves subscribers specified by ids | [optional] |
 | **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
 | **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
 | **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |

@@ -22,6 +22,7 @@ module OpenapiClient
     # subscriber.list
     # Get subscribers list
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :ids Retrieves subscribers specified by ids
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
@@ -44,6 +45,7 @@ module OpenapiClient
     # subscriber.list
     # Get subscribers list
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :ids Retrieves subscribers specified by ids
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
     # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (default to 10)
     # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
@@ -67,6 +69,7 @@ module OpenapiClient
 
       # query parameters
       query_params = opts[:query_params] || {}
+      query_params[:'ids'] = opts[:'ids'] if !opts[:'ids'].nil?
       query_params[:'start'] = opts[:'start'] if !opts[:'start'].nil?
       query_params[:'count'] = opts[:'count'] if !opts[:'count'].nil?
       query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?

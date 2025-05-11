@@ -116,6 +116,9 @@
 | **clear_cache** | **Boolean** | Is cache clear required | [optional][default to true] |
 | **viewed_count** | **Integer** | Specifies the number of product&#39;s reviews | [optional][default to 0] |
 | **ordered_count** | **Integer** | Defines how many times the product was ordered | [optional][default to 0] |
+| **shop_section_id** | **Integer** | Add Shop Section Id | [optional] |
+| **return_policy_id** | **Integer** | Add Return Policy Id | [optional] |
+| **personalization_details** | [**ProductAddPersonalizationDetails**](ProductAddPersonalizationDetails.md) |  | [optional] |
 
 ## Example
 
@@ -234,7 +237,10 @@ instance = OpenapiClient::ProductAdd.new(
   marketplace_item_properties: {&quot;color&quot;:[&quot;Silver&quot;],&quot;manufacturer&quot;:&quot;Philips&quot;,&quot;features&quot;:[&quot;3 way&quot;],&quot;countPerPack&quot;:1,&quot;watts&quot;:{&quot;unit&quot;:&quot;W&quot;,&quot;measure&quot;:40}},
   clear_cache: false,
   viewed_count: 9,
-  ordered_count: 15
+  ordered_count: 15,
+  shop_section_id: &#x60;12345678&#x60;,
+  return_policy_id: &#x60;12345678&#x60;,
+  personalization_details: null
 )
 ```
 

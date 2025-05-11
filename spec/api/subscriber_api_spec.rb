@@ -36,6 +36,7 @@ describe 'SubscriberApi' do
   # subscriber.list
   # Get subscribers list
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :ids Retrieves subscribers specified by ids
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities
   # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
   # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)

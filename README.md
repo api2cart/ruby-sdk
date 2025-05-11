@@ -538,6 +538,7 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::ProductAddLogisticInfoInner](docs/ProductAddLogisticInfoInner.md)
  - [OpenapiClient::ProductAddManufacturerInfo](docs/ProductAddManufacturerInfo.md)
  - [OpenapiClient::ProductAddPackageDetails](docs/ProductAddPackageDetails.md)
+ - [OpenapiClient::ProductAddPersonalizationDetails](docs/ProductAddPersonalizationDetails.md)
  - [OpenapiClient::ProductAddSalesTax](docs/ProductAddSalesTax.md)
  - [OpenapiClient::ProductAddSellerProfiles](docs/ProductAddSellerProfiles.md)
  - [OpenapiClient::ProductAddShippingDetailsInner](docs/ProductAddShippingDetailsInner.md)
