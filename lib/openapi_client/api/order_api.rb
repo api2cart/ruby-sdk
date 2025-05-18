@@ -1807,6 +1807,7 @@ module OpenapiClient
     # @option opts [Boolean] :send_notifications Send notifications to customer after order was created (default to false)
     # @option opts [Boolean] :create_invoice Determines whether an invoice should be created if it has not already been created
     # @option opts [String] :origin The source of the order
+    # @option opts [String] :tags Order tags
     # @return [AccountConfigUpdate200Response]
     def order_update(order_id, opts = {})
       data, _status_code, _headers = order_update_with_http_info(order_id, opts)
@@ -1832,6 +1833,7 @@ module OpenapiClient
     # @option opts [Boolean] :send_notifications Send notifications to customer after order was created (default to false)
     # @option opts [Boolean] :create_invoice Determines whether an invoice should be created if it has not already been created
     # @option opts [String] :origin The source of the order
+    # @option opts [String] :tags Order tags
     # @return [Array<(AccountConfigUpdate200Response, Integer, Hash)>] AccountConfigUpdate200Response data, response status code and response headers
     def order_update_with_http_info(order_id, opts = {})
       if @api_client.config.debugging
@@ -1862,6 +1864,7 @@ module OpenapiClient
       query_params[:'send_notifications'] = opts[:'send_notifications'] if !opts[:'send_notifications'].nil?
       query_params[:'create_invoice'] = opts[:'create_invoice'] if !opts[:'create_invoice'].nil?
       query_params[:'origin'] = opts[:'origin'] if !opts[:'origin'].nil?
+      query_params[:'tags'] = opts[:'tags'] if !opts[:'tags'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

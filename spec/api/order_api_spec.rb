@@ -431,6 +431,7 @@ describe 'OrderApi' do
   # @option opts [Boolean] :send_notifications Send notifications to customer after order was created
   # @option opts [Boolean] :create_invoice Determines whether an invoice should be created if it has not already been created
   # @option opts [String] :origin The source of the order
+  # @option opts [String] :tags Order tags
   # @return [AccountConfigUpdate200Response]
   describe 'order_update test' do
     it 'should work' do

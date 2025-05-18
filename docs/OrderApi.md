@@ -1997,7 +1997,8 @@ opts = {
   date_finished: '2014-06-05 05:05:00', # String | Specifies order's  finished date
   send_notifications: true, # Boolean | Send notifications to customer after order was created
   create_invoice: true, # Boolean | Determines whether an invoice should be created if it has not already been created
-  origin: 'newsletter' # String | The source of the order
+  origin: 'newsletter', # String | The source of the order
+  tags: 'tag1,tag2' # String | Order tags
 }
 
 begin
@@ -2047,6 +2048,7 @@ end
 | **send_notifications** | **Boolean** | Send notifications to customer after order was created | [optional][default to false] |
 | **create_invoice** | **Boolean** | Determines whether an invoice should be created if it has not already been created | [optional] |
 | **origin** | **String** | The source of the order | [optional] |
+| **tags** | **String** | Order tags | [optional] |
 
 ### Return type
 
