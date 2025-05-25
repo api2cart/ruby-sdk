@@ -33,7 +33,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::AccountApi.new
-account_cart_add = OpenapiClient::AccountCartAdd.new({cart_id: '3DCart', bigcartel_user_name: 'subdomain', bigcartel_password: '4GrrZCLNNoSUuhAjesKuchxo9SL', wix_app_id: '6b0b5b7b-7d87-45b5-bf34-ac6b438e63da', wix_app_secret_key: '316c0a09-f195-42be-74f6-a02cebb9cae6'}) # AccountCartAdd | 
+account_cart_add = OpenapiClient::AccountCartAdd.new({cart_id: '3DCart', bigcartel_user_name: 'subdomain', bigcartel_password: '4GrrZCLNNoSUuhAjesKuchxo9SL', wix_app_id: '6b0b5b7b-7d87-45b5-bf34-ac6b438e63da', wix_app_secret_key: '316c0a09-f195-42be-74f6-a02cebb9cae6', temu_access_token: 'uplv3hfyt5kcwoymrgnajnbl1ow5qxlz4sqhev6hl3xosz5dejrtyl2jre6'}) # AccountCartAdd | 
 
 begin
   # account.cart.add
@@ -257,6 +257,12 @@ opts = {
   shopify_api_key: 'bbca57d8ff3c3677128112c15556d9e3', # String | Shopify API Key
   shopify_api_password: '860f3a6fc87632301a42cd88e4b5ab3d', # String | Shopify API Password
   shopify_shared_secret: 'gmz3iz45x2', # String | Shared secret
+  shopee_partner_id: '1276777', # String | Shopee Partner ID
+  shopee_partner_key: '6a46494b4d746576554646626775617a577542774850636375464d6a736d5598', # String | Shopee Partner Key
+  shopee_shop_id: '137968', # String | Shopee SHOP ID
+  shopee_refresh_token: 'EAAPP06rM2n8BO4mZBuMPnu9zS0MaMbN7ue8aUkcxw4zewU987mVVb5br', # String | Shopee Refresh Token
+  shopee_region: 'CN', # String | Shopee API endpoint Region. Use for Chinese Mainland or Brazil.
+  shopee_environment: 'sandbox', # String | Shopee Environment
   shoplazza_access_token: 'igse8e4rdmzkxdi937qe69d59en1imw', # String | Access token authorizing the app to access resources on behalf of a user
   shoplazza_shared_secret: 'gmz3iz45x2', # String | Shared secret
   miva_access_token: '227cbe434a1e358d72db0de993x9d9fd', # String | Miva access token
@@ -341,7 +347,11 @@ opts = {
   salla_client_id: '1bxxxcf9-5xx4-xxx-bxxf-929b8xxxxe11', # String | Salla Client ID
   salla_client_secret: '8x88axxxc25e1fxxxa1c06fxxx150xx5', # String | Salla Client Secret
   salla_refresh_token: 'oxy_rt_zxxxxiY2xxZWWxxxxlU-tROxxxxx2JzS2fwzxxxxxkU.p3xxxkCIyFexxxxP50WwZYfhw5_wg1xxxxV5F-8xxXc', # String | Salla Refresh Token
-  salla_access_token: 'oxy_rt_zxxxxiY2xxZWWxxxxlU-tROxxxxx2JzS2fwzxxxxxkU.p3xxxkCIyFexxxxP50WwZYfhw5_wg1xxxxV5F-8xxXc' # String | Salla Access Token
+  salla_access_token: 'oxy_rt_zxxxxiY2xxZWWxxxxlU-tROxxxxx2JzS2fwzxxxxxkU.p3xxxkCIyFexxxxP50WwZYfhw5_wg1xxxxV5F-8xxXc', # String | Salla Access Token
+  temu_app_key: '4ebbc9190ae410443d65b4c2faca9811', # String | Temu App Key
+  temu_app_secret: '4782d2d827276688bf4758bed55dbdd4bbe79a78', # String | Temu App Secret
+  temu_access_token: 'uplv3hfyt5kcwoymrgnajnbl1ow5qxlz4sqhev6hl3xosz5dejrtyl2jre6', # String | Temu Access Token
+  temu_region: 'US' # String | Temu API endpoint Region.
 }
 
 begin
@@ -439,6 +449,12 @@ end
 | **shopify_api_key** | **String** | Shopify API Key | [optional] |
 | **shopify_api_password** | **String** | Shopify API Password | [optional] |
 | **shopify_shared_secret** | **String** | Shared secret | [optional] |
+| **shopee_partner_id** | **String** | Shopee Partner ID | [optional] |
+| **shopee_partner_key** | **String** | Shopee Partner Key | [optional] |
+| **shopee_shop_id** | **String** | Shopee SHOP ID | [optional] |
+| **shopee_refresh_token** | **String** | Shopee Refresh Token | [optional] |
+| **shopee_region** | **String** | Shopee API endpoint Region. Use for Chinese Mainland or Brazil. | [optional] |
+| **shopee_environment** | **String** | Shopee Environment | [optional] |
 | **shoplazza_access_token** | **String** | Access token authorizing the app to access resources on behalf of a user | [optional] |
 | **shoplazza_shared_secret** | **String** | Shared secret | [optional] |
 | **miva_access_token** | **String** | Miva access token | [optional] |
@@ -519,6 +535,10 @@ end
 | **salla_client_secret** | **String** | Salla Client Secret | [optional] |
 | **salla_refresh_token** | **String** | Salla Refresh Token | [optional] |
 | **salla_access_token** | **String** | Salla Access Token | [optional] |
+| **temu_app_key** | **String** | Temu App Key | [optional] |
+| **temu_app_secret** | **String** | Temu App Secret | [optional] |
+| **temu_access_token** | **String** | Temu Access Token | [optional] |
+| **temu_region** | **String** | Temu API endpoint Region. | [optional][default to &#39;US&#39;] |
 
 ### Return type
 

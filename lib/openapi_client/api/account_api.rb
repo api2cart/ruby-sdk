@@ -229,6 +229,12 @@ module OpenapiClient
     # @option opts [String] :shopify_api_key Shopify API Key
     # @option opts [String] :shopify_api_password Shopify API Password
     # @option opts [String] :shopify_shared_secret Shared secret
+    # @option opts [String] :shopee_partner_id Shopee Partner ID
+    # @option opts [String] :shopee_partner_key Shopee Partner Key
+    # @option opts [String] :shopee_shop_id Shopee SHOP ID
+    # @option opts [String] :shopee_refresh_token Shopee Refresh Token
+    # @option opts [String] :shopee_region Shopee API endpoint Region. Use for Chinese Mainland or Brazil.
+    # @option opts [String] :shopee_environment Shopee Environment
     # @option opts [String] :shoplazza_access_token Access token authorizing the app to access resources on behalf of a user
     # @option opts [String] :shoplazza_shared_secret Shared secret
     # @option opts [String] :miva_access_token Miva access token
@@ -309,6 +315,10 @@ module OpenapiClient
     # @option opts [String] :salla_client_secret Salla Client Secret
     # @option opts [String] :salla_refresh_token Salla Refresh Token
     # @option opts [String] :salla_access_token Salla Access Token
+    # @option opts [String] :temu_app_key Temu App Key
+    # @option opts [String] :temu_app_secret Temu App Secret
+    # @option opts [String] :temu_access_token Temu Access Token
+    # @option opts [String] :temu_region Temu API endpoint Region. (default to 'US')
     # @return [AccountConfigUpdate200Response]
     def account_config_update(opts = {})
       data, _status_code, _headers = account_config_update_with_http_info(opts)
@@ -382,6 +392,12 @@ module OpenapiClient
     # @option opts [String] :shopify_api_key Shopify API Key
     # @option opts [String] :shopify_api_password Shopify API Password
     # @option opts [String] :shopify_shared_secret Shared secret
+    # @option opts [String] :shopee_partner_id Shopee Partner ID
+    # @option opts [String] :shopee_partner_key Shopee Partner Key
+    # @option opts [String] :shopee_shop_id Shopee SHOP ID
+    # @option opts [String] :shopee_refresh_token Shopee Refresh Token
+    # @option opts [String] :shopee_region Shopee API endpoint Region. Use for Chinese Mainland or Brazil.
+    # @option opts [String] :shopee_environment Shopee Environment
     # @option opts [String] :shoplazza_access_token Access token authorizing the app to access resources on behalf of a user
     # @option opts [String] :shoplazza_shared_secret Shared secret
     # @option opts [String] :miva_access_token Miva access token
@@ -462,6 +478,10 @@ module OpenapiClient
     # @option opts [String] :salla_client_secret Salla Client Secret
     # @option opts [String] :salla_refresh_token Salla Refresh Token
     # @option opts [String] :salla_access_token Salla Access Token
+    # @option opts [String] :temu_app_key Temu App Key
+    # @option opts [String] :temu_app_secret Temu App Secret
+    # @option opts [String] :temu_access_token Temu Access Token
+    # @option opts [String] :temu_region Temu API endpoint Region. (default to 'US')
     # @return [Array<(AccountConfigUpdate200Response, Integer, Hash)>] AccountConfigUpdate200Response data, response status code and response headers
     def account_config_update_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -536,6 +556,12 @@ module OpenapiClient
       query_params[:'shopify_api_key'] = opts[:'shopify_api_key'] if !opts[:'shopify_api_key'].nil?
       query_params[:'shopify_api_password'] = opts[:'shopify_api_password'] if !opts[:'shopify_api_password'].nil?
       query_params[:'shopify_shared_secret'] = opts[:'shopify_shared_secret'] if !opts[:'shopify_shared_secret'].nil?
+      query_params[:'shopee_partner_id'] = opts[:'shopee_partner_id'] if !opts[:'shopee_partner_id'].nil?
+      query_params[:'shopee_partner_key'] = opts[:'shopee_partner_key'] if !opts[:'shopee_partner_key'].nil?
+      query_params[:'shopee_shop_id'] = opts[:'shopee_shop_id'] if !opts[:'shopee_shop_id'].nil?
+      query_params[:'shopee_refresh_token'] = opts[:'shopee_refresh_token'] if !opts[:'shopee_refresh_token'].nil?
+      query_params[:'shopee_region'] = opts[:'shopee_region'] if !opts[:'shopee_region'].nil?
+      query_params[:'shopee_environment'] = opts[:'shopee_environment'] if !opts[:'shopee_environment'].nil?
       query_params[:'shoplazza_access_token'] = opts[:'shoplazza_access_token'] if !opts[:'shoplazza_access_token'].nil?
       query_params[:'shoplazza_shared_secret'] = opts[:'shoplazza_shared_secret'] if !opts[:'shoplazza_shared_secret'].nil?
       query_params[:'miva_access_token'] = opts[:'miva_access_token'] if !opts[:'miva_access_token'].nil?
@@ -616,6 +642,10 @@ module OpenapiClient
       query_params[:'salla_client_secret'] = opts[:'salla_client_secret'] if !opts[:'salla_client_secret'].nil?
       query_params[:'salla_refresh_token'] = opts[:'salla_refresh_token'] if !opts[:'salla_refresh_token'].nil?
       query_params[:'salla_access_token'] = opts[:'salla_access_token'] if !opts[:'salla_access_token'].nil?
+      query_params[:'temu_app_key'] = opts[:'temu_app_key'] if !opts[:'temu_app_key'].nil?
+      query_params[:'temu_app_secret'] = opts[:'temu_app_secret'] if !opts[:'temu_app_secret'].nil?
+      query_params[:'temu_access_token'] = opts[:'temu_access_token'] if !opts[:'temu_access_token'].nil?
+      query_params[:'temu_region'] = opts[:'temu_region'] if !opts[:'temu_region'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

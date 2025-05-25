@@ -30,7 +30,7 @@ describe OpenapiClient::AccountCartAdd do
   describe 'test attribute "cart_id"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["3DCart", "3DCartApi", "AceShop", "AmazonSP", "AspDotNetStorefront", "BigCartel", "BigcommerceApi", "Bol", "CommerceHQ", "Creloaded", "Cscart", "Cubecart", "Demandware", "EBay", "Ecwid", "EtsyAPIv3", "Flipkart", "Gambio", "Hybris", "JooCart", "Lazada", "LightSpeed", "Magento1212", "Magento2Api", "MercadoLibre", "MijoShop", "Miva", "Neto", "Opencart14", "Oscmax2", "Oscommerce22ms2", "Otto", "Oxid", "Pinnacle", "Prestashop", "PrestashopApi", "SSPremium", "Salla", "Shopify", "Shoplazza", "Shopline", "Shopware", "ShopwareApi", "Square", "Squarespace", "Tiendanube", "TikTokShop", "Tomatocart", "Ubercart", "Virtuemart", "Volusion", "WPecommerce", "Walmart", "WebAsyst", "Wix", "Woocommerce", "WoocommerceApi", "Xcart", "Xtcommerce", "XtcommerceVeyton", "Zencart137", "Zid", "Zoey", "Zoho"])
+      # validator = Petstore::EnumTest::EnumAttributeValidator.new('String', ["3DCart", "3DCartApi", "AceShop", "AmazonSP", "AspDotNetStorefront", "BigCartel", "BigcommerceApi", "Bol", "CommerceHQ", "Creloaded", "Cscart", "Cubecart", "Demandware", "EBay", "Ecwid", "EtsyAPIv3", "Flipkart", "Gambio", "Hybris", "JooCart", "Lazada", "LightSpeed", "Magento1212", "Magento2Api", "MercadoLibre", "MijoShop", "Miva", "Neto", "Opencart14", "Oscmax2", "Oscommerce22ms2", "Otto", "Oxid", "Pinnacle", "Prestashop", "PrestashopApi", "SSPremium", "Salla", "Shopify", "Shopee", "Shoplazza", "Shopline", "Shopware", "ShopwareApi", "Square", "Squarespace", "Tiendanube", "TikTokShop", "Tomatocart", "Ubercart", "Virtuemart", "Volusion", "WPecommerce", "Walmart", "WebAsyst", "Wix", "Woocommerce", "WoocommerceApi", "Xcart", "Xtcommerce", "XtcommerceVeyton", "Zencart137", "Zid", "Zoey", "Zoho"])
       # validator.allowable_values.each do |value|
       #   expect { instance.cart_id = value }.not_to raise_error
       # end
@@ -511,6 +511,42 @@ describe OpenapiClient::AccountCartAdd do
     end
   end
 
+  describe 'test attribute "shopee_partner_id"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "shopee_partner_key"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "shopee_shop_id"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "shopee_refresh_token"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "shopee_region"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "shopee_environment"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "shoplazza_access_token"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -932,6 +968,30 @@ describe OpenapiClient::AccountCartAdd do
   end
 
   describe 'test attribute "salla_access_token"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "temu_app_key"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "temu_app_secret"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "temu_access_token"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "temu_region"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

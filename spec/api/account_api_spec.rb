@@ -129,6 +129,12 @@ describe 'AccountApi' do
   # @option opts [String] :shopify_api_key Shopify API Key
   # @option opts [String] :shopify_api_password Shopify API Password
   # @option opts [String] :shopify_shared_secret Shared secret
+  # @option opts [String] :shopee_partner_id Shopee Partner ID
+  # @option opts [String] :shopee_partner_key Shopee Partner Key
+  # @option opts [String] :shopee_shop_id Shopee SHOP ID
+  # @option opts [String] :shopee_refresh_token Shopee Refresh Token
+  # @option opts [String] :shopee_region Shopee API endpoint Region. Use for Chinese Mainland or Brazil.
+  # @option opts [String] :shopee_environment Shopee Environment
   # @option opts [String] :shoplazza_access_token Access token authorizing the app to access resources on behalf of a user
   # @option opts [String] :shoplazza_shared_secret Shared secret
   # @option opts [String] :miva_access_token Miva access token
@@ -209,6 +215,10 @@ describe 'AccountApi' do
   # @option opts [String] :salla_client_secret Salla Client Secret
   # @option opts [String] :salla_refresh_token Salla Refresh Token
   # @option opts [String] :salla_access_token Salla Access Token
+  # @option opts [String] :temu_app_key Temu App Key
+  # @option opts [String] :temu_app_secret Temu App Secret
+  # @option opts [String] :temu_access_token Temu Access Token
+  # @option opts [String] :temu_region Temu API endpoint Region.
   # @return [AccountConfigUpdate200Response]
   describe 'account_config_update test' do
     it 'should work' do
