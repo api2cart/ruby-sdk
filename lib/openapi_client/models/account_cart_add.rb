@@ -1557,7 +1557,7 @@ module OpenapiClient
       if attributes.key?(:'temu_region')
         self.temu_region = attributes[:'temu_region']
       else
-        self.temu_region = 'US'
+        self.temu_region = nil
       end
     end
 
@@ -1594,6 +1594,10 @@ module OpenapiClient
         invalid_properties.push('invalid value for "temu_access_token", temu_access_token cannot be nil.')
       end
 
+      if @temu_region.nil?
+        invalid_properties.push('invalid value for "temu_region", temu_region cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -1610,6 +1614,9 @@ module OpenapiClient
       return false if @wix_app_id.nil?
       return false if @wix_app_secret_key.nil?
       return false if @temu_access_token.nil?
+      return false if @temu_region.nil?
+      temu_region_validator = EnumAttributeValidator.new('String', ["US", "EU", "GLOBAL"])
+      return false unless temu_region_validator.valid?(@temu_region)
       true
     end
 
@@ -1635,6 +1642,16 @@ module OpenapiClient
       end
 
       @hybris_websites = hybris_websites
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] temu_region Object to be assigned
+    def temu_region=(temu_region)
+      validator = EnumAttributeValidator.new('String', ["US", "EU", "GLOBAL"])
+      unless validator.valid?(temu_region)
+        fail ArgumentError, "invalid value for \"temu_region\", must be one of #{validator.allowable_values}."
+      end
+      @temu_region = temu_region
     end
 
     # Checks equality by comparing each attribute.

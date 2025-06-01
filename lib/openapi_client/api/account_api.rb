@@ -318,7 +318,7 @@ module OpenapiClient
     # @option opts [String] :temu_app_key Temu App Key
     # @option opts [String] :temu_app_secret Temu App Secret
     # @option opts [String] :temu_access_token Temu Access Token
-    # @option opts [String] :temu_region Temu API endpoint Region. (default to 'US')
+    # @option opts [String] :temu_region Temu API endpoint Region.
     # @return [AccountConfigUpdate200Response]
     def account_config_update(opts = {})
       data, _status_code, _headers = account_config_update_with_http_info(opts)
@@ -481,7 +481,7 @@ module OpenapiClient
     # @option opts [String] :temu_app_key Temu App Key
     # @option opts [String] :temu_app_secret Temu App Secret
     # @option opts [String] :temu_access_token Temu Access Token
-    # @option opts [String] :temu_region Temu API endpoint Region. (default to 'US')
+    # @option opts [String] :temu_region Temu API endpoint Region.
     # @return [Array<(AccountConfigUpdate200Response, Integer, Hash)>] AccountConfigUpdate200Response data, response status code and response headers
     def account_config_update_with_http_info(opts = {})
       if @api_client.config.debugging

@@ -164,7 +164,7 @@
 | **temu_app_key** | **String** | Temu App Key | [optional] |
 | **temu_app_secret** | **String** | Temu App Secret | [optional] |
 | **temu_access_token** | **String** | Temu Access Token |  |
-| **temu_region** | **String** | Temu API endpoint Region. | [optional][default to &#39;US&#39;] |
+| **temu_region** | **String** | Temu API endpoint Region. |  |
 
 ## Example
 
