@@ -56,6 +56,7 @@ describe 'WebhookApi' do
   # @option opts [String] :label The name you give to the webhook
   # @option opts [String] :fields Fields the webhook should send
   # @option opts [Boolean] :active Webhook status
+  # @option opts [String] :lang_id Language id
   # @option opts [String] :store_id Defines store id where the webhook should be assigned
   # @return [BasketLiveShippingServiceCreate200Response]
   describe 'webhook_create test' do
@@ -114,6 +115,7 @@ describe 'WebhookApi' do
   # @option opts [String] :label The name you give to the webhook
   # @option opts [String] :fields Fields the webhook should send
   # @option opts [Boolean] :active Webhook status
+  # @option opts [String] :lang_id Language id
   # @return [ProductImageUpdate200Response]
   describe 'webhook_update test' do
     it 'should work' do

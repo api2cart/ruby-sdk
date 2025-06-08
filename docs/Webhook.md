@@ -7,6 +7,7 @@
 | **id** | **Integer** |  | [optional] |
 | **label** | **String** |  | [optional] |
 | **store_id** | **String** |  | [optional] |
+| **lang_id** | **String** |  | [optional] |
 | **active** | **Boolean** |  | [optional] |
 | **callback** | **String** |  | [optional] |
 | **fields** | **String** |  | [optional] |
@@ -26,6 +27,7 @@ instance = OpenapiClient::Webhook.new(
   id: null,
   label: null,
   store_id: null,
+  lang_id: null,
   active: null,
   callback: null,
   fields: null,

@@ -94,6 +94,7 @@ module OpenapiClient
     # @option opts [String] :label The name you give to the webhook
     # @option opts [String] :fields Fields the webhook should send (default to 'force_all')
     # @option opts [Boolean] :active Webhook status (default to true)
+    # @option opts [String] :lang_id Language id
     # @option opts [String] :store_id Defines store id where the webhook should be assigned
     # @return [BasketLiveShippingServiceCreate200Response]
     def webhook_create(entity, action, opts = {})
@@ -110,6 +111,7 @@ module OpenapiClient
     # @option opts [String] :label The name you give to the webhook
     # @option opts [String] :fields Fields the webhook should send (default to 'force_all')
     # @option opts [Boolean] :active Webhook status (default to true)
+    # @option opts [String] :lang_id Language id
     # @option opts [String] :store_id Defines store id where the webhook should be assigned
     # @return [Array<(BasketLiveShippingServiceCreate200Response, Integer, Hash)>] BasketLiveShippingServiceCreate200Response data, response status code and response headers
     def webhook_create_with_http_info(entity, action, opts = {})
@@ -135,6 +137,7 @@ module OpenapiClient
       query_params[:'label'] = opts[:'label'] if !opts[:'label'].nil?
       query_params[:'fields'] = opts[:'fields'] if !opts[:'fields'].nil?
       query_params[:'active'] = opts[:'active'] if !opts[:'active'].nil?
+      query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
 
       # header parameters
@@ -378,6 +381,7 @@ module OpenapiClient
     # @option opts [String] :label The name you give to the webhook
     # @option opts [String] :fields Fields the webhook should send
     # @option opts [Boolean] :active Webhook status
+    # @option opts [String] :lang_id Language id
     # @return [ProductImageUpdate200Response]
     def webhook_update(id, opts = {})
       data, _status_code, _headers = webhook_update_with_http_info(id, opts)
@@ -392,6 +396,7 @@ module OpenapiClient
     # @option opts [String] :label The name you give to the webhook
     # @option opts [String] :fields Fields the webhook should send
     # @option opts [Boolean] :active Webhook status
+    # @option opts [String] :lang_id Language id
     # @return [Array<(ProductImageUpdate200Response, Integer, Hash)>] ProductImageUpdate200Response data, response status code and response headers
     def webhook_update_with_http_info(id, opts = {})
       if @api_client.config.debugging
@@ -411,6 +416,7 @@ module OpenapiClient
       query_params[:'label'] = opts[:'label'] if !opts[:'label'].nil?
       query_params[:'fields'] = opts[:'fields'] if !opts[:'fields'].nil?
       query_params[:'active'] = opts[:'active'] if !opts[:'active'].nil?
+      query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
