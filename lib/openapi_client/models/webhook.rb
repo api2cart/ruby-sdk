@@ -29,6 +29,8 @@ module OpenapiClient
 
     attr_accessor :fields
 
+    attr_accessor :response_fields
+
     attr_accessor :created_at
 
     attr_accessor :updated_at
@@ -51,6 +53,7 @@ module OpenapiClient
         :'active' => :'active',
         :'callback' => :'callback',
         :'fields' => :'fields',
+        :'response_fields' => :'response_fields',
         :'created_at' => :'created_at',
         :'updated_at' => :'updated_at',
         :'entity' => :'entity',
@@ -75,6 +78,7 @@ module OpenapiClient
         :'active' => :'Boolean',
         :'callback' => :'String',
         :'fields' => :'String',
+        :'response_fields' => :'String',
         :'created_at' => :'String',
         :'updated_at' => :'String',
         :'entity' => :'String',
@@ -133,6 +137,10 @@ module OpenapiClient
         self.fields = attributes[:'fields']
       end
 
+      if attributes.key?(:'response_fields')
+        self.response_fields = attributes[:'response_fields']
+      end
+
       if attributes.key?(:'created_at')
         self.created_at = attributes[:'created_at']
       end
@@ -185,6 +193,7 @@ module OpenapiClient
           active == o.active &&
           callback == o.callback &&
           fields == o.fields &&
+          response_fields == o.response_fields &&
           created_at == o.created_at &&
           updated_at == o.updated_at &&
           entity == o.entity &&
@@ -202,7 +211,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, label, store_id, lang_id, active, callback, fields, created_at, updated_at, entity, action, additional_fields, custom_fields].hash
+      [id, label, store_id, lang_id, active, callback, fields, response_fields, created_at, updated_at, entity, action, additional_fields, custom_fields].hash
     end
 
     # Builds the object from hash

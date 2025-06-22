@@ -93,6 +93,7 @@ module OpenapiClient
     # @option opts [String] :callback Callback url that returns shipping rates. It should be able to accept POST requests with json data.
     # @option opts [String] :label The name you give to the webhook
     # @option opts [String] :fields Fields the webhook should send (default to 'force_all')
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [Boolean] :active Webhook status (default to true)
     # @option opts [String] :lang_id Language id
     # @option opts [String] :store_id Defines store id where the webhook should be assigned
@@ -110,6 +111,7 @@ module OpenapiClient
     # @option opts [String] :callback Callback url that returns shipping rates. It should be able to accept POST requests with json data.
     # @option opts [String] :label The name you give to the webhook
     # @option opts [String] :fields Fields the webhook should send (default to 'force_all')
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [Boolean] :active Webhook status (default to true)
     # @option opts [String] :lang_id Language id
     # @option opts [String] :store_id Defines store id where the webhook should be assigned
@@ -136,6 +138,7 @@ module OpenapiClient
       query_params[:'callback'] = opts[:'callback'] if !opts[:'callback'].nil?
       query_params[:'label'] = opts[:'label'] if !opts[:'label'].nil?
       query_params[:'fields'] = opts[:'fields'] if !opts[:'fields'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
       query_params[:'active'] = opts[:'active'] if !opts[:'active'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
@@ -380,6 +383,7 @@ module OpenapiClient
     # @option opts [String] :callback Callback url that returns shipping rates. It should be able to accept POST requests with json data.
     # @option opts [String] :label The name you give to the webhook
     # @option opts [String] :fields Fields the webhook should send
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [Boolean] :active Webhook status
     # @option opts [String] :lang_id Language id
     # @return [ProductImageUpdate200Response]
@@ -395,6 +399,7 @@ module OpenapiClient
     # @option opts [String] :callback Callback url that returns shipping rates. It should be able to accept POST requests with json data.
     # @option opts [String] :label The name you give to the webhook
     # @option opts [String] :fields Fields the webhook should send
+    # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [Boolean] :active Webhook status
     # @option opts [String] :lang_id Language id
     # @return [Array<(ProductImageUpdate200Response, Integer, Hash)>] ProductImageUpdate200Response data, response status code and response headers
@@ -415,6 +420,7 @@ module OpenapiClient
       query_params[:'callback'] = opts[:'callback'] if !opts[:'callback'].nil?
       query_params[:'label'] = opts[:'label'] if !opts[:'label'].nil?
       query_params[:'fields'] = opts[:'fields'] if !opts[:'fields'].nil?
+      query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
       query_params[:'active'] = opts[:'active'] if !opts[:'active'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
 

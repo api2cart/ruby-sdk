@@ -11,6 +11,7 @@
 | **active** | **Boolean** |  | [optional] |
 | **callback** | **String** |  | [optional] |
 | **fields** | **String** |  | [optional] |
+| **response_fields** | **String** |  | [optional] |
 | **created_at** | **String** |  | [optional] |
 | **updated_at** | **String** |  | [optional] |
 | **entity** | **String** |  | [optional] |
@@ -31,6 +32,7 @@ instance = OpenapiClient::Webhook.new(
   active: null,
   callback: null,
   fields: null,
+  response_fields: null,
   created_at: null,
   updated_at: null,
   entity: null,

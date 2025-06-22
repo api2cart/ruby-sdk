@@ -31,6 +31,7 @@
 | **avail_for_sale** | **Boolean** |  | [optional] |
 | **allow_backorders** | **Boolean** |  | [optional] |
 | **in_stock** | **Boolean** |  | [optional] |
+| **on_sale** | **Boolean** |  | [optional] |
 | **manage_stock** | **Boolean** |  | [optional] |
 | **inventory_level** | **Float** |  | [optional] |
 | **inventory** | [**Array&lt;ProductInventory&gt;**](ProductInventory.md) |  | [optional] |
@@ -84,6 +85,7 @@ instance = OpenapiClient::Child.new(
   avail_for_sale: null,
   allow_backorders: null,
   in_stock: null,
+  on_sale: null,
   manage_stock: null,
   inventory_level: null,
   inventory: null,

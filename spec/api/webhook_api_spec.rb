@@ -55,6 +55,7 @@ describe 'WebhookApi' do
   # @option opts [String] :callback Callback url that returns shipping rates. It should be able to accept POST requests with json data.
   # @option opts [String] :label The name you give to the webhook
   # @option opts [String] :fields Fields the webhook should send
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [Boolean] :active Webhook status
   # @option opts [String] :lang_id Language id
   # @option opts [String] :store_id Defines store id where the webhook should be assigned
@@ -114,6 +115,7 @@ describe 'WebhookApi' do
   # @option opts [String] :callback Callback url that returns shipping rates. It should be able to accept POST requests with json data.
   # @option opts [String] :label The name you give to the webhook
   # @option opts [String] :fields Fields the webhook should send
+  # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [Boolean] :active Webhook status
   # @option opts [String] :lang_id Language id
   # @return [ProductImageUpdate200Response]
