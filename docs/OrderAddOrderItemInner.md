@@ -12,6 +12,7 @@
 | **order_item_weight** | **Float** | Defines orders specified by order item weight | [optional] |
 | **order_item_variant_id** | **String** | Ordered product variant. Where x is order item ID | [optional] |
 | **order_item_tax** | **Float** | Percentage of tax for product order | [optional][default to 0] |
+| **order_item_tax_class** | **String** | Id of the tax class of product. | [optional] |
 | **order_item_price_includes_tax** | **Boolean** | Defines if item price includes tax | [optional][default to false] |
 | **order_item_parent** | **Integer** | Index of the parent grouped/bundle product | [optional] |
 | **order_item_parent_option_name** | **String** | Option name of the parent grouped/bundle product | [optional] |
@@ -34,6 +35,7 @@ instance = OpenapiClient::OrderAddOrderItemInner.new(
   order_item_weight: 5, where {x} - 1,2,3,... etc,
   order_item_variant_id: 52,
   order_item_tax: 5.5,
+  order_item_tax_class: standard,
   order_item_price_includes_tax: null,
   order_item_parent: 2,
   order_item_parent_option_name: Internal Memory Storage,

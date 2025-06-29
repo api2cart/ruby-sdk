@@ -39,6 +39,9 @@ module OpenapiClient
     # Percentage of tax for product order
     attr_accessor :order_item_tax
 
+    # Id of the tax class of product.
+    attr_accessor :order_item_tax_class
+
     # Defines if item price includes tax
     attr_accessor :order_item_price_includes_tax
 
@@ -69,6 +72,7 @@ module OpenapiClient
         :'order_item_weight' => :'order_item_weight',
         :'order_item_variant_id' => :'order_item_variant_id',
         :'order_item_tax' => :'order_item_tax',
+        :'order_item_tax_class' => :'order_item_tax_class',
         :'order_item_price_includes_tax' => :'order_item_price_includes_tax',
         :'order_item_parent' => :'order_item_parent',
         :'order_item_parent_option_name' => :'order_item_parent_option_name',
@@ -95,6 +99,7 @@ module OpenapiClient
         :'order_item_weight' => :'Float',
         :'order_item_variant_id' => :'String',
         :'order_item_tax' => :'Float',
+        :'order_item_tax_class' => :'String',
         :'order_item_price_includes_tax' => :'Boolean',
         :'order_item_parent' => :'Integer',
         :'order_item_parent_option_name' => :'String',
@@ -166,6 +171,10 @@ module OpenapiClient
         self.order_item_tax = attributes[:'order_item_tax']
       else
         self.order_item_tax = 0
+      end
+
+      if attributes.key?(:'order_item_tax_class')
+        self.order_item_tax_class = attributes[:'order_item_tax_class']
       end
 
       if attributes.key?(:'order_item_price_includes_tax')
@@ -251,6 +260,7 @@ module OpenapiClient
           order_item_weight == o.order_item_weight &&
           order_item_variant_id == o.order_item_variant_id &&
           order_item_tax == o.order_item_tax &&
+          order_item_tax_class == o.order_item_tax_class &&
           order_item_price_includes_tax == o.order_item_price_includes_tax &&
           order_item_parent == o.order_item_parent &&
           order_item_parent_option_name == o.order_item_parent_option_name &&
@@ -269,7 +279,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [order_item_id, order_item_name, order_item_model, order_item_price, order_item_quantity, order_item_weight, order_item_variant_id, order_item_tax, order_item_price_includes_tax, order_item_parent, order_item_parent_option_name, order_item_allow_refund_items_separately, order_item_allow_ship_items_separately, order_item_option, order_item_property].hash
+      [order_item_id, order_item_name, order_item_model, order_item_price, order_item_quantity, order_item_weight, order_item_variant_id, order_item_tax, order_item_tax_class, order_item_price_includes_tax, order_item_parent, order_item_parent_option_name, order_item_allow_refund_items_separately, order_item_allow_ship_items_separately, order_item_option, order_item_property].hash
     end
 
     # Builds the object from hash

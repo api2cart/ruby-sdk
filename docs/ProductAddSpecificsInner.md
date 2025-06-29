@@ -9,6 +9,7 @@
 | **values** | **Array&lt;String&gt;** |  | [optional] |
 | **used_for_variations** | **Boolean** |  | [optional][default to false] |
 | **scale_id** | **Integer** |  | [optional] |
+| **input_value** | **String** |  | [optional] |
 | **food_details** | [**ProductAddSpecificsInnerFoodDetails**](ProductAddSpecificsInnerFoodDetails.md) |  | [optional] |
 | **group_products_details** | [**Array&lt;ProductAddSpecificsInnerGroupProductsDetailsInner&gt;**](ProductAddSpecificsInnerGroupProductsDetailsInner.md) |  | [optional] |
 | **booking_details** | [**ProductAddSpecificsInnerBookingDetails**](ProductAddSpecificsInnerBookingDetails.md) |  | [optional] |
@@ -24,6 +25,7 @@ instance = OpenapiClient::ProductAddSpecificsInner.new(
   values: null,
   used_for_variations: null,
   scale_id: null,
+  input_value: null,
   food_details: null,
   group_products_details: null,
   booking_details: null

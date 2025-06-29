@@ -1408,7 +1408,7 @@ module OpenapiClient
     end
 
     # order.shipment.list
-    # Get list of shipments by orders.
+    # Get list of shipments per order.
     # @param order_id [String] Retrieves shipments specified by order id
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)
@@ -1429,7 +1429,7 @@ module OpenapiClient
     end
 
     # order.shipment.list
-    # Get list of shipments by orders.
+    # Get list of shipments per order.
     # @param order_id [String] Retrieves shipments specified by order id
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :start This parameter sets the number from which you want to get entities (default to 0)

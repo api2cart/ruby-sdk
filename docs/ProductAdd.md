@@ -107,6 +107,7 @@
 | **logistic_info** | [**Array&lt;ProductAddLogisticInfoInner&gt;**](ProductAddLogisticInfoInner.md) | Defines product&#39;s logistic channel settings | [optional] |
 | **listing_duration** | **String** | Describes the number of days the seller wants the listing to be active. Look at cart.info method response for allowed values. | [optional] |
 | **listing_type** | **String** | Indicates the selling format of the marketplace listing. | [optional][default to &#39;FixedPrice&#39;] |
+| **category_type** | **String** | Specifies the type of category (e.g., apparel or other) for the product being added. | [optional] |
 | **return_accepted** | **Boolean** | Indicates whether the seller allows the buyer to return the item. | [optional] |
 | **seller_profiles** | [**ProductAddSellerProfiles**](ProductAddSellerProfiles.md) |  | [optional] |
 | **auction_confidentiality_level** | **String** | This allows buyers to remain anonymous when the bid or buy an item. | [optional] |
@@ -229,6 +230,7 @@ instance = OpenapiClient::ProductAdd.new(
   logistic_info: null,
   listing_duration: Days_3,
   listing_type: Auction,
+  category_type: Apparel,
   return_accepted: true,
   seller_profiles: null,
   auction_confidentiality_level: public,

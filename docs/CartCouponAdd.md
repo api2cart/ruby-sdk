@@ -21,6 +21,7 @@
 | **action_condition_value** | **String** | Defines condition attribute value/s. Can be comma separated string. | [optional] |
 | **include_tax** | **Boolean** | Indicates whether to apply a discount for taxes. | [optional][default to false] |
 | **store_id** | **String** | Store Id | [optional] |
+| **free_cash_on_delivery** | **Boolean** | Defines whether the coupon provides free cash on delivery | [optional] |
 
 ## Example
 
@@ -44,7 +45,8 @@ instance = OpenapiClient::CartCouponAdd.new(
   action_condition_operator: ONE_OF,
   action_condition_value: 17834222,45466663,
   include_tax: true,
-  store_id: 1
+  store_id: 1,
+  free_cash_on_delivery: true
 )
 ```
 

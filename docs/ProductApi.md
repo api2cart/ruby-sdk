@@ -950,6 +950,7 @@ opts = {
   product_attributes: ['inner_example'], # Array<String> | Defines product attributes
   status: 'disabled', # String | Defines product's status
   type: 'simple', # String | Defines products's type
+  visible: 'everywhere', # String | Filter items by visibility status
   find_value: 'Phone', # String | Entity search that is specified by some value
   find_where: 'name', # String | Counts products that are searched specified by field
   report_request_id: '105245017661', # String | Report request id
@@ -1005,6 +1006,7 @@ end
 | **product_attributes** | [**Array&lt;String&gt;**](String.md) | Defines product attributes | [optional] |
 | **status** | **String** | Defines product&#39;s status | [optional] |
 | **type** | **String** | Defines products&#39;s type | [optional] |
+| **visible** | **String** | Filter items by visibility status | [optional][default to &#39;everywhere&#39;] |
 | **find_value** | **String** | Entity search that is specified by some value | [optional] |
 | **find_where** | **String** | Counts products that are searched specified by field | [optional] |
 | **report_request_id** | **String** | Report request id | [optional] |
@@ -1924,6 +1926,7 @@ opts = {
   product_attributes: ['inner_example'], # Array<String> | Defines product attributes
   status: 'disabled', # String | Defines product's status
   type: 'simple', # String | Defines products's type
+  visible: 'everywhere', # String | Filter items by visibility status
   find_value: 'Phone', # String | Entity search that is specified by some value
   find_where: 'name', # String | Product search that is specified by field
   return_global: false, # Boolean | Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.
@@ -1990,6 +1993,7 @@ end
 | **product_attributes** | [**Array&lt;String&gt;**](String.md) | Defines product attributes | [optional] |
 | **status** | **String** | Defines product&#39;s status | [optional] |
 | **type** | **String** | Defines products&#39;s type | [optional] |
+| **visible** | **String** | Filter items by visibility status | [optional][default to &#39;everywhere&#39;] |
 | **find_value** | **String** | Entity search that is specified by some value | [optional] |
 | **find_where** | **String** | Product search that is specified by field | [optional] |
 | **return_global** | **Boolean** | Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. | [optional][default to false] |

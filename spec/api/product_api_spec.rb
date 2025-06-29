@@ -235,6 +235,7 @@ describe 'ProductApi' do
   # @option opts [Array<String>] :product_attributes Defines product attributes
   # @option opts [String] :status Defines product&#39;s status
   # @option opts [String] :type Defines products&#39;s type
+  # @option opts [String] :visible Filter items by visibility status
   # @option opts [String] :find_value Entity search that is specified by some value
   # @option opts [String] :find_where Counts products that are searched specified by field
   # @option opts [String] :report_request_id Report request id
@@ -431,6 +432,7 @@ describe 'ProductApi' do
   # @option opts [Array<String>] :product_attributes Defines product attributes
   # @option opts [String] :status Defines product&#39;s status
   # @option opts [String] :type Defines products&#39;s type
+  # @option opts [String] :visible Filter items by visibility status
   # @option opts [String] :find_value Entity search that is specified by some value
   # @option opts [String] :find_where Product search that is specified by field
   # @option opts [Boolean] :return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned.

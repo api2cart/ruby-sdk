@@ -843,6 +843,7 @@ module OpenapiClient
     # @option opts [Array<String>] :product_attributes Defines product attributes
     # @option opts [String] :status Defines product&#39;s status
     # @option opts [String] :type Defines products&#39;s type
+    # @option opts [String] :visible Filter items by visibility status (default to 'everywhere')
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Counts products that are searched specified by field
     # @option opts [String] :report_request_id Report request id
@@ -874,6 +875,7 @@ module OpenapiClient
     # @option opts [Array<String>] :product_attributes Defines product attributes
     # @option opts [String] :status Defines product&#39;s status
     # @option opts [String] :type Defines products&#39;s type
+    # @option opts [String] :visible Filter items by visibility status (default to 'everywhere')
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Counts products that are searched specified by field
     # @option opts [String] :report_request_id Report request id
@@ -906,6 +908,7 @@ module OpenapiClient
       query_params[:'product_attributes'] = @api_client.build_collection_param(opts[:'product_attributes'], :multi) if !opts[:'product_attributes'].nil?
       query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
       query_params[:'type'] = opts[:'type'] if !opts[:'type'].nil?
+      query_params[:'visible'] = opts[:'visible'] if !opts[:'visible'].nil?
       query_params[:'find_value'] = opts[:'find_value'] if !opts[:'find_value'].nil?
       query_params[:'find_where'] = opts[:'find_where'] if !opts[:'find_where'].nil?
       query_params[:'report_request_id'] = opts[:'report_request_id'] if !opts[:'report_request_id'].nil?
@@ -1737,6 +1740,7 @@ module OpenapiClient
     # @option opts [Array<String>] :product_attributes Defines product attributes
     # @option opts [String] :status Defines product&#39;s status
     # @option opts [String] :type Defines products&#39;s type
+    # @option opts [String] :visible Filter items by visibility status (default to 'everywhere')
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Product search that is specified by field
     # @option opts [Boolean] :return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (default to false)
@@ -1779,6 +1783,7 @@ module OpenapiClient
     # @option opts [Array<String>] :product_attributes Defines product attributes
     # @option opts [String] :status Defines product&#39;s status
     # @option opts [String] :type Defines products&#39;s type
+    # @option opts [String] :visible Filter items by visibility status (default to 'everywhere')
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Product search that is specified by field
     # @option opts [Boolean] :return_global Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (default to false)
@@ -1822,6 +1827,7 @@ module OpenapiClient
       query_params[:'product_attributes'] = @api_client.build_collection_param(opts[:'product_attributes'], :multi) if !opts[:'product_attributes'].nil?
       query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
       query_params[:'type'] = opts[:'type'] if !opts[:'type'].nil?
+      query_params[:'visible'] = opts[:'visible'] if !opts[:'visible'].nil?
       query_params[:'find_value'] = opts[:'find_value'] if !opts[:'find_value'].nil?
       query_params[:'find_where'] = opts[:'find_where'] if !opts[:'find_where'].nil?
       query_params[:'return_global'] = opts[:'return_global'] if !opts[:'return_global'].nil?

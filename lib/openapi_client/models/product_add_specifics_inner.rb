@@ -25,6 +25,8 @@ module OpenapiClient
 
     attr_accessor :scale_id
 
+    attr_accessor :input_value
+
     attr_accessor :food_details
 
     attr_accessor :group_products_details
@@ -39,6 +41,7 @@ module OpenapiClient
         :'values' => :'values',
         :'used_for_variations' => :'used_for_variations',
         :'scale_id' => :'scale_id',
+        :'input_value' => :'input_value',
         :'food_details' => :'food_details',
         :'group_products_details' => :'group_products_details',
         :'booking_details' => :'booking_details'
@@ -58,6 +61,7 @@ module OpenapiClient
         :'values' => :'Array<String>',
         :'used_for_variations' => :'Boolean',
         :'scale_id' => :'Integer',
+        :'input_value' => :'String',
         :'food_details' => :'ProductAddSpecificsInnerFoodDetails',
         :'group_products_details' => :'Array<ProductAddSpecificsInnerGroupProductsDetailsInner>',
         :'booking_details' => :'ProductAddSpecificsInnerBookingDetails'
@@ -68,6 +72,7 @@ module OpenapiClient
     def self.openapi_nullable
       Set.new([
         :'scale_id',
+        :'input_value',
       ])
     end
 
@@ -108,6 +113,10 @@ module OpenapiClient
 
       if attributes.key?(:'scale_id')
         self.scale_id = attributes[:'scale_id']
+      end
+
+      if attributes.key?(:'input_value')
+        self.input_value = attributes[:'input_value']
       end
 
       if attributes.key?(:'food_details')
@@ -188,6 +197,7 @@ module OpenapiClient
           values == o.values &&
           used_for_variations == o.used_for_variations &&
           scale_id == o.scale_id &&
+          input_value == o.input_value &&
           food_details == o.food_details &&
           group_products_details == o.group_products_details &&
           booking_details == o.booking_details
@@ -202,7 +212,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, value, values, used_for_variations, scale_id, food_details, group_products_details, booking_details].hash
+      [name, value, values, used_for_variations, scale_id, input_value, food_details, group_products_details, booking_details].hash
     end
 
     # Builds the object from hash

@@ -334,7 +334,7 @@ describe 'OrderApi' do
 
   # unit tests for order_shipment_list
   # order.shipment.list
-  # Get list of shipments by orders.
+  # Get list of shipments per order.
   # @param order_id Retrieves shipments specified by order id
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :start This parameter sets the number from which you want to get entities

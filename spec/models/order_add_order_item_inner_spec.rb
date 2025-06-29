@@ -75,6 +75,12 @@ describe OpenapiClient::OrderAddOrderItemInner do
     end
   end
 
+  describe 'test attribute "order_item_tax_class"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "order_item_price_includes_tax"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
