@@ -85,6 +85,7 @@ describe 'CustomerApi' do
   # @option opts [String] :group_id Customer group_id
   # @option opts [String] :store_id Counts customer specified by store id
   # @option opts [Boolean] :avail Defines category&#39;s visibility status
+  # @option opts [Boolean] :include_guests Indicates whether to include guest customers in the total count.
   # @option opts [String] :find_value Entity search that is specified by some value
   # @option opts [String] :find_where Counts customers that are searched specified by field
   # @option opts [String] :created_from Retrieve entities from their creation date
@@ -118,6 +119,7 @@ describe 'CustomerApi' do
   # @option opts [String] :find_where Entity search that is specified by the comma-separated unique fields
   # @option opts [String] :find_params Entity search that is specified by comma-separated parameters
   # @option opts [String] :store_id Store Id
+  # @option opts [Boolean] :include_guests Indicates whether to search among guest customers when looking up a customer.
   # @return [CustomerFind200Response]
   describe 'customer_find test' do
     it 'should work' do
@@ -189,6 +191,7 @@ describe 'CustomerApi' do
   # @option opts [String] :group_id Customer group_id
   # @option opts [String] :store_id Retrieves customers specified by store id
   # @option opts [Boolean] :avail Defines category&#39;s visibility status
+  # @option opts [Boolean] :include_guests Indicates whether to include guest customers in the list results.
   # @option opts [String] :find_value Entity search that is specified by some value
   # @option opts [String] :find_where Customer search that is specified by field
   # @option opts [String] :created_from Retrieve entities from their creation date

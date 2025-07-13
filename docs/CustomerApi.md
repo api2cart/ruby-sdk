@@ -296,6 +296,7 @@ opts = {
   group_id: '3', # String | Customer group_id
   store_id: '1', # String | Counts customer specified by store id
   avail: false, # Boolean | Defines category's visibility status
+  include_guests: true, # Boolean | Indicates whether to include guest customers in the total count.
   find_value: 'mail@gmail.com', # String | Entity search that is specified by some value
   find_where: 'email', # String | Counts customers that are searched specified by field
   created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
@@ -341,6 +342,7 @@ end
 | **group_id** | **String** | Customer group_id | [optional] |
 | **store_id** | **String** | Counts customer specified by store id | [optional] |
 | **avail** | **Boolean** | Defines category&#39;s visibility status | [optional][default to true] |
+| **include_guests** | **Boolean** | Indicates whether to include guest customers in the total count. | [optional][default to false] |
 | **find_value** | **String** | Entity search that is specified by some value | [optional] |
 | **find_where** | **String** | Counts customers that are searched specified by field | [optional] |
 | **created_from** | **String** | Retrieve entities from their creation date | [optional] |
@@ -469,7 +471,8 @@ find_value = 'mail@gmail.com' # String | Entity search that is specified by some
 opts = {
   find_where: 'email', # String | Entity search that is specified by the comma-separated unique fields
   find_params: 'regex', # String | Entity search that is specified by comma-separated parameters
-  store_id: '1' # String | Store Id
+  store_id: '1', # String | Store Id
+  include_guests: true # Boolean | Indicates whether to search among guest customers when looking up a customer.
 }
 
 begin
@@ -507,6 +510,7 @@ end
 | **find_where** | **String** | Entity search that is specified by the comma-separated unique fields | [optional][default to &#39;email&#39;] |
 | **find_params** | **String** | Entity search that is specified by comma-separated parameters | [optional][default to &#39;whole_words&#39;] |
 | **store_id** | **String** | Store Id | [optional] |
+| **include_guests** | **Boolean** | Indicates whether to search among guest customers when looking up a customer. | [optional][default to false] |
 
 ### Return type
 
@@ -823,6 +827,7 @@ opts = {
   group_id: '3', # String | Customer group_id
   store_id: '1', # String | Retrieves customers specified by store id
   avail: false, # Boolean | Defines category's visibility status
+  include_guests: true, # Boolean | Indicates whether to include guest customers in the list results.
   find_value: 'mail@gmail.com', # String | Entity search that is specified by some value
   find_where: 'email', # String | Customer search that is specified by field
   created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
@@ -876,6 +881,7 @@ end
 | **group_id** | **String** | Customer group_id | [optional] |
 | **store_id** | **String** | Retrieves customers specified by store id | [optional] |
 | **avail** | **Boolean** | Defines category&#39;s visibility status | [optional][default to true] |
+| **include_guests** | **Boolean** | Indicates whether to include guest customers in the list results. | [optional][default to false] |
 | **find_value** | **String** | Entity search that is specified by some value | [optional] |
 | **find_where** | **String** | Customer search that is specified by field | [optional] |
 | **created_from** | **String** | Retrieve entities from their creation date | [optional] |

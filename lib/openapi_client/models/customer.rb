@@ -39,6 +39,8 @@ module OpenapiClient
 
     attr_accessor :status
 
+    attr_accessor :is_guest
+
     attr_accessor :news_letter_subscription
 
     attr_accessor :consents
@@ -82,6 +84,7 @@ module OpenapiClient
         :'last_login' => :'last_login',
         :'birth_day' => :'birth_day',
         :'status' => :'status',
+        :'is_guest' => :'is_guest',
         :'news_letter_subscription' => :'news_letter_subscription',
         :'consents' => :'consents',
         :'gender' => :'gender',
@@ -119,6 +122,7 @@ module OpenapiClient
         :'last_login' => :'A2CDateTime',
         :'birth_day' => :'A2CDateTime',
         :'status' => :'String',
+        :'is_guest' => :'Boolean',
         :'news_letter_subscription' => :'Boolean',
         :'consents' => :'Array<CustomerConsent>',
         :'gender' => :'String',
@@ -205,6 +209,10 @@ module OpenapiClient
 
       if attributes.key?(:'status')
         self.status = attributes[:'status']
+      end
+
+      if attributes.key?(:'is_guest')
+        self.is_guest = attributes[:'is_guest']
       end
 
       if attributes.key?(:'news_letter_subscription')
@@ -302,6 +310,7 @@ module OpenapiClient
           last_login == o.last_login &&
           birth_day == o.birth_day &&
           status == o.status &&
+          is_guest == o.is_guest &&
           news_letter_subscription == o.news_letter_subscription &&
           consents == o.consents &&
           gender == o.gender &&
@@ -327,7 +336,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, email, first_name, last_name, phone, created_time, modified_time, group, login, last_login, birth_day, status, news_letter_subscription, consents, gender, stores_ids, website, fax, company, ip_address, address_book, lang_id, orders_count, last_order_id, additional_fields, custom_fields].hash
+      [id, email, first_name, last_name, phone, created_time, modified_time, group, login, last_login, birth_day, status, is_guest, news_letter_subscription, consents, gender, stores_ids, website, fax, company, ip_address, address_book, lang_id, orders_count, last_order_id, additional_fields, custom_fields].hash
     end
 
     # Builds the object from hash

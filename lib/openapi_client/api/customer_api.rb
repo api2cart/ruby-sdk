@@ -249,6 +249,7 @@ module OpenapiClient
     # @option opts [String] :group_id Customer group_id
     # @option opts [String] :store_id Counts customer specified by store id
     # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
+    # @option opts [Boolean] :include_guests Indicates whether to include guest customers in the total count. (default to false)
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Counts customers that are searched specified by field
     # @option opts [String] :created_from Retrieve entities from their creation date
@@ -270,6 +271,7 @@ module OpenapiClient
     # @option opts [String] :group_id Customer group_id
     # @option opts [String] :store_id Counts customer specified by store id
     # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
+    # @option opts [Boolean] :include_guests Indicates whether to include guest customers in the total count. (default to false)
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Counts customers that are searched specified by field
     # @option opts [String] :created_from Retrieve entities from their creation date
@@ -292,6 +294,7 @@ module OpenapiClient
       query_params[:'group_id'] = opts[:'group_id'] if !opts[:'group_id'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'avail'] = opts[:'avail'] if !opts[:'avail'].nil?
+      query_params[:'include_guests'] = opts[:'include_guests'] if !opts[:'include_guests'].nil?
       query_params[:'find_value'] = opts[:'find_value'] if !opts[:'find_value'].nil?
       query_params[:'find_where'] = opts[:'find_where'] if !opts[:'find_where'].nil?
       query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
@@ -404,6 +407,7 @@ module OpenapiClient
     # @option opts [String] :find_where Entity search that is specified by the comma-separated unique fields (default to 'email')
     # @option opts [String] :find_params Entity search that is specified by comma-separated parameters (default to 'whole_words')
     # @option opts [String] :store_id Store Id
+    # @option opts [Boolean] :include_guests Indicates whether to search among guest customers when looking up a customer. (default to false)
     # @return [CustomerFind200Response]
     def customer_find(find_value, opts = {})
       data, _status_code, _headers = customer_find_with_http_info(find_value, opts)
@@ -417,6 +421,7 @@ module OpenapiClient
     # @option opts [String] :find_where Entity search that is specified by the comma-separated unique fields (default to 'email')
     # @option opts [String] :find_params Entity search that is specified by comma-separated parameters (default to 'whole_words')
     # @option opts [String] :store_id Store Id
+    # @option opts [Boolean] :include_guests Indicates whether to search among guest customers when looking up a customer. (default to false)
     # @return [Array<(CustomerFind200Response, Integer, Hash)>] CustomerFind200Response data, response status code and response headers
     def customer_find_with_http_info(find_value, opts = {})
       if @api_client.config.debugging
@@ -435,6 +440,7 @@ module OpenapiClient
       query_params[:'find_where'] = opts[:'find_where'] if !opts[:'find_where'].nil?
       query_params[:'find_params'] = opts[:'find_params'] if !opts[:'find_params'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'include_guests'] = opts[:'include_guests'] if !opts[:'include_guests'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -715,6 +721,7 @@ module OpenapiClient
     # @option opts [String] :group_id Customer group_id
     # @option opts [String] :store_id Retrieves customers specified by store id
     # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
+    # @option opts [Boolean] :include_guests Indicates whether to include guest customers in the list results. (default to false)
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Customer search that is specified by field
     # @option opts [String] :created_from Retrieve entities from their creation date
@@ -744,6 +751,7 @@ module OpenapiClient
     # @option opts [String] :group_id Customer group_id
     # @option opts [String] :store_id Retrieves customers specified by store id
     # @option opts [Boolean] :avail Defines category&#39;s visibility status (default to true)
+    # @option opts [Boolean] :include_guests Indicates whether to include guest customers in the list results. (default to false)
     # @option opts [String] :find_value Entity search that is specified by some value
     # @option opts [String] :find_where Customer search that is specified by field
     # @option opts [String] :created_from Retrieve entities from their creation date
@@ -774,6 +782,7 @@ module OpenapiClient
       query_params[:'group_id'] = opts[:'group_id'] if !opts[:'group_id'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'avail'] = opts[:'avail'] if !opts[:'avail'].nil?
+      query_params[:'include_guests'] = opts[:'include_guests'] if !opts[:'include_guests'].nil?
       query_params[:'find_value'] = opts[:'find_value'] if !opts[:'find_value'].nil?
       query_params[:'find_where'] = opts[:'find_where'] if !opts[:'find_where'].nil?
       query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?

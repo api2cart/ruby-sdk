@@ -16,6 +16,7 @@
 | **last_login** | [**A2CDateTime**](A2CDateTime.md) |  | [optional] |
 | **birth_day** | [**A2CDateTime**](A2CDateTime.md) |  | [optional] |
 | **status** | **String** |  | [optional] |
+| **is_guest** | **Boolean** |  | [optional] |
 | **news_letter_subscription** | **Boolean** |  | [optional] |
 | **consents** | [**Array&lt;CustomerConsent&gt;**](CustomerConsent.md) |  | [optional] |
 | **gender** | **String** |  | [optional] |
@@ -49,6 +50,7 @@ instance = OpenapiClient::Customer.new(
   last_login: null,
   birth_day: null,
   status: null,
+  is_guest: null,
   news_letter_subscription: null,
   consents: null,
   gender: null,
