@@ -77,7 +77,7 @@ describe 'CategoryApi' do
   # @param product_id Defines category assign to the product, specified by product id
   # @param [Hash] opts the optional parameters
   # @option opts [String] :store_id Store Id
-  # @return [CartConfigUpdate200Response]
+  # @return [CategoryAssign200Response]
   describe 'category_assign test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -228,7 +228,7 @@ describe 'CategoryApi' do
   # @param product_id Defines category unassign to the product, specified by product id
   # @param [Hash] opts the optional parameters
   # @option opts [String] :store_id Store Id
-  # @return [CartConfigUpdate200Response]
+  # @return [CategoryAssign200Response]
   describe 'category_unassign test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

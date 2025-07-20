@@ -40,6 +40,10 @@
 | **bol_retailer_id** | **Integer** | Bol Retailer ID | [optional] |
 | **bigcartel_user_name** | **String** | Subdomain of store |  |
 | **bigcartel_password** | **String** | BigCartel account password |  |
+| **bricklink_consumer_key** | **String** | Bricklink Consumer Key |  |
+| **bricklink_consumer_secret** | **String** | Bricklink Consumer Secret |  |
+| **bricklink_token** | **String** | Bricklink Access Token |  |
+| **bricklink_token_secret** | **String** | Bricklink Access Token Secret |  |
 | **demandware_client_id** | **String** | Demandware client id | [optional] |
 | **demandware_api_password** | **String** | Demandware api password | [optional] |
 | **demandware_user_name** | **String** | Demandware user name | [optional] |
@@ -208,6 +212,10 @@ instance = OpenapiClient::AccountCartAdd.new(
   bol_retailer_id: 145001,
   bigcartel_user_name: subdomain,
   bigcartel_password: 4GrrZCLNNoSUuhAjesKuchxo9SL,
+  bricklink_consumer_key: 26F6CDA087D9444EAA71AC09E7A1D39A,
+  bricklink_consumer_secret: a46abc3kxyinlbggy06i9g975xqo6gjq,
+  bricklink_token: ktv4n9rgrj0evjuy2t6p2xlb1f8u5pmy,
+  bricklink_token_secret: a46abc3kxyinlbggy06i9g975xqo6gjq,
   demandware_client_id: b849eb85-v8b9-1dw8-9fe2-97e1d6ffc7b0,
   demandware_api_password: testpassword,
   demandware_user_name: admin,

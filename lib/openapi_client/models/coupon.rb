@@ -107,6 +107,19 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'code',
+        :'name',
+        :'description',
+        :'date_start',
+        :'date_end',
+        :'avail',
+        :'priority',
+        :'used_times',
+        :'usage_limit',
+        :'usage_limit_per_customer',
+        :'logic_operator',
+        :'additional_fields',
+        :'custom_fields'
       ])
     end
 

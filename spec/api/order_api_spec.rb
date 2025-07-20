@@ -111,29 +111,6 @@ describe 'OrderApi' do
     end
   end
 
-  # unit tests for order_find
-  # order.find
-  # This method is deprecated and won&#39;t be supported in the future. Please use \&quot;order.list\&quot; instead.
-  # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :start This parameter sets the number from which you want to get entities
-  # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
-  # @option opts [String] :customer_id Retrieves orders specified by customer id
-  # @option opts [String] :customer_email Retrieves orders specified by customer email
-  # @option opts [String] :order_status Retrieves orders specified by order status
-  # @option opts [String] :financial_status Retrieves orders specified by financial status
-  # @option opts [String] :created_to Retrieve entities to their creation date
-  # @option opts [String] :created_from Retrieve entities from their creation date
-  # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @option opts [String] :modified_from Retrieve entities from their modification date
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @return [OrderFind200Response]
-  describe 'order_find test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
   # unit tests for order_fulfillment_status_list
   # order.fulfillment_status.list
   # Retrieve list of fulfillment statuses

@@ -144,6 +144,10 @@ describe 'AccountApi' do
   # @option opts [String] :shopware_api_secret Shopware client secret access key
   # @option opts [String] :bigcartel_user_name Subdomain of store
   # @option opts [String] :bigcartel_password BigCartel account password
+  # @option opts [String] :bricklink_consumer_key Bricklink Consumer Key
+  # @option opts [String] :bricklink_consumer_secret Bricklink Consumer Secret
+  # @option opts [String] :bricklink_token Bricklink Access Token
+  # @option opts [String] :bricklink_token_secret Bricklink Access Token Secret
   # @option opts [String] :volusion_login It&#39;s a Volusion account for which API is enabled
   # @option opts [String] :volusion_password Volusion API Password
   # @option opts [String] :walmart_client_id Walmart client ID. For the region &#39;ca&#39; use Consumer ID

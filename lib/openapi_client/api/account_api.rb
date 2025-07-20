@@ -244,6 +244,10 @@ module OpenapiClient
     # @option opts [String] :shopware_api_secret Shopware client secret access key
     # @option opts [String] :bigcartel_user_name Subdomain of store
     # @option opts [String] :bigcartel_password BigCartel account password
+    # @option opts [String] :bricklink_consumer_key Bricklink Consumer Key
+    # @option opts [String] :bricklink_consumer_secret Bricklink Consumer Secret
+    # @option opts [String] :bricklink_token Bricklink Access Token
+    # @option opts [String] :bricklink_token_secret Bricklink Access Token Secret
     # @option opts [String] :volusion_login It&#39;s a Volusion account for which API is enabled
     # @option opts [String] :volusion_password Volusion API Password
     # @option opts [String] :walmart_client_id Walmart client ID. For the region &#39;ca&#39; use Consumer ID
@@ -407,6 +411,10 @@ module OpenapiClient
     # @option opts [String] :shopware_api_secret Shopware client secret access key
     # @option opts [String] :bigcartel_user_name Subdomain of store
     # @option opts [String] :bigcartel_password BigCartel account password
+    # @option opts [String] :bricklink_consumer_key Bricklink Consumer Key
+    # @option opts [String] :bricklink_consumer_secret Bricklink Consumer Secret
+    # @option opts [String] :bricklink_token Bricklink Access Token
+    # @option opts [String] :bricklink_token_secret Bricklink Access Token Secret
     # @option opts [String] :volusion_login It&#39;s a Volusion account for which API is enabled
     # @option opts [String] :volusion_password Volusion API Password
     # @option opts [String] :walmart_client_id Walmart client ID. For the region &#39;ca&#39; use Consumer ID
@@ -571,6 +579,10 @@ module OpenapiClient
       query_params[:'shopware_api_secret'] = opts[:'shopware_api_secret'] if !opts[:'shopware_api_secret'].nil?
       query_params[:'bigcartel_user_name'] = opts[:'bigcartel_user_name'] if !opts[:'bigcartel_user_name'].nil?
       query_params[:'bigcartel_password'] = opts[:'bigcartel_password'] if !opts[:'bigcartel_password'].nil?
+      query_params[:'bricklink_consumer_key'] = opts[:'bricklink_consumer_key'] if !opts[:'bricklink_consumer_key'].nil?
+      query_params[:'bricklink_consumer_secret'] = opts[:'bricklink_consumer_secret'] if !opts[:'bricklink_consumer_secret'].nil?
+      query_params[:'bricklink_token'] = opts[:'bricklink_token'] if !opts[:'bricklink_token'].nil?
+      query_params[:'bricklink_token_secret'] = opts[:'bricklink_token_secret'] if !opts[:'bricklink_token_secret'].nil?
       query_params[:'volusion_login'] = opts[:'volusion_login'] if !opts[:'volusion_login'].nil?
       query_params[:'volusion_password'] = opts[:'volusion_password'] if !opts[:'volusion_password'].nil?
       query_params[:'walmart_client_id'] = opts[:'walmart_client_id'] if !opts[:'walmart_client_id'].nil?

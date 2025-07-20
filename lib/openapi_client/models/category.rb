@@ -107,6 +107,19 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'parent_id',
+        :'created_at',
+        :'modified_at',
+        :'short_description',
+        :'description',
+        :'keywords',
+        :'meta_description',
+        :'meta_title',
+        :'path',
+        :'seo_url',
+        :'sort_order',
+        :'additional_fields',
+        :'custom_fields'
       ])
     end
 

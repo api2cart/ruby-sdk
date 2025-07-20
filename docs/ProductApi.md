@@ -1,6 +1,6 @@
 # OpenapiClient::ProductApi
 
-All URIs are relative to *https://api.api2cart.com/v1.1*
+All URIs are relative to *https://api.api2cart.local.com/v1.1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -18,7 +18,6 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
 | [**product_currency_list**](ProductApi.md#product_currency_list) | **GET** /product.currency.list.json | product.currency.list |
 | [**product_delete**](ProductApi.md#product_delete) | **DELETE** /product.delete.json | product.delete |
 | [**product_delete_batch**](ProductApi.md#product_delete_batch) | **POST** /product.delete.batch.json | product.delete.batch |
-| [**product_fields**](ProductApi.md#product_fields) | **GET** /product.fields.json | product.fields |
 | [**product_find**](ProductApi.md#product_find) | **GET** /product.find.json | product.find |
 | [**product_image_add**](ProductApi.md#product_image_add) | **POST** /product.image.add.json | product.image.add |
 | [**product_image_delete**](ProductApi.md#product_image_delete) | **DELETE** /product.image.delete.json | product.image.delete |
@@ -44,13 +43,10 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
 | [**product_update_batch**](ProductApi.md#product_update_batch) | **POST** /product.update.batch.json | product.update.batch |
 | [**product_variant_add**](ProductApi.md#product_variant_add) | **POST** /product.variant.add.json | product.variant.add |
 | [**product_variant_add_batch**](ProductApi.md#product_variant_add_batch) | **POST** /product.variant.add.batch.json | product.variant.add.batch |
-| [**product_variant_count**](ProductApi.md#product_variant_count) | **GET** /product.variant.count.json | product.variant.count |
 | [**product_variant_delete**](ProductApi.md#product_variant_delete) | **DELETE** /product.variant.delete.json | product.variant.delete |
 | [**product_variant_delete_batch**](ProductApi.md#product_variant_delete_batch) | **POST** /product.variant.delete.batch.json | product.variant.delete.batch |
 | [**product_variant_image_add**](ProductApi.md#product_variant_image_add) | **POST** /product.variant.image.add.json | product.variant.image.add |
 | [**product_variant_image_delete**](ProductApi.md#product_variant_image_delete) | **DELETE** /product.variant.image.delete.json | product.variant.image.delete |
-| [**product_variant_info**](ProductApi.md#product_variant_info) | **GET** /product.variant.info.json | product.variant.info |
-| [**product_variant_list**](ProductApi.md#product_variant_list) | **GET** /product.variant.list.json | product.variant.list |
 | [**product_variant_price_add**](ProductApi.md#product_variant_price_add) | **POST** /product.variant.price.add.json | product.variant.price.add |
 | [**product_variant_price_delete**](ProductApi.md#product_variant_price_delete) | **DELETE** /product.variant.price.delete.json | product.variant.price.delete |
 | [**product_variant_price_update**](ProductApi.md#product_variant_price_update) | **PUT** /product.variant.price.update.json | product.variant.price.update |
@@ -1363,79 +1359,6 @@ end
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## product_fields
-
-> <CartConfigUpdate200Response> product_fields
-
-product.fields
-
-Retrieve all available fields for product item in store.
-
-### Examples
-
-```ruby
-require 'time'
-require 'openapi_client'
-# setup authorization
-OpenapiClient.configure do |config|
-  # Configure API key authorization: StoreKeyAuth
-  config.api_key['x-store-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['x-store-key'] = 'Bearer'
-
-  # Configure API key authorization: ApiKeyAuth
-  config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['x-api-key'] = 'Bearer'
-end
-
-api_instance = OpenapiClient::ProductApi.new
-
-begin
-  # product.fields
-  result = api_instance.product_fields
-  p result
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProductApi->product_fields: #{e}"
-end
-```
-
-#### Using the product_fields_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<CartConfigUpdate200Response>, Integer, Hash)> product_fields_with_http_info
-
-```ruby
-begin
-  # product.fields
-  data, status_code, headers = api_instance.product_fields_with_http_info
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <CartConfigUpdate200Response>
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProductApi->product_fields_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**CartConfigUpdate200Response**](CartConfigUpdate200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -3577,96 +3500,6 @@ end
 - **Accept**: application/json
 
 
-## product_variant_count
-
-> <ProductVariantCount200Response> product_variant_count(product_id, opts)
-
-product.variant.count
-
-Get count variants.
-
-### Examples
-
-```ruby
-require 'time'
-require 'openapi_client'
-# setup authorization
-OpenapiClient.configure do |config|
-  # Configure API key authorization: StoreKeyAuth
-  config.api_key['x-store-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['x-store-key'] = 'Bearer'
-
-  # Configure API key authorization: ApiKeyAuth
-  config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['x-api-key'] = 'Bearer'
-end
-
-api_instance = OpenapiClient::ProductApi.new
-product_id = '10' # String | Retrieves products' variants specified by product id
-opts = {
-  category_id: '6', # String | Counts products’ variants specified by category id
-  store_id: '1', # String | Retrieves variants specified by store id
-  created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
-  created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
-  modified_from: '2010-07-29 13:45:52', # String | Retrieve entities from their modification date
-  modified_to: '2100-08-29 13:45:52' # String | Retrieve entities to their modification date
-}
-
-begin
-  # product.variant.count
-  result = api_instance.product_variant_count(product_id, opts)
-  p result
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProductApi->product_variant_count: #{e}"
-end
-```
-
-#### Using the product_variant_count_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ProductVariantCount200Response>, Integer, Hash)> product_variant_count_with_http_info(product_id, opts)
-
-```ruby
-begin
-  # product.variant.count
-  data, status_code, headers = api_instance.product_variant_count_with_http_info(product_id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ProductVariantCount200Response>
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProductApi->product_variant_count_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **product_id** | **String** | Retrieves products&#39; variants specified by product id |  |
-| **category_id** | **String** | Counts products’ variants specified by category id | [optional] |
-| **store_id** | **String** | Retrieves variants specified by store id | [optional] |
-| **created_from** | **String** | Retrieve entities from their creation date | [optional] |
-| **created_to** | **String** | Retrieve entities to their creation date | [optional] |
-| **modified_from** | **String** | Retrieve entities from their modification date | [optional] |
-| **modified_to** | **String** | Retrieve entities to their modification date | [optional] |
-
-### Return type
-
-[**ProductVariantCount200Response**](ProductVariantCount200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
 ## product_variant_delete
 
 > <AttributeValueDelete200Response> product_variant_delete(id, product_id, opts)
@@ -3974,188 +3807,6 @@ end
 ### Return type
 
 [**AttributeDelete200Response**](AttributeDelete200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## product_variant_info
-
-> <ProductInfo200Response> product_variant_info(id, opts)
-
-product.variant.info
-
-Get variant info. This method is deprecated, and its development is stopped. Please use \"product.child_item.info\" instead.
-
-### Examples
-
-```ruby
-require 'time'
-require 'openapi_client'
-# setup authorization
-OpenapiClient.configure do |config|
-  # Configure API key authorization: StoreKeyAuth
-  config.api_key['x-store-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['x-store-key'] = 'Bearer'
-
-  # Configure API key authorization: ApiKeyAuth
-  config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['x-api-key'] = 'Bearer'
-end
-
-api_instance = OpenapiClient::ProductApi.new
-id = '10' # String | Retrieves variant's info specified by variant id
-opts = {
-  store_id: '1', # String | Retrieves variant info specified by store id
-  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'false' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-}
-
-begin
-  # product.variant.info
-  result = api_instance.product_variant_info(id, opts)
-  p result
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProductApi->product_variant_info: #{e}"
-end
-```
-
-#### Using the product_variant_info_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ProductInfo200Response>, Integer, Hash)> product_variant_info_with_http_info(id, opts)
-
-```ruby
-begin
-  # product.variant.info
-  data, status_code, headers = api_instance.product_variant_info_with_http_info(id, opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ProductInfo200Response>
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProductApi->product_variant_info_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **id** | **String** | Retrieves variant&#39;s info specified by variant id |  |
-| **store_id** | **String** | Retrieves variant info specified by store id | [optional] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,description,price&#39;] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-
-### Return type
-
-[**ProductInfo200Response**](ProductInfo200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## product_variant_list
-
-> <ProductVariantList200Response> product_variant_list(opts)
-
-product.variant.list
-
-Get a list of variants. This method is deprecated, and its development is stopped. Please use \"product.child_item.list\" instead.
-
-### Examples
-
-```ruby
-require 'time'
-require 'openapi_client'
-# setup authorization
-OpenapiClient.configure do |config|
-  # Configure API key authorization: StoreKeyAuth
-  config.api_key['x-store-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['x-store-key'] = 'Bearer'
-
-  # Configure API key authorization: ApiKeyAuth
-  config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['x-api-key'] = 'Bearer'
-end
-
-api_instance = OpenapiClient::ProductApi.new
-opts = {
-  start: 0, # Integer | This parameter sets the number from which you want to get entities
-  count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-  product_id: '10', # String | Retrieves products' variants specified by product id
-  category_id: '6', # String | Retrieves products’ variants specified by category id
-  store_id: '1', # String | Retrieves variants specified by store id
-  created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
-  created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
-  modified_from: '2010-07-29 13:45:52', # String | Retrieve entities from their modification date
-  modified_to: '2100-08-29 13:45:52', # String | Retrieve entities to their modification date
-  params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'false' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-}
-
-begin
-  # product.variant.list
-  result = api_instance.product_variant_list(opts)
-  p result
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProductApi->product_variant_list: #{e}"
-end
-```
-
-#### Using the product_variant_list_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<ProductVariantList200Response>, Integer, Hash)> product_variant_list_with_http_info(opts)
-
-```ruby
-begin
-  # product.variant.list
-  data, status_code, headers = api_instance.product_variant_list_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <ProductVariantList200Response>
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling ProductApi->product_variant_list_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
-| **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
-| **product_id** | **String** | Retrieves products&#39; variants specified by product id | [optional] |
-| **category_id** | **String** | Retrieves products’ variants specified by category id | [optional] |
-| **store_id** | **String** | Retrieves variants specified by store id | [optional] |
-| **created_from** | **String** | Retrieve entities from their creation date | [optional] |
-| **created_to** | **String** | Retrieve entities to their creation date | [optional] |
-| **modified_from** | **String** | Retrieve entities from their modification date | [optional] |
-| **modified_to** | **String** | Retrieve entities to their modification date | [optional] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,name,description,price&#39;] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-
-### Return type
-
-[**ProductVariantList200Response**](ProductVariantList200Response.md)
 
 ### Authorization
 

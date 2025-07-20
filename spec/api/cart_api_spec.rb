@@ -32,17 +32,6 @@ describe 'CartApi' do
     end
   end
 
-  # unit tests for cart_bridge
-  # cart.bridge
-  # Get bridge key and store key
-  # @param [Hash] opts the optional parameters
-  # @return [CartBridge200Response]
-  describe 'cart_bridge test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
   # unit tests for cart_catalog_price_rules_count
   # cart.catalog_price_rules.count
   # Get count of cart catalog price rules discounts.
@@ -67,43 +56,6 @@ describe 'CartApi' do
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [ModelResponseCartCatalogPriceRulesList]
   describe 'cart_catalog_price_rules_list test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  # unit tests for cart_clear_cache
-  # cart.clear_cache
-  # Clear cache on store.
-  # @param cache_type Defines which cache should be cleared.
-  # @param [Hash] opts the optional parameters
-  # @return [CartClearCache200Response]
-  describe 'cart_clear_cache test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  # unit tests for cart_config
-  # cart.config
-  # Get list of cart configs
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @return [CartConfig200Response]
-  describe 'cart_config test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  # unit tests for cart_config_update
-  # cart.config.update
-  # Use this API method to update custom data in client database.
-  # @param cart_config_update 
-  # @param [Hash] opts the optional parameters
-  # @return [CartConfigUpdate200Response]
-  describe 'cart_config_update test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
@@ -196,18 +148,6 @@ describe 'CartApi' do
     end
   end
 
-  # unit tests for cart_create
-  # cart.create
-  # Add store to the account
-  # @param cart_create 
-  # @param [Hash] opts the optional parameters
-  # @return [AccountCartAdd200Response]
-  describe 'cart_create test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
   # unit tests for cart_delete
   # cart.delete
   # Remove store from API2Cart
@@ -215,18 +155,6 @@ describe 'CartApi' do
   # @option opts [Boolean] :delete_bridge Identifies if there is a necessity to delete bridge
   # @return [CartDelete200Response]
   describe 'cart_delete test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  # unit tests for cart_disconnect
-  # cart.disconnect
-  # Disconnect with the store and clear store session data.
-  # @param [Hash] opts the optional parameters
-  # @option opts [Boolean] :delete_bridge Identifies if there is a necessity to delete bridge
-  # @return [CartDisconnect200Response]
-  describe 'cart_disconnect test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end
@@ -301,17 +229,6 @@ describe 'CartApi' do
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
   # @return [CartInfo200Response]
   describe 'cart_info test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  # unit tests for cart_list
-  # cart.list
-  # Get list of supported carts
-  # @param [Hash] opts the optional parameters
-  # @return [CartList200Response]
-  describe 'cart_list test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

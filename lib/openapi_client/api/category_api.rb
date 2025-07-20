@@ -199,7 +199,7 @@ module OpenapiClient
     # @param product_id [String] Defines category assign to the product, specified by product id
     # @param [Hash] opts the optional parameters
     # @option opts [String] :store_id Store Id
-    # @return [CartConfigUpdate200Response]
+    # @return [CategoryAssign200Response]
     def category_assign(category_id, product_id, opts = {})
       data, _status_code, _headers = category_assign_with_http_info(category_id, product_id, opts)
       data
@@ -211,7 +211,7 @@ module OpenapiClient
     # @param product_id [String] Defines category assign to the product, specified by product id
     # @param [Hash] opts the optional parameters
     # @option opts [String] :store_id Store Id
-    # @return [Array<(CartConfigUpdate200Response, Integer, Hash)>] CartConfigUpdate200Response data, response status code and response headers
+    # @return [Array<(CategoryAssign200Response, Integer, Hash)>] CategoryAssign200Response data, response status code and response headers
     def category_assign_with_http_info(category_id, product_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CategoryApi.category_assign ...'
@@ -245,7 +245,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'CartConfigUpdate200Response'
+      return_type = opts[:debug_return_type] || 'CategoryAssign200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['StoreKeyAuth', 'ApiKeyAuth']
@@ -893,7 +893,7 @@ module OpenapiClient
     # @param product_id [String] Defines category unassign to the product, specified by product id
     # @param [Hash] opts the optional parameters
     # @option opts [String] :store_id Store Id
-    # @return [CartConfigUpdate200Response]
+    # @return [CategoryAssign200Response]
     def category_unassign(category_id, product_id, opts = {})
       data, _status_code, _headers = category_unassign_with_http_info(category_id, product_id, opts)
       data
@@ -905,7 +905,7 @@ module OpenapiClient
     # @param product_id [String] Defines category unassign to the product, specified by product id
     # @param [Hash] opts the optional parameters
     # @option opts [String] :store_id Store Id
-    # @return [Array<(CartConfigUpdate200Response, Integer, Hash)>] CartConfigUpdate200Response data, response status code and response headers
+    # @return [Array<(CategoryAssign200Response, Integer, Hash)>] CategoryAssign200Response data, response status code and response headers
     def category_unassign_with_http_info(category_id, product_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: CategoryApi.category_unassign ...'
@@ -939,7 +939,7 @@ module OpenapiClient
       post_body = opts[:debug_body]
 
       # return_type
-      return_type = opts[:debug_return_type] || 'CartConfigUpdate200Response'
+      return_type = opts[:debug_return_type] || 'CategoryAssign200Response'
 
       # auth_names
       auth_names = opts[:debug_auth_names] || ['StoreKeyAuth', 'ApiKeyAuth']

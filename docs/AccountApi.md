@@ -1,6 +1,6 @@
 # OpenapiClient::AccountApi
 
-All URIs are relative to *https://api.api2cart.com/v1.1*
+All URIs are relative to *https://api.api2cart.local.com/v1.1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -33,7 +33,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::AccountApi.new
-account_cart_add = OpenapiClient::AccountCartAdd.new({cart_id: '3DCart', bigcartel_user_name: 'subdomain', bigcartel_password: '4GrrZCLNNoSUuhAjesKuchxo9SL', wix_app_id: '6b0b5b7b-7d87-45b5-bf34-ac6b438e63da', wix_app_secret_key: '316c0a09-f195-42be-74f6-a02cebb9cae6', temu_access_token: 'uplv3hfyt5kcwoymrgnajnbl1ow5qxlz4sqhev6hl3xosz5dejrtyl2jre6', temu_region: 'US'}) # AccountCartAdd | 
+account_cart_add = OpenapiClient::AccountCartAdd.new({cart_id: '3DCart', bigcartel_user_name: 'subdomain', bigcartel_password: '4GrrZCLNNoSUuhAjesKuchxo9SL', bricklink_consumer_key: '26F6CDA087D9444EAA71AC09E7A1D39A', bricklink_consumer_secret: 'a46abc3kxyinlbggy06i9g975xqo6gjq', bricklink_token: 'ktv4n9rgrj0evjuy2t6p2xlb1f8u5pmy', bricklink_token_secret: 'a46abc3kxyinlbggy06i9g975xqo6gjq', wix_app_id: '6b0b5b7b-7d87-45b5-bf34-ac6b438e63da', wix_app_secret_key: '316c0a09-f195-42be-74f6-a02cebb9cae6', temu_access_token: 'uplv3hfyt5kcwoymrgnajnbl1ow5qxlz4sqhev6hl3xosz5dejrtyl2jre6', temu_region: 'US'}) # AccountCartAdd | 
 
 begin
   # account.cart.add
@@ -272,6 +272,10 @@ opts = {
   shopware_api_secret: 'V3NYNWg2b1dZdHBUWDN1cmdKdGhnenp5enVJYlJ0WlJvOFF2bnQ', # String | Shopware client secret access key
   bigcartel_user_name: 'subdomain', # String | Subdomain of store
   bigcartel_password: '4GrrZCLNNoSUuhAjesKuchxo9SL', # String | BigCartel account password
+  bricklink_consumer_key: '26F6CDA087D9444EAA71AC09E7A1D39A', # String | Bricklink Consumer Key
+  bricklink_consumer_secret: 'a46abc3kxyinlbggy06i9g975xqo6gjq', # String | Bricklink Consumer Secret
+  bricklink_token: 'ktv4n9rgrj0evjuy2t6p2xlb1f8u5pmy', # String | Bricklink Access Token
+  bricklink_token_secret: 'a46abc3kxyinlbggy06i9g975xqo6gjq', # String | Bricklink Access Token Secret
   volusion_login: 'admin', # String | It's a Volusion account for which API is enabled
   volusion_password: '7943CA5F3990E00D9A4CCF0BD998211F', # String | Volusion API Password
   walmart_client_id: '423f6A24-123z-8654-989u-6fa96478289', # String | Walmart client ID. For the region 'ca' use Consumer ID
@@ -464,6 +468,10 @@ end
 | **shopware_api_secret** | **String** | Shopware client secret access key | [optional] |
 | **bigcartel_user_name** | **String** | Subdomain of store | [optional] |
 | **bigcartel_password** | **String** | BigCartel account password | [optional] |
+| **bricklink_consumer_key** | **String** | Bricklink Consumer Key | [optional] |
+| **bricklink_consumer_secret** | **String** | Bricklink Consumer Secret | [optional] |
+| **bricklink_token** | **String** | Bricklink Access Token | [optional] |
+| **bricklink_token_secret** | **String** | Bricklink Access Token Secret | [optional] |
 | **volusion_login** | **String** | It&#39;s a Volusion account for which API is enabled | [optional] |
 | **volusion_password** | **String** | Volusion API Password | [optional] |
 | **walmart_client_id** | **String** | Walmart client ID. For the region &#39;ca&#39; use Consumer ID | [optional] |

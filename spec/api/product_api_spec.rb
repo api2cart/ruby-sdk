@@ -311,17 +311,6 @@ describe 'ProductApi' do
     end
   end
 
-  # unit tests for product_fields
-  # product.fields
-  # Retrieve all available fields for product item in store.
-  # @param [Hash] opts the optional parameters
-  # @return [CartConfigUpdate200Response]
-  describe 'product_fields test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
   # unit tests for product_find
   # product.find
   # Search product in store catalog. \&quot;Apple\&quot; is specified here by default.
@@ -726,24 +715,6 @@ describe 'ProductApi' do
     end
   end
 
-  # unit tests for product_variant_count
-  # product.variant.count
-  # Get count variants.
-  # @param product_id Retrieves products&#39; variants specified by product id
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :category_id Counts products’ variants specified by category id
-  # @option opts [String] :store_id Retrieves variants specified by store id
-  # @option opts [String] :created_from Retrieve entities from their creation date
-  # @option opts [String] :created_to Retrieve entities to their creation date
-  # @option opts [String] :modified_from Retrieve entities from their modification date
-  # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @return [ProductVariantCount200Response]
-  describe 'product_variant_count test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
   # unit tests for product_variant_delete
   # product.variant.delete
   # Delete variant.
@@ -792,43 +763,6 @@ describe 'ProductApi' do
   # @option opts [String] :store_id Store Id
   # @return [AttributeDelete200Response]
   describe 'product_variant_image_delete test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  # unit tests for product_variant_info
-  # product.variant.info
-  # Get variant info. This method is deprecated, and its development is stopped. Please use \&quot;product.child_item.info\&quot; instead.
-  # @param id Retrieves variant&#39;s info specified by variant id
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :store_id Retrieves variant info specified by store id
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @return [ProductInfo200Response]
-  describe 'product_variant_info test' do
-    it 'should work' do
-      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
-    end
-  end
-
-  # unit tests for product_variant_list
-  # product.variant.list
-  # Get a list of variants. This method is deprecated, and its development is stopped. Please use \&quot;product.child_item.list\&quot; instead.
-  # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :start This parameter sets the number from which you want to get entities
-  # @option opts [Integer] :count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250
-  # @option opts [String] :product_id Retrieves products&#39; variants specified by product id
-  # @option opts [String] :category_id Retrieves products’ variants specified by category id
-  # @option opts [String] :store_id Retrieves variants specified by store id
-  # @option opts [String] :created_from Retrieve entities from their creation date
-  # @option opts [String] :created_to Retrieve entities to their creation date
-  # @option opts [String] :modified_from Retrieve entities from their modification date
-  # @option opts [String] :modified_to Retrieve entities to their modification date
-  # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
-  # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
-  # @return [ProductVariantList200Response]
-  describe 'product_variant_list test' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

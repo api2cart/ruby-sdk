@@ -1,6 +1,6 @@
 # OpenapiClient::OrderApi
 
-All URIs are relative to *https://api.api2cart.com/v1.1*
+All URIs are relative to *https://api.api2cart.local.com/v1.1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -8,7 +8,6 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
 | [**order_add**](OrderApi.md#order_add) | **POST** /order.add.json | order.add |
 | [**order_count**](OrderApi.md#order_count) | **GET** /order.count.json | order.count |
 | [**order_financial_status_list**](OrderApi.md#order_financial_status_list) | **GET** /order.financial_status.list.json | order.financial_status.list |
-| [**order_find**](OrderApi.md#order_find) | **GET** /order.find.json | order.find |
 | [**order_fulfillment_status_list**](OrderApi.md#order_fulfillment_status_list) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list |
 | [**order_info**](OrderApi.md#order_info) | **GET** /order.info.json | order.info |
 | [**order_list**](OrderApi.md#order_list) | **GET** /order.list.json | order.list |
@@ -387,106 +386,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**OrderFinancialStatusList200Response**](OrderFinancialStatusList200Response.md)
-
-### Authorization
-
-[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## order_find
-
-> <OrderFind200Response> order_find(opts)
-
-order.find
-
-This method is deprecated and won't be supported in the future. Please use \"order.list\" instead.
-
-### Examples
-
-```ruby
-require 'time'
-require 'openapi_client'
-# setup authorization
-OpenapiClient.configure do |config|
-  # Configure API key authorization: StoreKeyAuth
-  config.api_key['x-store-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['x-store-key'] = 'Bearer'
-
-  # Configure API key authorization: ApiKeyAuth
-  config.api_key['x-api-key'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  # config.api_key_prefix['x-api-key'] = 'Bearer'
-end
-
-api_instance = OpenapiClient::OrderApi.new
-opts = {
-  start: 0, # Integer | This parameter sets the number from which you want to get entities
-  count: 20, # Integer | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-  customer_id: '5', # String | Retrieves orders specified by customer id
-  customer_email: 'jubari@hannsgroup.com', # String | Retrieves orders specified by customer email
-  order_status: 'Completed', # String | Retrieves orders specified by order status
-  financial_status: 'paid', # String | Retrieves orders specified by financial status
-  created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
-  created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
-  modified_to: '2100-08-29 13:45:52', # String | Retrieve entities to their modification date
-  modified_from: '2010-07-29 13:45:52', # String | Retrieve entities from their modification date
-  params: 'order_id,totals,status', # String | Set this parameter in order to choose which entity fields you want to retrieve
-  exclude: 'order_id,totals,status' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-}
-
-begin
-  # order.find
-  result = api_instance.order_find(opts)
-  p result
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling OrderApi->order_find: #{e}"
-end
-```
-
-#### Using the order_find_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<OrderFind200Response>, Integer, Hash)> order_find_with_http_info(opts)
-
-```ruby
-begin
-  # order.find
-  data, status_code, headers = api_instance.order_find_with_http_info(opts)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <OrderFind200Response>
-rescue OpenapiClient::ApiError => e
-  puts "Error when calling OrderApi->order_find_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **start** | **Integer** | This parameter sets the number from which you want to get entities | [optional][default to 0] |
-| **count** | **Integer** | This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional][default to 10] |
-| **customer_id** | **String** | Retrieves orders specified by customer id | [optional] |
-| **customer_email** | **String** | Retrieves orders specified by customer email | [optional] |
-| **order_status** | **String** | Retrieves orders specified by order status | [optional] |
-| **financial_status** | **String** | Retrieves orders specified by financial status | [optional] |
-| **created_to** | **String** | Retrieve entities to their creation date | [optional] |
-| **created_from** | **String** | Retrieve entities from their creation date | [optional] |
-| **modified_to** | **String** | Retrieve entities to their modification date | [optional] |
-| **modified_from** | **String** | Retrieve entities from their modification date | [optional] |
-| **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;order_id,customer,totals,address,items,bundles,status&#39;] |
-| **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-
-### Return type
-
-[**OrderFind200Response**](OrderFind200Response.md)
 
 ### Authorization
 

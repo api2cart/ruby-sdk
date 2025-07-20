@@ -158,7 +158,7 @@ module OpenapiClient
 
     def initialize
       @scheme = 'https'
-      @host = 'api.api2cart.com'
+      @host = 'api.api2cart.local.com'
       @base_path = '/v1.1'
       @server_index = nil
       @server_operation_index = {}
@@ -265,7 +265,7 @@ module OpenapiClient
     def server_settings
       [
         {
-          url: "https://api.api2cart.com/v1.1",
+          url: "https://api.api2cart.local.com/v1.1",
           description: "API2Cart Production Server",
         }
       ]

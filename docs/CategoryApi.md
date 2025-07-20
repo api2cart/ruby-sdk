@@ -1,6 +1,6 @@
 # OpenapiClient::CategoryApi
 
-All URIs are relative to *https://api.api2cart.com/v1.1*
+All URIs are relative to *https://api.api2cart.local.com/v1.1*
 
 | Method | HTTP request | Description |
 | ------ | ------------ | ----------- |
@@ -202,7 +202,7 @@ end
 
 ## category_assign
 
-> <CartConfigUpdate200Response> category_assign(category_id, product_id, opts)
+> <CategoryAssign200Response> category_assign(category_id, product_id, opts)
 
 category.assign
 
@@ -246,7 +246,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CartConfigUpdate200Response>, Integer, Hash)> category_assign_with_http_info(category_id, product_id, opts)
+> <Array(<CategoryAssign200Response>, Integer, Hash)> category_assign_with_http_info(category_id, product_id, opts)
 
 ```ruby
 begin
@@ -254,7 +254,7 @@ begin
   data, status_code, headers = api_instance.category_assign_with_http_info(category_id, product_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CartConfigUpdate200Response>
+  p data # => <CategoryAssign200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling CategoryApi->category_assign_with_http_info: #{e}"
 end
@@ -270,7 +270,7 @@ end
 
 ### Return type
 
-[**CartConfigUpdate200Response**](CartConfigUpdate200Response.md)
+[**CategoryAssign200Response**](CategoryAssign200Response.md)
 
 ### Authorization
 
@@ -936,7 +936,7 @@ end
 
 ## category_unassign
 
-> <CartConfigUpdate200Response> category_unassign(category_id, product_id, opts)
+> <CategoryAssign200Response> category_unassign(category_id, product_id, opts)
 
 category.unassign
 
@@ -980,7 +980,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<CartConfigUpdate200Response>, Integer, Hash)> category_unassign_with_http_info(category_id, product_id, opts)
+> <Array(<CategoryAssign200Response>, Integer, Hash)> category_unassign_with_http_info(category_id, product_id, opts)
 
 ```ruby
 begin
@@ -988,7 +988,7 @@ begin
   data, status_code, headers = api_instance.category_unassign_with_http_info(category_id, product_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <CartConfigUpdate200Response>
+  p data # => <CategoryAssign200Response>
 rescue OpenapiClient::ApiError => e
   puts "Error when calling CategoryApi->category_unassign_with_http_info: #{e}"
 end
@@ -1004,7 +1004,7 @@ end
 
 ### Return type
 
-[**CartConfigUpdate200Response**](CartConfigUpdate200Response.md)
+[**CategoryAssign200Response**](CategoryAssign200Response.md)
 
 ### Authorization
 

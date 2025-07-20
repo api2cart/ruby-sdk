@@ -135,6 +135,29 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+        :'transaction_id',
+        :'parent_id',
+        :'description',
+        :'status',
+        :'gateway',
+        :'reference_number',
+        :'currency',
+        :'amount',
+        :'created_time',
+        :'settlement_currency',
+        :'settlement_amount',
+        :'settlement_created_time',
+        :'card_brand',
+        :'card_bin',
+        :'card_last_four',
+        :'avs_street_resp_code',
+        :'avs_postal_resp_code',
+        :'avs_message',
+        :'cvv_code',
+        :'cvv_message',
+        :'is_test_mode',
+        :'additional_fields',
+        :'custom_fields'
       ])
     end
 

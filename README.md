@@ -66,7 +66,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::AccountApi.new
-account_cart_add = OpenapiClient::AccountCartAdd.new({cart_id: '3DCart', bigcartel_user_name: 'subdomain', bigcartel_password: '4GrrZCLNNoSUuhAjesKuchxo9SL', wix_app_id: '6b0b5b7b-7d87-45b5-bf34-ac6b438e63da', wix_app_secret_key: '316c0a09-f195-42be-74f6-a02cebb9cae6', temu_access_token: 'uplv3hfyt5kcwoymrgnajnbl1ow5qxlz4sqhev6hl3xosz5dejrtyl2jre6', temu_region: 'US'}) # AccountCartAdd | 
+account_cart_add = OpenapiClient::AccountCartAdd.new({cart_id: '3DCart', bigcartel_user_name: 'subdomain', bigcartel_password: '4GrrZCLNNoSUuhAjesKuchxo9SL', bricklink_consumer_key: '26F6CDA087D9444EAA71AC09E7A1D39A', bricklink_consumer_secret: 'a46abc3kxyinlbggy06i9g975xqo6gjq', bricklink_token: 'ktv4n9rgrj0evjuy2t6p2xlb1f8u5pmy', bricklink_token_secret: 'a46abc3kxyinlbggy06i9g975xqo6gjq', wix_app_id: '6b0b5b7b-7d87-45b5-bf34-ac6b438e63da', wix_app_secret_key: '316c0a09-f195-42be-74f6-a02cebb9cae6', temu_access_token: 'uplv3hfyt5kcwoymrgnajnbl1ow5qxlz4sqhev6hl3xosz5dejrtyl2jre6', temu_region: 'US'}) # AccountCartAdd | 
 
 begin
   #account.cart.add
@@ -80,7 +80,7 @@ end
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.api2cart.com/v1.1*
+All URIs are relative to *https://api.api2cart.local.com/v1.1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -115,26 +115,19 @@ Class | Method | HTTP request | Description
 *OpenapiClient::BridgeApi* | [**bridge_delete**](docs/BridgeApi.md#bridge_delete) | **POST** /bridge.delete.json | bridge.delete
 *OpenapiClient::BridgeApi* | [**bridge_download**](docs/BridgeApi.md#bridge_download) | **GET** /bridge.download.file | bridge.download
 *OpenapiClient::BridgeApi* | [**bridge_update**](docs/BridgeApi.md#bridge_update) | **POST** /bridge.update.json | bridge.update
-*OpenapiClient::CartApi* | [**cart_bridge**](docs/CartApi.md#cart_bridge) | **GET** /cart.bridge.json | cart.bridge
 *OpenapiClient::CartApi* | [**cart_catalog_price_rules_count**](docs/CartApi.md#cart_catalog_price_rules_count) | **GET** /cart.catalog_price_rules.count.json | cart.catalog_price_rules.count
 *OpenapiClient::CartApi* | [**cart_catalog_price_rules_list**](docs/CartApi.md#cart_catalog_price_rules_list) | **GET** /cart.catalog_price_rules.list.json | cart.catalog_price_rules.list
-*OpenapiClient::CartApi* | [**cart_clear_cache**](docs/CartApi.md#cart_clear_cache) | **POST** /cart.clear_cache.json | cart.clear_cache
-*OpenapiClient::CartApi* | [**cart_config**](docs/CartApi.md#cart_config) | **GET** /cart.config.json | cart.config
-*OpenapiClient::CartApi* | [**cart_config_update**](docs/CartApi.md#cart_config_update) | **PUT** /cart.config.update.json | cart.config.update
 *OpenapiClient::CartApi* | [**cart_coupon_add**](docs/CartApi.md#cart_coupon_add) | **POST** /cart.coupon.add.json | cart.coupon.add
 *OpenapiClient::CartApi* | [**cart_coupon_condition_add**](docs/CartApi.md#cart_coupon_condition_add) | **POST** /cart.coupon.condition.add.json | cart.coupon.condition.add
 *OpenapiClient::CartApi* | [**cart_coupon_count**](docs/CartApi.md#cart_coupon_count) | **GET** /cart.coupon.count.json | cart.coupon.count
 *OpenapiClient::CartApi* | [**cart_coupon_delete**](docs/CartApi.md#cart_coupon_delete) | **DELETE** /cart.coupon.delete.json | cart.coupon.delete
 *OpenapiClient::CartApi* | [**cart_coupon_list**](docs/CartApi.md#cart_coupon_list) | **GET** /cart.coupon.list.json | cart.coupon.list
-*OpenapiClient::CartApi* | [**cart_create**](docs/CartApi.md#cart_create) | **POST** /cart.create.json | cart.create
 *OpenapiClient::CartApi* | [**cart_delete**](docs/CartApi.md#cart_delete) | **DELETE** /cart.delete.json | cart.delete
-*OpenapiClient::CartApi* | [**cart_disconnect**](docs/CartApi.md#cart_disconnect) | **GET** /cart.disconnect.json | cart.disconnect
 *OpenapiClient::CartApi* | [**cart_giftcard_add**](docs/CartApi.md#cart_giftcard_add) | **POST** /cart.giftcard.add.json | cart.giftcard.add
 *OpenapiClient::CartApi* | [**cart_giftcard_count**](docs/CartApi.md#cart_giftcard_count) | **GET** /cart.giftcard.count.json | cart.giftcard.count
 *OpenapiClient::CartApi* | [**cart_giftcard_delete**](docs/CartApi.md#cart_giftcard_delete) | **DELETE** /cart.giftcard.delete.json | cart.giftcard.delete
 *OpenapiClient::CartApi* | [**cart_giftcard_list**](docs/CartApi.md#cart_giftcard_list) | **GET** /cart.giftcard.list.json | cart.giftcard.list
 *OpenapiClient::CartApi* | [**cart_info**](docs/CartApi.md#cart_info) | **GET** /cart.info.json | cart.info
-*OpenapiClient::CartApi* | [**cart_list**](docs/CartApi.md#cart_list) | **GET** /cart.list.json | cart.list
 *OpenapiClient::CartApi* | [**cart_meta_data_list**](docs/CartApi.md#cart_meta_data_list) | **GET** /cart.meta_data.list.json | cart.meta_data.list
 *OpenapiClient::CartApi* | [**cart_meta_data_set**](docs/CartApi.md#cart_meta_data_set) | **POST** /cart.meta_data.set.json | cart.meta_data.set
 *OpenapiClient::CartApi* | [**cart_meta_data_unset**](docs/CartApi.md#cart_meta_data_unset) | **DELETE** /cart.meta_data.unset.json | cart.meta_data.unset
@@ -174,7 +167,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::OrderApi* | [**order_add**](docs/OrderApi.md#order_add) | **POST** /order.add.json | order.add
 *OpenapiClient::OrderApi* | [**order_count**](docs/OrderApi.md#order_count) | **GET** /order.count.json | order.count
 *OpenapiClient::OrderApi* | [**order_financial_status_list**](docs/OrderApi.md#order_financial_status_list) | **GET** /order.financial_status.list.json | order.financial_status.list
-*OpenapiClient::OrderApi* | [**order_find**](docs/OrderApi.md#order_find) | **GET** /order.find.json | order.find
 *OpenapiClient::OrderApi* | [**order_fulfillment_status_list**](docs/OrderApi.md#order_fulfillment_status_list) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list
 *OpenapiClient::OrderApi* | [**order_info**](docs/OrderApi.md#order_info) | **GET** /order.info.json | order.info
 *OpenapiClient::OrderApi* | [**order_list**](docs/OrderApi.md#order_list) | **GET** /order.list.json | order.list
@@ -207,7 +199,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::ProductApi* | [**product_currency_list**](docs/ProductApi.md#product_currency_list) | **GET** /product.currency.list.json | product.currency.list
 *OpenapiClient::ProductApi* | [**product_delete**](docs/ProductApi.md#product_delete) | **DELETE** /product.delete.json | product.delete
 *OpenapiClient::ProductApi* | [**product_delete_batch**](docs/ProductApi.md#product_delete_batch) | **POST** /product.delete.batch.json | product.delete.batch
-*OpenapiClient::ProductApi* | [**product_fields**](docs/ProductApi.md#product_fields) | **GET** /product.fields.json | product.fields
 *OpenapiClient::ProductApi* | [**product_find**](docs/ProductApi.md#product_find) | **GET** /product.find.json | product.find
 *OpenapiClient::ProductApi* | [**product_image_add**](docs/ProductApi.md#product_image_add) | **POST** /product.image.add.json | product.image.add
 *OpenapiClient::ProductApi* | [**product_image_delete**](docs/ProductApi.md#product_image_delete) | **DELETE** /product.image.delete.json | product.image.delete
@@ -233,13 +224,10 @@ Class | Method | HTTP request | Description
 *OpenapiClient::ProductApi* | [**product_update_batch**](docs/ProductApi.md#product_update_batch) | **POST** /product.update.batch.json | product.update.batch
 *OpenapiClient::ProductApi* | [**product_variant_add**](docs/ProductApi.md#product_variant_add) | **POST** /product.variant.add.json | product.variant.add
 *OpenapiClient::ProductApi* | [**product_variant_add_batch**](docs/ProductApi.md#product_variant_add_batch) | **POST** /product.variant.add.batch.json | product.variant.add.batch
-*OpenapiClient::ProductApi* | [**product_variant_count**](docs/ProductApi.md#product_variant_count) | **GET** /product.variant.count.json | product.variant.count
 *OpenapiClient::ProductApi* | [**product_variant_delete**](docs/ProductApi.md#product_variant_delete) | **DELETE** /product.variant.delete.json | product.variant.delete
 *OpenapiClient::ProductApi* | [**product_variant_delete_batch**](docs/ProductApi.md#product_variant_delete_batch) | **POST** /product.variant.delete.batch.json | product.variant.delete.batch
 *OpenapiClient::ProductApi* | [**product_variant_image_add**](docs/ProductApi.md#product_variant_image_add) | **POST** /product.variant.image.add.json | product.variant.image.add
 *OpenapiClient::ProductApi* | [**product_variant_image_delete**](docs/ProductApi.md#product_variant_image_delete) | **DELETE** /product.variant.image.delete.json | product.variant.image.delete
-*OpenapiClient::ProductApi* | [**product_variant_info**](docs/ProductApi.md#product_variant_info) | **GET** /product.variant.info.json | product.variant.info
-*OpenapiClient::ProductApi* | [**product_variant_list**](docs/ProductApi.md#product_variant_list) | **GET** /product.variant.list.json | product.variant.list
 *OpenapiClient::ProductApi* | [**product_variant_price_add**](docs/ProductApi.md#product_variant_price_add) | **POST** /product.variant.price.add.json | product.variant.price.add
 *OpenapiClient::ProductApi* | [**product_variant_price_delete**](docs/ProductApi.md#product_variant_price_delete) | **DELETE** /product.variant.price.delete.json | product.variant.price.delete
 *OpenapiClient::ProductApi* | [**product_variant_price_update**](docs/ProductApi.md#product_variant_price_update) | **PUT** /product.variant.price.update.json | product.variant.price.update
@@ -319,35 +307,21 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::Brand](docs/Brand.md)
  - [OpenapiClient::Carrier](docs/Carrier.md)
  - [OpenapiClient::Cart](docs/Cart.md)
- - [OpenapiClient::CartBridge200Response](docs/CartBridge200Response.md)
- - [OpenapiClient::CartBridge200ResponseResult](docs/CartBridge200ResponseResult.md)
  - [OpenapiClient::CartCatalogPriceRulesCount200Response](docs/CartCatalogPriceRulesCount200Response.md)
  - [OpenapiClient::CartCatalogPriceRulesCount200ResponseResult](docs/CartCatalogPriceRulesCount200ResponseResult.md)
  - [OpenapiClient::CartChannel](docs/CartChannel.md)
- - [OpenapiClient::CartClearCache200Response](docs/CartClearCache200Response.md)
- - [OpenapiClient::CartClearCache200ResponseResult](docs/CartClearCache200ResponseResult.md)
- - [OpenapiClient::CartConfig200Response](docs/CartConfig200Response.md)
- - [OpenapiClient::CartConfig200ResponseResult](docs/CartConfig200ResponseResult.md)
- - [OpenapiClient::CartConfigUpdate](docs/CartConfigUpdate.md)
- - [OpenapiClient::CartConfigUpdate200Response](docs/CartConfigUpdate200Response.md)
  - [OpenapiClient::CartCouponAdd](docs/CartCouponAdd.md)
  - [OpenapiClient::CartCouponAdd200Response](docs/CartCouponAdd200Response.md)
  - [OpenapiClient::CartCouponAdd200ResponseResult](docs/CartCouponAdd200ResponseResult.md)
  - [OpenapiClient::CartCouponCount200Response](docs/CartCouponCount200Response.md)
  - [OpenapiClient::CartCouponCount200ResponseResult](docs/CartCouponCount200ResponseResult.md)
- - [OpenapiClient::CartCreate](docs/CartCreate.md)
  - [OpenapiClient::CartDelete200Response](docs/CartDelete200Response.md)
  - [OpenapiClient::CartDelete200ResponseResult](docs/CartDelete200ResponseResult.md)
- - [OpenapiClient::CartDisconnect200Response](docs/CartDisconnect200Response.md)
- - [OpenapiClient::CartDisconnect200ResponseResult](docs/CartDisconnect200ResponseResult.md)
  - [OpenapiClient::CartGiftcardAdd200Response](docs/CartGiftcardAdd200Response.md)
  - [OpenapiClient::CartGiftcardAdd200ResponseResult](docs/CartGiftcardAdd200ResponseResult.md)
  - [OpenapiClient::CartGiftcardCount200Response](docs/CartGiftcardCount200Response.md)
  - [OpenapiClient::CartGiftcardCount200ResponseResult](docs/CartGiftcardCount200ResponseResult.md)
  - [OpenapiClient::CartInfo200Response](docs/CartInfo200Response.md)
- - [OpenapiClient::CartList200Response](docs/CartList200Response.md)
- - [OpenapiClient::CartList200ResponseResult](docs/CartList200ResponseResult.md)
- - [OpenapiClient::CartList200ResponseResultSupportedCartsInner](docs/CartList200ResponseResultSupportedCartsInner.md)
  - [OpenapiClient::CartMetaData](docs/CartMetaData.md)
  - [OpenapiClient::CartMethods200Response](docs/CartMethods200Response.md)
  - [OpenapiClient::CartMethods200ResponseResult](docs/CartMethods200ResponseResult.md)
@@ -373,6 +347,7 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::CategoryAddBatch200ResponseResult](docs/CategoryAddBatch200ResponseResult.md)
  - [OpenapiClient::CategoryAddBatchPayloadInner](docs/CategoryAddBatchPayloadInner.md)
  - [OpenapiClient::CategoryAddBatchPayloadInnerImagesInner](docs/CategoryAddBatchPayloadInnerImagesInner.md)
+ - [OpenapiClient::CategoryAssign200Response](docs/CategoryAssign200Response.md)
  - [OpenapiClient::CategoryCount200Response](docs/CategoryCount200Response.md)
  - [OpenapiClient::CategoryCount200ResponseResult](docs/CategoryCount200ResponseResult.md)
  - [OpenapiClient::CategoryDelete200Response](docs/CategoryDelete200Response.md)
@@ -471,8 +446,6 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::OrderFinancialStatusList200Response](docs/OrderFinancialStatusList200Response.md)
  - [OpenapiClient::OrderFinancialStatusList200ResponseResult](docs/OrderFinancialStatusList200ResponseResult.md)
  - [OpenapiClient::OrderFinancialStatusList200ResponseResultOrderFinancialStatusesInner](docs/OrderFinancialStatusList200ResponseResultOrderFinancialStatusesInner.md)
- - [OpenapiClient::OrderFind200Response](docs/OrderFind200Response.md)
- - [OpenapiClient::OrderFind200ResponseResult](docs/OrderFind200ResponseResult.md)
  - [OpenapiClient::OrderFulfillmentStatusList200Response](docs/OrderFulfillmentStatusList200Response.md)
  - [OpenapiClient::OrderFulfillmentStatusList200ResponseResult](docs/OrderFulfillmentStatusList200ResponseResult.md)
  - [OpenapiClient::OrderInfo200Response](docs/OrderInfo200Response.md)
@@ -615,15 +588,11 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::ProductVariantAddBatch](docs/ProductVariantAddBatch.md)
  - [OpenapiClient::ProductVariantAddBatchPayloadInner](docs/ProductVariantAddBatchPayloadInner.md)
  - [OpenapiClient::ProductVariantAddBatchPayloadInnerCombinationInner](docs/ProductVariantAddBatchPayloadInnerCombinationInner.md)
- - [OpenapiClient::ProductVariantCount200Response](docs/ProductVariantCount200Response.md)
- - [OpenapiClient::ProductVariantCount200ResponseResult](docs/ProductVariantCount200ResponseResult.md)
  - [OpenapiClient::ProductVariantDeleteBatch](docs/ProductVariantDeleteBatch.md)
  - [OpenapiClient::ProductVariantDeleteBatchPayloadInner](docs/ProductVariantDeleteBatchPayloadInner.md)
  - [OpenapiClient::ProductVariantImageAdd](docs/ProductVariantImageAdd.md)
  - [OpenapiClient::ProductVariantImageAdd200Response](docs/ProductVariantImageAdd200Response.md)
  - [OpenapiClient::ProductVariantImageAdd200ResponseResult](docs/ProductVariantImageAdd200ResponseResult.md)
- - [OpenapiClient::ProductVariantList200Response](docs/ProductVariantList200Response.md)
- - [OpenapiClient::ProductVariantList200ResponseResult](docs/ProductVariantList200ResponseResult.md)
  - [OpenapiClient::ProductVariantPriceAdd](docs/ProductVariantPriceAdd.md)
  - [OpenapiClient::ProductVariantPriceUpdate](docs/ProductVariantPriceUpdate.md)
  - [OpenapiClient::ProductVariantUpdate](docs/ProductVariantUpdate.md)
