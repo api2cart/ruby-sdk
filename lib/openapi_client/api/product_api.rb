@@ -1696,6 +1696,7 @@ module OpenapiClient
     # @option opts [Boolean] :disable_cache Disable cache for current request (default to false)
     # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
     # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
+    # @option opts [String] :product_type A categorization for the product
     # @return [ModelResponseProductList]
     def product_list(opts = {})
       data, _status_code, _headers = product_list_with_http_info(opts)
@@ -1739,6 +1740,7 @@ module OpenapiClient
     # @option opts [Boolean] :disable_cache Disable cache for current request (default to false)
     # @option opts [Boolean] :disable_report_cache Disable report cache for current request (default to false)
     # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
+    # @option opts [String] :product_type A categorization for the product
     # @return [Array<(ModelResponseProductList, Integer, Hash)>] ModelResponseProductList data, response status code and response headers
     def product_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -1783,6 +1785,7 @@ module OpenapiClient
       query_params[:'disable_cache'] = opts[:'disable_cache'] if !opts[:'disable_cache'].nil?
       query_params[:'disable_report_cache'] = opts[:'disable_report_cache'] if !opts[:'disable_report_cache'].nil?
       query_params[:'use_latest_api_version'] = opts[:'use_latest_api_version'] if !opts[:'use_latest_api_version'].nil?
+      query_params[:'product_type'] = opts[:'product_type'] if !opts[:'product_type'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

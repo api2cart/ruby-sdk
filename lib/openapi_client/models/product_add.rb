@@ -126,6 +126,9 @@ module OpenapiClient
     # The maximum quantity an order can contain when purchasing the product.
     attr_accessor :max_order_quantity
 
+    # Specify the quantity threshold below which the product is considered low in stock
+    attr_accessor :low_stock_threshold
+
     # Weight
     attr_accessor :weight
 
@@ -396,6 +399,7 @@ module OpenapiClient
         :'backorder_status' => :'backorder_status',
         :'min_order_quantity' => :'min_order_quantity',
         :'max_order_quantity' => :'max_order_quantity',
+        :'low_stock_threshold' => :'low_stock_threshold',
         :'weight' => :'weight',
         :'weight_unit' => :'weight_unit',
         :'width' => :'width',
@@ -523,6 +527,7 @@ module OpenapiClient
         :'backorder_status' => :'String',
         :'min_order_quantity' => :'Float',
         :'max_order_quantity' => :'Float',
+        :'low_stock_threshold' => :'Float',
         :'weight' => :'Float',
         :'weight_unit' => :'String',
         :'width' => :'Float',
@@ -798,6 +803,10 @@ module OpenapiClient
 
       if attributes.key?(:'max_order_quantity')
         self.max_order_quantity = attributes[:'max_order_quantity']
+      end
+
+      if attributes.key?(:'low_stock_threshold')
+        self.low_stock_threshold = attributes[:'low_stock_threshold']
       end
 
       if attributes.key?(:'weight')
@@ -1230,6 +1239,7 @@ module OpenapiClient
           backorder_status == o.backorder_status &&
           min_order_quantity == o.min_order_quantity &&
           max_order_quantity == o.max_order_quantity &&
+          low_stock_threshold == o.low_stock_threshold &&
           weight == o.weight &&
           weight_unit == o.weight_unit &&
           width == o.width &&
@@ -1320,7 +1330,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, model, description, price, sku, short_description, type, status, visible, category_id, categories_ids, product_class, product_type, is_virtual, downloadable, is_supply, available_for_view, available_for_sale, store_id, stores_ids, lang_id, old_price, special_price, wholesale_price, cost_price, fixed_cost_shipping_price, tier_prices, group_prices, buyitnow_price, reserve_price, quantity, in_stock, manage_stock, warehouse_id, backorder_status, min_order_quantity, max_order_quantity, weight, weight_unit, width, height, length, dimensions_unit, barcode, upc, ean, isbn, gtin, mpn, asin, product_reference, harmonized_system_code, country_of_origin, manufacturer, manufacturer_id, manufacturer_info, brand_name, image_url, image_name, additional_image_urls, files, size_chart, related_products_ids, up_sell_products_ids, cross_sell_products_ids, attribute_set_name, attribute_name, search_keywords, tags, materials, certifications, specifics, avail_from, sprice_create, sprice_modified, sprice_expire, created_at, auto_renew, when_made, meta_title, meta_keywords, meta_description, url, seo_url, tax_class_id, taxable, sales_tax, condition, condition_description, allow_display_condition, payment_methods, paypal_email, shipping_template_id, shipping_details, is_free_shipping, delivery_code, delivery_type, delivery_time, delivery_option_ids, package_details, logistic_info, listing_duration, listing_type, category_type, return_accepted, seller_profiles, auction_confidentiality_level, best_offer, production_partner_ids, marketplace_item_properties, clear_cache, viewed_count, ordered_count, shop_section_id, return_policy_id, personalization_details].hash
+      [name, model, description, price, sku, short_description, type, status, visible, category_id, categories_ids, product_class, product_type, is_virtual, downloadable, is_supply, available_for_view, available_for_sale, store_id, stores_ids, lang_id, old_price, special_price, wholesale_price, cost_price, fixed_cost_shipping_price, tier_prices, group_prices, buyitnow_price, reserve_price, quantity, in_stock, manage_stock, warehouse_id, backorder_status, min_order_quantity, max_order_quantity, low_stock_threshold, weight, weight_unit, width, height, length, dimensions_unit, barcode, upc, ean, isbn, gtin, mpn, asin, product_reference, harmonized_system_code, country_of_origin, manufacturer, manufacturer_id, manufacturer_info, brand_name, image_url, image_name, additional_image_urls, files, size_chart, related_products_ids, up_sell_products_ids, cross_sell_products_ids, attribute_set_name, attribute_name, search_keywords, tags, materials, certifications, specifics, avail_from, sprice_create, sprice_modified, sprice_expire, created_at, auto_renew, when_made, meta_title, meta_keywords, meta_description, url, seo_url, tax_class_id, taxable, sales_tax, condition, condition_description, allow_display_condition, payment_methods, paypal_email, shipping_template_id, shipping_details, is_free_shipping, delivery_code, delivery_type, delivery_time, delivery_option_ids, package_details, logistic_info, listing_duration, listing_type, category_type, return_accepted, seller_profiles, auction_confidentiality_level, best_offer, production_partner_ids, marketplace_item_properties, clear_cache, viewed_count, ordered_count, shop_section_id, return_policy_id, personalization_details].hash
     end
 
     # Builds the object from hash

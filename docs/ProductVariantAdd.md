@@ -30,6 +30,7 @@
 | **in_stock** | **Boolean** | Set stock status | [optional] |
 | **backorder_status** | **String** | Set backorder status | [optional] |
 | **manage_stock** | **Boolean** | Defines inventory tracking for product variant | [optional] |
+| **low_stock_threshold** | **Float** | Specify the quantity threshold below which the product is considered low in stock | [optional] |
 | **weight** | **Float** | Weight | [optional][default to 0] |
 | **width** | **Float** | Defines product&#39;s width | [optional] |
 | **height** | **Float** | Defines product&#39;s height | [optional] |
@@ -89,6 +90,7 @@ instance = OpenapiClient::ProductVariantAdd.new(
   in_stock: true,
   backorder_status: true,
   manage_stock: false,
+  low_stock_threshold: 1,
   weight: 23.69,
   width: 56.12,
   height: 56.12,

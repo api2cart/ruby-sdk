@@ -36,6 +36,7 @@
 | **inventory_level** | **Float** |  | [optional] |
 | **inventory** | [**Array&lt;ProductInventory&gt;**](ProductInventory.md) |  | [optional] |
 | **min_quantity** | **Float** |  | [optional] |
+| **low_stock_threshold** | **Float** |  | [optional] |
 | **default_qty_in_pack** | **Float** |  | [optional] |
 | **is_qty_in_pack_fixed** | **Boolean** |  | [optional] |
 | **weight_unit** | **String** |  | [optional] |
@@ -90,6 +91,7 @@ instance = OpenapiClient::Child.new(
   inventory_level: null,
   inventory: null,
   min_quantity: null,
+  low_stock_threshold: null,
   default_qty_in_pack: null,
   is_qty_in_pack_fixed: null,
   weight_unit: null,

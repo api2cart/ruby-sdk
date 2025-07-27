@@ -41,6 +41,7 @@
 | **backorder_status** | **String** | Set backorder status | [optional] |
 | **increase_quantity** | **Float** | Defines the incremental changes in product quantity | [optional] |
 | **reduce_quantity** | **Float** | Defines the decrement changes in product quantity | [optional] |
+| **low_stock_threshold** | **Float** | Specify the quantity threshold below which the product is considered low in stock | [optional] |
 | **warehouse_id** | **String** | This parameter is used for selecting a warehouse where you need to set/modify a product quantity. | [optional] |
 | **weight** | **Float** | Weight | [optional] |
 | **weight_unit** | **String** | Weight Unit | [optional] |
@@ -133,6 +134,7 @@ instance = OpenapiClient::ProductUpdate.new(
   backorder_status: true,
   increase_quantity: 4,
   reduce_quantity: 4,
+  low_stock_threshold: 1,
   warehouse_id: 1,
   weight: 23.69,
   weight_unit: lb,

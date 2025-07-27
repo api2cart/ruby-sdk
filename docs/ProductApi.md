@@ -1861,7 +1861,8 @@ opts = {
   report_request_id: '105245017661', # String | Report request id
   disable_cache: false, # Boolean | Disable cache for current request
   disable_report_cache: false, # Boolean | Disable report cache for current request
-  use_latest_api_version: true # Boolean | Use the latest platform API version
+  use_latest_api_version: true, # Boolean | Use the latest platform API version
+  product_type: 'BICYCLE' # String | A categorization for the product
 }
 
 begin
@@ -1929,6 +1930,7 @@ end
 | **disable_cache** | **Boolean** | Disable cache for current request | [optional][default to false] |
 | **disable_report_cache** | **Boolean** | Disable report cache for current request | [optional][default to false] |
 | **use_latest_api_version** | **Boolean** | Use the latest platform API version | [optional][default to false] |
+| **product_type** | **String** | A categorization for the product | [optional] |
 
 ### Return type
 

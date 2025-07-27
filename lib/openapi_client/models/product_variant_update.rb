@@ -54,6 +54,9 @@ module OpenapiClient
     # Set backorder status
     attr_accessor :backorder_status
 
+    # Specify the quantity threshold below which the product is considered low in stock
+    attr_accessor :low_stock_threshold
+
     # Specifies the set of visible/invisible product's variants for sale
     attr_accessor :available_for_sale
 
@@ -190,6 +193,7 @@ module OpenapiClient
         :'visible' => :'visible',
         :'status' => :'status',
         :'backorder_status' => :'backorder_status',
+        :'low_stock_threshold' => :'low_stock_threshold',
         :'available_for_sale' => :'available_for_sale',
         :'avail' => :'avail',
         :'is_default' => :'is_default',
@@ -254,6 +258,7 @@ module OpenapiClient
         :'visible' => :'String',
         :'status' => :'String',
         :'backorder_status' => :'String',
+        :'low_stock_threshold' => :'Float',
         :'available_for_sale' => :'Boolean',
         :'avail' => :'Boolean',
         :'is_default' => :'Boolean',
@@ -370,6 +375,10 @@ module OpenapiClient
 
       if attributes.key?(:'backorder_status')
         self.backorder_status = attributes[:'backorder_status']
+      end
+
+      if attributes.key?(:'low_stock_threshold')
+        self.low_stock_threshold = attributes[:'low_stock_threshold']
       end
 
       if attributes.key?(:'available_for_sale')
@@ -584,6 +593,7 @@ module OpenapiClient
           visible == o.visible &&
           status == o.status &&
           backorder_status == o.backorder_status &&
+          low_stock_threshold == o.low_stock_threshold &&
           available_for_sale == o.available_for_sale &&
           avail == o.avail &&
           is_default == o.is_default &&
@@ -635,7 +645,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, product_id, store_id, lang_id, options, name, description, short_description, model, sku, visible, status, backorder_status, available_for_sale, avail, is_default, is_free_shipping, taxable, tax_class_id, is_virtual, manage_stock, in_stock, warehouse_id, reserve_quantity, quantity, increase_quantity, reduce_quantity, price, special_price, retail_price, old_price, cost_price, fixed_cost_shipping_price, sprice_create, sprice_expire, weight, barcode, width, weight_unit, height, length, gtin, upc, mpn, ean, isbn, harmonized_system_code, country_of_origin, meta_title, meta_description, meta_keywords, reindex, clear_cache].hash
+      [id, product_id, store_id, lang_id, options, name, description, short_description, model, sku, visible, status, backorder_status, low_stock_threshold, available_for_sale, avail, is_default, is_free_shipping, taxable, tax_class_id, is_virtual, manage_stock, in_stock, warehouse_id, reserve_quantity, quantity, increase_quantity, reduce_quantity, price, special_price, retail_price, old_price, cost_price, fixed_cost_shipping_price, sprice_create, sprice_expire, weight, barcode, width, weight_unit, height, length, gtin, upc, mpn, ean, isbn, harmonized_system_code, country_of_origin, meta_title, meta_description, meta_keywords, reindex, clear_cache].hash
     end
 
     # Builds the object from hash

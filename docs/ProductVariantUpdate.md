@@ -17,6 +17,7 @@
 | **visible** | **String** | Set visibility status | [optional] |
 | **status** | **String** | Defines product variant&#39;s status | [optional] |
 | **backorder_status** | **String** | Set backorder status | [optional] |
+| **low_stock_threshold** | **Float** | Specify the quantity threshold below which the product is considered low in stock | [optional] |
 | **available_for_sale** | **Boolean** | Specifies the set of visible/invisible product&#39;s variants for sale | [optional][default to true] |
 | **avail** | **Boolean** | Defines category&#39;s visibility status | [optional][default to true] |
 | **is_default** | **Boolean** | Defines as a default variant | [optional] |
@@ -77,6 +78,7 @@ instance = OpenapiClient::ProductVariantUpdate.new(
   visible: catalog,
   status: disabled,
   backorder_status: true,
+  low_stock_threshold: 1,
   available_for_sale: false,
   avail: false,
   is_default: true,

@@ -41,6 +41,7 @@
 | **backorder_status** | **String** | Set backorder status | [optional] |
 | **min_order_quantity** | **Float** | The minimum quantity an order must contain, to be eligible to purchase this product. | [optional] |
 | **max_order_quantity** | **Float** | The maximum quantity an order can contain when purchasing the product. | [optional] |
+| **low_stock_threshold** | **Float** | Specify the quantity threshold below which the product is considered low in stock | [optional] |
 | **weight** | **Float** | Weight | [optional][default to 0] |
 | **weight_unit** | **String** | Weight Unit | [optional] |
 | **width** | **Float** | Defines product&#39;s width | [optional] |
@@ -164,6 +165,7 @@ instance = OpenapiClient::ProductAdd.new(
   backorder_status: true,
   min_order_quantity: 1,
   max_order_quantity: 1,
+  low_stock_threshold: 1,
   weight: 23.69,
   weight_unit: lb,
   width: 56.12,

@@ -434,6 +434,7 @@ describe 'ProductApi' do
   # @option opts [Boolean] :disable_cache Disable cache for current request
   # @option opts [Boolean] :disable_report_cache Disable report cache for current request
   # @option opts [Boolean] :use_latest_api_version Use the latest platform API version
+  # @option opts [String] :product_type A categorization for the product
   # @return [ModelResponseProductList]
   describe 'product_list test' do
     it 'should work' do

@@ -79,6 +79,8 @@ module OpenapiClient
 
     attr_accessor :min_quantity
 
+    attr_accessor :low_stock_threshold
+
     attr_accessor :default_qty_in_pack
 
     attr_accessor :is_qty_in_pack_fixed
@@ -144,6 +146,7 @@ module OpenapiClient
         :'inventory_level' => :'inventory_level',
         :'inventory' => :'inventory',
         :'min_quantity' => :'min_quantity',
+        :'low_stock_threshold' => :'low_stock_threshold',
         :'default_qty_in_pack' => :'default_qty_in_pack',
         :'is_qty_in_pack_fixed' => :'is_qty_in_pack_fixed',
         :'weight_unit' => :'weight_unit',
@@ -202,6 +205,7 @@ module OpenapiClient
         :'inventory_level' => :'Float',
         :'inventory' => :'Array<ProductInventory>',
         :'min_quantity' => :'Float',
+        :'low_stock_threshold' => :'Float',
         :'default_qty_in_pack' => :'Float',
         :'is_qty_in_pack_fixed' => :'Boolean',
         :'weight_unit' => :'String',
@@ -249,6 +253,7 @@ module OpenapiClient
         :'manage_stock',
         :'inventory_level',
         :'min_quantity',
+        :'low_stock_threshold',
         :'default_qty_in_pack',
         :'is_qty_in_pack_fixed',
         :'weight_unit',
@@ -417,6 +422,10 @@ module OpenapiClient
         self.min_quantity = attributes[:'min_quantity']
       end
 
+      if attributes.key?(:'low_stock_threshold')
+        self.low_stock_threshold = attributes[:'low_stock_threshold']
+      end
+
       if attributes.key?(:'default_qty_in_pack')
         self.default_qty_in_pack = attributes[:'default_qty_in_pack']
       end
@@ -532,6 +541,7 @@ module OpenapiClient
           inventory_level == o.inventory_level &&
           inventory == o.inventory &&
           min_quantity == o.min_quantity &&
+          low_stock_threshold == o.low_stock_threshold &&
           default_qty_in_pack == o.default_qty_in_pack &&
           is_qty_in_pack_fixed == o.is_qty_in_pack_fixed &&
           weight_unit == o.weight_unit &&
@@ -558,7 +568,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, parent_id, sku, upc, ean, mpn, gtin, isbn, url, seo_url, sort_order, created_time, modified_time, name, short_description, full_description, images, combination, default_price, cost_price, list_price, wholesale_price, advanced_price, tax_class_id, avail_for_sale, allow_backorders, in_stock, on_sale, manage_stock, inventory_level, inventory, min_quantity, default_qty_in_pack, is_qty_in_pack_fixed, weight_unit, weight, dimensions_unit, width, height, length, meta_title, meta_description, meta_keywords, discounts, is_virtual, additional_fields, custom_fields].hash
+      [id, parent_id, sku, upc, ean, mpn, gtin, isbn, url, seo_url, sort_order, created_time, modified_time, name, short_description, full_description, images, combination, default_price, cost_price, list_price, wholesale_price, advanced_price, tax_class_id, avail_for_sale, allow_backorders, in_stock, on_sale, manage_stock, inventory_level, inventory, min_quantity, low_stock_threshold, default_qty_in_pack, is_qty_in_pack_fixed, weight_unit, weight, dimensions_unit, width, height, length, meta_title, meta_description, meta_keywords, discounts, is_virtual, additional_fields, custom_fields].hash
     end
 
     # Builds the object from hash
