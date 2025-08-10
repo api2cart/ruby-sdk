@@ -1046,38 +1046,26 @@ module OpenapiClient
 
       if attributes.key?(:'bigcartel_user_name')
         self.bigcartel_user_name = attributes[:'bigcartel_user_name']
-      else
-        self.bigcartel_user_name = nil
       end
 
       if attributes.key?(:'bigcartel_password')
         self.bigcartel_password = attributes[:'bigcartel_password']
-      else
-        self.bigcartel_password = nil
       end
 
       if attributes.key?(:'bricklink_consumer_key')
         self.bricklink_consumer_key = attributes[:'bricklink_consumer_key']
-      else
-        self.bricklink_consumer_key = nil
       end
 
       if attributes.key?(:'bricklink_consumer_secret')
         self.bricklink_consumer_secret = attributes[:'bricklink_consumer_secret']
-      else
-        self.bricklink_consumer_secret = nil
       end
 
       if attributes.key?(:'bricklink_token')
         self.bricklink_token = attributes[:'bricklink_token']
-      else
-        self.bricklink_token = nil
       end
 
       if attributes.key?(:'bricklink_token_secret')
         self.bricklink_token_secret = attributes[:'bricklink_token_secret']
-      else
-        self.bricklink_token_secret = nil
       end
 
       if attributes.key?(:'demandware_client_id')
@@ -1430,14 +1418,10 @@ module OpenapiClient
 
       if attributes.key?(:'wix_app_id')
         self.wix_app_id = attributes[:'wix_app_id']
-      else
-        self.wix_app_id = nil
       end
 
       if attributes.key?(:'wix_app_secret_key')
         self.wix_app_secret_key = attributes[:'wix_app_secret_key']
-      else
-        self.wix_app_secret_key = nil
       end
 
       if attributes.key?(:'wix_instance_id')
@@ -1594,14 +1578,10 @@ module OpenapiClient
 
       if attributes.key?(:'temu_access_token')
         self.temu_access_token = attributes[:'temu_access_token']
-      else
-        self.temu_access_token = nil
       end
 
       if attributes.key?(:'temu_region')
         self.temu_region = attributes[:'temu_region']
-      else
-        self.temu_region = nil
       end
     end
 
@@ -1614,48 +1594,8 @@ module OpenapiClient
         invalid_properties.push('invalid value for "cart_id", cart_id cannot be nil.')
       end
 
-      if @bigcartel_user_name.nil?
-        invalid_properties.push('invalid value for "bigcartel_user_name", bigcartel_user_name cannot be nil.')
-      end
-
-      if @bigcartel_password.nil?
-        invalid_properties.push('invalid value for "bigcartel_password", bigcartel_password cannot be nil.')
-      end
-
-      if @bricklink_consumer_key.nil?
-        invalid_properties.push('invalid value for "bricklink_consumer_key", bricklink_consumer_key cannot be nil.')
-      end
-
-      if @bricklink_consumer_secret.nil?
-        invalid_properties.push('invalid value for "bricklink_consumer_secret", bricklink_consumer_secret cannot be nil.')
-      end
-
-      if @bricklink_token.nil?
-        invalid_properties.push('invalid value for "bricklink_token", bricklink_token cannot be nil.')
-      end
-
-      if @bricklink_token_secret.nil?
-        invalid_properties.push('invalid value for "bricklink_token_secret", bricklink_token_secret cannot be nil.')
-      end
-
       if !@hybris_websites.nil? && @hybris_websites.length < 1
         invalid_properties.push('invalid value for "hybris_websites", number of items must be greater than or equal to 1.')
-      end
-
-      if @wix_app_id.nil?
-        invalid_properties.push('invalid value for "wix_app_id", wix_app_id cannot be nil.')
-      end
-
-      if @wix_app_secret_key.nil?
-        invalid_properties.push('invalid value for "wix_app_secret_key", wix_app_secret_key cannot be nil.')
-      end
-
-      if @temu_access_token.nil?
-        invalid_properties.push('invalid value for "temu_access_token", temu_access_token cannot be nil.')
-      end
-
-      if @temu_region.nil?
-        invalid_properties.push('invalid value for "temu_region", temu_region cannot be nil.')
       end
 
       invalid_properties
@@ -1668,19 +1608,7 @@ module OpenapiClient
       return false if @cart_id.nil?
       cart_id_validator = EnumAttributeValidator.new('String', ["3DCart", "3DCartApi", "AceShop", "AmazonSP", "AspDotNetStorefront", "BigCartel", "BigcommerceApi", "Bol", "CommerceHQ", "Creloaded", "Cscart", "Cubecart", "Demandware", "EBay", "Ecwid", "EtsyAPIv3", "Flipkart", "Gambio", "Hybris", "JooCart", "Lazada", "LightSpeed", "Magento1212", "Magento2Api", "MercadoLibre", "MijoShop", "Miva", "Neto", "Opencart14", "Oscmax2", "Oscommerce22ms2", "Otto", "Oxid", "Pinnacle", "Prestashop", "PrestashopApi", "SSPremium", "Salla", "Shopify", "Shopee", "Shoplazza", "Shopline", "Shopware", "ShopwareApi", "Square", "Squarespace", "Temu", "Tiendanube", "TikTokShop", "Tomatocart", "Ubercart", "Virtuemart", "Volusion", "WPecommerce", "Walmart", "WebAsyst", "Wix", "Woocommerce", "WoocommerceApi", "Xcart", "Xtcommerce", "XtcommerceVeyton", "Zencart137", "Zid", "Zoey", "Zoho"])
       return false unless cart_id_validator.valid?(@cart_id)
-      return false if @bigcartel_user_name.nil?
-      return false if @bigcartel_password.nil?
-      return false if @bricklink_consumer_key.nil?
-      return false if @bricklink_consumer_secret.nil?
-      return false if @bricklink_token.nil?
-      return false if @bricklink_token_secret.nil?
       return false if !@hybris_websites.nil? && @hybris_websites.length < 1
-      return false if @wix_app_id.nil?
-      return false if @wix_app_secret_key.nil?
-      return false if @temu_access_token.nil?
-      return false if @temu_region.nil?
-      temu_region_validator = EnumAttributeValidator.new('String', ["US", "EU", "GLOBAL"])
-      return false unless temu_region_validator.valid?(@temu_region)
       true
     end
 
@@ -1706,16 +1634,6 @@ module OpenapiClient
       end
 
       @hybris_websites = hybris_websites
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] temu_region Object to be assigned
-    def temu_region=(temu_region)
-      validator = EnumAttributeValidator.new('String', ["US", "EU", "GLOBAL"])
-      unless validator.valid?(temu_region)
-        fail ArgumentError, "invalid value for \"temu_region\", must be one of #{validator.allowable_values}."
-      end
-      @temu_region = temu_region
     end
 
     # Checks equality by comparing each attribute.

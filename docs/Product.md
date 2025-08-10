@@ -34,10 +34,10 @@
 | **weight_unit** | **String** |  | [optional] |
 | **sort_order** | **Integer** |  | [optional] |
 | **in_stock** | **Boolean** |  | [optional] |
-| **on_sale** | **Boolean** |  | [optional] |
 | **backorders** | **String** |  | [optional] |
 | **manage_stock** | **String** |  | [optional] |
 | **is_stock_managed** | **Boolean** |  | [optional] |
+| **on_sale** | **Boolean** |  | [optional] |
 | **create_at** | [**A2CDateTime**](A2CDateTime.md) |  | [optional] |
 | **modified_at** | [**A2CDateTime**](A2CDateTime.md) |  | [optional] |
 | **tax_class_id** | **String** |  | [optional] |
@@ -98,10 +98,10 @@ instance = OpenapiClient::Product.new(
   weight_unit: null,
   sort_order: null,
   in_stock: null,
-  on_sale: null,
   backorders: null,
   manage_stock: null,
   is_stock_managed: null,
+  on_sale: null,
   create_at: null,
   modified_at: null,
   tax_class_id: null,

@@ -33,7 +33,7 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::AccountApi.new
-account_cart_add = OpenapiClient::AccountCartAdd.new({cart_id: '3DCart', bigcartel_user_name: 'subdomain', bigcartel_password: '4GrrZCLNNoSUuhAjesKuchxo9SL', bricklink_consumer_key: '26F6CDA087D9444EAA71AC09E7A1D39A', bricklink_consumer_secret: 'a46abc3kxyinlbggy06i9g975xqo6gjq', bricklink_token: 'ktv4n9rgrj0evjuy2t6p2xlb1f8u5pmy', bricklink_token_secret: 'a46abc3kxyinlbggy06i9g975xqo6gjq', wix_app_id: '6b0b5b7b-7d87-45b5-bf34-ac6b438e63da', wix_app_secret_key: '316c0a09-f195-42be-74f6-a02cebb9cae6', temu_access_token: 'uplv3hfyt5kcwoymrgnajnbl1ow5qxlz4sqhev6hl3xosz5dejrtyl2jre6', temu_region: 'US'}) # AccountCartAdd | 
+account_cart_add = OpenapiClient::AccountCartAdd.new({cart_id: '3DCart'}) # AccountCartAdd | 
 
 begin
   # account.cart.add

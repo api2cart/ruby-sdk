@@ -21,6 +21,8 @@ module OpenapiClient
 
     attr_accessor :version
 
+    attr_accessor :bridge_version
+
     attr_accessor :db_prefix
 
     attr_accessor :stores_info
@@ -39,6 +41,7 @@ module OpenapiClient
         :'name' => :'name',
         :'url' => :'url',
         :'version' => :'version',
+        :'bridge_version' => :'bridge_version',
         :'db_prefix' => :'db_prefix',
         :'stores_info' => :'stores_info',
         :'warehouses' => :'warehouses',
@@ -59,6 +62,7 @@ module OpenapiClient
         :'name' => :'String',
         :'url' => :'String',
         :'version' => :'String',
+        :'bridge_version' => :'String',
         :'db_prefix' => :'String',
         :'stores_info' => :'Array<CartStoreInfo>',
         :'warehouses' => :'Array<CartWarehouse>',
@@ -74,6 +78,7 @@ module OpenapiClient
         :'name',
         :'url',
         :'version',
+        :'bridge_version',
         :'db_prefix',
         :'additional_fields',
         :'custom_fields'
@@ -105,6 +110,10 @@ module OpenapiClient
 
       if attributes.key?(:'version')
         self.version = attributes[:'version']
+      end
+
+      if attributes.key?(:'bridge_version')
+        self.bridge_version = attributes[:'bridge_version']
       end
 
       if attributes.key?(:'db_prefix')
@@ -161,6 +170,7 @@ module OpenapiClient
           name == o.name &&
           url == o.url &&
           version == o.version &&
+          bridge_version == o.bridge_version &&
           db_prefix == o.db_prefix &&
           stores_info == o.stores_info &&
           warehouses == o.warehouses &&
@@ -178,7 +188,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, url, version, db_prefix, stores_info, warehouses, shipping_zones, additional_fields, custom_fields].hash
+      [name, url, version, bridge_version, db_prefix, stores_info, warehouses, shipping_zones, additional_fields, custom_fields].hash
     end
 
     # Builds the object from hash

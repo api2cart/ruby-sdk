@@ -45,6 +45,12 @@ describe OpenapiClient::Cart do
     end
   end
 
+  describe 'test attribute "bridge_version"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "db_prefix"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

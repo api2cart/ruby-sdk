@@ -90,6 +90,8 @@
 | **specifics** | [**Array&lt;ProductAddSpecificsInner&gt;**](ProductAddSpecificsInner.md) | An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields-&gt;product_specifics).         &lt;b&gt;The structure of the parameter is different for specific platforms.&lt;/b&gt; | [optional] |
 | **shop_section_id** | **Integer** | Add Shop Section Id | [optional] |
 | **personalization_details** | [**ProductAddPersonalizationDetails**](ProductAddPersonalizationDetails.md) |  | [optional] |
+| **marketplace_item_properties** | **String** | String containing the JSON representation of the supplied data | [optional] |
+| **min_order_quantity** | **Float** | The minimum quantity an order must contain, to be eligible to purchase this product. | [optional] |
 
 ## Example
 
@@ -182,7 +184,9 @@ instance = OpenapiClient::ProductUpdate.new(
   check_process_status: false,
   specifics: null,
   shop_section_id: &#x60;12345678&#x60;,
-  personalization_details: null
+  personalization_details: null,
+  marketplace_item_properties: {&quot;color&quot;:[&quot;Silver&quot;],&quot;manufacturer&quot;:&quot;Philips&quot;,&quot;features&quot;:[&quot;3 way&quot;],&quot;countPerPack&quot;:1,&quot;watts&quot;:{&quot;unit&quot;:&quot;W&quot;,&quot;measure&quot;:40}},
+  min_order_quantity: 1
 )
 ```
 

@@ -12,6 +12,7 @@
 | **short_description** | **String** | Defines short description | [optional] |
 | **available_for_view** | **Boolean** | Specifies the set of visible/invisible product&#39;s variants for users | [optional][default to true] |
 | **available_for_sale** | **Boolean** | Specifies the set of visible/invisible product&#39;s variants for sale | [optional][default to true] |
+| **status** | **String** | Defines status | [optional] |
 | **is_virtual** | **Boolean** | Defines whether the product is virtual | [optional][default to false] |
 | **is_default** | **Boolean** | Defines as a default variant | [optional] |
 | **store_id** | **String** | Add variants specified by store id | [optional] |
@@ -43,6 +44,7 @@
 | **ean** | **String** | European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products. | [optional] |
 | **mpn** | **String** | Manufacturer Part Number. A MPN is an identifier of a particular part design or material used. | [optional] |
 | **isbn** | **String** | International Standard Book Number. An ISBN is a unique identifier for books. | [optional] |
+| **seo_url** | **String** | Defines unique URL for SEO | [optional] |
 | **manufacturer** | **String** | Specifies the product variant&#39;s manufacturer | [optional] |
 | **created_at** | **String** | Defines the date of entity creation | [optional] |
 | **meta_title** | **String** | Defines unique meta title for each entity | [optional] |
@@ -72,6 +74,7 @@ instance = OpenapiClient::ProductVariantAdd.new(
   short_description: Short description. This is very short description,
   available_for_view: false,
   available_for_sale: false,
+  status: disabled,
   is_virtual: false,
   is_default: true,
   store_id: 1,
@@ -103,6 +106,7 @@ instance = OpenapiClient::ProductVariantAdd.new(
   ean: 5901234123457,
   mpn: 9770317847001,
   isbn: 9783161484100,
+  seo_url: some seo url,
   manufacturer: Samsung,
   created_at: 2014-08-09 13:13:13,
   meta_title: category,test,

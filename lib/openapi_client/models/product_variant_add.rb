@@ -39,6 +39,9 @@ module OpenapiClient
     # Specifies the set of visible/invisible product's variants for sale
     attr_accessor :available_for_sale
 
+    # Defines status
+    attr_accessor :status
+
     # Defines whether the product is virtual
     attr_accessor :is_virtual
 
@@ -132,6 +135,9 @@ module OpenapiClient
     # International Standard Book Number. An ISBN is a unique identifier for books.
     attr_accessor :isbn
 
+    # Defines unique URL for SEO
+    attr_accessor :seo_url
+
     # Specifies the product variant's manufacturer
     attr_accessor :manufacturer
 
@@ -185,6 +191,7 @@ module OpenapiClient
         :'short_description' => :'short_description',
         :'available_for_view' => :'available_for_view',
         :'available_for_sale' => :'available_for_sale',
+        :'status' => :'status',
         :'is_virtual' => :'is_virtual',
         :'is_default' => :'is_default',
         :'store_id' => :'store_id',
@@ -216,6 +223,7 @@ module OpenapiClient
         :'ean' => :'ean',
         :'mpn' => :'mpn',
         :'isbn' => :'isbn',
+        :'seo_url' => :'seo_url',
         :'manufacturer' => :'manufacturer',
         :'created_at' => :'created_at',
         :'meta_title' => :'meta_title',
@@ -249,6 +257,7 @@ module OpenapiClient
         :'short_description' => :'String',
         :'available_for_view' => :'Boolean',
         :'available_for_sale' => :'Boolean',
+        :'status' => :'String',
         :'is_virtual' => :'Boolean',
         :'is_default' => :'Boolean',
         :'store_id' => :'String',
@@ -280,6 +289,7 @@ module OpenapiClient
         :'ean' => :'String',
         :'mpn' => :'String',
         :'isbn' => :'String',
+        :'seo_url' => :'String',
         :'manufacturer' => :'String',
         :'created_at' => :'String',
         :'meta_title' => :'String',
@@ -356,6 +366,10 @@ module OpenapiClient
         self.available_for_sale = attributes[:'available_for_sale']
       else
         self.available_for_sale = true
+      end
+
+      if attributes.key?(:'status')
+        self.status = attributes[:'status']
       end
 
       if attributes.key?(:'is_virtual')
@@ -490,6 +504,10 @@ module OpenapiClient
         self.isbn = attributes[:'isbn']
       end
 
+      if attributes.key?(:'seo_url')
+        self.seo_url = attributes[:'seo_url']
+      end
+
       if attributes.key?(:'manufacturer')
         self.manufacturer = attributes[:'manufacturer']
       end
@@ -584,6 +602,7 @@ module OpenapiClient
           short_description == o.short_description &&
           available_for_view == o.available_for_view &&
           available_for_sale == o.available_for_sale &&
+          status == o.status &&
           is_virtual == o.is_virtual &&
           is_default == o.is_default &&
           store_id == o.store_id &&
@@ -615,6 +634,7 @@ module OpenapiClient
           ean == o.ean &&
           mpn == o.mpn &&
           isbn == o.isbn &&
+          seo_url == o.seo_url &&
           manufacturer == o.manufacturer &&
           created_at == o.created_at &&
           meta_title == o.meta_title &&
@@ -640,7 +660,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [product_id, attributes, name, model, description, short_description, available_for_view, available_for_sale, is_virtual, is_default, store_id, stores_ids, lang_id, price, old_price, cost_price, special_price, sprice_create, sprice_modified, sprice_expire, tier_prices, quantity, warehouse_id, in_stock, backorder_status, manage_stock, low_stock_threshold, weight, width, height, length, weight_unit, sku, barcode, gtin, upc, ean, mpn, isbn, manufacturer, created_at, meta_title, meta_keywords, meta_description, url, tax_class_id, taxable, fixed_cost_shipping_price, is_free_shipping, country_of_origin, harmonized_system_code, marketplace_item_properties, clear_cache].hash
+      [product_id, attributes, name, model, description, short_description, available_for_view, available_for_sale, status, is_virtual, is_default, store_id, stores_ids, lang_id, price, old_price, cost_price, special_price, sprice_create, sprice_modified, sprice_expire, tier_prices, quantity, warehouse_id, in_stock, backorder_status, manage_stock, low_stock_threshold, weight, width, height, length, weight_unit, sku, barcode, gtin, upc, ean, mpn, isbn, seo_url, manufacturer, created_at, meta_title, meta_keywords, meta_description, url, tax_class_id, taxable, fixed_cost_shipping_price, is_free_shipping, country_of_origin, harmonized_system_code, marketplace_item_properties, clear_cache].hash
     end
 
     # Builds the object from hash

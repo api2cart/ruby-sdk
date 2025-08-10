@@ -270,6 +270,12 @@ module OpenapiClient
 
     attr_accessor :personalization_details
 
+    # String containing the JSON representation of the supplied data
+    attr_accessor :marketplace_item_properties
+
+    # The minimum quantity an order must contain, to be eligible to purchase this product.
+    attr_accessor :min_order_quantity
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -358,7 +364,9 @@ module OpenapiClient
         :'check_process_status' => :'check_process_status',
         :'specifics' => :'specifics',
         :'shop_section_id' => :'shop_section_id',
-        :'personalization_details' => :'personalization_details'
+        :'personalization_details' => :'personalization_details',
+        :'marketplace_item_properties' => :'marketplace_item_properties',
+        :'min_order_quantity' => :'min_order_quantity'
       }
     end
 
@@ -455,7 +463,9 @@ module OpenapiClient
         :'check_process_status' => :'Boolean',
         :'specifics' => :'Array<ProductAddSpecificsInner>',
         :'shop_section_id' => :'Integer',
-        :'personalization_details' => :'ProductAddPersonalizationDetails'
+        :'personalization_details' => :'ProductAddPersonalizationDetails',
+        :'marketplace_item_properties' => :'String',
+        :'min_order_quantity' => :'Float'
       }
     end
 
@@ -855,6 +865,14 @@ module OpenapiClient
       if attributes.key?(:'personalization_details')
         self.personalization_details = attributes[:'personalization_details']
       end
+
+      if attributes.key?(:'marketplace_item_properties')
+        self.marketplace_item_properties = attributes[:'marketplace_item_properties']
+      end
+
+      if attributes.key?(:'min_order_quantity')
+        self.min_order_quantity = attributes[:'min_order_quantity']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -962,7 +980,9 @@ module OpenapiClient
           check_process_status == o.check_process_status &&
           specifics == o.specifics &&
           shop_section_id == o.shop_section_id &&
-          personalization_details == o.personalization_details
+          personalization_details == o.personalization_details &&
+          marketplace_item_properties == o.marketplace_item_properties &&
+          min_order_quantity == o.min_order_quantity
     end
 
     # @see the `==` method
@@ -974,7 +994,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, model, sku, name, description, short_description, price, old_price, special_price, sprice_create, sprice_expire, cost_price, fixed_cost_shipping_price, retail_price, tier_prices, reserve_price, buyitnow_price, taxable, tax_class_id, type, status, condition, visible, in_stock, avail, avail_from, product_class, available_for_view, stores_ids, store_id, lang_id, quantity, reserve_quantity, manage_stock, backorder_status, increase_quantity, reduce_quantity, low_stock_threshold, warehouse_id, weight, weight_unit, height, length, width, dimensions_unit, is_virtual, is_free_shipping, gtin, upc, mpn, ean, isbn, barcode, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, meta_title, meta_keywords, meta_description, seo_url, search_keywords, tags, delivery_code, package_details, country_of_origin, harmonized_system_code, shipping_template_id, when_made, is_supply, downloadable, materials, auto_renew, on_sale, production_partner_ids, manufacturer_info, report_request_id, disable_report_cache, reindex, clear_cache, check_process_status, specifics, shop_section_id, personalization_details].hash
+      [id, model, sku, name, description, short_description, price, old_price, special_price, sprice_create, sprice_expire, cost_price, fixed_cost_shipping_price, retail_price, tier_prices, reserve_price, buyitnow_price, taxable, tax_class_id, type, status, condition, visible, in_stock, avail, avail_from, product_class, available_for_view, stores_ids, store_id, lang_id, quantity, reserve_quantity, manage_stock, backorder_status, increase_quantity, reduce_quantity, low_stock_threshold, warehouse_id, weight, weight_unit, height, length, width, dimensions_unit, is_virtual, is_free_shipping, gtin, upc, mpn, ean, isbn, barcode, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, meta_title, meta_keywords, meta_description, seo_url, search_keywords, tags, delivery_code, package_details, country_of_origin, harmonized_system_code, shipping_template_id, when_made, is_supply, downloadable, materials, auto_renew, on_sale, production_partner_ids, manufacturer_info, report_request_id, disable_report_cache, reindex, clear_cache, check_process_status, specifics, shop_section_id, personalization_details, marketplace_item_properties, min_order_quantity].hash
     end
 
     # Builds the object from hash
