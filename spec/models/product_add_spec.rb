@@ -339,6 +339,12 @@ describe OpenapiClient::ProductAdd do
     end
   end
 
+  describe 'test attribute "external_product_link"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "harmonized_system_code"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

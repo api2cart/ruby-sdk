@@ -171,6 +171,9 @@ module OpenapiClient
     # Groups all variations, that you want to combine into one product.
     attr_accessor :product_reference
 
+    # External product link
+    attr_accessor :external_product_link
+
     # Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
     attr_accessor :harmonized_system_code
 
@@ -414,6 +417,7 @@ module OpenapiClient
         :'mpn' => :'mpn',
         :'asin' => :'asin',
         :'product_reference' => :'product_reference',
+        :'external_product_link' => :'external_product_link',
         :'harmonized_system_code' => :'harmonized_system_code',
         :'country_of_origin' => :'country_of_origin',
         :'manufacturer' => :'manufacturer',
@@ -542,6 +546,7 @@ module OpenapiClient
         :'mpn' => :'String',
         :'asin' => :'String',
         :'product_reference' => :'String',
+        :'external_product_link' => :'String',
         :'harmonized_system_code' => :'String',
         :'country_of_origin' => :'String',
         :'manufacturer' => :'String',
@@ -865,6 +870,10 @@ module OpenapiClient
 
       if attributes.key?(:'product_reference')
         self.product_reference = attributes[:'product_reference']
+      end
+
+      if attributes.key?(:'external_product_link')
+        self.external_product_link = attributes[:'external_product_link']
       end
 
       if attributes.key?(:'harmonized_system_code')
@@ -1254,6 +1263,7 @@ module OpenapiClient
           mpn == o.mpn &&
           asin == o.asin &&
           product_reference == o.product_reference &&
+          external_product_link == o.external_product_link &&
           harmonized_system_code == o.harmonized_system_code &&
           country_of_origin == o.country_of_origin &&
           manufacturer == o.manufacturer &&
@@ -1330,7 +1340,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, model, description, price, sku, short_description, type, status, visible, category_id, categories_ids, product_class, product_type, is_virtual, downloadable, is_supply, available_for_view, available_for_sale, store_id, stores_ids, lang_id, old_price, special_price, wholesale_price, cost_price, fixed_cost_shipping_price, tier_prices, group_prices, buyitnow_price, reserve_price, quantity, in_stock, manage_stock, warehouse_id, backorder_status, min_order_quantity, max_order_quantity, low_stock_threshold, weight, weight_unit, width, height, length, dimensions_unit, barcode, upc, ean, isbn, gtin, mpn, asin, product_reference, harmonized_system_code, country_of_origin, manufacturer, manufacturer_id, manufacturer_info, brand_name, image_url, image_name, additional_image_urls, files, size_chart, related_products_ids, up_sell_products_ids, cross_sell_products_ids, attribute_set_name, attribute_name, search_keywords, tags, materials, certifications, specifics, avail_from, sprice_create, sprice_modified, sprice_expire, created_at, auto_renew, when_made, meta_title, meta_keywords, meta_description, url, seo_url, tax_class_id, taxable, sales_tax, condition, condition_description, allow_display_condition, payment_methods, paypal_email, shipping_template_id, shipping_details, is_free_shipping, delivery_code, delivery_type, delivery_time, delivery_option_ids, package_details, logistic_info, listing_duration, listing_type, category_type, return_accepted, seller_profiles, auction_confidentiality_level, best_offer, production_partner_ids, marketplace_item_properties, clear_cache, viewed_count, ordered_count, shop_section_id, return_policy_id, personalization_details].hash
+      [name, model, description, price, sku, short_description, type, status, visible, category_id, categories_ids, product_class, product_type, is_virtual, downloadable, is_supply, available_for_view, available_for_sale, store_id, stores_ids, lang_id, old_price, special_price, wholesale_price, cost_price, fixed_cost_shipping_price, tier_prices, group_prices, buyitnow_price, reserve_price, quantity, in_stock, manage_stock, warehouse_id, backorder_status, min_order_quantity, max_order_quantity, low_stock_threshold, weight, weight_unit, width, height, length, dimensions_unit, barcode, upc, ean, isbn, gtin, mpn, asin, product_reference, external_product_link, harmonized_system_code, country_of_origin, manufacturer, manufacturer_id, manufacturer_info, brand_name, image_url, image_name, additional_image_urls, files, size_chart, related_products_ids, up_sell_products_ids, cross_sell_products_ids, attribute_set_name, attribute_name, search_keywords, tags, materials, certifications, specifics, avail_from, sprice_create, sprice_modified, sprice_expire, created_at, auto_renew, when_made, meta_title, meta_keywords, meta_description, url, seo_url, tax_class_id, taxable, sales_tax, condition, condition_description, allow_display_condition, payment_methods, paypal_email, shipping_template_id, shipping_details, is_free_shipping, delivery_code, delivery_type, delivery_time, delivery_option_ids, package_details, logistic_info, listing_duration, listing_type, category_type, return_accepted, seller_profiles, auction_confidentiality_level, best_offer, production_partner_ids, marketplace_item_properties, clear_cache, viewed_count, ordered_count, shop_section_id, return_policy_id, personalization_details].hash
     end
 
     # Builds the object from hash

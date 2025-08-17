@@ -565,6 +565,7 @@ opts = {
   store_id: '1', # String | Filter coupons by store id
   lang_id: '3', # String | Language id
   avail: false, # Boolean | Filter coupons by avail status
+  status: 'disabled', # String | Defines coupon's status
   date_start_from: '2016-12-29 16:44:30', # String | Filter entity by date_start (greater or equal)
   date_start_to: '2016-12-29 16:44:30', # String | Filter entity by date_start (less or equal)
   date_end_from: '2016-12-29 16:44:30', # String | Filter entity by date_end (greater or equal)
@@ -612,6 +613,7 @@ end
 | **store_id** | **String** | Filter coupons by store id | [optional] |
 | **lang_id** | **String** | Language id | [optional] |
 | **avail** | **Boolean** | Filter coupons by avail status | [optional] |
+| **status** | **String** | Defines coupon&#39;s status | [optional] |
 | **date_start_from** | **String** | Filter entity by date_start (greater or equal) | [optional] |
 | **date_start_to** | **String** | Filter entity by date_start (less or equal) | [optional] |
 | **date_end_from** | **String** | Filter entity by date_end (greater or equal) | [optional] |

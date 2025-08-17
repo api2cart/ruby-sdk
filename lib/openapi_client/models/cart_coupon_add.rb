@@ -69,6 +69,9 @@ module OpenapiClient
     # Defines whether the coupon provides free cash on delivery
     attr_accessor :free_cash_on_delivery
 
+    # Retrieves orders specified by customer id
+    attr_accessor :customer_id
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -111,7 +114,8 @@ module OpenapiClient
         :'action_condition_value' => :'action_condition_value',
         :'include_tax' => :'include_tax',
         :'store_id' => :'store_id',
-        :'free_cash_on_delivery' => :'free_cash_on_delivery'
+        :'free_cash_on_delivery' => :'free_cash_on_delivery',
+        :'customer_id' => :'customer_id'
       }
     end
 
@@ -140,7 +144,8 @@ module OpenapiClient
         :'action_condition_value' => :'String',
         :'include_tax' => :'Boolean',
         :'store_id' => :'String',
-        :'free_cash_on_delivery' => :'Boolean'
+        :'free_cash_on_delivery' => :'Boolean',
+        :'customer_id' => :'String'
       }
     end
 
@@ -252,6 +257,10 @@ module OpenapiClient
       if attributes.key?(:'free_cash_on_delivery')
         self.free_cash_on_delivery = attributes[:'free_cash_on_delivery']
       end
+
+      if attributes.key?(:'customer_id')
+        self.customer_id = attributes[:'customer_id']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -352,7 +361,8 @@ module OpenapiClient
           action_condition_value == o.action_condition_value &&
           include_tax == o.include_tax &&
           store_id == o.store_id &&
-          free_cash_on_delivery == o.free_cash_on_delivery
+          free_cash_on_delivery == o.free_cash_on_delivery &&
+          customer_id == o.customer_id
     end
 
     # @see the `==` method
@@ -364,7 +374,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [code, action_type, action_apply_to, action_scope, action_amount, codes, name, date_start, date_end, usage_limit, usage_limit_per_customer, action_condition_entity, action_condition_key, action_condition_operator, action_condition_value, include_tax, store_id, free_cash_on_delivery].hash
+      [code, action_type, action_apply_to, action_scope, action_amount, codes, name, date_start, date_end, usage_limit, usage_limit_per_customer, action_condition_entity, action_condition_key, action_condition_operator, action_condition_value, include_tax, store_id, free_cash_on_delivery, customer_id].hash
     end
 
     # Builds the object from hash

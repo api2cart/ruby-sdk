@@ -134,6 +134,7 @@ describe 'CartApi' do
   # @option opts [String] :store_id Filter coupons by store id
   # @option opts [String] :lang_id Language id
   # @option opts [Boolean] :avail Filter coupons by avail status
+  # @option opts [String] :status Defines coupon&#39;s status
   # @option opts [String] :date_start_from Filter entity by date_start (greater or equal)
   # @option opts [String] :date_start_to Filter entity by date_start (less or equal)
   # @option opts [String] :date_end_from Filter entity by date_end (greater or equal)

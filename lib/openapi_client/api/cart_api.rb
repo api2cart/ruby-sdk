@@ -488,6 +488,7 @@ module OpenapiClient
     # @option opts [String] :store_id Filter coupons by store id
     # @option opts [String] :lang_id Language id
     # @option opts [Boolean] :avail Filter coupons by avail status
+    # @option opts [String] :status Defines coupon&#39;s status
     # @option opts [String] :date_start_from Filter entity by date_start (greater or equal)
     # @option opts [String] :date_start_to Filter entity by date_start (less or equal)
     # @option opts [String] :date_end_from Filter entity by date_end (greater or equal)
@@ -511,6 +512,7 @@ module OpenapiClient
     # @option opts [String] :store_id Filter coupons by store id
     # @option opts [String] :lang_id Language id
     # @option opts [Boolean] :avail Filter coupons by avail status
+    # @option opts [String] :status Defines coupon&#39;s status
     # @option opts [String] :date_start_from Filter entity by date_start (greater or equal)
     # @option opts [String] :date_start_to Filter entity by date_start (less or equal)
     # @option opts [String] :date_end_from Filter entity by date_end (greater or equal)
@@ -535,6 +537,7 @@ module OpenapiClient
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
       query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
       query_params[:'avail'] = opts[:'avail'] if !opts[:'avail'].nil?
+      query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
       query_params[:'date_start_from'] = opts[:'date_start_from'] if !opts[:'date_start_from'].nil?
       query_params[:'date_start_to'] = opts[:'date_start_to'] if !opts[:'date_start_to'].nil?
       query_params[:'date_end_from'] = opts[:'date_end_from'] if !opts[:'date_end_from'].nil?

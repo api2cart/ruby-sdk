@@ -22,6 +22,7 @@
 | **include_tax** | **Boolean** | Indicates whether to apply a discount for taxes. | [optional][default to false] |
 | **store_id** | **String** | Store Id | [optional] |
 | **free_cash_on_delivery** | **Boolean** | Defines whether the coupon provides free cash on delivery | [optional] |
+| **customer_id** | **String** | Retrieves orders specified by customer id | [optional] |
 
 ## Example
 
@@ -46,7 +47,8 @@ instance = OpenapiClient::CartCouponAdd.new(
   action_condition_value: 17834222,45466663,
   include_tax: true,
   store_id: 1,
-  free_cash_on_delivery: true
+  free_cash_on_delivery: true,
+  customer_id: 5
 )
 ```
 
