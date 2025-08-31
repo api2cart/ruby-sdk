@@ -270,6 +270,9 @@ module OpenapiClient
 
     attr_accessor :personalization_details
 
+    # External product link
+    attr_accessor :external_product_link
+
     # String containing the JSON representation of the supplied data
     attr_accessor :marketplace_item_properties
 
@@ -365,6 +368,7 @@ module OpenapiClient
         :'specifics' => :'specifics',
         :'shop_section_id' => :'shop_section_id',
         :'personalization_details' => :'personalization_details',
+        :'external_product_link' => :'external_product_link',
         :'marketplace_item_properties' => :'marketplace_item_properties',
         :'min_order_quantity' => :'min_order_quantity'
       }
@@ -464,6 +468,7 @@ module OpenapiClient
         :'specifics' => :'Array<ProductAddSpecificsInner>',
         :'shop_section_id' => :'Integer',
         :'personalization_details' => :'ProductAddPersonalizationDetails',
+        :'external_product_link' => :'String',
         :'marketplace_item_properties' => :'String',
         :'min_order_quantity' => :'Float'
       }
@@ -866,6 +871,10 @@ module OpenapiClient
         self.personalization_details = attributes[:'personalization_details']
       end
 
+      if attributes.key?(:'external_product_link')
+        self.external_product_link = attributes[:'external_product_link']
+      end
+
       if attributes.key?(:'marketplace_item_properties')
         self.marketplace_item_properties = attributes[:'marketplace_item_properties']
       end
@@ -981,6 +990,7 @@ module OpenapiClient
           specifics == o.specifics &&
           shop_section_id == o.shop_section_id &&
           personalization_details == o.personalization_details &&
+          external_product_link == o.external_product_link &&
           marketplace_item_properties == o.marketplace_item_properties &&
           min_order_quantity == o.min_order_quantity
     end
@@ -994,7 +1004,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, model, sku, name, description, short_description, price, old_price, special_price, sprice_create, sprice_expire, cost_price, fixed_cost_shipping_price, retail_price, tier_prices, reserve_price, buyitnow_price, taxable, tax_class_id, type, status, condition, visible, in_stock, avail, avail_from, product_class, available_for_view, stores_ids, store_id, lang_id, quantity, reserve_quantity, manage_stock, backorder_status, increase_quantity, reduce_quantity, low_stock_threshold, warehouse_id, weight, weight_unit, height, length, width, dimensions_unit, is_virtual, is_free_shipping, gtin, upc, mpn, ean, isbn, barcode, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, meta_title, meta_keywords, meta_description, seo_url, search_keywords, tags, delivery_code, package_details, country_of_origin, harmonized_system_code, shipping_template_id, when_made, is_supply, downloadable, materials, auto_renew, on_sale, production_partner_ids, manufacturer_info, report_request_id, disable_report_cache, reindex, clear_cache, check_process_status, specifics, shop_section_id, personalization_details, marketplace_item_properties, min_order_quantity].hash
+      [id, model, sku, name, description, short_description, price, old_price, special_price, sprice_create, sprice_expire, cost_price, fixed_cost_shipping_price, retail_price, tier_prices, reserve_price, buyitnow_price, taxable, tax_class_id, type, status, condition, visible, in_stock, avail, avail_from, product_class, available_for_view, stores_ids, store_id, lang_id, quantity, reserve_quantity, manage_stock, backorder_status, increase_quantity, reduce_quantity, low_stock_threshold, warehouse_id, weight, weight_unit, height, length, width, dimensions_unit, is_virtual, is_free_shipping, gtin, upc, mpn, ean, isbn, barcode, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, meta_title, meta_keywords, meta_description, seo_url, search_keywords, tags, delivery_code, package_details, country_of_origin, harmonized_system_code, shipping_template_id, when_made, is_supply, downloadable, materials, auto_renew, on_sale, production_partner_ids, manufacturer_info, report_request_id, disable_report_cache, reindex, clear_cache, check_process_status, specifics, shop_section_id, personalization_details, external_product_link, marketplace_item_properties, min_order_quantity].hash
     end
 
     # Builds the object from hash

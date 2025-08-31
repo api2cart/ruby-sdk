@@ -543,6 +543,12 @@ describe OpenapiClient::ProductUpdate do
     end
   end
 
+  describe 'test attribute "external_product_link"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "marketplace_item_properties"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
