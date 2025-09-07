@@ -30,6 +30,9 @@ module OpenapiClient
     # Defines the group where the customer
     attr_accessor :group
 
+    # Customer group_id
+    attr_accessor :group_id
+
     # Groups that will be assigned to a customer
     attr_accessor :group_ids
 
@@ -91,6 +94,7 @@ module OpenapiClient
         :'last_name' => :'last_name',
         :'password' => :'password',
         :'group' => :'group',
+        :'group_id' => :'group_id',
         :'group_ids' => :'group_ids',
         :'status' => :'status',
         :'created_time' => :'created_time',
@@ -125,6 +129,7 @@ module OpenapiClient
         :'last_name' => :'String',
         :'password' => :'String',
         :'group' => :'String',
+        :'group_id' => :'String',
         :'group_ids' => :'String',
         :'status' => :'String',
         :'created_time' => :'String',
@@ -187,6 +192,10 @@ module OpenapiClient
 
       if attributes.key?(:'group')
         self.group = attributes[:'group']
+      end
+
+      if attributes.key?(:'group_id')
+        self.group_id = attributes[:'group_id']
       end
 
       if attributes.key?(:'group_ids')
@@ -317,6 +326,7 @@ module OpenapiClient
           last_name == o.last_name &&
           password == o.password &&
           group == o.group &&
+          group_id == o.group_id &&
           group_ids == o.group_ids &&
           status == o.status &&
           created_time == o.created_time &&
@@ -346,7 +356,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [email, first_name, last_name, password, group, group_ids, status, created_time, modified_time, login, last_login, birth_day, news_letter_subscription, consents, gender, website, fax, company, phone, note, country, store_id, address].hash
+      [email, first_name, last_name, password, group, group_id, group_ids, status, created_time, modified_time, login, last_login, birth_day, news_letter_subscription, consents, gender, website, fax, company, phone, note, country, store_id, address].hash
     end
 
     # Builds the object from hash

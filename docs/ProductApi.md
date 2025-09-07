@@ -1976,7 +1976,13 @@ api_instance = OpenapiClient::ProductApi.new
 product_id = '10' # String | Defines products specified by product id
 manufacturer = 'Samsung' # String | Defines product’s manufacturer's name
 opts = {
-  store_id: '1' # String | Store Id
+  store_id: '1', # String | Store Id
+  meta_title: 'category,test', # String | Defines unique meta title for each entity
+  meta_keywords: 'category,test', # String | Defines unique meta keywords for each entity
+  meta_description: 'category,test', # String | Defines unique meta description of a entity
+  search_keywords: 'key1,key2,key3', # String | Defines unique search keywords
+  image_url: 'https://docs.api2cart.com/img/logo.png', # String | Image Url
+  seo_url: 'some seo url' # String | Defines unique URL for SEO
 }
 
 begin
@@ -2013,6 +2019,12 @@ end
 | **product_id** | **String** | Defines products specified by product id |  |
 | **manufacturer** | **String** | Defines product’s manufacturer&#39;s name |  |
 | **store_id** | **String** | Store Id | [optional] |
+| **meta_title** | **String** | Defines unique meta title for each entity | [optional] |
+| **meta_keywords** | **String** | Defines unique meta keywords for each entity | [optional] |
+| **meta_description** | **String** | Defines unique meta description of a entity | [optional] |
+| **search_keywords** | **String** | Defines unique search keywords | [optional] |
+| **image_url** | **String** | Image Url | [optional] |
+| **seo_url** | **String** | Defines unique URL for SEO | [optional] |
 
 ### Return type
 
@@ -2982,7 +2994,13 @@ opts = {
   page_cursor: 'page_cursor_example', # String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
   ids: '24,25', # String | Retrieves reviews specified by ids
   store_id: '1', # String | Store Id
+  lang_id: '3', # String | Language id
   status: 'disabled', # String | Defines status
+  created_from: '2010-07-29 13:45:52', # String | Retrieve entities from their creation date
+  created_to: '2100-08-29 13:45:52', # String | Retrieve entities to their creation date
+  customer_id: '5', # String | Retrieves orders specified by customer id
+  sort_by: 'value_id', # String | Set field to sort by
+  sort_direction: 'asc', # String | Set sorting direction
   response_fields: '{return_code,return_message,pagination,result}', # String | Set this parameter in order to choose which entity fields you want to retrieve
   params: 'id,model,price,images', # String | Set this parameter in order to choose which entity fields you want to retrieve
   exclude: 'false' # String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
@@ -3025,7 +3043,13 @@ end
 | **page_cursor** | **String** | Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **ids** | **String** | Retrieves reviews specified by ids | [optional] |
 | **store_id** | **String** | Store Id | [optional] |
+| **lang_id** | **String** | Language id | [optional] |
 | **status** | **String** | Defines status | [optional] |
+| **created_from** | **String** | Retrieve entities from their creation date | [optional] |
+| **created_to** | **String** | Retrieve entities to their creation date | [optional] |
+| **customer_id** | **String** | Retrieves orders specified by customer id | [optional] |
+| **sort_by** | **String** | Set field to sort by | [optional][default to &#39;id&#39;] |
+| **sort_direction** | **String** | Set sorting direction | [optional][default to &#39;asc&#39;] |
 | **response_fields** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **String** | Set this parameter in order to choose which entity fields you want to retrieve | [optional][default to &#39;id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time&#39;] |
 | **exclude** | **String** | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |

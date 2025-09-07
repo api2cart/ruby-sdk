@@ -165,6 +165,7 @@ Class | Method | HTTP request | Description
 *OpenapiClient::MarketplaceApi* | [**marketplace_product_find**](docs/MarketplaceApi.md#marketplace_product_find) | **GET** /marketplace.product.find.json | marketplace.product.find
 *OpenapiClient::OrderApi* | [**order_abandoned_list**](docs/OrderApi.md#order_abandoned_list) | **GET** /order.abandoned.list.json | order.abandoned.list
 *OpenapiClient::OrderApi* | [**order_add**](docs/OrderApi.md#order_add) | **POST** /order.add.json | order.add
+*OpenapiClient::OrderApi* | [**order_calculate**](docs/OrderApi.md#order_calculate) | **POST** /order.calculate.json | order.calculate
 *OpenapiClient::OrderApi* | [**order_count**](docs/OrderApi.md#order_count) | **GET** /order.count.json | order.count
 *OpenapiClient::OrderApi* | [**order_financial_status_list**](docs/OrderApi.md#order_financial_status_list) | **GET** /order.financial_status.list.json | order.financial_status.list
 *OpenapiClient::OrderApi* | [**order_fulfillment_status_list**](docs/OrderApi.md#order_fulfillment_status_list) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list
@@ -441,6 +442,15 @@ Class | Method | HTTP request | Description
  - [OpenapiClient::OrderAddOrderItemInner](docs/OrderAddOrderItemInner.md)
  - [OpenapiClient::OrderAddOrderItemInnerOrderItemOptionInner](docs/OrderAddOrderItemInnerOrderItemOptionInner.md)
  - [OpenapiClient::OrderAddOrderItemInnerOrderItemPropertyInner](docs/OrderAddOrderItemInnerOrderItemPropertyInner.md)
+ - [OpenapiClient::OrderCalculate](docs/OrderCalculate.md)
+ - [OpenapiClient::OrderCalculate200Response](docs/OrderCalculate200Response.md)
+ - [OpenapiClient::OrderCalculateDiscount](docs/OrderCalculateDiscount.md)
+ - [OpenapiClient::OrderCalculateItem](docs/OrderCalculateItem.md)
+ - [OpenapiClient::OrderCalculateOrderItemInner](docs/OrderCalculateOrderItemInner.md)
+ - [OpenapiClient::OrderCalculateOrderItemInnerOrderItemOptionInner](docs/OrderCalculateOrderItemInnerOrderItemOptionInner.md)
+ - [OpenapiClient::OrderCalculateShippingRate](docs/OrderCalculateShippingRate.md)
+ - [OpenapiClient::OrderCalculateSubtotal](docs/OrderCalculateSubtotal.md)
+ - [OpenapiClient::OrderCalculateTax](docs/OrderCalculateTax.md)
  - [OpenapiClient::OrderCount200Response](docs/OrderCount200Response.md)
  - [OpenapiClient::OrderCount200ResponseResult](docs/OrderCount200ResponseResult.md)
  - [OpenapiClient::OrderFinancialStatusList200Response](docs/OrderFinancialStatusList200Response.md)

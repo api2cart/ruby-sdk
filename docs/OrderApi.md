@@ -6,6 +6,7 @@ All URIs are relative to *https://api.api2cart.local.com/v1.1*
 | ------ | ------------ | ----------- |
 | [**order_abandoned_list**](OrderApi.md#order_abandoned_list) | **GET** /order.abandoned.list.json | order.abandoned.list |
 | [**order_add**](OrderApi.md#order_add) | **POST** /order.add.json | order.add |
+| [**order_calculate**](OrderApi.md#order_calculate) | **POST** /order.calculate.json | order.calculate |
 | [**order_count**](OrderApi.md#order_count) | **GET** /order.count.json | order.count |
 | [**order_financial_status_list**](OrderApi.md#order_financial_status_list) | **GET** /order.financial_status.list.json | order.financial_status.list |
 | [**order_fulfillment_status_list**](OrderApi.md#order_fulfillment_status_list) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list |
@@ -197,6 +198,82 @@ end
 ### Return type
 
 [**OrderAdd200Response**](OrderAdd200Response.md)
+
+### Authorization
+
+[StoreKeyAuth](../README.md#StoreKeyAuth), [ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## order_calculate
+
+> <OrderCalculate200Response> order_calculate(order_calculate)
+
+order.calculate
+
+<p>Calculates the total cost of an order for a given customer and a set of products, as well as the available shipping methods based on the specified address. The calculation takes into account store product prices, discounts, taxes, shipping costs, and other store settings. The result includes a detailed breakdown of the final order cost by its components.</p> <p>Note that the final totals, taxes, and other amounts must include the corresponding values for the selected shipping method.</p><p>The result of this method can be used when creating an order using the <strong>order.add</strong> method.</p>
+
+### Examples
+
+```ruby
+require 'time'
+require 'openapi_client'
+# setup authorization
+OpenapiClient.configure do |config|
+  # Configure API key authorization: StoreKeyAuth
+  config.api_key['x-store-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-store-key'] = 'Bearer'
+
+  # Configure API key authorization: ApiKeyAuth
+  config.api_key['x-api-key'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  # config.api_key_prefix['x-api-key'] = 'Bearer'
+end
+
+api_instance = OpenapiClient::OrderApi.new
+order_calculate = OpenapiClient::OrderCalculate.new({customer_email: 'jubari@hannsgroup.com', shipp_first_name: 'John', shipp_last_name: 'Smith', shipp_address_1: 'Green str. 35', shipp_city: 'Chicago', shipp_postcode: '24545', shipp_country: 'US', order_item: [OpenapiClient::OrderCalculateOrderItemInner.new({order_item_id: '125, where {x} - 1,2,3,... etc', order_item_quantity: 5, where {x} - 1,2,3,... etc})]}) # OrderCalculate | 
+
+begin
+  # order.calculate
+  result = api_instance.order_calculate(order_calculate)
+  p result
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling OrderApi->order_calculate: #{e}"
+end
+```
+
+#### Using the order_calculate_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<OrderCalculate200Response>, Integer, Hash)> order_calculate_with_http_info(order_calculate)
+
+```ruby
+begin
+  # order.calculate
+  data, status_code, headers = api_instance.order_calculate_with_http_info(order_calculate)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <OrderCalculate200Response>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling OrderApi->order_calculate_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **order_calculate** | [**OrderCalculate**](OrderCalculate.md) |  |  |
+
+### Return type
+
+[**OrderCalculate200Response**](OrderCalculate200Response.md)
 
 ### Authorization
 

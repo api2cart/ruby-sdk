@@ -165,6 +165,12 @@ describe OpenapiClient::ProductAddBatchPayloadInner do
     end
   end
 
+  describe 'test attribute "specifics"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "is_free_shipping"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
@@ -364,6 +370,12 @@ describe OpenapiClient::ProductAddBatchPayloadInner do
   end
 
   describe 'test attribute "seo_url"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
+  describe 'test attribute "external_product_link"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
     end

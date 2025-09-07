@@ -69,6 +69,18 @@ describe 'OrderApi' do
     end
   end
 
+  # unit tests for order_calculate
+  # order.calculate
+  # &lt;p&gt;Calculates the total cost of an order for a given customer and a set of products, as well as the available shipping methods based on the specified address. The calculation takes into account store product prices, discounts, taxes, shipping costs, and other store settings. The result includes a detailed breakdown of the final order cost by its components.&lt;/p&gt; &lt;p&gt;Note that the final totals, taxes, and other amounts must include the corresponding values for the selected shipping method.&lt;/p&gt;&lt;p&gt;The result of this method can be used when creating an order using the &lt;strong&gt;order.add&lt;/strong&gt; method.&lt;/p&gt;
+  # @param order_calculate 
+  # @param [Hash] opts the optional parameters
+  # @return [OrderCalculate200Response]
+  describe 'order_calculate test' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   # unit tests for order_count
   # order.count
   # Count orders in store

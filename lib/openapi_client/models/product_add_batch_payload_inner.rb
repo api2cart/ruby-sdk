@@ -61,6 +61,8 @@ module OpenapiClient
 
     attr_accessor :marketplace_item_properties
 
+    attr_accessor :specifics
+
     attr_accessor :is_free_shipping
 
     attr_accessor :taxable
@@ -129,6 +131,8 @@ module OpenapiClient
 
     attr_accessor :seo_url
 
+    attr_accessor :external_product_link
+
     attr_accessor :manufacturer
 
     attr_accessor :manufacturer_id
@@ -167,6 +171,7 @@ module OpenapiClient
         :'manage_stock' => :'manage_stock',
         :'product_type' => :'product_type',
         :'marketplace_item_properties' => :'marketplace_item_properties',
+        :'specifics' => :'specifics',
         :'is_free_shipping' => :'is_free_shipping',
         :'taxable' => :'taxable',
         :'status' => :'status',
@@ -201,6 +206,7 @@ module OpenapiClient
         :'harmonized_system_code' => :'harmonized_system_code',
         :'url' => :'url',
         :'seo_url' => :'seo_url',
+        :'external_product_link' => :'external_product_link',
         :'manufacturer' => :'manufacturer',
         :'manufacturer_id' => :'manufacturer_id',
         :'backorder_status' => :'backorder_status',
@@ -241,6 +247,7 @@ module OpenapiClient
         :'manage_stock' => :'Boolean',
         :'product_type' => :'String',
         :'marketplace_item_properties' => :'Object',
+        :'specifics' => :'Object',
         :'is_free_shipping' => :'Boolean',
         :'taxable' => :'Boolean',
         :'status' => :'String',
@@ -275,6 +282,7 @@ module OpenapiClient
         :'harmonized_system_code' => :'String',
         :'url' => :'String',
         :'seo_url' => :'String',
+        :'external_product_link' => :'String',
         :'manufacturer' => :'String',
         :'manufacturer_id' => :'String',
         :'backorder_status' => :'String',
@@ -397,6 +405,10 @@ module OpenapiClient
 
       if attributes.key?(:'marketplace_item_properties')
         self.marketplace_item_properties = attributes[:'marketplace_item_properties']
+      end
+
+      if attributes.key?(:'specifics')
+        self.specifics = attributes[:'specifics']
       end
 
       if attributes.key?(:'is_free_shipping')
@@ -547,6 +559,10 @@ module OpenapiClient
 
       if attributes.key?(:'seo_url')
         self.seo_url = attributes[:'seo_url']
+      end
+
+      if attributes.key?(:'external_product_link')
+        self.external_product_link = attributes[:'external_product_link']
       end
 
       if attributes.key?(:'manufacturer')
@@ -813,6 +829,7 @@ module OpenapiClient
           manage_stock == o.manage_stock &&
           product_type == o.product_type &&
           marketplace_item_properties == o.marketplace_item_properties &&
+          specifics == o.specifics &&
           is_free_shipping == o.is_free_shipping &&
           taxable == o.taxable &&
           status == o.status &&
@@ -847,6 +864,7 @@ module OpenapiClient
           harmonized_system_code == o.harmonized_system_code &&
           url == o.url &&
           seo_url == o.seo_url &&
+          external_product_link == o.external_product_link &&
           manufacturer == o.manufacturer &&
           manufacturer_id == o.manufacturer_id &&
           backorder_status == o.backorder_status &&
@@ -864,7 +882,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, description, short_description, sku, model, asin, upc, ean, gtin, mpn, barcode, price, old_price, cost_price, special_price, sprice_create, sprice_expire, advanced_prices, fixed_cost_shipping_price, quantity, manage_stock, product_type, marketplace_item_properties, is_free_shipping, taxable, status, condition, visible, available_for_view, available_for_sale, is_virtual, in_stock, type, downloadable, weight, length, width, height, weight_unit, dimensions_unit, store_id, lang_id, category_id, warehouse_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, stores_ids, tax_class_id, meta_title, meta_description, meta_keywords, search_keywords, harmonized_system_code, url, seo_url, manufacturer, manufacturer_id, backorder_status, images, tags, files].hash
+      [name, description, short_description, sku, model, asin, upc, ean, gtin, mpn, barcode, price, old_price, cost_price, special_price, sprice_create, sprice_expire, advanced_prices, fixed_cost_shipping_price, quantity, manage_stock, product_type, marketplace_item_properties, specifics, is_free_shipping, taxable, status, condition, visible, available_for_view, available_for_sale, is_virtual, in_stock, type, downloadable, weight, length, width, height, weight_unit, dimensions_unit, store_id, lang_id, category_id, warehouse_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, stores_ids, tax_class_id, meta_title, meta_description, meta_keywords, search_keywords, harmonized_system_code, url, seo_url, external_product_link, manufacturer, manufacturer_id, backorder_status, images, tags, files].hash
     end
 
     # Builds the object from hash

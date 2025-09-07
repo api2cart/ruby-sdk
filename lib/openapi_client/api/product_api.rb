@@ -1827,6 +1827,12 @@ module OpenapiClient
     # @param manufacturer [String] Defines product’s manufacturer&#39;s name
     # @param [Hash] opts the optional parameters
     # @option opts [String] :store_id Store Id
+    # @option opts [String] :meta_title Defines unique meta title for each entity
+    # @option opts [String] :meta_keywords Defines unique meta keywords for each entity
+    # @option opts [String] :meta_description Defines unique meta description of a entity
+    # @option opts [String] :search_keywords Defines unique search keywords
+    # @option opts [String] :image_url Image Url
+    # @option opts [String] :seo_url Defines unique URL for SEO
     # @return [ProductManufacturerAdd200Response]
     def product_manufacturer_add(product_id, manufacturer, opts = {})
       data, _status_code, _headers = product_manufacturer_add_with_http_info(product_id, manufacturer, opts)
@@ -1839,6 +1845,12 @@ module OpenapiClient
     # @param manufacturer [String] Defines product’s manufacturer&#39;s name
     # @param [Hash] opts the optional parameters
     # @option opts [String] :store_id Store Id
+    # @option opts [String] :meta_title Defines unique meta title for each entity
+    # @option opts [String] :meta_keywords Defines unique meta keywords for each entity
+    # @option opts [String] :meta_description Defines unique meta description of a entity
+    # @option opts [String] :search_keywords Defines unique search keywords
+    # @option opts [String] :image_url Image Url
+    # @option opts [String] :seo_url Defines unique URL for SEO
     # @return [Array<(ProductManufacturerAdd200Response, Integer, Hash)>] ProductManufacturerAdd200Response data, response status code and response headers
     def product_manufacturer_add_with_http_info(product_id, manufacturer, opts = {})
       if @api_client.config.debugging
@@ -1860,6 +1872,12 @@ module OpenapiClient
       query_params[:'product_id'] = product_id
       query_params[:'manufacturer'] = manufacturer
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'meta_title'] = opts[:'meta_title'] if !opts[:'meta_title'].nil?
+      query_params[:'meta_keywords'] = opts[:'meta_keywords'] if !opts[:'meta_keywords'].nil?
+      query_params[:'meta_description'] = opts[:'meta_description'] if !opts[:'meta_description'].nil?
+      query_params[:'search_keywords'] = opts[:'search_keywords'] if !opts[:'search_keywords'].nil?
+      query_params[:'image_url'] = opts[:'image_url'] if !opts[:'image_url'].nil?
+      query_params[:'seo_url'] = opts[:'seo_url'] if !opts[:'seo_url'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -2750,7 +2768,13 @@ module OpenapiClient
     # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :ids Retrieves reviews specified by ids
     # @option opts [String] :store_id Store Id
+    # @option opts [String] :lang_id Language id
     # @option opts [String] :status Defines status
+    # @option opts [String] :created_from Retrieve entities from their creation date
+    # @option opts [String] :created_to Retrieve entities to their creation date
+    # @option opts [String] :customer_id Retrieves orders specified by customer id
+    # @option opts [String] :sort_by Set field to sort by (default to 'id')
+    # @option opts [String] :sort_direction Set sorting direction (default to 'asc')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
@@ -2769,7 +2793,13 @@ module OpenapiClient
     # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
     # @option opts [String] :ids Retrieves reviews specified by ids
     # @option opts [String] :store_id Store Id
+    # @option opts [String] :lang_id Language id
     # @option opts [String] :status Defines status
+    # @option opts [String] :created_from Retrieve entities from their creation date
+    # @option opts [String] :created_to Retrieve entities to their creation date
+    # @option opts [String] :customer_id Retrieves orders specified by customer id
+    # @option opts [String] :sort_by Set field to sort by (default to 'id')
+    # @option opts [String] :sort_direction Set sorting direction (default to 'asc')
     # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
     # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve (default to 'id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time')
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
@@ -2793,7 +2823,13 @@ module OpenapiClient
       query_params[:'page_cursor'] = opts[:'page_cursor'] if !opts[:'page_cursor'].nil?
       query_params[:'ids'] = opts[:'ids'] if !opts[:'ids'].nil?
       query_params[:'store_id'] = opts[:'store_id'] if !opts[:'store_id'].nil?
+      query_params[:'lang_id'] = opts[:'lang_id'] if !opts[:'lang_id'].nil?
       query_params[:'status'] = opts[:'status'] if !opts[:'status'].nil?
+      query_params[:'created_from'] = opts[:'created_from'] if !opts[:'created_from'].nil?
+      query_params[:'created_to'] = opts[:'created_to'] if !opts[:'created_to'].nil?
+      query_params[:'customer_id'] = opts[:'customer_id'] if !opts[:'customer_id'].nil?
+      query_params[:'sort_by'] = opts[:'sort_by'] if !opts[:'sort_by'].nil?
+      query_params[:'sort_direction'] = opts[:'sort_direction'] if !opts[:'sort_direction'].nil?
       query_params[:'response_fields'] = opts[:'response_fields'] if !opts[:'response_fields'].nil?
       query_params[:'params'] = opts[:'params'] if !opts[:'params'].nil?
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?

@@ -9,6 +9,7 @@
 | **last_name** | **String** | Defines customer&#39;s last name | [optional] |
 | **password** | **String** | Defines customer&#39;s unique password | [optional] |
 | **group** | **String** | Defines the group where the customer | [optional] |
+| **group_id** | **String** | Customer group_id | [optional] |
 | **group_ids** | **String** | Groups that will be assigned to a customer | [optional] |
 | **status** | **String** | Defines customer&#39;s status | [optional][default to &#39;enabled&#39;] |
 | **created_time** | **String** | Entity&#39;s date creation | [optional] |
@@ -39,6 +40,7 @@ instance = OpenapiClient::CustomerAdd.new(
   last_name: Smith,
   password: fd5gfd5g75fd,
   group: Register,
+  group_id: 3,
   group_ids: 1,2,3,
   status: disabled,
   created_time: 2014-01-30 15:58:41,

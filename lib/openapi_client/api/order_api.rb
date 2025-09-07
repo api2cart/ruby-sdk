@@ -186,6 +186,74 @@ module OpenapiClient
       return data, status_code, headers
     end
 
+    # order.calculate
+    # <p>Calculates the total cost of an order for a given customer and a set of products, as well as the available shipping methods based on the specified address. The calculation takes into account store product prices, discounts, taxes, shipping costs, and other store settings. The result includes a detailed breakdown of the final order cost by its components.</p> <p>Note that the final totals, taxes, and other amounts must include the corresponding values for the selected shipping method.</p><p>The result of this method can be used when creating an order using the <strong>order.add</strong> method.</p>
+    # @param order_calculate [OrderCalculate] 
+    # @param [Hash] opts the optional parameters
+    # @return [OrderCalculate200Response]
+    def order_calculate(order_calculate, opts = {})
+      data, _status_code, _headers = order_calculate_with_http_info(order_calculate, opts)
+      data
+    end
+
+    # order.calculate
+    # &lt;p&gt;Calculates the total cost of an order for a given customer and a set of products, as well as the available shipping methods based on the specified address. The calculation takes into account store product prices, discounts, taxes, shipping costs, and other store settings. The result includes a detailed breakdown of the final order cost by its components.&lt;/p&gt; &lt;p&gt;Note that the final totals, taxes, and other amounts must include the corresponding values for the selected shipping method.&lt;/p&gt;&lt;p&gt;The result of this method can be used when creating an order using the &lt;strong&gt;order.add&lt;/strong&gt; method.&lt;/p&gt;
+    # @param order_calculate [OrderCalculate] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(OrderCalculate200Response, Integer, Hash)>] OrderCalculate200Response data, response status code and response headers
+    def order_calculate_with_http_info(order_calculate, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: OrderApi.order_calculate ...'
+      end
+      # verify the required parameter 'order_calculate' is set
+      if @api_client.config.client_side_validation && order_calculate.nil?
+        fail ArgumentError, "Missing the required parameter 'order_calculate' when calling OrderApi.order_calculate"
+      end
+      # resource path
+      local_var_path = '/order.calculate.json'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+
+      # header parameters
+      header_params = opts[:header_params] || {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json']) unless header_params['Accept']
+      # HTTP header 'Content-Type'
+      content_type = @api_client.select_header_content_type(['application/json'])
+      if !content_type.nil?
+          header_params['Content-Type'] = content_type
+      end
+
+      # form parameters
+      form_params = opts[:form_params] || {}
+
+      # http body (model)
+      post_body = opts[:debug_body] || @api_client.object_to_http_body(order_calculate)
+
+      # return_type
+      return_type = opts[:debug_return_type] || 'OrderCalculate200Response'
+
+      # auth_names
+      auth_names = opts[:debug_auth_names] || ['StoreKeyAuth', 'ApiKeyAuth']
+
+      new_options = opts.merge(
+        :operation => :"OrderApi.order_calculate",
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => return_type
+      )
+
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: OrderApi#order_calculate\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # order.count
     # Count orders in store
     # @param [Hash] opts the optional parameters

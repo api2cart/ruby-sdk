@@ -14,32 +14,14 @@ require 'date'
 require 'time'
 
 module OpenapiClient
-  class ProductReview
-    attr_accessor :id
+  class OrderCalculateDiscount
+    attr_accessor :code
 
-    attr_accessor :product_id
+    attr_accessor :value
 
-    attr_accessor :customer_id
+    attr_accessor :type
 
-    attr_accessor :nick_name
-
-    attr_accessor :email
-
-    attr_accessor :summary
-
-    attr_accessor :message
-
-    attr_accessor :rating
-
-    attr_accessor :ratings
-
-    attr_accessor :status
-
-    attr_accessor :created_time
-
-    attr_accessor :modified_time
-
-    attr_accessor :medias
+    attr_accessor :free_shipping
 
     attr_accessor :additional_fields
 
@@ -48,19 +30,10 @@ module OpenapiClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
-        :'product_id' => :'product_id',
-        :'customer_id' => :'customer_id',
-        :'nick_name' => :'nick_name',
-        :'email' => :'email',
-        :'summary' => :'summary',
-        :'message' => :'message',
-        :'rating' => :'rating',
-        :'ratings' => :'ratings',
-        :'status' => :'status',
-        :'created_time' => :'created_time',
-        :'modified_time' => :'modified_time',
-        :'medias' => :'medias',
+        :'code' => :'code',
+        :'value' => :'value',
+        :'type' => :'type',
+        :'free_shipping' => :'free_shipping',
         :'additional_fields' => :'additional_fields',
         :'custom_fields' => :'custom_fields'
       }
@@ -74,19 +47,10 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
-        :'product_id' => :'String',
-        :'customer_id' => :'String',
-        :'nick_name' => :'String',
-        :'email' => :'String',
-        :'summary' => :'String',
-        :'message' => :'String',
-        :'rating' => :'Float',
-        :'ratings' => :'Array<ProductReviewRating>',
-        :'status' => :'String',
-        :'created_time' => :'A2CDateTime',
-        :'modified_time' => :'A2CDateTime',
-        :'medias' => :'Array<Media>',
+        :'code' => :'String',
+        :'value' => :'Float',
+        :'type' => :'String',
+        :'free_shipping' => :'Boolean',
         :'additional_fields' => :'Object',
         :'custom_fields' => :'Object'
       }
@@ -95,16 +59,9 @@ module OpenapiClient
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'product_id',
-        :'customer_id',
-        :'nick_name',
-        :'email',
-        :'summary',
-        :'message',
-        :'rating',
-        :'status',
-        :'created_time',
-        :'modified_time',
+        :'code',
+        :'type',
+        :'free_shipping',
         :'additional_fields',
         :'custom_fields'
       ])
@@ -114,71 +71,31 @@ module OpenapiClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `OpenapiClient::ProductReview` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `OpenapiClient::OrderCalculateDiscount` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `OpenapiClient::ProductReview`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `OpenapiClient::OrderCalculateDiscount`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
+      if attributes.key?(:'code')
+        self.code = attributes[:'code']
       end
 
-      if attributes.key?(:'product_id')
-        self.product_id = attributes[:'product_id']
+      if attributes.key?(:'value')
+        self.value = attributes[:'value']
       end
 
-      if attributes.key?(:'customer_id')
-        self.customer_id = attributes[:'customer_id']
+      if attributes.key?(:'type')
+        self.type = attributes[:'type']
       end
 
-      if attributes.key?(:'nick_name')
-        self.nick_name = attributes[:'nick_name']
-      end
-
-      if attributes.key?(:'email')
-        self.email = attributes[:'email']
-      end
-
-      if attributes.key?(:'summary')
-        self.summary = attributes[:'summary']
-      end
-
-      if attributes.key?(:'message')
-        self.message = attributes[:'message']
-      end
-
-      if attributes.key?(:'rating')
-        self.rating = attributes[:'rating']
-      end
-
-      if attributes.key?(:'ratings')
-        if (value = attributes[:'ratings']).is_a?(Array)
-          self.ratings = value
-        end
-      end
-
-      if attributes.key?(:'status')
-        self.status = attributes[:'status']
-      end
-
-      if attributes.key?(:'created_time')
-        self.created_time = attributes[:'created_time']
-      end
-
-      if attributes.key?(:'modified_time')
-        self.modified_time = attributes[:'modified_time']
-      end
-
-      if attributes.key?(:'medias')
-        if (value = attributes[:'medias']).is_a?(Array)
-          self.medias = value
-        end
+      if attributes.key?(:'free_shipping')
+        self.free_shipping = attributes[:'free_shipping']
       end
 
       if attributes.key?(:'additional_fields')
@@ -210,19 +127,10 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
-          product_id == o.product_id &&
-          customer_id == o.customer_id &&
-          nick_name == o.nick_name &&
-          email == o.email &&
-          summary == o.summary &&
-          message == o.message &&
-          rating == o.rating &&
-          ratings == o.ratings &&
-          status == o.status &&
-          created_time == o.created_time &&
-          modified_time == o.modified_time &&
-          medias == o.medias &&
+          code == o.code &&
+          value == o.value &&
+          type == o.type &&
+          free_shipping == o.free_shipping &&
           additional_fields == o.additional_fields &&
           custom_fields == o.custom_fields
     end
@@ -236,7 +144,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, product_id, customer_id, nick_name, email, summary, message, rating, ratings, status, created_time, modified_time, medias, additional_fields, custom_fields].hash
+      [code, value, type, free_shipping, additional_fields, custom_fields].hash
     end
 
     # Builds the object from hash

@@ -27,6 +27,7 @@
 | **manage_stock** | **Boolean** |  | [optional] |
 | **product_type** | **String** |  | [optional] |
 | **marketplace_item_properties** | **Object** |  | [optional] |
+| **specifics** | **Object** |  | [optional] |
 | **is_free_shipping** | **Boolean** |  | [optional] |
 | **taxable** | **Boolean** |  | [optional] |
 | **status** | **String** |  | [optional] |
@@ -61,6 +62,7 @@
 | **harmonized_system_code** | **String** |  | [optional] |
 | **url** | **String** |  | [optional] |
 | **seo_url** | **String** |  | [optional] |
+| **external_product_link** | **String** |  | [optional] |
 | **manufacturer** | **String** |  | [optional] |
 | **manufacturer_id** | **String** |  | [optional] |
 | **backorder_status** | **String** |  | [optional] |
@@ -97,6 +99,7 @@ instance = OpenapiClient::ProductAddBatchPayloadInner.new(
   manage_stock: null,
   product_type: null,
   marketplace_item_properties: null,
+  specifics: null,
   is_free_shipping: null,
   taxable: null,
   status: null,
@@ -131,6 +134,7 @@ instance = OpenapiClient::ProductAddBatchPayloadInner.new(
   harmonized_system_code: null,
   url: null,
   seo_url: null,
+  external_product_link: null,
   manufacturer: null,
   manufacturer_id: null,
   backorder_status: null,

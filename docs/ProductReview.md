@@ -15,6 +15,7 @@
 | **ratings** | [**Array&lt;ProductReviewRating&gt;**](ProductReviewRating.md) |  | [optional] |
 | **status** | **String** |  | [optional] |
 | **created_time** | [**A2CDateTime**](A2CDateTime.md) |  | [optional] |
+| **modified_time** | [**A2CDateTime**](A2CDateTime.md) |  | [optional] |
 | **medias** | [**Array&lt;Media&gt;**](Media.md) |  | [optional] |
 | **additional_fields** | **Object** |  | [optional] |
 | **custom_fields** | **Object** |  | [optional] |
@@ -36,6 +37,7 @@ instance = OpenapiClient::ProductReview.new(
   ratings: null,
   status: null,
   created_time: null,
+  modified_time: null,
   medias: null,
   additional_fields: null,
   custom_fields: null

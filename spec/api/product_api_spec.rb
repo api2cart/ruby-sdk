@@ -449,6 +449,12 @@ describe 'ProductApi' do
   # @param manufacturer Defines product’s manufacturer&#39;s name
   # @param [Hash] opts the optional parameters
   # @option opts [String] :store_id Store Id
+  # @option opts [String] :meta_title Defines unique meta title for each entity
+  # @option opts [String] :meta_keywords Defines unique meta keywords for each entity
+  # @option opts [String] :meta_description Defines unique meta description of a entity
+  # @option opts [String] :search_keywords Defines unique search keywords
+  # @option opts [String] :image_url Image Url
+  # @option opts [String] :seo_url Defines unique URL for SEO
   # @return [ProductManufacturerAdd200Response]
   describe 'product_manufacturer_add test' do
     it 'should work' do
@@ -632,7 +638,13 @@ describe 'ProductApi' do
   # @option opts [String] :page_cursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter)
   # @option opts [String] :ids Retrieves reviews specified by ids
   # @option opts [String] :store_id Store Id
+  # @option opts [String] :lang_id Language id
   # @option opts [String] :status Defines status
+  # @option opts [String] :created_from Retrieve entities from their creation date
+  # @option opts [String] :created_to Retrieve entities to their creation date
+  # @option opts [String] :customer_id Retrieves orders specified by customer id
+  # @option opts [String] :sort_by Set field to sort by
+  # @option opts [String] :sort_direction Set sorting direction
   # @option opts [String] :response_fields Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :params Set this parameter in order to choose which entity fields you want to retrieve
   # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
