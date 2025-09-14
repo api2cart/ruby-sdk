@@ -27,6 +27,7 @@
 | **status** | **String** |  | [optional] |
 | **type** | **String** |  | [optional] |
 | **condition** | **String** |  | [optional] |
+| **condition_description** | **String** |  | [optional] |
 | **visible** | **String** |  | [optional] |
 | **available_for_view** | **Boolean** |  | [optional] |
 | **available_for_sale** | **Boolean** |  | [optional] |
@@ -97,6 +98,7 @@ instance = OpenapiClient::ProductUpdateBatchPayloadInner.new(
   status: null,
   type: null,
   condition: null,
+  condition_description: null,
   visible: null,
   available_for_view: null,
   available_for_sale: null,

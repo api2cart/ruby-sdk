@@ -62,6 +62,8 @@ module OpenapiClient
 
     attr_accessor :condition
 
+    attr_accessor :condition_description
+
     attr_accessor :visible
 
     attr_accessor :available_for_view
@@ -172,6 +174,7 @@ module OpenapiClient
         :'status' => :'status',
         :'type' => :'type',
         :'condition' => :'condition',
+        :'condition_description' => :'condition_description',
         :'visible' => :'visible',
         :'available_for_view' => :'available_for_view',
         :'available_for_sale' => :'available_for_sale',
@@ -246,6 +249,7 @@ module OpenapiClient
         :'status' => :'String',
         :'type' => :'String',
         :'condition' => :'String',
+        :'condition_description' => :'String',
         :'visible' => :'String',
         :'available_for_view' => :'Boolean',
         :'available_for_sale' => :'Boolean',
@@ -404,6 +408,10 @@ module OpenapiClient
 
       if attributes.key?(:'condition')
         self.condition = attributes[:'condition']
+      end
+
+      if attributes.key?(:'condition_description')
+        self.condition_description = attributes[:'condition_description']
       end
 
       if attributes.key?(:'visible')
@@ -726,6 +734,7 @@ module OpenapiClient
           status == o.status &&
           type == o.type &&
           condition == o.condition &&
+          condition_description == o.condition_description &&
           visible == o.visible &&
           available_for_view == o.available_for_view &&
           available_for_sale == o.available_for_sale &&
@@ -777,7 +786,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, name, description, short_description, sku, model, price, special_price, sprice_create, sprice_expire, cost_price, old_price, fixed_cost_shipping_price, advanced_prices, quantity, increase_quantity, reduce_quantity, reserve_quantity, store_id, lang_id, status, type, condition, visible, available_for_view, available_for_sale, avail_from, weight, length, width, height, dimensions_unit, weight_unit, manage_stock, in_stock, backorder_status, is_free_shipping, is_virtual, taxable, downloadable, warehouse_id, tax_class_id, categories_ids, meta_title, meta_description, meta_keywords, url, seo_url, manufacturer, manufacturer_id, mpn, gtin, upc, isbn, ean, barcode, images, related_products_ids, up_sell_products_ids, cross_sell_products_ids, tags, search_keywords, harmonized_system_code].hash
+      [id, name, description, short_description, sku, model, price, special_price, sprice_create, sprice_expire, cost_price, old_price, fixed_cost_shipping_price, advanced_prices, quantity, increase_quantity, reduce_quantity, reserve_quantity, store_id, lang_id, status, type, condition, condition_description, visible, available_for_view, available_for_sale, avail_from, weight, length, width, height, dimensions_unit, weight_unit, manage_stock, in_stock, backorder_status, is_free_shipping, is_virtual, taxable, downloadable, warehouse_id, tax_class_id, categories_ids, meta_title, meta_description, meta_keywords, url, seo_url, manufacturer, manufacturer_id, mpn, gtin, upc, isbn, ean, barcode, images, related_products_ids, up_sell_products_ids, cross_sell_products_ids, tags, search_keywords, harmonized_system_code].hash
     end
 
     # Builds the object from hash

@@ -189,6 +189,12 @@ describe OpenapiClient::ProductUpdate do
     end
   end
 
+  describe 'test attribute "brand_name"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "available_for_view"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

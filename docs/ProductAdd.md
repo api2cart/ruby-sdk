@@ -203,7 +203,7 @@ instance = OpenapiClient::ProductAdd.new(
   materials: materials[0]&#x3D;Aluminum&amp;materials[1]&#x3D;Brass,
   certifications: null,
   specifics: null,
-  avail_from: avail_from&#x3D;2029-10-25T15:54:37-0500,
+  avail_from: 2029-10-25T15:54:37-0500,
   sprice_create: 2018-08-25 23:56:12,
   sprice_modified: 2018-12-05 13:46:20,
   sprice_expire: 2018-08-25 23:56:12,
