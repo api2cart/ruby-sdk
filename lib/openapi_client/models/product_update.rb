@@ -572,8 +572,6 @@ module OpenapiClient
 
       if attributes.key?(:'taxable')
         self.taxable = attributes[:'taxable']
-      else
-        self.taxable = true
       end
 
       if attributes.key?(:'tax_class_id')

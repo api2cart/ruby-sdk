@@ -22,7 +22,7 @@
 | **avail** | **Boolean** | Defines category&#39;s visibility status | [optional][default to true] |
 | **is_default** | **Boolean** | Defines as a default variant | [optional] |
 | **is_free_shipping** | **Boolean** | Specifies variant&#39;s free shipping flag that has to be added | [optional] |
-| **taxable** | **Boolean** | Specifies whether a tax is charged | [optional][default to true] |
+| **taxable** | **Boolean** | Specifies whether a tax is charged | [optional] |
 | **tax_class_id** | **String** | Defines tax classes where entity has to be added | [optional] |
 | **is_virtual** | **Boolean** | Defines whether the product is virtual | [optional][default to false] |
 | **manage_stock** | **Boolean** | Defines inventory tracking for product variant | [optional] |
@@ -56,6 +56,7 @@
 | **meta_title** | **String** | Defines unique meta title for each entity | [optional] |
 | **meta_description** | **String** | Defines unique meta description of a entity | [optional] |
 | **meta_keywords** | **String** | Defines unique meta keywords for each entity | [optional] |
+| **manufacturer** | **String** | Specifies the product variant&#39;s manufacturer | [optional] |
 | **reindex** | **Boolean** | Is reindex required | [optional][default to true] |
 | **clear_cache** | **Boolean** | Is cache clear required | [optional][default to true] |
 
@@ -117,6 +118,7 @@ instance = OpenapiClient::ProductVariantUpdate.new(
   meta_title: category,test,
   meta_description: category,test,
   meta_keywords: category,test,
+  manufacturer: Samsung,
   reindex: false,
   clear_cache: false
 )

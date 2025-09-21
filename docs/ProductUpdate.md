@@ -21,7 +21,7 @@
 | **tier_prices** | [**Array&lt;ProductAddTierPricesInner&gt;**](ProductAddTierPricesInner.md) | Defines product&#39;s tier prices | [optional] |
 | **reserve_price** | **Float** | Defines reserve price value | [optional] |
 | **buyitnow_price** | **Float** | Defines buy it now value | [optional] |
-| **taxable** | **Boolean** | Specifies whether a tax is charged | [optional][default to true] |
+| **taxable** | **Boolean** | Specifies whether a tax is charged | [optional] |
 | **tax_class_id** | **String** | Defines tax classes where entity has to be added | [optional] |
 | **type** | **String** | Defines product&#39;s type | [optional] |
 | **status** | **String** | Defines product&#39;s status | [optional] |

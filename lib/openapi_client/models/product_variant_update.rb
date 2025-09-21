@@ -171,6 +171,9 @@ module OpenapiClient
     # Defines unique meta keywords for each entity
     attr_accessor :meta_keywords
 
+    # Specifies the product variant's manufacturer
+    attr_accessor :manufacturer
+
     # Is reindex required
     attr_accessor :reindex
 
@@ -232,6 +235,7 @@ module OpenapiClient
         :'meta_title' => :'meta_title',
         :'meta_description' => :'meta_description',
         :'meta_keywords' => :'meta_keywords',
+        :'manufacturer' => :'manufacturer',
         :'reindex' => :'reindex',
         :'clear_cache' => :'clear_cache'
       }
@@ -297,6 +301,7 @@ module OpenapiClient
         :'meta_title' => :'String',
         :'meta_description' => :'String',
         :'meta_keywords' => :'String',
+        :'manufacturer' => :'String',
         :'reindex' => :'Boolean',
         :'clear_cache' => :'Boolean'
       }
@@ -403,8 +408,6 @@ module OpenapiClient
 
       if attributes.key?(:'taxable')
         self.taxable = attributes[:'taxable']
-      else
-        self.taxable = true
       end
 
       if attributes.key?(:'tax_class_id')
@@ -547,6 +550,10 @@ module OpenapiClient
         self.meta_keywords = attributes[:'meta_keywords']
       end
 
+      if attributes.key?(:'manufacturer')
+        self.manufacturer = attributes[:'manufacturer']
+      end
+
       if attributes.key?(:'reindex')
         self.reindex = attributes[:'reindex']
       else
@@ -632,6 +639,7 @@ module OpenapiClient
           meta_title == o.meta_title &&
           meta_description == o.meta_description &&
           meta_keywords == o.meta_keywords &&
+          manufacturer == o.manufacturer &&
           reindex == o.reindex &&
           clear_cache == o.clear_cache
     end
@@ -645,7 +653,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, product_id, store_id, lang_id, options, name, description, short_description, model, sku, visible, status, backorder_status, low_stock_threshold, available_for_sale, avail, is_default, is_free_shipping, taxable, tax_class_id, is_virtual, manage_stock, in_stock, warehouse_id, reserve_quantity, quantity, increase_quantity, reduce_quantity, price, special_price, retail_price, old_price, cost_price, fixed_cost_shipping_price, sprice_create, sprice_expire, weight, barcode, width, weight_unit, height, length, gtin, upc, mpn, ean, isbn, harmonized_system_code, country_of_origin, meta_title, meta_description, meta_keywords, reindex, clear_cache].hash
+      [id, product_id, store_id, lang_id, options, name, description, short_description, model, sku, visible, status, backorder_status, low_stock_threshold, available_for_sale, avail, is_default, is_free_shipping, taxable, tax_class_id, is_virtual, manage_stock, in_stock, warehouse_id, reserve_quantity, quantity, increase_quantity, reduce_quantity, price, special_price, retail_price, old_price, cost_price, fixed_cost_shipping_price, sprice_create, sprice_expire, weight, barcode, width, weight_unit, height, length, gtin, upc, mpn, ean, isbn, harmonized_system_code, country_of_origin, meta_title, meta_description, meta_keywords, manufacturer, reindex, clear_cache].hash
     end
 
     # Builds the object from hash

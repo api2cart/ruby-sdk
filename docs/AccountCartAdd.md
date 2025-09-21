@@ -97,6 +97,7 @@
 | **shoplazza_access_token** | **String** | Access token authorizing the app to access resources on behalf of a user | [optional] |
 | **shoplazza_shared_secret** | **String** | Shared secret | [optional] |
 | **shopware_access_key** | **String** | Shopware access key | [optional] |
+| **unas_api_key** | **String** | UNAS API Key | [optional] |
 | **shopware_api_key** | **String** | Shopware api key | [optional] |
 | **shopware_api_secret** | **String** | Shopware client secret access key | [optional] |
 | **miva_access_token** | **String** | Miva access token | [optional] |
@@ -269,6 +270,7 @@ instance = OpenapiClient::AccountCartAdd.new(
   shoplazza_access_token: igse8e4rdmzkxdi937qe69d59en1imw,
   shoplazza_shared_secret: gmz3iz45x2,
   shopware_access_key: SWSCS3O1RJBSRNBYQLFIYJN2ZQ,
+  unas_api_key: c238908e29ceb6e6ad3df15f89a6234709d3f000,
   shopware_api_key: SWSCS3O1RJBSRNBYQLFIYJN2ZQ,
   shopware_api_secret: V3NYNWg2b1dZdHBUWDN1cmdKdGhnenp5enVJYlJ0WlJvOFF2bnQ,
   miva_access_token: 227cbe434a1e358d72db0de993x9d9fd,
