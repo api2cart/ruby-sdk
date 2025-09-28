@@ -24,6 +24,12 @@ module OpenapiClient
     # Ordered product variant. Where x is order item ID
     attr_accessor :order_item_variant_id
 
+    # Index of the parent grouped/bundle product
+    attr_accessor :order_item_parent
+
+    # Option name of the parent grouped/bundle product
+    attr_accessor :order_item_parent_option_name
+
     attr_accessor :order_item_option
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -32,6 +38,8 @@ module OpenapiClient
         :'order_item_id' => :'order_item_id',
         :'order_item_quantity' => :'order_item_quantity',
         :'order_item_variant_id' => :'order_item_variant_id',
+        :'order_item_parent' => :'order_item_parent',
+        :'order_item_parent_option_name' => :'order_item_parent_option_name',
         :'order_item_option' => :'order_item_option'
       }
     end
@@ -47,6 +55,8 @@ module OpenapiClient
         :'order_item_id' => :'String',
         :'order_item_quantity' => :'Integer',
         :'order_item_variant_id' => :'String',
+        :'order_item_parent' => :'Integer',
+        :'order_item_parent_option_name' => :'String',
         :'order_item_option' => :'Array<OrderCalculateOrderItemInnerOrderItemOptionInner>'
       }
     end
@@ -86,6 +96,14 @@ module OpenapiClient
 
       if attributes.key?(:'order_item_variant_id')
         self.order_item_variant_id = attributes[:'order_item_variant_id']
+      end
+
+      if attributes.key?(:'order_item_parent')
+        self.order_item_parent = attributes[:'order_item_parent']
+      end
+
+      if attributes.key?(:'order_item_parent_option_name')
+        self.order_item_parent_option_name = attributes[:'order_item_parent_option_name']
       end
 
       if attributes.key?(:'order_item_option')
@@ -128,6 +146,8 @@ module OpenapiClient
           order_item_id == o.order_item_id &&
           order_item_quantity == o.order_item_quantity &&
           order_item_variant_id == o.order_item_variant_id &&
+          order_item_parent == o.order_item_parent &&
+          order_item_parent_option_name == o.order_item_parent_option_name &&
           order_item_option == o.order_item_option
     end
 
@@ -140,7 +160,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [order_item_id, order_item_quantity, order_item_variant_id, order_item_option].hash
+      [order_item_id, order_item_quantity, order_item_variant_id, order_item_parent, order_item_parent_option_name, order_item_option].hash
     end
 
     # Builds the object from hash

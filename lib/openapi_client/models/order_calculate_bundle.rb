@@ -14,7 +14,7 @@ require 'date'
 require 'time'
 
 module OpenapiClient
-  class OrderCalculateItem
+  class OrderCalculateBundle
     attr_accessor :product_id
 
     attr_accessor :sku
@@ -39,8 +39,6 @@ module OpenapiClient
 
     attr_accessor :variant_id
 
-    attr_accessor :bundle_product_id
-
     attr_accessor :options
 
     attr_accessor :additional_fields
@@ -62,7 +60,6 @@ module OpenapiClient
         :'weight_unit' => :'weight_unit',
         :'barcode' => :'barcode',
         :'variant_id' => :'variant_id',
-        :'bundle_product_id' => :'bundle_product_id',
         :'options' => :'options',
         :'additional_fields' => :'additional_fields',
         :'custom_fields' => :'custom_fields'
@@ -89,7 +86,6 @@ module OpenapiClient
         :'weight_unit' => :'String',
         :'barcode' => :'String',
         :'variant_id' => :'String',
-        :'bundle_product_id' => :'String',
         :'options' => :'Array<OrderItemOption>',
         :'additional_fields' => :'Object',
         :'custom_fields' => :'Object'
@@ -103,7 +99,6 @@ module OpenapiClient
         :'weight_unit',
         :'barcode',
         :'variant_id',
-        :'bundle_product_id',
         :'additional_fields',
         :'custom_fields'
       ])
@@ -113,13 +108,13 @@ module OpenapiClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `OpenapiClient::OrderCalculateItem` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `OpenapiClient::OrderCalculateBundle` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `OpenapiClient::OrderCalculateItem`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `OpenapiClient::OrderCalculateBundle`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
@@ -172,10 +167,6 @@ module OpenapiClient
         self.variant_id = attributes[:'variant_id']
       end
 
-      if attributes.key?(:'bundle_product_id')
-        self.bundle_product_id = attributes[:'bundle_product_id']
-      end
-
       if attributes.key?(:'options')
         if (value = attributes[:'options']).is_a?(Array)
           self.options = value
@@ -223,7 +214,6 @@ module OpenapiClient
           weight_unit == o.weight_unit &&
           barcode == o.barcode &&
           variant_id == o.variant_id &&
-          bundle_product_id == o.bundle_product_id &&
           options == o.options &&
           additional_fields == o.additional_fields &&
           custom_fields == o.custom_fields
@@ -238,7 +228,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [product_id, sku, name, quantity, price, price_inc_tax, tax_rate, unit_discount, weight, weight_unit, barcode, variant_id, bundle_product_id, options, additional_fields, custom_fields].hash
+      [product_id, sku, name, quantity, price, price_inc_tax, tax_rate, unit_discount, weight, weight_unit, barcode, variant_id, options, additional_fields, custom_fields].hash
     end
 
     # Builds the object from hash

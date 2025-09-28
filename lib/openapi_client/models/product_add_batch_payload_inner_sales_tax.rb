@@ -14,58 +14,16 @@ require 'date'
 require 'time'
 
 module OpenapiClient
-  class OrderCalculateItem
-    attr_accessor :product_id
+  class ProductAddBatchPayloadInnerSalesTax
+    attr_accessor :tax_percent
 
-    attr_accessor :sku
-
-    attr_accessor :name
-
-    attr_accessor :quantity
-
-    attr_accessor :price
-
-    attr_accessor :price_inc_tax
-
-    attr_accessor :tax_rate
-
-    attr_accessor :unit_discount
-
-    attr_accessor :weight
-
-    attr_accessor :weight_unit
-
-    attr_accessor :barcode
-
-    attr_accessor :variant_id
-
-    attr_accessor :bundle_product_id
-
-    attr_accessor :options
-
-    attr_accessor :additional_fields
-
-    attr_accessor :custom_fields
+    attr_accessor :taxable
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'product_id' => :'product_id',
-        :'sku' => :'sku',
-        :'name' => :'name',
-        :'quantity' => :'quantity',
-        :'price' => :'price',
-        :'price_inc_tax' => :'price_inc_tax',
-        :'tax_rate' => :'tax_rate',
-        :'unit_discount' => :'unit_discount',
-        :'weight' => :'weight',
-        :'weight_unit' => :'weight_unit',
-        :'barcode' => :'barcode',
-        :'variant_id' => :'variant_id',
-        :'bundle_product_id' => :'bundle_product_id',
-        :'options' => :'options',
-        :'additional_fields' => :'additional_fields',
-        :'custom_fields' => :'custom_fields'
+        :'tax_percent' => :'tax_percent',
+        :'taxable' => :'taxable'
       }
     end
 
@@ -77,35 +35,14 @@ module OpenapiClient
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'product_id' => :'String',
-        :'sku' => :'String',
-        :'name' => :'String',
-        :'quantity' => :'Integer',
-        :'price' => :'Float',
-        :'price_inc_tax' => :'Float',
-        :'tax_rate' => :'Float',
-        :'unit_discount' => :'Float',
-        :'weight' => :'Float',
-        :'weight_unit' => :'String',
-        :'barcode' => :'String',
-        :'variant_id' => :'String',
-        :'bundle_product_id' => :'String',
-        :'options' => :'Array<OrderItemOption>',
-        :'additional_fields' => :'Object',
-        :'custom_fields' => :'Object'
+        :'tax_percent' => :'Float',
+        :'taxable' => :'Boolean'
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
-        :'weight',
-        :'weight_unit',
-        :'barcode',
-        :'variant_id',
-        :'bundle_product_id',
-        :'additional_fields',
-        :'custom_fields'
       ])
     end
 
@@ -113,81 +50,23 @@ module OpenapiClient
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `OpenapiClient::OrderCalculateItem` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `OpenapiClient::ProductAddBatchPayloadInnerSalesTax` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `OpenapiClient::OrderCalculateItem`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `OpenapiClient::ProductAddBatchPayloadInnerSalesTax`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'product_id')
-        self.product_id = attributes[:'product_id']
+      if attributes.key?(:'tax_percent')
+        self.tax_percent = attributes[:'tax_percent']
       end
 
-      if attributes.key?(:'sku')
-        self.sku = attributes[:'sku']
-      end
-
-      if attributes.key?(:'name')
-        self.name = attributes[:'name']
-      end
-
-      if attributes.key?(:'quantity')
-        self.quantity = attributes[:'quantity']
-      end
-
-      if attributes.key?(:'price')
-        self.price = attributes[:'price']
-      end
-
-      if attributes.key?(:'price_inc_tax')
-        self.price_inc_tax = attributes[:'price_inc_tax']
-      end
-
-      if attributes.key?(:'tax_rate')
-        self.tax_rate = attributes[:'tax_rate']
-      end
-
-      if attributes.key?(:'unit_discount')
-        self.unit_discount = attributes[:'unit_discount']
-      end
-
-      if attributes.key?(:'weight')
-        self.weight = attributes[:'weight']
-      end
-
-      if attributes.key?(:'weight_unit')
-        self.weight_unit = attributes[:'weight_unit']
-      end
-
-      if attributes.key?(:'barcode')
-        self.barcode = attributes[:'barcode']
-      end
-
-      if attributes.key?(:'variant_id')
-        self.variant_id = attributes[:'variant_id']
-      end
-
-      if attributes.key?(:'bundle_product_id')
-        self.bundle_product_id = attributes[:'bundle_product_id']
-      end
-
-      if attributes.key?(:'options')
-        if (value = attributes[:'options']).is_a?(Array)
-          self.options = value
-        end
-      end
-
-      if attributes.key?(:'additional_fields')
-        self.additional_fields = attributes[:'additional_fields']
-      end
-
-      if attributes.key?(:'custom_fields')
-        self.custom_fields = attributes[:'custom_fields']
+      if attributes.key?(:'taxable')
+        self.taxable = attributes[:'taxable']
       end
     end
 
@@ -196,6 +75,10 @@ module OpenapiClient
     def list_invalid_properties
       warn '[DEPRECATED] the `list_invalid_properties` method is obsolete'
       invalid_properties = Array.new
+      if !@tax_percent.nil? && @tax_percent < 0
+        invalid_properties.push('invalid value for "tax_percent", must be greater than or equal to 0.')
+      end
+
       invalid_properties
     end
 
@@ -203,7 +86,22 @@ module OpenapiClient
     # @return true if the model is valid
     def valid?
       warn '[DEPRECATED] the `valid?` method is obsolete'
+      return false if !@tax_percent.nil? && @tax_percent < 0
       true
+    end
+
+    # Custom attribute writer method with validation
+    # @param [Object] tax_percent Value to be assigned
+    def tax_percent=(tax_percent)
+      if tax_percent.nil?
+        fail ArgumentError, 'tax_percent cannot be nil'
+      end
+
+      if tax_percent < 0
+        fail ArgumentError, 'invalid value for "tax_percent", must be greater than or equal to 0.'
+      end
+
+      @tax_percent = tax_percent
     end
 
     # Checks equality by comparing each attribute.
@@ -211,22 +109,8 @@ module OpenapiClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          product_id == o.product_id &&
-          sku == o.sku &&
-          name == o.name &&
-          quantity == o.quantity &&
-          price == o.price &&
-          price_inc_tax == o.price_inc_tax &&
-          tax_rate == o.tax_rate &&
-          unit_discount == o.unit_discount &&
-          weight == o.weight &&
-          weight_unit == o.weight_unit &&
-          barcode == o.barcode &&
-          variant_id == o.variant_id &&
-          bundle_product_id == o.bundle_product_id &&
-          options == o.options &&
-          additional_fields == o.additional_fields &&
-          custom_fields == o.custom_fields
+          tax_percent == o.tax_percent &&
+          taxable == o.taxable
     end
 
     # @see the `==` method
@@ -238,7 +122,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [product_id, sku, name, quantity, price, price_inc_tax, tax_rate, unit_discount, weight, weight_unit, barcode, variant_id, bundle_product_id, options, additional_fields, custom_fields].hash
+      [tax_percent, taxable].hash
     end
 
     # Builds the object from hash

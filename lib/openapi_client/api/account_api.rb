@@ -240,6 +240,7 @@ module OpenapiClient
     # @option opts [String] :miva_access_token Miva access token
     # @option opts [String] :miva_signature Miva signature
     # @option opts [String] :shopware_access_key Shopware access key
+    # @option opts [String] :unas_api_key UNAS API Key
     # @option opts [String] :shopware_api_key Shopware api key
     # @option opts [String] :shopware_api_secret Shopware client secret access key
     # @option opts [String] :bigcartel_user_name Subdomain of store
@@ -407,6 +408,7 @@ module OpenapiClient
     # @option opts [String] :miva_access_token Miva access token
     # @option opts [String] :miva_signature Miva signature
     # @option opts [String] :shopware_access_key Shopware access key
+    # @option opts [String] :unas_api_key UNAS API Key
     # @option opts [String] :shopware_api_key Shopware api key
     # @option opts [String] :shopware_api_secret Shopware client secret access key
     # @option opts [String] :bigcartel_user_name Subdomain of store
@@ -575,6 +577,7 @@ module OpenapiClient
       query_params[:'miva_access_token'] = opts[:'miva_access_token'] if !opts[:'miva_access_token'].nil?
       query_params[:'miva_signature'] = opts[:'miva_signature'] if !opts[:'miva_signature'].nil?
       query_params[:'shopware_access_key'] = opts[:'shopware_access_key'] if !opts[:'shopware_access_key'].nil?
+      query_params[:'unas_api_key'] = opts[:'unas_api_key'] if !opts[:'unas_api_key'].nil?
       query_params[:'shopware_api_key'] = opts[:'shopware_api_key'] if !opts[:'shopware_api_key'].nil?
       query_params[:'shopware_api_secret'] = opts[:'shopware_api_secret'] if !opts[:'shopware_api_secret'].nil?
       query_params[:'bigcartel_user_name'] = opts[:'bigcartel_user_name'] if !opts[:'bigcartel_user_name'].nil?

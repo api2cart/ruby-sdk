@@ -35,6 +35,8 @@ module OpenapiClient
 
     attr_accessor :mpn
 
+    attr_accessor :isbn
+
     attr_accessor :barcode
 
     attr_accessor :price
@@ -49,9 +51,17 @@ module OpenapiClient
 
     attr_accessor :sprice_expire
 
+    attr_accessor :avail_from
+
     attr_accessor :advanced_prices
 
     attr_accessor :fixed_cost_shipping_price
+
+    attr_accessor :buyitnow_price
+
+    attr_accessor :reserve_price
+
+    attr_accessor :best_offer
 
     attr_accessor :quantity
 
@@ -71,6 +81,8 @@ module OpenapiClient
 
     attr_accessor :condition
 
+    attr_accessor :condition_description
+
     attr_accessor :visible
 
     attr_accessor :available_for_view
@@ -82,6 +94,10 @@ module OpenapiClient
     attr_accessor :in_stock
 
     attr_accessor :type
+
+    attr_accessor :listing_type
+
+    attr_accessor :listing_duration
 
     attr_accessor :downloadable
 
@@ -116,6 +132,8 @@ module OpenapiClient
     attr_accessor :stores_ids
 
     attr_accessor :tax_class_id
+
+    attr_accessor :sales_tax
 
     attr_accessor :meta_title
 
@@ -158,6 +176,7 @@ module OpenapiClient
         :'ean' => :'ean',
         :'gtin' => :'gtin',
         :'mpn' => :'mpn',
+        :'isbn' => :'isbn',
         :'barcode' => :'barcode',
         :'price' => :'price',
         :'old_price' => :'old_price',
@@ -165,8 +184,12 @@ module OpenapiClient
         :'special_price' => :'special_price',
         :'sprice_create' => :'sprice_create',
         :'sprice_expire' => :'sprice_expire',
+        :'avail_from' => :'avail_from',
         :'advanced_prices' => :'advanced_prices',
         :'fixed_cost_shipping_price' => :'fixed_cost_shipping_price',
+        :'buyitnow_price' => :'buyitnow_price',
+        :'reserve_price' => :'reserve_price',
+        :'best_offer' => :'best_offer',
         :'quantity' => :'quantity',
         :'manage_stock' => :'manage_stock',
         :'product_type' => :'product_type',
@@ -176,12 +199,15 @@ module OpenapiClient
         :'taxable' => :'taxable',
         :'status' => :'status',
         :'condition' => :'condition',
+        :'condition_description' => :'condition_description',
         :'visible' => :'visible',
         :'available_for_view' => :'available_for_view',
         :'available_for_sale' => :'available_for_sale',
         :'is_virtual' => :'is_virtual',
         :'in_stock' => :'in_stock',
         :'type' => :'type',
+        :'listing_type' => :'listing_type',
+        :'listing_duration' => :'listing_duration',
         :'downloadable' => :'downloadable',
         :'weight' => :'weight',
         :'length' => :'length',
@@ -199,6 +225,7 @@ module OpenapiClient
         :'cross_sell_products_ids' => :'cross_sell_products_ids',
         :'stores_ids' => :'stores_ids',
         :'tax_class_id' => :'tax_class_id',
+        :'sales_tax' => :'sales_tax',
         :'meta_title' => :'meta_title',
         :'meta_description' => :'meta_description',
         :'meta_keywords' => :'meta_keywords',
@@ -234,6 +261,7 @@ module OpenapiClient
         :'ean' => :'String',
         :'gtin' => :'String',
         :'mpn' => :'String',
+        :'isbn' => :'String',
         :'barcode' => :'String',
         :'price' => :'Float',
         :'old_price' => :'Float',
@@ -241,8 +269,12 @@ module OpenapiClient
         :'special_price' => :'Float',
         :'sprice_create' => :'String',
         :'sprice_expire' => :'String',
+        :'avail_from' => :'String',
         :'advanced_prices' => :'Array<ProductAddBatchPayloadInnerAdvancedPricesInner>',
         :'fixed_cost_shipping_price' => :'Float',
+        :'buyitnow_price' => :'Float',
+        :'reserve_price' => :'Float',
+        :'best_offer' => :'Float',
         :'quantity' => :'Float',
         :'manage_stock' => :'Boolean',
         :'product_type' => :'String',
@@ -252,12 +284,15 @@ module OpenapiClient
         :'taxable' => :'Boolean',
         :'status' => :'String',
         :'condition' => :'String',
+        :'condition_description' => :'String',
         :'visible' => :'String',
         :'available_for_view' => :'Boolean',
         :'available_for_sale' => :'Boolean',
         :'is_virtual' => :'Boolean',
         :'in_stock' => :'Boolean',
         :'type' => :'String',
+        :'listing_type' => :'String',
+        :'listing_duration' => :'String',
         :'downloadable' => :'Boolean',
         :'weight' => :'Float',
         :'length' => :'Float',
@@ -275,6 +310,7 @@ module OpenapiClient
         :'cross_sell_products_ids' => :'Array<String>',
         :'stores_ids' => :'Array<String>',
         :'tax_class_id' => :'String',
+        :'sales_tax' => :'ProductAddBatchPayloadInnerSalesTax',
         :'meta_title' => :'String',
         :'meta_description' => :'String',
         :'meta_keywords' => :'Array<String>',
@@ -353,6 +389,10 @@ module OpenapiClient
         self.mpn = attributes[:'mpn']
       end
 
+      if attributes.key?(:'isbn')
+        self.isbn = attributes[:'isbn']
+      end
+
       if attributes.key?(:'barcode')
         self.barcode = attributes[:'barcode']
       end
@@ -381,6 +421,10 @@ module OpenapiClient
         self.sprice_expire = attributes[:'sprice_expire']
       end
 
+      if attributes.key?(:'avail_from')
+        self.avail_from = attributes[:'avail_from']
+      end
+
       if attributes.key?(:'advanced_prices')
         if (value = attributes[:'advanced_prices']).is_a?(Array)
           self.advanced_prices = value
@@ -389,6 +433,18 @@ module OpenapiClient
 
       if attributes.key?(:'fixed_cost_shipping_price')
         self.fixed_cost_shipping_price = attributes[:'fixed_cost_shipping_price']
+      end
+
+      if attributes.key?(:'buyitnow_price')
+        self.buyitnow_price = attributes[:'buyitnow_price']
+      end
+
+      if attributes.key?(:'reserve_price')
+        self.reserve_price = attributes[:'reserve_price']
+      end
+
+      if attributes.key?(:'best_offer')
+        self.best_offer = attributes[:'best_offer']
       end
 
       if attributes.key?(:'quantity')
@@ -427,6 +483,10 @@ module OpenapiClient
         self.condition = attributes[:'condition']
       end
 
+      if attributes.key?(:'condition_description')
+        self.condition_description = attributes[:'condition_description']
+      end
+
       if attributes.key?(:'visible')
         self.visible = attributes[:'visible']
       end
@@ -449,6 +509,14 @@ module OpenapiClient
 
       if attributes.key?(:'type')
         self.type = attributes[:'type']
+      end
+
+      if attributes.key?(:'listing_type')
+        self.listing_type = attributes[:'listing_type']
+      end
+
+      if attributes.key?(:'listing_duration')
+        self.listing_duration = attributes[:'listing_duration']
       end
 
       if attributes.key?(:'downloadable')
@@ -527,6 +595,10 @@ module OpenapiClient
 
       if attributes.key?(:'tax_class_id')
         self.tax_class_id = attributes[:'tax_class_id']
+      end
+
+      if attributes.key?(:'sales_tax')
+        self.sales_tax = attributes[:'sales_tax']
       end
 
       if attributes.key?(:'meta_title')
@@ -816,6 +888,7 @@ module OpenapiClient
           ean == o.ean &&
           gtin == o.gtin &&
           mpn == o.mpn &&
+          isbn == o.isbn &&
           barcode == o.barcode &&
           price == o.price &&
           old_price == o.old_price &&
@@ -823,8 +896,12 @@ module OpenapiClient
           special_price == o.special_price &&
           sprice_create == o.sprice_create &&
           sprice_expire == o.sprice_expire &&
+          avail_from == o.avail_from &&
           advanced_prices == o.advanced_prices &&
           fixed_cost_shipping_price == o.fixed_cost_shipping_price &&
+          buyitnow_price == o.buyitnow_price &&
+          reserve_price == o.reserve_price &&
+          best_offer == o.best_offer &&
           quantity == o.quantity &&
           manage_stock == o.manage_stock &&
           product_type == o.product_type &&
@@ -834,12 +911,15 @@ module OpenapiClient
           taxable == o.taxable &&
           status == o.status &&
           condition == o.condition &&
+          condition_description == o.condition_description &&
           visible == o.visible &&
           available_for_view == o.available_for_view &&
           available_for_sale == o.available_for_sale &&
           is_virtual == o.is_virtual &&
           in_stock == o.in_stock &&
           type == o.type &&
+          listing_type == o.listing_type &&
+          listing_duration == o.listing_duration &&
           downloadable == o.downloadable &&
           weight == o.weight &&
           length == o.length &&
@@ -857,6 +937,7 @@ module OpenapiClient
           cross_sell_products_ids == o.cross_sell_products_ids &&
           stores_ids == o.stores_ids &&
           tax_class_id == o.tax_class_id &&
+          sales_tax == o.sales_tax &&
           meta_title == o.meta_title &&
           meta_description == o.meta_description &&
           meta_keywords == o.meta_keywords &&
@@ -882,7 +963,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, description, short_description, sku, model, asin, upc, ean, gtin, mpn, barcode, price, old_price, cost_price, special_price, sprice_create, sprice_expire, advanced_prices, fixed_cost_shipping_price, quantity, manage_stock, product_type, marketplace_item_properties, specifics, is_free_shipping, taxable, status, condition, visible, available_for_view, available_for_sale, is_virtual, in_stock, type, downloadable, weight, length, width, height, weight_unit, dimensions_unit, store_id, lang_id, category_id, warehouse_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, stores_ids, tax_class_id, meta_title, meta_description, meta_keywords, search_keywords, harmonized_system_code, url, seo_url, external_product_link, manufacturer, manufacturer_id, backorder_status, images, tags, files].hash
+      [name, description, short_description, sku, model, asin, upc, ean, gtin, mpn, isbn, barcode, price, old_price, cost_price, special_price, sprice_create, sprice_expire, avail_from, advanced_prices, fixed_cost_shipping_price, buyitnow_price, reserve_price, best_offer, quantity, manage_stock, product_type, marketplace_item_properties, specifics, is_free_shipping, taxable, status, condition, condition_description, visible, available_for_view, available_for_sale, is_virtual, in_stock, type, listing_type, listing_duration, downloadable, weight, length, width, height, weight_unit, dimensions_unit, store_id, lang_id, category_id, warehouse_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, stores_ids, tax_class_id, sales_tax, meta_title, meta_description, meta_keywords, search_keywords, harmonized_system_code, url, seo_url, external_product_link, manufacturer, manufacturer_id, backorder_status, images, tags, files].hash
     end
 
     # Builds the object from hash

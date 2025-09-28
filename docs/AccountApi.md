@@ -268,6 +268,7 @@ opts = {
   miva_access_token: '227cbe434a1e358d72db0de993x9d9fd', # String | Miva access token
   miva_signature: '1hpkrebfdsObGTor/0Gk9XcNBUQohrxrw67Sg9AM9ps=', # String | Miva signature
   shopware_access_key: 'SWSCS3O1RJBSRNBYQLFIYJN2ZQ', # String | Shopware access key
+  unas_api_key: 'c238908e29ceb6e6ad3df15f89a6234709d3f000', # String | UNAS API Key
   shopware_api_key: 'SWSCS3O1RJBSRNBYQLFIYJN2ZQ', # String | Shopware api key
   shopware_api_secret: 'V3NYNWg2b1dZdHBUWDN1cmdKdGhnenp5enVJYlJ0WlJvOFF2bnQ', # String | Shopware client secret access key
   bigcartel_user_name: 'subdomain', # String | Subdomain of store
@@ -464,6 +465,7 @@ end
 | **miva_access_token** | **String** | Miva access token | [optional] |
 | **miva_signature** | **String** | Miva signature | [optional] |
 | **shopware_access_key** | **String** | Shopware access key | [optional] |
+| **unas_api_key** | **String** | UNAS API Key | [optional] |
 | **shopware_api_key** | **String** | Shopware api key | [optional] |
 | **shopware_api_secret** | **String** | Shopware client secret access key | [optional] |
 | **bigcartel_user_name** | **String** | Subdomain of store | [optional] |

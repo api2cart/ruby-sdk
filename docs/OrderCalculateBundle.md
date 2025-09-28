@@ -1,4 +1,4 @@
-# OpenapiClient::OrderCalculateItem
+# OpenapiClient::OrderCalculateBundle
 
 ## Properties
 
@@ -16,7 +16,6 @@
 | **weight_unit** | **String** |  | [optional] |
 | **barcode** | **String** |  | [optional] |
 | **variant_id** | **String** |  | [optional] |
-| **bundle_product_id** | **String** |  | [optional] |
 | **options** | [**Array&lt;OrderItemOption&gt;**](OrderItemOption.md) |  | [optional] |
 | **additional_fields** | **Object** |  | [optional] |
 | **custom_fields** | **Object** |  | [optional] |
@@ -26,7 +25,7 @@
 ```ruby
 require 'openapi_client'
 
-instance = OpenapiClient::OrderCalculateItem.new(
+instance = OpenapiClient::OrderCalculateBundle.new(
   product_id: null,
   sku: null,
   name: null,
@@ -39,7 +38,6 @@ instance = OpenapiClient::OrderCalculateItem.new(
   weight_unit: null,
   barcode: null,
   variant_id: null,
-  bundle_product_id: null,
   options: null,
   additional_fields: null,
   custom_fields: null

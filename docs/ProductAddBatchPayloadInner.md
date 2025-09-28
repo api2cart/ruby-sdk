@@ -14,6 +14,7 @@
 | **ean** | **String** |  | [optional] |
 | **gtin** | **String** |  | [optional] |
 | **mpn** | **String** |  | [optional] |
+| **isbn** | **String** |  | [optional] |
 | **barcode** | **String** |  | [optional] |
 | **price** | **Float** |  | [optional] |
 | **old_price** | **Float** |  | [optional] |
@@ -21,8 +22,12 @@
 | **special_price** | **Float** |  | [optional] |
 | **sprice_create** | **String** |  | [optional] |
 | **sprice_expire** | **String** |  | [optional] |
+| **avail_from** | **String** |  | [optional] |
 | **advanced_prices** | [**Array&lt;ProductAddBatchPayloadInnerAdvancedPricesInner&gt;**](ProductAddBatchPayloadInnerAdvancedPricesInner.md) |  | [optional] |
 | **fixed_cost_shipping_price** | **Float** |  | [optional] |
+| **buyitnow_price** | **Float** |  | [optional] |
+| **reserve_price** | **Float** |  | [optional] |
+| **best_offer** | **Float** |  | [optional] |
 | **quantity** | **Float** |  | [optional] |
 | **manage_stock** | **Boolean** |  | [optional] |
 | **product_type** | **String** |  | [optional] |
@@ -32,12 +37,15 @@
 | **taxable** | **Boolean** |  | [optional] |
 | **status** | **String** |  | [optional] |
 | **condition** | **String** |  | [optional] |
+| **condition_description** | **String** |  | [optional] |
 | **visible** | **String** |  | [optional] |
 | **available_for_view** | **Boolean** |  | [optional] |
 | **available_for_sale** | **Boolean** |  | [optional] |
 | **is_virtual** | **Boolean** |  | [optional] |
 | **in_stock** | **Boolean** |  | [optional] |
 | **type** | **String** |  | [optional] |
+| **listing_type** | **String** |  | [optional] |
+| **listing_duration** | **String** |  | [optional] |
 | **downloadable** | **Boolean** |  | [optional] |
 | **weight** | **Float** |  | [optional] |
 | **length** | **Float** |  | [optional] |
@@ -55,6 +63,7 @@
 | **cross_sell_products_ids** | **Array&lt;String&gt;** |  | [optional] |
 | **stores_ids** | **Array&lt;String&gt;** |  | [optional] |
 | **tax_class_id** | **String** |  | [optional] |
+| **sales_tax** | [**ProductAddBatchPayloadInnerSalesTax**](ProductAddBatchPayloadInnerSalesTax.md) |  | [optional] |
 | **meta_title** | **String** |  | [optional] |
 | **meta_description** | **String** |  | [optional] |
 | **meta_keywords** | **Array&lt;String&gt;** |  | [optional] |
@@ -86,6 +95,7 @@ instance = OpenapiClient::ProductAddBatchPayloadInner.new(
   ean: null,
   gtin: null,
   mpn: null,
+  isbn: null,
   barcode: null,
   price: null,
   old_price: null,
@@ -93,8 +103,12 @@ instance = OpenapiClient::ProductAddBatchPayloadInner.new(
   special_price: null,
   sprice_create: null,
   sprice_expire: null,
+  avail_from: null,
   advanced_prices: null,
   fixed_cost_shipping_price: null,
+  buyitnow_price: null,
+  reserve_price: null,
+  best_offer: null,
   quantity: null,
   manage_stock: null,
   product_type: null,
@@ -104,12 +118,15 @@ instance = OpenapiClient::ProductAddBatchPayloadInner.new(
   taxable: null,
   status: null,
   condition: null,
+  condition_description: null,
   visible: null,
   available_for_view: null,
   available_for_sale: null,
   is_virtual: null,
   in_stock: null,
   type: null,
+  listing_type: null,
+  listing_duration: null,
   downloadable: null,
   weight: null,
   length: null,
@@ -127,6 +144,7 @@ instance = OpenapiClient::ProductAddBatchPayloadInner.new(
   cross_sell_products_ids: null,
   stores_ids: null,
   tax_class_id: null,
+  sales_tax: null,
   meta_title: null,
   meta_description: null,
   meta_keywords: null,
