@@ -597,6 +597,12 @@ describe OpenapiClient::ProductAdd do
     end
   end
 
+  describe 'test attribute "processing_profile_id"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "shipping_details"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

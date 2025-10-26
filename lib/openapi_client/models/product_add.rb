@@ -297,6 +297,9 @@ module OpenapiClient
     # The numeric ID of the shipping template associated with the products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field shipping_zones[]->id.
     attr_accessor :shipping_template_id
 
+    # The numeric ID of the processing profile (readiness state) for physical products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field processing_profiles[]->readiness_state_id.
+    attr_accessor :processing_profile_id
+
     # The shipping details, including flat and calculated shipping costs and shipping insurance costs. Look at cart.info method response for allowed values.<hr><div style=\"font-style:normal\">Param structure:<div style=\"margin-left: 2%;\"><code style=\"padding:0; background-color:#ffffff;font-size:85%;font-family:monospace;\">shipping_details[0][<b>shipping_type</b>] = string </br>shipping_details[0][<b>shipping_service</b>] = string</br>shipping_details[0][<b>shipping_cost</b>] = decimal</br>shipping_details[1][<b>shipping_type</b>] = string </br>shipping_details[1][<b>shipping_service</b>] = string</br>shipping_details[1][<b>shipping_cost</b>] = decimal</br></code></div></div>
     attr_accessor :shipping_details
 
@@ -460,6 +463,7 @@ module OpenapiClient
         :'payment_methods' => :'payment_methods',
         :'paypal_email' => :'paypal_email',
         :'shipping_template_id' => :'shipping_template_id',
+        :'processing_profile_id' => :'processing_profile_id',
         :'shipping_details' => :'shipping_details',
         :'is_free_shipping' => :'is_free_shipping',
         :'delivery_code' => :'delivery_code',
@@ -589,6 +593,7 @@ module OpenapiClient
         :'payment_methods' => :'Array<String>',
         :'paypal_email' => :'String',
         :'shipping_template_id' => :'Integer',
+        :'processing_profile_id' => :'Integer',
         :'shipping_details' => :'Array<ProductAddShippingDetailsInner>',
         :'is_free_shipping' => :'Boolean',
         :'delivery_code' => :'String',
@@ -1066,6 +1071,10 @@ module OpenapiClient
         self.shipping_template_id = 0
       end
 
+      if attributes.key?(:'processing_profile_id')
+        self.processing_profile_id = attributes[:'processing_profile_id']
+      end
+
       if attributes.key?(:'shipping_details')
         if (value = attributes[:'shipping_details']).is_a?(Array)
           self.shipping_details = value
@@ -1306,6 +1315,7 @@ module OpenapiClient
           payment_methods == o.payment_methods &&
           paypal_email == o.paypal_email &&
           shipping_template_id == o.shipping_template_id &&
+          processing_profile_id == o.processing_profile_id &&
           shipping_details == o.shipping_details &&
           is_free_shipping == o.is_free_shipping &&
           delivery_code == o.delivery_code &&
@@ -1340,7 +1350,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [name, model, description, price, sku, short_description, type, status, visible, category_id, categories_ids, product_class, product_type, is_virtual, downloadable, is_supply, available_for_view, available_for_sale, store_id, stores_ids, lang_id, old_price, special_price, wholesale_price, cost_price, fixed_cost_shipping_price, tier_prices, group_prices, buyitnow_price, reserve_price, quantity, in_stock, manage_stock, warehouse_id, backorder_status, min_order_quantity, max_order_quantity, low_stock_threshold, weight, weight_unit, width, height, length, dimensions_unit, barcode, upc, ean, isbn, gtin, mpn, asin, product_reference, external_product_link, harmonized_system_code, country_of_origin, manufacturer, manufacturer_id, manufacturer_info, brand_name, image_url, image_name, additional_image_urls, files, size_chart, related_products_ids, up_sell_products_ids, cross_sell_products_ids, attribute_set_name, attribute_name, search_keywords, tags, materials, certifications, specifics, avail_from, sprice_create, sprice_modified, sprice_expire, created_at, auto_renew, when_made, meta_title, meta_keywords, meta_description, url, seo_url, tax_class_id, taxable, sales_tax, condition, condition_description, allow_display_condition, payment_methods, paypal_email, shipping_template_id, shipping_details, is_free_shipping, delivery_code, delivery_type, delivery_time, delivery_option_ids, package_details, logistic_info, listing_duration, listing_type, category_type, return_accepted, seller_profiles, auction_confidentiality_level, best_offer, production_partner_ids, marketplace_item_properties, clear_cache, viewed_count, ordered_count, shop_section_id, return_policy_id, personalization_details].hash
+      [name, model, description, price, sku, short_description, type, status, visible, category_id, categories_ids, product_class, product_type, is_virtual, downloadable, is_supply, available_for_view, available_for_sale, store_id, stores_ids, lang_id, old_price, special_price, wholesale_price, cost_price, fixed_cost_shipping_price, tier_prices, group_prices, buyitnow_price, reserve_price, quantity, in_stock, manage_stock, warehouse_id, backorder_status, min_order_quantity, max_order_quantity, low_stock_threshold, weight, weight_unit, width, height, length, dimensions_unit, barcode, upc, ean, isbn, gtin, mpn, asin, product_reference, external_product_link, harmonized_system_code, country_of_origin, manufacturer, manufacturer_id, manufacturer_info, brand_name, image_url, image_name, additional_image_urls, files, size_chart, related_products_ids, up_sell_products_ids, cross_sell_products_ids, attribute_set_name, attribute_name, search_keywords, tags, materials, certifications, specifics, avail_from, sprice_create, sprice_modified, sprice_expire, created_at, auto_renew, when_made, meta_title, meta_keywords, meta_description, url, seo_url, tax_class_id, taxable, sales_tax, condition, condition_description, allow_display_condition, payment_methods, paypal_email, shipping_template_id, processing_profile_id, shipping_details, is_free_shipping, delivery_code, delivery_type, delivery_time, delivery_option_ids, package_details, logistic_info, listing_duration, listing_type, category_type, return_accepted, seller_profiles, auction_confidentiality_level, best_offer, production_partner_ids, marketplace_item_properties, clear_cache, viewed_count, ordered_count, shop_section_id, return_policy_id, personalization_details].hash
     end
 
     # Builds the object from hash

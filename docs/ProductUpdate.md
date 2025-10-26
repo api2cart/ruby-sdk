@@ -75,6 +75,7 @@
 | **country_of_origin** | **String** | The country where the inventory item was made | [optional] |
 | **harmonized_system_code** | **String** | Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes | [optional] |
 | **shipping_template_id** | **Integer** | The numeric ID of the shipping template associated with the products in Etsy. You can find possible values in the \&quot;cart.info\&quot; API method response, in the field shipping_zones[]-&gt;id. | [optional][default to 0] |
+| **processing_profile_id** | **Integer** | The numeric ID of the processing profile (readiness state) for physical products in Etsy. You can find possible values in the \&quot;cart.info\&quot; API method response, in the field processing_profiles[]-&gt;readiness_state_id. | [optional] |
 | **when_made** | **String** | An enumerated string for the era in which the maker made the product. | [optional][default to &#39;made_to_order&#39;] |
 | **is_supply** | **Boolean** | If true, it indicates the product as a supply, otherwise it indicates that it is a finished product. | [optional][default to true] |
 | **downloadable** | **Boolean** | Defines whether the product is downloadable | [optional][default to false] |
@@ -172,6 +173,7 @@ instance = OpenapiClient::ProductUpdate.new(
   country_of_origin: 123456,
   harmonized_system_code: 123456,
   shipping_template_id: 40256592690,
+  processing_profile_id: &#x60;12345678&#x60;,
   when_made: 2020_2025,
   is_supply: false,
   downloadable: true,

@@ -499,6 +499,7 @@ module OpenapiClient
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [Boolean] :enable_cache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (default to false)
     # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
+    # @option opts [Integer] :rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt;
     # @return [OrderInfo200Response]
     def order_info(opts = {})
       data, _status_code, _headers = order_info_with_http_info(opts)
@@ -516,6 +517,7 @@ module OpenapiClient
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [Boolean] :enable_cache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (default to false)
     # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
+    # @option opts [Integer] :rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt;
     # @return [Array<(OrderInfo200Response, Integer, Hash)>] OrderInfo200Response data, response status code and response headers
     def order_info_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -534,6 +536,7 @@ module OpenapiClient
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
       query_params[:'enable_cache'] = opts[:'enable_cache'] if !opts[:'enable_cache'].nil?
       query_params[:'use_latest_api_version'] = opts[:'use_latest_api_version'] if !opts[:'use_latest_api_version'].nil?
+      query_params[:'rounding_precision'] = opts[:'rounding_precision'] if !opts[:'rounding_precision'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}
@@ -610,6 +613,7 @@ module OpenapiClient
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [Boolean] :enable_cache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (default to false)
     # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
+    # @option opts [Integer] :rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt;
     # @return [ModelResponseOrderList]
     def order_list(opts = {})
       data, _status_code, _headers = order_list_with_http_info(opts)
@@ -657,6 +661,7 @@ module OpenapiClient
     # @option opts [String] :exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all
     # @option opts [Boolean] :enable_cache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (default to false)
     # @option opts [Boolean] :use_latest_api_version Use the latest platform API version (default to false)
+    # @option opts [Integer] :rounding_precision &lt;p&gt;Specifies the rounding precision for fractional numeric values (such as prices, taxes, and weights).&lt;/p&gt; &lt;p&gt;Supported values range from &lt;b&gt;1&lt;/b&gt; to &lt;b&gt;6&lt;/b&gt;.&lt;/p&gt; &lt;p&gt;The default rounding precision may vary depending on the platform. You can retrieve the default value using the &lt;strong&gt;cart.info&lt;/strong&gt; method in the &lt;code&gt;default_rounding_precision&lt;/code&gt; field. &lt;/p&gt;&lt;p&gt;Values are rounded to the nearest number at the specified precision. Fractions of .5 or higher are rounded up, while fractions lower than .5 are rounded down.&lt;/p&gt;
     # @return [Array<(ModelResponseOrderList, Integer, Hash)>] ModelResponseOrderList data, response status code and response headers
     def order_list_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -705,6 +710,7 @@ module OpenapiClient
       query_params[:'exclude'] = opts[:'exclude'] if !opts[:'exclude'].nil?
       query_params[:'enable_cache'] = opts[:'enable_cache'] if !opts[:'enable_cache'].nil?
       query_params[:'use_latest_api_version'] = opts[:'use_latest_api_version'] if !opts[:'use_latest_api_version'].nil?
+      query_params[:'rounding_precision'] = opts[:'rounding_precision'] if !opts[:'rounding_precision'].nil?
 
       # header parameters
       header_params = opts[:header_params] || {}

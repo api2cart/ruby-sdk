@@ -51,6 +51,12 @@ describe OpenapiClient::Cart do
     end
   end
 
+  describe 'test attribute "default_rounding_precision"' do
+    it 'should work' do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
+  end
+
   describe 'test attribute "db_prefix"' do
     it 'should work' do
       # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/

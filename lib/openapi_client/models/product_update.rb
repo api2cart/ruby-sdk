@@ -227,6 +227,9 @@ module OpenapiClient
     # The numeric ID of the shipping template associated with the products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field shipping_zones[]->id.
     attr_accessor :shipping_template_id
 
+    # The numeric ID of the processing profile (readiness state) for physical products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field processing_profiles[]->readiness_state_id.
+    attr_accessor :processing_profile_id
+
     # An enumerated string for the era in which the maker made the product.
     attr_accessor :when_made
 
@@ -356,6 +359,7 @@ module OpenapiClient
         :'country_of_origin' => :'country_of_origin',
         :'harmonized_system_code' => :'harmonized_system_code',
         :'shipping_template_id' => :'shipping_template_id',
+        :'processing_profile_id' => :'processing_profile_id',
         :'when_made' => :'when_made',
         :'is_supply' => :'is_supply',
         :'downloadable' => :'downloadable',
@@ -457,6 +461,7 @@ module OpenapiClient
         :'country_of_origin' => :'String',
         :'harmonized_system_code' => :'String',
         :'shipping_template_id' => :'Integer',
+        :'processing_profile_id' => :'Integer',
         :'when_made' => :'String',
         :'is_supply' => :'Boolean',
         :'downloadable' => :'Boolean',
@@ -792,6 +797,10 @@ module OpenapiClient
         self.shipping_template_id = 0
       end
 
+      if attributes.key?(:'processing_profile_id')
+        self.processing_profile_id = attributes[:'processing_profile_id']
+      end
+
       if attributes.key?(:'when_made')
         self.when_made = attributes[:'when_made']
       else
@@ -982,6 +991,7 @@ module OpenapiClient
           country_of_origin == o.country_of_origin &&
           harmonized_system_code == o.harmonized_system_code &&
           shipping_template_id == o.shipping_template_id &&
+          processing_profile_id == o.processing_profile_id &&
           when_made == o.when_made &&
           is_supply == o.is_supply &&
           downloadable == o.downloadable &&
@@ -1012,7 +1022,7 @@ module OpenapiClient
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, model, sku, name, description, short_description, price, old_price, special_price, sprice_create, sprice_expire, cost_price, fixed_cost_shipping_price, retail_price, tier_prices, reserve_price, buyitnow_price, taxable, tax_class_id, type, status, condition, visible, in_stock, avail, avail_from, product_class, brand_name, available_for_view, stores_ids, store_id, lang_id, quantity, reserve_quantity, manage_stock, backorder_status, increase_quantity, reduce_quantity, low_stock_threshold, warehouse_id, weight, weight_unit, height, length, width, dimensions_unit, is_virtual, is_free_shipping, gtin, upc, mpn, ean, isbn, barcode, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, meta_title, meta_keywords, meta_description, seo_url, search_keywords, tags, delivery_code, package_details, country_of_origin, harmonized_system_code, shipping_template_id, when_made, is_supply, downloadable, materials, auto_renew, on_sale, production_partner_ids, manufacturer_info, report_request_id, disable_report_cache, reindex, clear_cache, check_process_status, specifics, shop_section_id, personalization_details, external_product_link, marketplace_item_properties, min_order_quantity].hash
+      [id, model, sku, name, description, short_description, price, old_price, special_price, sprice_create, sprice_expire, cost_price, fixed_cost_shipping_price, retail_price, tier_prices, reserve_price, buyitnow_price, taxable, tax_class_id, type, status, condition, visible, in_stock, avail, avail_from, product_class, brand_name, available_for_view, stores_ids, store_id, lang_id, quantity, reserve_quantity, manage_stock, backorder_status, increase_quantity, reduce_quantity, low_stock_threshold, warehouse_id, weight, weight_unit, height, length, width, dimensions_unit, is_virtual, is_free_shipping, gtin, upc, mpn, ean, isbn, barcode, manufacturer, manufacturer_id, categories_ids, related_products_ids, up_sell_products_ids, cross_sell_products_ids, meta_title, meta_keywords, meta_description, seo_url, search_keywords, tags, delivery_code, package_details, country_of_origin, harmonized_system_code, shipping_template_id, processing_profile_id, when_made, is_supply, downloadable, materials, auto_renew, on_sale, production_partner_ids, manufacturer_info, report_request_id, disable_report_cache, reindex, clear_cache, check_process_status, specifics, shop_section_id, personalization_details, external_product_link, marketplace_item_properties, min_order_quantity].hash
     end
 
     # Builds the object from hash

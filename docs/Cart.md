@@ -8,6 +8,7 @@
 | **url** | **String** |  | [optional] |
 | **version** | **String** |  | [optional] |
 | **bridge_version** | **String** |  | [optional] |
+| **default_rounding_precision** | **Integer** |  | [optional] |
 | **db_prefix** | **String** |  | [optional] |
 | **stores_info** | [**Array&lt;CartStoreInfo&gt;**](CartStoreInfo.md) |  | [optional] |
 | **warehouses** | [**Array&lt;CartWarehouse&gt;**](CartWarehouse.md) |  | [optional] |
@@ -25,6 +26,7 @@ instance = OpenapiClient::Cart.new(
   url: null,
   version: null,
   bridge_version: null,
+  default_rounding_precision: null,
   db_prefix: null,
   stores_info: null,
   warehouses: null,
